@@ -8,7 +8,7 @@ services:
     volumes:
       - ./doc:/workdir
       - ./html:/html
-    command: asciidoctor -n data-management-handbook.adoc -D /html
+    command: asciidoctor -n /workdir/data-management-handbook.adoc -D /html
 
   pdf:
     build:
@@ -17,7 +17,7 @@ services:
     volumes:
       - ./doc:/workdir
       - ./pdf:/pdf
-    command: asciidoctor-pdf -a pdf-themesdir=./ -a pdf-theme=mmd -n data-management-handbook.adoc -D /pdf
+    command: asciidoctor-pdf -a pdf-themesdir=./ -a pdf-theme=mmd -n /workdir/data-management-handbook.adoc -D /pdf
 
 
 
