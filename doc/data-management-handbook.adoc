@@ -1,0 +1,37 @@
+:doctype: book
+:pdf-folio-placement: physical
+:media: prepress
+:title-logo-image: image::images/Met_RGB_Horisontal_Engelsk.png[pdfwidth=10cm,align=right]
+= Data Management Handbook template for MET and partners in S-ENDA written in asciidoc
+Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, ...
+:sectnums:
+:sectnumlevels: 6
+:sectanchors:
+:toc: macro
+:chapter-label:
+:xrefstyle: short
+:toclevels: 6
+
+[discrete]
+== Abstract
+
+Abstract will come here..
+
+toc::[]
+
+[discrete]
+== Revision history
+
+[cols=",,,",]
+|=======================================================================
+|Version |Date |Comment |Responsible
+
+|2.0 |2021-??-?? |New version based on original MET DMH
+|Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, ...
+
+|=======================================================================
+
+
+:numbered:
+include::introduction.adoc[]
+

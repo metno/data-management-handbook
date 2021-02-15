@@ -1,0 +1,35 @@
+
+name: 'html/pdf'
+
+on:
+  push:
+    branches:
+      - master
+    paths:
+      - './**'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: create html and pdf
+      run: |
+        docker-compose -f docker-compose.asciidoctor.yml up
+
+    - name: commit changed files
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add -f data-management-handbook.html
+        git add -f data-management-handbook.pdf
+        git commit -m "Automatically updated by GitHub Action"
+
+    - name: push code to ${{ github.ref }}
+      run: |
+        remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
+        git push "${remote_repo}" HEAD:${{ github.ref }} --follow-tags
+

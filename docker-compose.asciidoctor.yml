@@ -1,0 +1,23 @@
+version: '3.4'
+
+services:
+  html:
+    build:
+      context: .
+      dockerfile: Dockerfile.asciidoctor
+    volumes:
+      - ./doc:/workdir
+      - ./html:/html
+    command: asciidoctor -n data-management-handbook.adoc -D /html
+
+  pdf:
+    build:
+      context: .
+      dockerfile: Dockerfile.asciidoctor
+    volumes:
+      - ./doc:/workdir
+      - ./pdf:/pdf
+    command: asciidoctor-pdf -a pdf-themesdir=./ -a pdf-theme=mmd -n data-management-handbook.adoc -D /pdf
+
+
+
