@@ -4,7 +4,7 @@
 #
 
 FROM ruby:alpine
-LABEL maintainer="aheimsbakk@met.no"
+LABEL maintainer="mortenwh@met.no"
 
 RUN gem install asciidoctor; \
     gem install asciidoctor-pdf --pre; \
