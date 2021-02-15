@@ -8,10 +8,11 @@ LABEL maintainer="aheimsbakk@met.no"
 
 RUN gem install asciidoctor; \
     gem install asciidoctor-pdf --pre; \
-    mkdir /workdir
-    mkdir /pdf
+    mkdir /workdir; \
+    mkdir /pdf; \
     mkdir /html
 
 VOLUME /html
 VOLUME /pdf
+VOLUME /workdir
 WORKDIR /workdir
