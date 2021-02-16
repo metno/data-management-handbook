@@ -1,4 +1,5 @@
 = Disposition for Data Management Handbook
+:sectnums:
 
 This documents shows the structure of the Data Management Handbook.
 
@@ -15,9 +16,11 @@ Todo:
 
 
 == 1 Introduction
+
 General part
 
 ===​ 1.1 Background
+
 MET/ Partner specific
 
 ​===​= 1.1.1 Data at MET Norway
@@ -56,7 +59,8 @@ Generic
 MET specific, "how tos" should be added or linked
 
 ==​ 2 Structuring and Documenting Data for Efficient Discovery and Use
-​===​ 2.1 Purpose
+​
+===​ 2.1 Purpose
 General, and can probably be added directly
 ​=== 2.2 Implementation
 General
@@ -73,7 +77,8 @@ MET specific, needs to be updated with current status
 MET specific, needs to be updated with current status
 
 ​==​ 3 Data Services
-​=== 3.1 Purpose
+​
+=== 3.1 Purpose
 Generic
 
 ​=== 3.2 Implementation
