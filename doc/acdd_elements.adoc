@@ -1,0 +1,7 @@
+[[acdd_elements]]
+== ACDD elements
+
+[yaml2text,mmd_elements.yaml,data]
+----
+See {{data.metadata_identifier.id}}
+----

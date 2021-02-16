@@ -1,14 +1,16 @@
 #
 # Docker file used in GitHub Actions to build HTML and PDF
-# versions of mmd-specification.
+# versions of metno/data-management-handbook
 #
 
 FROM ruby:alpine
+#FROM metanorma/metanorma:latest
 LABEL maintainer="mortenwh@met.no"
 
 RUN gem install asciidoctor; \
-    gem install asciidoctor-pdf --pre; \
-    mkdir /workdir; \
+    gem install asciidoctor-pdf --pre
+
+RUN mkdir /workdir; \
     mkdir /pdf; \
     mkdir /html
 

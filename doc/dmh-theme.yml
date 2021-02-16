@@ -1,0 +1,41 @@
+extends: default
+page:
+  margin: [1.5cm, 1cm, 1.5cm, 1.0cm]
+  margin-inner: 1.5cm
+  margin-outer: 1.0cm
+header:
+  #margin: [2cm,0cm,2cm,0cm]
+  font-color: #000000
+  border-color: #000000
+  border-style: solid
+  height: 1.5cm
+  content-margin: 1cm
+  recto:
+    left:
+      content: |
+        Norwegian Meteorological Institute +
+        {docdate}
+    right:
+      content: |
+        {document-title} +
+        Page {page-number} of {page-count}
+  verso:
+    right:
+      content: |
+        Norwegian Meteorological Institute +
+        {docdate}
+    left:
+      content: |
+        {document-title} +
+        Page {page-number} of {page-count}
+footer:
+  height: 1cm 
+  border-color: #000000
+  border-style: solid
+  line_height: 1
+  recto:
+    right: 
+      content: ' '
+  verso:
+    left: 
+      content: ' '

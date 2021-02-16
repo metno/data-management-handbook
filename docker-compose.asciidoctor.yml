@@ -10,6 +10,9 @@ services:
       - ./html:/html
     command: asciidoctor -n /workdir/data-management-handbook.adoc -D /html
 
+
+  # Metanorma can maybe be used to generate content from yaml data but it doesn't work for pdf (yet)
+  # See https://www.metanorma.com/author/topics/install/ and https://www.metanorma.com/author/topics/automation/yaml_to_text/
   pdf:
     build:
       context: .
@@ -17,7 +20,7 @@ services:
     volumes:
       - ./doc:/workdir
       - ./pdf:/pdf
-    command: asciidoctor-pdf -a pdf-themesdir=./ -a pdf-theme=mmd -n /workdir/data-management-handbook.adoc -D /pdf
+    command: asciidoctor-pdf -a pdf-themesdir=/workdir -a pdf-theme=dmh -n /workdir/data-management-handbook.adoc -D /pdf
 
 
 
