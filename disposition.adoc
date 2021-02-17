@@ -20,7 +20,6 @@ Todo:
 
 General part
 
-<<<<<<< HEAD
 * 1.1 Background: MET/ Partner specific
 ** 1.1.1 Data at MET Norway: MET/ Partner specific
 **​ 1.1.2 MET Norway’s position: MET/ Partner specific
@@ -96,7 +95,7 @@ Generic
 MET specific, "how tos" should be added or linked
 
 ==​ 2 Structuring and Documenting Data for Efficient Discovery and Use
->>>>>>> a695d60372d743e2f176f0ccda74691eb5845cb6
+
 ​
 ===​ 2.1 Purpose
 
