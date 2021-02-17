@@ -12,6 +12,8 @@ The data management regime should be continuously evolving, to reflect the evolv
 
 The DMH is a strategic governing document and should be used as part of the quality framework the organisation is using. 
 
+// Remember to add links/references to the chapters below
+
 This DMH focuses on the management of geophysical data, types of data and the usage of these data are described in the organisation specific information in Section X.X.X.
 This introduction (Chapter 1) lays forth the background and principles for the data management regime. 
 Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (Chapter 2), data services (Chapter 3), portals and documentation aimed at users (Chapter 4) and governance issues (Chapter 5). 
@@ -19,7 +21,11 @@ Each chapter starts with a brief statement of its purpose, followed by a descrip
 Practical guidelines for carrying out good data management are addressed in Chapter 6 and especially in the Quick Manual for Data Providers. 
 The Quick Manual is a concise, informal HOW-TO for data management practitioners.
 
-The intended audience for this DMH is any co-worker who is involved in any part of the value chain for geophysical data (Figure 1).
+The intended audience for this DMH is any co-worker who is involved in any part of the value chain for geophysical data (<<img-value_chain>>).
+
+[#img-value_chain]
+.Value chain for geophysical data
+image::value_chain.png[Value chain]
 
 The handbook can be used in three ways: 
 
