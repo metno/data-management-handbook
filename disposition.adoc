@@ -50,13 +50,14 @@ Mostly generic, some history/background and some (small) METspecific parts
 
 == Structuring and Documenting Data for Efficient Discovery and Use 2
 
-===​ Purpose 2.1
+=== Purpose 2.1
 
 General, and can probably be added directly
 
 === Implementation 2.2
 
 General
+
 * Current practice in structuring and documenting data 2.2.1: Can make a general list, and add section with in house data formats
 * Current implementation of Arctic Data centre model 2.2.2: Can make a general list, and add section with in house data formats
 * Planned developments in the near-term (< 2 years) 2.2.3: MET specific, needs to be updated with current status
