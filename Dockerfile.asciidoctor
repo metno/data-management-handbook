@@ -4,7 +4,6 @@
 #
 
 FROM ruby:alpine
-#FROM metanorma/metanorma:latest
 LABEL maintainer="mortenwh@met.no"
 
 RUN gem install asciidoctor; \

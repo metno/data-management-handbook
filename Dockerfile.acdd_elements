@@ -1,0 +1,33 @@
+#
+# Docker file used in GitHub Actions to build documentation
+# about netcdf attributes in metno/data-management-handbook
+#
+FROM python:3.8-slim
+LABEL maintainer="mortenwh@met.no"
+
+ENV PY_MMD_TOOLS=https://github.com/metno/py-mmd-tools
+ENV PY_MMD_TOOLS_VERSION=${PY_MMD_TOOLS_VERSION:-master}
+
+RUN apt-get update && \
+    apt-get install -y git && \
+    apt-get clean
+
+WORKDIR /
+
+RUN mkdir /src
+RUN python -c 'import site; print(site.getsitepackages())'
+
+RUN git clone ${PY_MMD_TOOLS}; \
+  cd py-mmd-tools; \
+  git checkout ${PY_MMD_TOOLS_VERSION}; \
+  chmod +x script/yaml2adoc; \
+  cp requirements.txt /src/requirements.txt; \
+  cp -r py_mmd_tools /usr/local/lib/python3.8/site-packages
+
+RUN pip3 install --upgrade pip && \
+      pip3 install --no-cache -r /src/requirements.txt
+
+RUN mkdir /doc
+
+VOLUME /doc
+WORKDIR /py-mmd-tools/script
