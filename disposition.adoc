@@ -44,16 +44,15 @@ Mostly generic, some history/background and some (small) METspecific parts
 
 == Structuring and Documenting Data for Efficient Discovery and Use
 
-[[background]]
-===​ Background
+=== Background
 
 MET/ Partner specific
 
-​===​= Data at MET Norway 1.1.1
+==== Data at MET Norway 1.1.1
 
 MET/ Partner specific
 
-​====​ MET Norway’s position 1.1.2
+==== MET Norway’s position 1.1.2
 
 MET/ Partner specific
 
