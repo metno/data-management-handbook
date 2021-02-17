@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  acdd_elements:
+    build:
+      context: .
+      dockerfile: Dockerfile.acdd_elements
+    volumes:
+      - ./doc:/doc
+    command: ./yaml2adoc -o /doc/acdd_elements.adoc

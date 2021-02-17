@@ -15,7 +15,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: create html and pdf
+    - name: update doc/acdd_elements.adoc
+      run: |
+        docker-compose -f docker-compose.acdd_elements.yml up
+
+    - name: create html and pdf and update doc/acdd_elements.adoc
       run: |
         docker-compose -f docker-compose.asciidoctor.yml up
 
@@ -23,6 +27,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git add -f doc/acdd_elements.adoc
         git add -f html/data-management-handbook.html
         git add -f pdf/data-management-handbook.pdf
         git commit -m "Automatically updated by GitHub Action"
