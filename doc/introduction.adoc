@@ -25,7 +25,7 @@ The intended audience for this DMH is any co-worker who is involved in any part 
 
 [#img-value_chain]
 .Value chain for geophysical data
-image::value_chain.png[Value chain]
+image::../images/value_chain.png[Value chain]
 
 The handbook can be used in three ways: 
 
