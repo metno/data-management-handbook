@@ -3,8 +3,8 @@
 
 This documents shows the structure of the Data Management Handbook.
 
-Current status: The haders from V1 of DMH has been added to this document. 
-Numbering of chapters is from this first version of the document.
+Current status: The headers from V1 of DMH has been added to this document. 
+
 
 Todo:
 
@@ -15,8 +15,14 @@ Todo:
 ** Planned developements (if any)
 * Add the information from the Quick guide
 
+
+== Headers from V1 of the DMH
+
+Numbering from the original document is placed after the header text.
+To save some space, subchapters below the second level has been placed as a bullet point list.
+
 [[introduction]]
-== Introduction
+== Introduction 1
 
 General part
 
@@ -42,91 +48,21 @@ Mostly generic, some history/background and some (small) METspecific parts
 ** Data Management Roles 1.2.2.3: Generic
 * Summary of data management requirements (ADC model)​ 1.2.3: MET specific, "how tos" should be added or linked
 
-== Structuring and Documenting Data for Efficient Discovery and Use
+== Structuring and Documenting Data for Efficient Discovery and Use 2
 
-=== Background
-
-MET/ Partner specific
-
-==== Data at MET Norway 1.1.1
-
-MET/ Partner specific
-
-==== MET Norway’s position 1.1.2
-
-MET/ Partner specific
-
-==== MET Norway’s data users 1.1.3
-
-Most of this is General related and should be moved elsewhere
-
-==== 1.1.4 External data management requirements and forcing mechanisms
-
-General, should be moved up in this section
-
-===​ 1.2 Principles for data management at MET Norway
-
-Mostly generic, some history/background and some (small) METspecific parts
-
-​====​ 1.2.1 Our data management model
-
-More general?
-
-=====​ 1.2.1.1 Dataset
-
-MET specific
-
-====​=​ 1.2.1.2 Metadata
-
-Generic, MET specific can be extracted at the end. (and add the new stuff from S-ENDA project)
-
-====​ 1.2.2 Human roles in data management
-
-Generic
-
-=====​ 1.2.2.1 Data Consumer
-
-Generic
-
-=====​ 1.2.2.2 Data Provider
-
-Generic
-
-=====​ 1.2.2.3 Data Management Roles
-
-Generic
-
-====​ 1.2.3 Summary of data management requirements (ADC model)
-
-MET specific, "how tos" should be added or linked
-
-==​ 2 Structuring and Documenting Data for Efficient Discovery and Use
-
-===​ 2.1 Purpose
+===​ Purpose 2.1
 
 General, and can probably be added directly
 
-=== 2.2 Implementation
+=== Implementation 2.2
 
 General
+* Current practice in structuring and documenting data 2.2.1: Can make a general list, and add section with in house data formats
+* Current implementation of Arctic Data centre model 2.2.2: Can make a general list, and add section with in house data formats
+* Planned developments in the near-term (< 2 years) 2.2.3: MET specific, needs to be updated with current status
+* Expected evolution in the longer term (> 2 years) 2.2.4: MET specific, needs to be updated with current status
 
-====​ 2.2.1 Current practice in structuring and documenting data
-
-Can make a general list, and add section with in house data formats
-
-====​ 2.2.2 Current implementation of Arctic Data centre model
-
-Can make a general list, and add section with in house data formats
-
-====​ 2.2.3 Planned developments in the near-term (< 2 years)
-
-MET specific, needs to be updated with current status
-
-====​ 2.2.4 Expected evolution in the longer term (> 2 years)
-
-MET specific, needs to be updated with current status
-
-==​ 3 Data Services
+== Data Services 3
 
 === 3.1 Purpose
 
@@ -136,117 +72,82 @@ Generic
 
 MET specific, needs to add information about the metadata storage and mms
 
-====​ 3.2.1 Legacy data organisation
+* Legacy data organisation 3.2.1: MET specific, needs to add information about the metadata storage and mms
+* Evolution of the current implementation 3.2.2: MET specific, needs to add information about the metadata storage and mms
+* Current implementation of Arctic Data Centre model 3.2.3: MET specific, needs to add information about the metadata storage and mms
+* Planned developments in near-term (< 2 years) 3.2.4: MET specific, needs to add information about the metadata storage and mms
+* Expected evolution in the longer term (> 2 years) 3.2.5: MET specific, needs to add information about the metadata storage and mms. Some Generic parts that needs to be extracted and perhaps put in another place
 
-MET specific, needs to add information about the metadata storage and mms
+== User Portals and Documentation 4
 
-====​ 3.2.2 Evolution of the current implementation
-
-MET specific, needs to add information about the metadata storage and mms
-
-====​ 3.2.3 Current implementation of Arctic Data Centre model
-
-MET specific, needs to add information about the metadata storage and mms
-
-==== 3.2.4​ Planned developments in near-term (< 2 years)
-
-MET specific, needs to add information about the metadata storage and mms
-
-==== 3.2.5​ Expected evolution in the longer term (> 2 years)
-
-MET specific, needs to add information about the metadata storage and mms
-Some Generic parts that needs to be extracted and perhaps put in another place
-
-== ​4 User Portals and Documentation
-
-=== 4.1​ Purpose
+=== Purpose 4.2
 
 Generic
 
-===​ 4.2​ Implementation of the MET portal
+=== Implementation of the MET portal 4.2
 
 Met specific
 
-==== 4.2.1​ Current implementation of MET portal
+* Current implementation of MET portal 4.2.1: MET specific
+* Planned developments in near-term (< 2 years) 4.2.2: MET specific
+
+=== Implementation of targeted portals 4.3
 
 MET specific
 
-==== 4.2.2​ Planned developments in near-term (< 2 years)
+* Current implementation of targeted portals in Arctic Data Centre model 4.3.1: MET specific
+* Planned developments in near-term (< 2 years) 4.3.2: MET specific
+* Expected evolution in the longer term (> 2 years) 4.3.3: MET specific
 
-MET specific 
-
-=== 4.3​ Implementation of targeted portals
-
-MET specific
-
-==== 4.3.1​ Current implementation of targeted portals in Arctic Data Centre model
-
-MET specific
-
-==== 4.3.2​ Planned developments in near-term (< 2 years)
-
-MET specific
-
-==== 4.3.3​ Expected evolution in the longer term (> 2 years)
-
-MET specific
-
-== 5​ Data Governance
+== Data Governance 5
 
 Generic 
 
-=== 5.1​ Purpose
+=== Purpose 5.1
 
 Generic
 
-=== 5.2​ Background
+=== Background 5.2
 
 MET Specific
 
-=== 5.3​ Organisational Roles
+=== Organisational Roles 5.3
 
 Currently no content
 
-=== 5.4​ Data life cycle management
+=== Data life cycle management 5.4
 
 Generic 
 
-==== 5.4.1​ MET Norway’s internal production chains
+* MET Norway’s internal production chains 5.4.1: Met specific
+* Data Management Plan 5.4.2: Generic, needs to be updated and MET/partner specific DMPs needs a location in the document
 
-Met specific
-
-==== 5.4.2​ Data Management Plan
-
-Generic
-needs to be updated and MET/partner specific DMPs needs a location in the document
-
-=== 5.5​ Implementation plan
+=== Implementation plan 5.5
 
 Chapter 5.5 and all subchapters are very MET specific, alternatively DMH specific. Should be rewritten and perhaps placed differently
 
-==== 5.5.1​ Current implementation
+* Current implementation 5.5.1
+* Planned developments in near-term (< 2 years) 5.5.2
+* Expected evolution in the longer term (> 2 years) 5.5.3
 
-==== 5.5.2​ Planned developments in near-term (< 2 years)
 
-==== 5.5.3​ Expected evolution in the longer term (> 2 years)
+== Use cases and workflow checklists 6
 
-== 6 Use cases and workflow checklists
-
-=== 6.1 Purpose
+=== Purpose 6.1
 
 General, Use cases are MET specific. Need to figure out what to do with the workflow checklist
 
-=== 6.2 Use Case descriptions
+=== Use Case descriptions 6.2
 
-====​ 6.2.1 UC1: A new NWP model is introduced and the data it produces shall be made available to the consumers.
+* UC1: A new NWP model is introduced and the data it produces shall be made available to the consumers.
 
-====​ 6.2.2 UC2: A new operational in situ observation source is introduced and its data shall be made freely available to public consumers after QC.
+* UC2: A new operational in situ observation source is introduced and its data shall be made freely available to public consumers after QC.
 
-====​ 6.2.3 UC3: A researcher has funding from NFR to produce a dedicated set of model experiments
+* UC3: A researcher has funding from NFR to produce a dedicated set of model experiments
 
-====​ 6.2.4 UC4: A user shall extract observed and forecasted temperature time series data values over Longyearbyen.
+* UC4: A user shall extract observed and forecasted temperature time series data values over Longyearbyen.
 
-====​ 6.2.5 UC5: A new ocean wave model is introduced and the data it produces shall be made available to consumers.
+* UC5: A new ocean wave model is introduced and the data it produces shall be made available to consumers.
 
 == Acknowledgements
 
@@ -256,7 +157,7 @@ MET specific? or should be added to background?
 
 == Glossary of Terms and Names
 
-== ​List of Acronyms
+== List of Acronyms
 
 == Appendix A: List of Referenced Software or Services
 
