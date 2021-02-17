@@ -1,4 +1,28 @@
 [[introduction]]
 == Introduction
 
-Put intro here.. 
+The purpose of the Data Management Handbook (DMH) is threefold:
+
+1. to provide an overview of the principles for data management to be employed.
+2. to help personnel identify their roles and responsibilities for good data management.
+3. to provide personnel with practical guidelines for carrying out good data management.
+
+_Data management_ is the term used to describe the handling of data in a systematic and cost-effective manner. 
+The data management regime should be continuously evolving, to reflect the evolving nature of data colletion. Therefore this DMH is a living document that will be revised and updated from time to time in order to maintain its relevance.
+
+The DMH is a strategic governing document and should be used as part of the quality framework the organisation is using. 
+
+This DMH focuses on the management of geophysical data, types of data and the usage of these data are described in the organisation specific information in Section X.X.X.
+This introduction (Chapter 1) lays forth the background and principles for the data management regime. 
+Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (Chapter 2), data services (Chapter 3), portals and documentation aimed at users (Chapter 4) and governance issues (Chapter 5). 
+Each chapter starts with a brief statement of its purpose, followed by a description of what is implemented at the organisation at present, as well as the planned developments for the short-term (<2 years) and expected developments for the longer term (2-5 years). 
+Practical guidelines for carrying out good data management are addressed in Chapter 6 and especially in the Quick Manual for Data Providers. 
+The Quick Manual is a concise, informal HOW-TO for data management practitioners.
+
+The intended audience for this DMH is any co-worker who is involved in any part of the value chain for geophysical data (Figure 1).
+
+The handbook can be used in three ways: 
+
+1. Read the Introduction (Chapter 1) to find out the background and principles of data management;
+2. Read Chapters 2-5 to learn about how data management is currently implemented and how it is expected to evolve in the next few years:
+3. Go to the Quick Manual for Data Providers for guidelines on what to do in real-life cases; alternatively Chapter 6 for typical workflow examples.
