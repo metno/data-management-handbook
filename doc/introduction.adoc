@@ -21,14 +21,100 @@ Each chapter starts with a brief statement of its purpose, followed by a descrip
 Practical guidelines for carrying out good data management are addressed in Chapter 6 and especially in the Quick Manual for Data Providers. 
 The Quick Manual is a concise, informal HOW-TO for data management practitioners.
 
-The intended audience for this DMH is any co-worker who is involved in any part of the value chain for geophysical data (<<img-value_chain>>).
+//Remember to change if we mov away from the Quick manual
 
-[#img-value_chain]
-.Value chain for geophysical data
-image::../images/value_chain.png[Value chain]
+The intended audience for this DMH is any co-worker who is involved in any part of the value chain for geophysical data (<<img-value_chain>>).
 
 The handbook can be used in three ways: 
 
 1. Read the Introduction (Chapter 1) to find out the background and principles of data management;
 2. Read Chapters 2-5 to learn about how data management is currently implemented and how it is expected to evolve in the next few years:
 3. Go to the Quick Manual for Data Providers for guidelines on what to do in real-life cases; alternatively Chapter 6 for typical workflow examples.
+
+[[PrinciplesDataManagement]]
+=== The principles of data management for geophysical data
+An example of a geophysical value chain is presented in Figure 1. Typically, data from a wide variety of providers are used in the value chain. Traditionally, the data used have been transmitted on request from one data centre to another, and used in the specific processing chains that requested the data. 
+The focus on reuse of data in various contexts has been missing.
+
+// need to solve the link to the image and possibly also the linking to the image
+
+[#img-value_chain]
+.Value chain for geophysical data
+image::value_chain.png[Value chain]
+
+// need to link to glossary terms for FAIR,RD3 and FORCE11
+The principles of standardised data documentation, publication, sharing and preservation have been formalised in the The FAIR Guiding Principles for scientific data management and stewardship [RD3] through a process facilitated by FORCE11.
+ 
+FAIR - findability, accessibility, interoperability and reusability
+
+
+
+[[FAIR data management model]]
+==== A data management model based on the FAIR principles
+
+This model is based on the model of the Arctic Data Centre, which adheres to the FAIR principles. The model’s basic functions fall into three main categories:
+
+1. *Documentation of data* using discovery and use metadata (metadata are further described below). 
+The documentation identifies who, what, when, where, and how and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of controlled vocabularies and ontologies where textual representation is required. It also covers the topic of data provenance which is used to describe the origin and all actions done on a dataset. Data provenance is closely linked with workflow management. Furthermore, it covers the relationship between datasets. Application of ontologies in data documentation is closely linked to the concept of linked data. 
+2. *Publication and sharing of data* focuses on making data accessible to consumers internally and externally.
+Application of standardised approaches is vital, along with cost efficient solutions that are sustainable. Direct integration of data in applications for analysis through data streaming minimises the complexity and overhead in dissemination solutions. 
+This category also covers persistent identifiers for data.
+3. *Preservation of data* includes short and long term management of data, which secures access and availability throughout the lifespan of the data. Good solutions in this area depend on expected and actual usage of the data. Preservation of data includes the concept of data life cycle, i.e., the documented flow of data from initial storage through to obsolescence and permanent archiving (or deletion).
+
+For its implementation, the data management model is built upon the following principles:
+
+* *Standardisation* – compliance with established international standards;
+* *Interoperability* – enabling machine-to-machine interfaces and standardised documentation and encoding of data;
+* *Integrity* – ensuring that data and access to them can be maintained over time, ensuring the user receives the same data each time;
+* *Traceability* – documentation of the provenance of a dataset, i.e., all actions taken to produce and maintain the dataset and the usage of the data in downstream systems;
+* *Modularisation* – enabling replacement of one component of the system without necessitating other changes. 
+In this data management model there are two terms that are fundamental and may be addressed immediately: *dataset* and *metadata*.
+
+[[Dataset]]
+​=====​ Dataset
+
+A dataset is a collection of data. In the context of the data management model, the storage mode of the dataset is irrelevant, since access mechanisms can be decoupled from the storage layer as experienced by a data consumer. Typically, a dataset represents a number of variables in time and space. A more detailed definition is provided in the Glossary of Terms //Link here//. In order to best serve the data through the web services developed, the following guidance is given for defining datasets:
+
+1. A dataset can be a collection of variables stored in, for example, a relational database or as flat files. 
+2. A dataset is defined as a number of spatial and/or temporal variables. 
+3. A dataset should be defined by the information content and not the production method. This implies that the output of, for example, a numerical model may be divided into several datasets that are related. This is also important in order to efficiently serve the data through web services //link here//. For instance, model variables defined on different vertical coordinates should be separated as linked datasets //link here//, since some OGC //Link here// services (e.g. WMS) are unable to handle mixed coordinates in the same dataset.
+4. A good dataset does not mix feature types, e.g. do not combine trajectories and gridded data in one dataset.
+
+Most importantly, a dataset should be defined to meet a consumer need. This means that the specification of a dataset should follow not only the content guidelines just listed, but also address the user needs for delivery, security and preservation. 
+
+
+== original text not used yet
+
+At the end of the data management value chain are the users of the data (aka. data consumers, see Section 1.2.2.1), who may be either external or internal to the institute. An overview of the users of our dynamic geodata, including a categorisation and a non-exhaustive list of known users, is given in Appendix B where the diversity of MET Norway’s data users and their demands on our data services is shown. Users include consumers of both data and metadata. 
+One of the main motivations for implementing a unified data management model at MET Norway is to better serve the users of the data. Primarily, this can be approached by making user needs and requirements the guide for determining what data we provide and how. For example, it will be described below how the specification of datasets should be determined by user needs. By implementing the data management practices described here, it is expected that users will benefit from:
+the ease of discovering, viewing and accessing all the datasets that are offered by the institute;
+standardised ways of downloading data, which reduces the need for special solutions on the user side;
+reducing their own data storage needs, by downloading just what they need;
+easy and standardised access to remote datasets and catalogues, when using their own visualisation/analysis tools;
+the ability to compare and combine MET Norway’s data with data from other sources (through metadata catalogues);
+the ability to apply common data transformations, like spatial, temporal and variables subsetting and reprojection, before downloading anything;
+the ease of building specific metadata catalogues and data portals that include data from MET Norway and can target a specific user community;
+the access to datasets which can be integrated in their internal and external workflows through standardised web services.
+
+1.1.4​ External data management requirements and forcing mechanisms
+MET Norway has to relate to external forcing mechanisms concerning data management at several levels. At the national level, the institute must comply with national regulations as decided by the government. Some of these are indications of expected behaviour (e.g. OECD regulations) and some are implemented through a legal framework. The Norwegian government has over time promoted free and open sharing of public data. Mechanisms for how to do this are governed by the Geodataloven (implemented as Geonorge), which is a national implementation of the European INSPIRE directive (to be amended in 2019). INSPIRE defines a federated multinational Spatial Data Infrastructure (SDI) for the European Union, similar to NSDI in the USA or UNSDI under the United Nations. The goal is to provide a standardised access to data and provide the necessary tools to be able to work with the data in a unified manner. In short, these legal frameworks require standardised documentation (at discovery and use level; these concepts are described later) and access (through specified protocols) to the data identified. At the global level, the institute is the primary representative for Norway in the WMO. WMO has in recent years reorganised its approach to documenting and sharing data through two major activities: WIS and WIGOS. Both are metadata-driven activities that follow the same principles as Geonorge and INSPIRE, although there are differences concerning standards required. The DMH is addressing these external requirements that MET Norway has to fulfil.
+
+ At MET Norway, data have always been managed, albeit in a rather narrow technical sense. The main focus has been on storage, primarily for operational data. More recently, the issues of delivering, sharing and reusing data have steadily gained prominence. Still, the legacy of data storage systems built up over many years is an important factor in any uniform data management program.
+During the International Polar Year (IPY), MET Norway was the international coordinator for operational data. IPY data management was based on the principle of distributed data management through exchange of standardised descriptions of datasets between contributing data centres.  - are the fundamental principles for data management at MET Norway.
+
+​1.2.1​ Our data management model
+The data management regime at MET Norway follows the model of the Arctic Data Centre, introduced in Section 1.2.2 above, which adheres to the FAIR principles. 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
