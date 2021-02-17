@@ -6,6 +6,8 @@ on:
       - master
     paths:
       - 'doc/**'
+  schedule:
+    - cron:  '23 2 * * *'
 
 jobs:
   build:
