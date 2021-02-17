@@ -1,0 +1,175 @@
+= Disposition for Data Management Handbook
+:sectnums!:
+
+This documents shows the structure of the Data Management Handbook.
+
+Current status: The headers from V1 of DMH has been added to this document. 
+
+
+Todo:
+
+* Extract and rewrite the generic parts
+* Create templates for partner specific parts (usually the "implementation" header), suggested sub- sections:
+** Background (only if needed!)
+** Current implementation (should include subsections or links to how-to documents)
+** Planned developements (if any)
+* Add the information from the Quick guide
+
+== Suggested structure of V2 DMH
+
+=== Introduction
+
+==== General part
+Should include the following sections from V1:
+1, 1.1.3, 1.1.4, 1.2(parts), 1.2.1, 1.2.1.2, 1.2.2 with subsections
+
+
+==== Partner specific
+
+== Headers from V1 of the DMH
+
+Numbering from the original document is placed after the header text.
+To save some space, subchapters below the second level has been placed as a bullet point list.
+
+=== Introduction 1
+
+General part
+
+==== Background 1.1
+
+MET/ Partner specific
+
+* Data at MET Norway 1.1.1: MET/ Partner specific
+* MET Norway’s position​ 1.1.2: MET/ Partner specific
+* MET Norway’s data users​ 1.1.3: Most of this is General related and should be moved elsewhere
+* External data management requirements and forcing mechanisms 1.1.4: General, should be moved up in this section.
+
+==== Principles for data management at MET Norway​ 1.2
+
+Mostly generic, some history/background and some (small) METspecific parts
+
+* Our data management model 1.2.1: More general?
+** Dataset 1.2.1.1: MET specific
+** Metadata 1.2.1.2: Generic, MET specific can be extracted at the end.
+* Human roles in data management​ 1.2.2: Generic
+** Data Consumer: Generic
+** Data Provider 1.2.2.2: Generic
+** Data Management Roles 1.2.2.3: Generic
+* Summary of data management requirements (ADC model)​ 1.2.3: MET specific, "how tos" should be added or linked
+
+==== Structuring and Documenting Data for Efficient Discovery and Use 2
+
+==== Purpose 2.1
+
+General, and can probably be added directly
+
+==== Implementation 2.2
+
+General
+
+* Current practice in structuring and documenting data 2.2.1: Can make a general list, and add section with in house data formats
+* Current implementation of Arctic Data centre model 2.2.2: Can make a general list, and add section with in house data formats
+* Planned developments in the near-term (< 2 years) 2.2.3: MET specific, needs to be updated with current status
+* Expected evolution in the longer term (> 2 years) 2.2.4: MET specific, needs to be updated with current status
+
+=== Data Services 3
+
+==== Purpose 3.1
+
+Generic
+
+==== Implementation 3.2
+
+MET specific, needs to add information about the metadata storage and mms
+
+* Legacy data organisation 3.2.1: MET specific, needs to add information about the metadata storage and mms
+* Evolution of the current implementation 3.2.2: MET specific, needs to add information about the metadata storage and mms
+* Current implementation of Arctic Data Centre model 3.2.3: MET specific, needs to add information about the metadata storage and mms
+* Planned developments in near-term (< 2 years) 3.2.4: MET specific, needs to add information about the metadata storage and mms
+* Expected evolution in the longer term (> 2 years) 3.2.5: MET specific, needs to add information about the metadata storage and mms. Some Generic parts that needs to be extracted and perhaps put in another place
+
+=== User Portals and Documentation 4
+
+==== Purpose 4.2
+
+Generic
+
+==== Implementation of the MET portal 4.2
+
+Met specific
+
+* Current implementation of MET portal 4.2.1: MET specific
+* Planned developments in near-term (< 2 years) 4.2.2: MET specific
+
+==== Implementation of targeted portals 4.3
+
+MET specific
+
+* Current implementation of targeted portals in Arctic Data Centre model 4.3.1: MET specific
+* Planned developments in near-term (< 2 years) 4.3.2: MET specific
+* Expected evolution in the longer term (> 2 years) 4.3.3: MET specific
+
+=== Data Governance 5
+
+Generic 
+
+==== Purpose 5.1
+
+Generic
+
+==== Background 5.2
+
+MET Specific
+
+==== Organisational Roles 5.3
+
+Currently no content
+
+==== Data life cycle management 5.4
+
+Generic 
+
+* MET Norway’s internal production chains 5.4.1: Met specific
+* Data Management Plan 5.4.2: Generic, needs to be updated and MET/partner specific DMPs needs a location in the document
+
+==== Implementation plan 5.5
+
+Chapter 5.5 and all subchapters are very MET specific, alternatively DMH specific. Should be rewritten and perhaps placed differently
+
+* Current implementation 5.5.1
+* Planned developments in near-term (< 2 years) 5.5.2
+* Expected evolution in the longer term (> 2 years) 5.5.3
+
+
+=== Use cases and workflow checklists 6
+
+==== Purpose 6.1
+
+General, Use cases are MET specific. Need to figure out what to do with the workflow checklist
+
+==== Use Case descriptions 6.2
+
+* UC1: A new NWP model is introduced and the data it produces shall be made available to the consumers.
+
+* UC2: A new operational in situ observation source is introduced and its data shall be made freely available to public consumers after QC.
+
+* UC3: A researcher has funding from NFR to produce a dedicated set of model experiments
+
+* UC4: A user shall extract observed and forecasted temperature time series data values over Longyearbyen.
+
+* UC5: A new ocean wave model is introduced and the data it produces shall be made available to consumers.
+
+=== Acknowledgements
+
+MET specific? or should be added to background?
+
+=== References
+
+=== Glossary of Terms and Names
+
+=== List of Acronyms
+
+=== Appendix A: List of Referenced Software or Services
+
+=== Appendix B: Users of MET Norway’s Geodata
+
