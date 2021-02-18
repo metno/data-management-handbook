@@ -44,11 +44,11 @@ Alias: life cycle management
 |[[dataset]]Dataset
 |A dataset is a pre-defined grouping or collection of related data for an intended use. Datasets may be categorised by:
 
-* _source_, such as observations, and numerical model projections and analyses
+_Source_, such as observations (in situ, remotely sensed) and numerical model projections and analyses;
 
-* _Source_, such as observations (in situ, remotely sensed) and numerical model projections and analyses;
-* _Processing level_, such as “raw data” (values measured by an instrument), calibrated data, quality-controlled data, derived parameters (preferably with error estimates), temporally and/or spatially aggregated variables;
-* _Data type_, including point data, sections and profiles, lines and polylines, polygons, gridded data, volume data, and time series (of  points, grids, etc.).
+_Processing level_, such as “raw data” (values measured by an instrument), calibrated data, quality-controlled data, derived parameters (preferably with error estimates), temporally and/or spatially aggregated variables;
+
+_Data type_, including point data, sections and profiles, lines and polylines, polygons, gridded data, volume data, and time series (of  points, grids, etc.).
 
 Data having all of the same characteristics in each category, but different independent variable ranges and/or responding to a specific need, are normally considered part of a single dataset.
 In the context of data preservation a dataset consists of the data records and their associated knowledge (information, tools). In practice, our datasets should conform to the <<CMD-dataset,Unidata CDM dataset>> definition, as much as possible.
