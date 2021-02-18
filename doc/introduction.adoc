@@ -56,6 +56,7 @@ FAIR - findability, accessibility, interoperability and reusability
 
 [[external-requirements]]
 ====​ External data management requirements and forcing mechanisms
+
 Any organisation that strives to implement <<fair-principles,FAIR>> data management model has to relate to external forcing mechanisms concerning data management at several levels. At the national level, the organisation must comply with national regulations as decided by the government. Some of these are indications of expected behaviour (e.g. OECD regulations) and some are implemented through a legal framework. The Norwegian government has over time promoted free and open sharing of public data. Mechanisms for how to do this are governed by the <<geodataloven,Geodataloven>> (implemented as <<geonorge,Geonorge>>), which is a national implementation of the European INSPIRE directive (to be amended in 2019). INSPIRE defines a federated multinational Spatial Data Infrastructure (SDI) for the European Union, similar to NSDI in the USA or UNSDI under the United Nations. The goal is to provide a standardised access to data and provide the necessary tools to be able to work with the data in a unified manner. In short, these legal frameworks require standardised documentation (at discovery and use level; these concepts are described later) and access (through specified protocols) to the data identified.
 
 Other external requirements and forcing mechanisms that are organisation-specific are listed under section X.X.X
@@ -76,7 +77,7 @@ image::value_chain.png[Value chain]
 
 At the end of the data management value chain are the users of the data (aka. data consumers, see Section 1.2.2.1), who may be either external or internal to the institute.
 
-[[FAIR data management model]]
+[[fair-data-management-model]]
 ==== A data management model based on the FAIR principles
 
 This model is based on the model of the Arctic Data Centre, which adheres to the FAIR principles. The model’s basic functions fall into three main categories:
@@ -97,8 +98,8 @@ For its implementation, the data management model is built upon the following pr
 * *Modularisation* – enabling replacement of one component of the system without necessitating other changes. 
 In this data management model there are two terms that are fundamental and may be addressed immediately: *dataset* and *metadata*.
 
-[[Dataset]]
-​====​ Dataset
+[[dataset]]
+==== Dataset
 
 A dataset is a collection of data. In the context of the data management model, the storage mode of the dataset is irrelevant, since access mechanisms can be decoupled from the storage layer as experienced by a data consumer. Typically, a dataset represents a number of variables in time and space. A more detailed definition is provided in the <<glossary,Glossary of Terms>>. In order to best serve the data through the web services developed, the following guidance is given for defining datasets:
 
@@ -107,10 +108,10 @@ A dataset is a collection of data. In the context of the data management model, 
 3. A dataset should be defined by the information content and not the production method. This implies that the output of, for example, a numerical model may be divided into several datasets that are related. This is also important in order to efficiently serve the data through <<webservice,web services>>. For instance, model variables defined on different vertical coordinates should be separated as <<linked-data,linked datasets>>, since some OGC //Link here// services (e.g. WMS) are unable to handle mixed coordinates in the same dataset.
 4. A good dataset does not mix feature types, e.g. do not combine trajectories and gridded data in one dataset.
 
-Most importantly, a dataset should be defined to meet a consumer need. This means that the specification of a dataset should follow not only the content guidelines just listed, but also address the user needs for delivery, security and preservation. 
+Most importantly, a dataset should be defined to meet a consumer need. This means that the specification of a dataset should follow not only the content guidelines just listed, but also address the user needs for delivery, security and preservation.
 
 [[metadata]]
-​==== Metadata
+==== Metadata
 
 Metadata is a broad concept. In our data management model the term “metadata” is used in several contexts, specifically the five categories that are briefly described in <<metadata-table>>. 
 
