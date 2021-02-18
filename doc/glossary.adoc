@@ -44,6 +44,8 @@ Alias: life cycle management
 |[[dataset]]Dataset
 |A dataset is a pre-defined grouping or collection of related data for an intended use. Datasets may be categorised by:
 
+* _source_, such as observations, and numerical model projections and analyses
+
 * _Source_, such as observations (in situ, remotely sensed) and numerical model projections and analyses;
 * _Processing level_, such as “raw data” (values measured by an instrument), calibrated data, quality-controlled data, derived parameters (preferably with error estimates), temporally and/or spatially aggregated variables;
 * _Data type_, including point data, sections and profiles, lines and polylines, polygons, gridded data, volume data, and time series (of  points, grids, etc.).
@@ -103,7 +105,7 @@ GIS systems have lately evolved in distributed <<spatial-data-infrastructure,Spa
 |“Spatial Data Infrastructure (SDI) is defined as a framework of policies, institutional arrangements. technologies, data, and people that enables the sharing and effective usage of geographic information by standardising formats and protocols for access and interoperability.” (Tonchovska et al, 2012)
 SDI has evolved from <<geographic-information-system,GIS>>. Among the largest implementations are: NSDI in the USA, INSPIRE in Europe and UNSDI as an effort by the United Nations. For areas in the Arctic, there is https://arctic-sdi.org/[arctic-sdi.org].
 
-|[unified-data-management]Unified data management
+|[[unified-data-management]]Unified data management
 |A common approach to data management in a grouping of separate data management enterprises.
 
 |[[use-metadata]]Use metadata
