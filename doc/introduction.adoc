@@ -113,10 +113,10 @@ Most importantly, a dataset should be defined to meet a consumer need. This mean
 [[metadata]]
 ==== Metadata
 
-Metadata is a broad concept. In our data management model the term “metadata” is used in several contexts, specifically the five categories that are briefly described in <<metadata-table>>. 
+Metadata is a broad concept. In our data management model the term “metadata” is used in several contexts, specifically the five categories that are briefly described in <<tabl-metadata>>. 
 
 .Brief introduction to different types of metadata.
-[[metadata-table]]
+[[tabl-metadata]]
 [%header, cols=4*]
 |===
 |Type
@@ -158,7 +158,52 @@ StInfoSys
 The tools and facilities used to manage the information contained in the metadata are further described in Chapter 2.
 //add internal link
 
- 
+[[human-roles]]
+=== Human roles in data management
+
+[[data-consumer]]
+==== Data consumer
+
+The Data Consumer may be a scientist or student, employee of a governmental agency, consultant or some other person with a professional or personal interest in the data provided. Data consumers may be internal or external to the entities providing and managing the data.
+
+[[data-provider]]
+==== Data provider
+
+The Data Provider is generating datasets managed by the data management system described in this document. Data providers can be internal or external to the system. They should be able to maintain the datasets they have committed.
+​
+[[data-management-roles]]
+==== Data Management Roles
+
+Between the data providers and data consumers are the processes that manage and deliver the datasets (cf. <<img-value-chain>>). A number of human roles may be defined with responsibilities that, together, ensure that these processes are carried out in accordance with the data management requirements of the organisation. The definition and filling of these roles depend heavily on the particular organisation, and each organisation must devise its own best solution. 
+
+[[summary-requirements]]
+=== Summary of data management requirements
+
+The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
+
+.There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.
+..There are sufficient metadata for each dataset for both discovery and use purposes.
+..Discovery metadata are indexed and can be retrieved from available services in a standard way and with standard protocols.
+..There are interfaces for discovery, visualisation and download, as well as portals for human access, that operate seamlessly across institutions.
+..The data are described in a relevant, standardised and managed vocabulary that supports machine-machine interfaces.
+..Datasets have attached a unique and permanent identifier, i.e., UUID, that enables traceability. 
+..Datasets have licensing that ensures free use and reuse wherever possible.
+..Datasets are available for download in a standard form according to the FAIR guiding principles (NetCDF/CF and equivalent) and through standard protocols (OPeNDAP, OGC WCS, secure direct download, etc.) that are accepted and utilised in the user environment.
+..There are authentication and authorisation mechanisms that ensure access control to data with restrictions, and that are compatible with and coupled to relevant public authentication solutions (FEIDE, eduGAIN, Google, etc.).
+.There is an organisation that provides for the management of each dataset throughout its lifetime (life cycle management).
+..There is documentation that describes physical storage, lifetime of each dataset, degree of storage redundancy, metadata consistency methods, how dataset versioning is implemented and unique IDs to ensure traceability.
+..The organisation provides seamless access to data from distributed data centres through various portals.
+..The above and a business model at dataset level are described in a Data Management Plan (DMP)
+.There are services or tools that provide the following functionalities on the datasets:
+..Transformations
+...subsetting
+...slicing of gridded data sets to points, sections, profiles
+...reprojection
+...resampling
+...reformatting
+..Visualisation (time series, mapping services, etc.)
+..Aggregation
+..Upload of new datasets (including enabling and configuring data access services)
 
 
 
