@@ -181,9 +181,9 @@ Between the data providers and data consumers are the processes that manage and 
 
 The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
 
-.There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.
-..There are sufficient metadata for each dataset for both discovery and use purposes.
-..Discovery metadata are indexed and can be retrieved from available services in a standard way and with standard protocols.
+1. There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.
+a. There are sufficient metadata for each dataset for both discovery and use purposes.
+b. Discovery metadata are indexed and can be retrieved from available services in a standard way and with standard protocols.
 ..There are interfaces for discovery, visualisation and download, as well as portals for human access, that operate seamlessly across institutions.
 ..The data are described in a relevant, standardised and managed vocabulary that supports machine-machine interfaces.
 ..Datasets have attached a unique and permanent identifier, i.e., UUID, that enables traceability. 
