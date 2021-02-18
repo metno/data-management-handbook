@@ -1,5 +1,6 @@
 [[introduction]]
 == Introduction
+:xrefstyle: short
 
 //not updated: chapter links, check all links to glossary and acronyms
 //remember: change references to quick manual
@@ -97,7 +98,7 @@ For its implementation, the data management model is built upon the following pr
 In this data management model there are two terms that are fundamental and may be addressed immediately: *dataset* and *metadata*.
 
 [[Dataset]]
-​=====​ Dataset
+​====​ Dataset
 
 A dataset is a collection of data. In the context of the data management model, the storage mode of the dataset is irrelevant, since access mechanisms can be decoupled from the storage layer as experienced by a data consumer. Typically, a dataset represents a number of variables in time and space. A more detailed definition is provided in the <<glossary,Glossary of Terms>>. In order to best serve the data through the web services developed, the following guidance is given for defining datasets:
 
@@ -109,11 +110,12 @@ A dataset is a collection of data. In the context of the data management model, 
 Most importantly, a dataset should be defined to meet a consumer need. This means that the specification of a dataset should follow not only the content guidelines just listed, but also address the user needs for delivery, security and preservation. 
 
 [[metadata]]
-​===== Metadata
+​==== Metadata
 
-Metadata is a broad concept. In our data management model the term “metadata” is used in several contexts, specifically the five categories that are briefly described in Table 1. 
+Metadata is a broad concept. In our data management model the term “metadata” is used in several contexts, specifically the five categories that are briefly described in <<metadata-table>>. 
 
-.Table 1: Brief introduction to different types of metadata.
+.Brief introduction to different types of metadata.
+[[metadata-table]]
 [%header, cols=4*]
 |===
 |Type
