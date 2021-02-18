@@ -55,7 +55,7 @@ The principles of standardised data documentation, publication, sharing and pres
 FAIR - findability, accessibility, interoperability and reusability
 
 [[external-requirements]]
-====​ External data management requirements and forcing mechanisms
+==== External data management requirements and forcing mechanisms
 
 Any organisation that strives to implement <<fair-principles,FAIR>> data management model has to relate to external forcing mechanisms concerning data management at several levels. At the national level, the organisation must comply with national regulations as decided by the government. Some of these are indications of expected behaviour (e.g. OECD regulations) and some are implemented through a legal framework. The Norwegian government has over time promoted free and open sharing of public data. Mechanisms for how to do this are governed by the <<geodataloven,Geodataloven>> (implemented as <<geonorge,Geonorge>>), which is a national implementation of the European INSPIRE directive (to be amended in 2019). INSPIRE defines a federated multinational Spatial Data Infrastructure (SDI) for the European Union, similar to NSDI in the USA or UNSDI under the United Nations. The goal is to provide a standardised access to data and provide the necessary tools to be able to work with the data in a unified manner. In short, these legal frameworks require standardised documentation (at discovery and use level; these concepts are described later) and access (through specified protocols) to the data identified.
 
