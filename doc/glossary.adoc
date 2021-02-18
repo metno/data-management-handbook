@@ -1,6 +1,8 @@
 [[glossary]]
 == Glossary of Terms and Names 
 
+//links to tables and other sections not updated
+
 [%header, cols=2*]
 |===
 |Term
@@ -10,13 +12,13 @@
 |TBC
 
 |[[CMD-dataset]]CDM dataset
-|A dataset that “may be a NetCDF, HDF5, GRIB, etc. file, an OPeNDAP dataset, a collection of files, or anything else which can be accessed through the NetCDF API.” Unidata Common Data Model 
+|A dataset that “may be a NetCDF, HDF5, GRIB, etc. file, an OPeNDAP dataset, a collection of files, or anything else which can be accessed through the NetCDF API.” https://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[Unidata Common Data Model] 
 
 |[[configuration-metadata]]Configuration metadata
 |See Configuration metadata definition in Table 2
 
 |[[controlled-vocabulary]]Controlled vocabulary
-|A carefully selected list of terms (words and phrases) controlled by some authority. They are used to tag information elements (such as datasets) so that they are easier to search for. (see Wikipedia article) A basic element in the implementation of the <<semantic-web,Semantic web>>.
+|A carefully selected list of terms (words and phrases) controlled by some authority. They are used to tag information elements (such as datasets) so that they are easier to search for. (see https://en.wikipedia.org/wiki/Controlled_vocabulary[Wikipedia article]) A basic element in the implementation of the <<semantic-web,Semantic web>>.
 
 |[[data-life-cycle-management]]Data life cycle management
 |“Data life cycle management (DLM) is a policy-based approach to managing the flow of an information system's data throughout its life cycle: from creation and initial storage to the time when it becomes obsolete and is deleted.” Excerpt from TechTarget article.
