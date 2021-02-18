@@ -37,3 +37,6 @@ include::introduction.adoc[]
 
 :numbered:
 include::acdd_elements.adoc[]
+
+:numbered!:
+include::glossary.adoc[]

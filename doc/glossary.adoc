@@ -12,7 +12,7 @@
 |TBC
 
 |[[CMD-dataset]]CDM dataset
-|A dataset that “may be a NetCDF, HDF5, GRIB, etc. file, an OPeNDAP dataset, a collection of files, or anything else which can be accessed through the NetCDF API.” https://www.unidata.ucar.edu/software/thredds/current/netcdf-java/CDM/[Unidata Common Data Model] 
+|A dataset that “may be a NetCDF, HDF5, GRIB, etc. file, an OPeNDAP dataset, a collection of files, or anything else which can be accessed through the NetCDF API.” https://www.unidata.ucar.edu/software/netcdf-java/v4.6/CDM/index.html[Unidata Common Data Model] 
 
 |[[configuration-metadata]]Configuration metadata
 |See Configuration metadata definition in Table 2
@@ -21,11 +21,11 @@
 |A carefully selected list of terms (words and phrases) controlled by some authority. They are used to tag information elements (such as datasets) so that they are easier to search for. (see https://en.wikipedia.org/wiki/Controlled_vocabulary[Wikipedia article]) A basic element in the implementation of the <<semantic-web,Semantic web>>.
 
 |[[data-life-cycle-management]]Data life cycle management
-|“Data life cycle management (DLM) is a policy-based approach to managing the flow of an information system's data throughout its life cycle: from creation and initial storage to the time when it becomes obsolete and is deleted.” Excerpt from TechTarget article.
+|“Data life cycle management (DLM) is a policy-based approach to managing the flow of an information system's data throughout its life cycle: from creation and initial storage to the time when it becomes obsolete and is deleted.” Excerpt from https://searchstorage.techtarget.com/definition/data-life-cycle-management[TechTarget] article.
 Alias: life cycle management
 
 |[[data-management-plan]]Data Management Plan
-|“A data management plan (DMP) is a written document that describes the data you expect to acquire or generate during the course of a research project, how you will manage, describe, analyse, and store those data, and what mechanisms you will use at the end of your project to share and preserve your data.” Stanford Libraries
+|“A data management plan (DMP) is a written document that describes the data you expect to acquire or generate during the course of a research project, how you will manage, describe, analyse, and store those data, and what mechanisms you will use at the end of your project to share and preserve your data.” https://library.stanford.edu/research/data-management-services/data-management-plans[Stanford Libraries]
 
 |[[data-centre]]Data centre
 |A combination of a (distributed) data repository and the data availability services and information about them (e.g., a metadata catalog). A data centre may include contributions from several other data centres.  
@@ -34,7 +34,7 @@ Alias: life cycle management
 |How data sets are handled by the organisation through the entire value chain - include receiving, storing, metadata management and data retrieval.
 
 |[[data-provenance]]Data provenance
-|“The term ‘data provenance’ refers to a record trail that accounts for the origin of a piece of data (in a database, document or repository) together with an explanation of how and why it got to the present place.” (Gupta, 2009). See also Boohers (2015)
+|“The term ‘data provenance’ refers to a record trail that accounts for the origin of a piece of data (in a database, document or repository) together with an explanation of how and why it got to the present place.” (Gupta, 2009). See also https://www.theboohers.org/2015/03/03/provenance/[Boohers (2015)]
 
 |[[data-repository]]Data repository
 |A set of distributed components that will hold the data and ensure they can be queried and accessed according to agreed protocols. This component is also known as a Data Node.
@@ -42,13 +42,12 @@ Alias: life cycle management
 |[[dataset]]Dataset
 |A dataset is a pre-defined grouping or collection of related data for an intended use. Datasets may be categorised by:
 
-* source, such as observations (in situ, remotely sensed) and numerical model projections and analyses;
-* processing level, such as “raw data” (values measured by an instrument), calibrated data, quality-controlled data, derived parameters (preferably with error estimates), temporally and/or spatially aggregated variables;
-* data type, including point data, sections and profiles, lines and polylines, polygons, gridded data, volume data, and time series (of  points, grids, etc.).
+* _source_, such as observations (in situ, remotely sensed) and numerical model projections and analyses;
+* _processing level_, such as “raw data” (values measured by an instrument), calibrated data, quality-controlled data, derived parameters (preferably with error estimates), temporally and/or spatially aggregated variables;
+* _data type_, including point data, sections and profiles, lines and polylines, polygons, gridded data, volume data, and time series (of  points, grids, etc.).
 
 Data having all of the same characteristics in each category, but different independent variable ranges and/or responding to a specific need, are normally considered part of a single dataset.
-In the context of data preservation a dataset consists of the data records and their associated knowledge (information, tools).
-In practice, our datasets should conform to the Unidata CDM dataset definition, as much as possible.
+In the context of data preservation a dataset consists of the data records and their associated knowledge (information, tools). In practice, our datasets should conform to the <<CMD-dataset,Unidata CDM dataset>> definition, as much as possible.
 
 |[[discovery-metadata]]Discovery metadata
 |See Discovery metadata definition in Table 2
@@ -56,21 +55,22 @@ In practice, our datasets should conform to the Unidata CDM dataset definition, 
 |[[dynamic-geodata]]Dynamic geodata
 |Data describing geophysical processes which are continuously evolving over time. Typically these data are used for monitoring and prediction of the weather, sea, climate and environment. 
 
-|[[fari-principles]]FAIR principles
-|The four foundational principles of good data management and stewardship: Findability, Accessibility, Interoperability and Reusability. Nature article [RD3], FAIR Data Principles, FAIR metrics proposal, EU H2020 Guidelines
+|[[fair-principles]]FAIR principles
+|The four foundational principles of good data management and stewardship: *F*indability, *A*ccessibility, *I*nteroperability and *R*eusability. Nature article [https://www.nature.com/articles/sdata201618[RD3]], https://www.go-fair.org/fair-principles/[FAIR Data Principles], https://github.com/FAIRMetrics/Metrics[FAIR metrics proposal], https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf[EU H2020 Guidelines]
 
 |[[feature-type]]Feature type
-|A categorisation of data according to how they are stored, for example, grid, time series, profile, etc. It has been formalised in the NetCDF/CF feature type table, which currently defines eight feature types. 
+|A categorisation of data according to how they are stored, for example, grid, time series, profile, etc. It has been formalised in the NetCDF/CF https://www.nodc.noaa.gov/data/formats/netcdf/v2.0/#templatesexamples[feature type table], which currently defines eight feature types. 
+//need internal link to acronym-document
 
 |[[geodataloven]]Geodataloven
-|“Norwegian regulation toward good and efficient access to public geographic information for public and private purposes.” See Deling av geodata – Geodataloven,
+|“Norwegian regulation toward good and efficient access to public geographic information for public and private purposes.” See https://www.regjeringen.no/no/tema/plan-bygg-og-eiendom/plan--og-bygningsloven/kart/geodataloven/id749728/[Deling av geodata – Geodataloven].
 
 |[[geonorge]]Geonorge
-|“Geonorge is the national website for map data and other location information in Norway. Users of map data can search for any such information available and access it here.” See Geonorge. 
+|“Geonorge is the national website for map data and other location information in Norway. Users of map data can search for any such information available and access it here.” See https://www.geonorge.no/en/[Geonorge]. 
 
 |[[geographic-information-system]]Geographic Information System
 |A geographic information system (GIS) is a system designed to capture, store, manipulate, analyze, manage and present spatial or geographic data. (Clarke, K. C., 1986)
-GIS systems have lately evolved in distributed Spatial Data Infrastructures (SDI)
+GIS systems have lately evolved in distributed <<spatial-data-infrastructure,Spatial Data Infrastructures (SDI)>>
 
 |[[glossary]]Glossary
 |Terms and their definitions, possibly with synonyms.
@@ -79,44 +79,44 @@ GIS systems have lately evolved in distributed Spatial Data Infrastructures (SDI
 |The ability of data or tools from non-cooperating resources to integrate or work together with minimal effort.
 
 |[linked-data]]Linked data
-|A method of publishing structured data so that they can be interlinked and become more useful through semantic queries, i.e., through machine-machine interactions. (see Wikipedia article)
+|A method of publishing structured data so that they can be interlinked and become more useful through https://en.wikipedia.org/wiki/Semantic_query[semantic queries], i.e., through machine-machine interactions. (see https://en.wikipedia.org/wiki/Linked_data[Wikipedia article])
 
 |[[ontology]]Ontology
 |A set of concepts with attributes and relationships that define a domain of knowledge. 
 
 |[[opensearch]]OpenSearch
-|A collection of simple formats for the sharing of search results (OpenSearch)
+|A collection of simple formats for the sharing of search results (https://github.com/dewitt/opensearch[OpenSearch])
 
 |[[product]]Product
 |“Product” is not a uniquely defined term among the various providers of dynamical geodata, either nationally or internationally. It is often used synonymously with “dataset.” For the sake of clarity, “product” is not used in this handbook. The term “dataset” is adequate for our purpose. 
 
 |[[semantic-web]]Semantic web
-|“The Semantic Web provides a common framework that allows data to be shared and reused across application, enterprise, and community boundaries". W3C (see Wikipedia article)
+|“The Semantic Web provides a common framework that allows data to be shared and reused across application, enterprise, and community boundaries". https://www.w3.org/2001/sw/[W3C] (see https://en.wikipedia.org/wiki/Semantic_Web[Wikipedia article])
 
 |[[site-metadata]]Site metadata
 |See Site metadata definition in Table 2
+//needs internal link
 
 |[[spatial-data-infrastructure]]Spatial Data Infrastructure
 |“Spatial Data Infrastructure (SDI) is defined as a framework of policies, institutional arrangements. technologies, data, and people that enables the sharing and effective usage of geographic information by standardising formats and protocols for access and interoperability.” (Tonchovska et al, 2012)
-SDI has evolved from GIS.
-Among the largest implementations are: NSDI in the USA, INSPIRE in Europe and UNSDI as an effort by the United Nations.
-For areas in the Arctic, there is arctic-sdi.org.
+SDI has evolved from <<geographic-information-system,GIS>>. Among the largest implementations are: NSDI in the USA, INSPIRE in Europe and UNSDI as an effort by the United Nations. For areas in the Arctic, there is https://arctic-sdi.org/[arctic-sdi.org].
 
 |[unified-data-management]]Unified data management
 |A common approach to data management in a grouping of separate data management enterprises.
 
 |[[use-metadata]]Use metadata
 |See Use metadata definition in Table 2
+//needs internal link
 
 |[[webportal]]Web portal
 |A central website where all users can search, browse, access, transform, display and download datasets irrespective of the data repository in which the data are held.
 
 |[[webservice]]Web service
-|Web services are used to communicate metadata, data and to offer processing services. Much effort has been put on standardisation of web services to ensure they are reusable in different contexts. In contrast to web applications, web services communicate with other programs, instead of interactively with users. (See TechTerms article)
+|Web services are used to communicate metadata, data and to offer processing services. Much effort has been put on standardisation of web services to ensure they are reusable in different contexts. In contrast to web applications, web services communicate with other programs, instead of interactively with users. (See https://techterms.com/definition/web_service[TechTerms article])
 
 |[[workflow-management]]Workflow management
-|Workflow management is the process of tracking data, software and other actions on data into a new form of the data. It is related to data provenance, but is usually used in the context of workflow management systems.
+|Workflow management is the process of tracking data, software and other actions on data into a new form of the data. It is related to data provenance, but is usually used in the context of <<scientific-workflow-management-systems,workflow management systems>>.
 
 |[[scientific-workflow-management-system]](Scientific) Workflow management systems
-|A scientific workflow system is a specialised form of a workflow management system designed specifically to compose and execute a series of computational or data manipulation steps, or workflow, in a scientific application. (Wikipedia) As of today, many different frameworks exist with their own proprietary languages, these might eventually get connected by using a common workflow definition language.
+|A scientific workflow system is a specialised form of a workflow management system designed specifically to compose and execute a series of computational or data manipulation steps, or workflow, in a scientific application. (https://en.wikipedia.org/wiki/Scientific_workflow_system[Wikipedia]) As of today, many different frameworks exist with their own proprietary languages, these might eventually get connected by using a https://www.commonwl.org/[common workflow definition language].
 |===
