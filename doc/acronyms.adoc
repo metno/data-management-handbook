@@ -1,0 +1,401 @@
+[[acronyms]]
+== List of Acronyms
+
+This list contains acronyms used throughout the DMH. The column "General/Specific" indicates if the acronyms are used in the general part of the DMH (from the template) or if they are organisation specific. 
+
+//comment for editors:
+// add your own acronyms here and bookmark with [[bookmark]] in front of the acronym
+// these can be linked in the main document like this: <<bookmark, *text to be shown*>>
+
+[%header, cols=3*]
+|===
+|Acronym
+|Meaning
+|General/specific
+
+|[[acdd]]ACDD
+|Attribute Convention for Dataset Discovery https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3[RD5]
+|
+
+|[[adc]]ADC
+|Arctic Data Centre (https://pm.met.no/home[ADC])
+|
+
+|[[aen]]AeN
+|Arven etter Nansen (English: Nansen Legacy)
+|
+
+|[[bufr]]BUFR
+|Binary Universal Form for the Representation of meteorological data. WMO standard format for binary data, particularly for non-gridded data (https://www.wmo.int/pages/prog/www/WDM/Guides/Guide-binary-1A.html[BUFR])
+|
+
+|[[cdm]]CDM
+|Unidata Common Data Model (https://docs.unidata.ucar.edu/netcdf-java/current/userguide/common_data_model_overview.html[CDM])
+|
+
+|[[cf]]CF
+|Climate and Forecast Metadata Conventions (http://cfconventions.org/[CF])
+|
+
+|[[cms]]CMS
+|Content Management System
+|
+
+|[[csw]]CSW
+|Catalog Service for the Web (https://www.ogc.org/standards/cat[CSW])
+|
+
+|[[dap]]DAP
+|Data access protocol (https://earthdata.nasa.gov/esdis/eso/standards-and-references/data-access-protocol-2[DAP])
+|
+
+|[[dbms]]DBMS
+|DataBase Management System (https://en.wikipedia.org/wiki/Database#Database_management_system[DBMS])
+|
+
+|[[diana]]DIANA
+|Digital Analysis tool for visualisation of geodata, open source from MET Norway (https://github.com/metno/diana[DIANA])
+|
+
+|[[diana-wms]]diana-WMS
+|WMS implementation in DIANA
+|
+
+|[[dias]]DIAS
+|Copernicus Data and Information Access Services (https://www.copernicus.eu/en/access-data/dias[DIAS])
+|
+
+|[[dif]]DIF
+|Directory Interchange Format of GCMD (https://earthdata.nasa.gov/esdis/eso/standards-and-references/directory-interchange-format-dif-standard[DIF])
+|
+
+|[[dlm]]DLM
+|Data life cycle management (https://searchstorage.techtarget.com/definition/data-life-cycle-management[DLM])
+|
+
+|[[dm]]DM
+|Data Manager
+|
+
+|[[dmh]]DMH
+|Data Management Handbook (this document) 
+|
+
+|[[dmcg]]DMCG
+|Data Management Coordination Group
+|
+
+|[[dmp]]DMP
+|Data Management Plan (https://en.wikipedia.org/wiki/Data_management_plan[DMP definition], https://www.sigma2.no/data-planning[easyDMP tool])
+|
+
+|[[doi]]DOI
+|Digital Object Identifier (https://www.doi.org/index.html[DOI])
+|
+
+|[[edugain]]eduGAIN
+|The Global Academic Interfederation Service (https://edugain.org/[eduGAIN])
+|
+
+|[[envri]]ENVRI
+|European Environmental Research Infrastructures (https://envri.eu/[ENVRI])
+|
+
+|[[envri-fair]]ENVRI FAIR
+|"Making the ENV RIs data services FAIR." A proposal to the EU’s Horizon 2020 call INFRAEOSC-04
+|
+
+|[[eosc]]EOSC
+|European Open Science Cloud (https://eosc-portal.eu/[EOSC])
+|
+
+|[[erddap]]ERDDAP
+|NOAA Environmental Research Division Data Access Protocol  (https://coastwatch.pfeg.noaa.gov/erddap/index.html[ERDDAP])
+|
+
+|[[esa]]ESA
+|European Space Agency (http://www.esa.int/[ESA])
+
+|[[esgf]]ESGF
+|Earth System Grid Federation (https://esgf.llnl.gov/[ESGF])
+|
+
+|[[ewc]]EWC
+|European Weather Cloud ()
+|
+
+|[[fair]]FAIR
+|Findability, Accessibility, Interoperability and Reusability https://www.nature.com/articles/sdata201618[RD3]
+|
+
+|[[feide]]FEIDE
+|Identity Federation of the Norwegian National Research and Education Network (UNINETT) (https://www.feide.no/[FEIDE])
+|
+
+|[[ffi]]FFI
+|Norwegian Defence Research Establishment (https://www.ffi.no/en[FFI])
+|
+
+|[[force11]]FORCE11
+|Future of Research Communication and e-Scholarship (https://www.force11.org/[FORCE11])
+|
+
+|[[gcmd]]GCMD
+|Global Change Master Directory (https://idn.ceos.org/[GCMD])
+|
+
+|[[gcw]]GCW
+|Global Cryosphere Watch (https://globalcryospherewatch.org/[GCW])
+|
+
+|[[geoaccessno]]GeoAccessNO
+|An NFR-funded infrastructure project, 2015- (https://www.geoaccessno.no/[GeoAccessNO])
+|
+
+|[[gis]]GIS
+|<<geographic-information-system,Geographic Information System>>
+|
+
+|[[grib]]GRIB
+|GRIdded Binary or General Regularly-distributed Information in Binary form. WMO standard file format for gridded data (https://www.wmo.int/pages/prog/www/WDM/Guides/Guide-binary-2.html[GRIB])
+|
+
+|[[hdf]]HDF, HDF5
+|Hierarchical Data Format (https://en.wikipedia.org/wiki/Hierarchical_Data_Format[HDF])
+|
+
+|[[hyrax]]Hyrax
+|OPeNDAP 4 Data Server (https://www.opendap.org/software/hyrax-data-server[Hyrax])
+|
+
+|[[imr]]IMR
+|Institute of Marine Research (https://www.hi.no/en[IMR])
+|
+
+|[[inspire]]INSPIRE
+|Infrastructure for Spatial Information in Europe (https://inspire.ec.europa.eu/[INSPIRE])
+|
+
+|[[iso-19115]]ISO 19115
+|ISO standard for geospatial metadata (https://www.iso.org/standard/53798.html[ISO 19115-1:2014]). 
+|
+
+|[[ipy]]IPY
+|International Polar Year (https://public.wmo.int/en/bulletin/international-polar-year-2007-2008[IPY])
+|
+
+|[[jrcc]]JRCC
+|Joint Rescue Coordination centre (https://www.hovedredningssentralen.no/english/[Hovedredningssentralen])
+|
+
+|[[kdvh]]KDVH
+|KlimaDataVareHus 
+|Specific to METNorway
+
+|[[kpi]]KPI
+|Key Performance Indicator (https://en.wikipedia.org/wiki/Performance_indicator[KPI])
+|
+
+|[[metcim]]METCIM
+|MET Norway Crisis and Incident Management  (https://metcim.no/[METCIM])
+|Specific to METNorway
+
+|[[metsis]]METSIS
+|MET Norway Scientific Information System
+|Specific to METNorway
+
+|[[mmd]]MMD
+|Met.no Metadata Format https://github.com/metno/mmd[MMD]
+|
+
+|[[moai]]MOAI
+|Meta Open Archives Initiative server (https://github.com/infrae/moai[MOAI])
+|
+
+|[[ncwms]]ncWMS
+|WMS implementation for NetCDF files (https://reading-escience-centre.github.io/ncwms/[ncWMS])
+|
+
+|[[nersc]]NERSC
+|Nansen Environmental and Remote Sensing Center (https://www.nersc.no/[NERSC])
+|
+
+|[[netcdf]]NetCDF
+|Network Common Data Format (https://www.unidata.ucar.edu/software/netcdf/[NetCDF])
+|
+
+|[[netcdf-cf]]NetCDF/CF
+|A common combination of <<netcdf,NetCDF>> file format with <<cf,CF>>-compliant attributes.
+|
+
+|[[nfr]]NFR
+|The Research Council of Norway (https://www.forskningsradet.no/en/[NFR])
+|
+
+|[[nilu]]NILU
+|Norwegian Institute for Air Research (https://www.nilu.no/Forsiden/tabid/41/language/en-GB/Default.aspx[NILU])
+|
+
+|[[niva]]NIVA
+|Norwegian Institute for Water Research (https://www.niva.no/en[NIVA])
+|
+
+|[[nmdc]]NMDC
+|Norwegian Marine Data Centre, NFR-supported infrastructure project 2013-2017 (https://nmdc.no/[NMDC])
+|
+
+|[[nordatanet]]NorDataNet
+|Norwegian Scientific Data Network, an NFR-funded project 2015-2020 (https://www.nordatanet.no/[NorDataNet])
+|
+
+|[[norway-digital]]Norway Digital
+|Norwegian national spatial data infrastructure organisation (https://www.geonorge.no/en/infrastructure/norway-digital/[Norway Digital]). Norwegian: https://www.geonorge.no/Geodataarbeid/Norge-digitalt/[Norge digitalt]
+|
+
+|[[normap]]NORMAP
+|Norwegian Satellite Earth Observation Database for Marine and Polar Research, an NFR-funded project 2010-2016  (https://normap.nersc.no/[NORMAP])
+|
+
+|[[nrpa]]NRPA
+|Norwegian Radiation Protection Authority (https://dsa.no/en/[NRPA])
+|
+
+|[[nsdi]]NSDI
+|National Spatial Data Infrastructure, USA (https://www.fgdc.gov/nsdi/nsdi.html[NSDI])
+|
+
+|[[nve]]NVE
+|Norwegian Water Resources and Energy Directorate (https://www.nve.no/english/[NVE])
+|
+
+|[[nwp]]NWP
+|Numerical Weather Prediction
+|
+
+|[[oai-pmh]]OAI-PMH
+|Open Archives Initiative - Protocol for Metadata Harvesting (https://www.openarchives.org/pmh/[OAI-PMH])
+|
+
+|[[oais]]OAIS
+|Open Archival Information System (https://en.wikipedia.org/wiki/Open_Archival_Information_System[OAIS])
+|
+
+|[[oceanotron]]OCEANOTRON
+|Web server dedicated to the dissemination of ocean in situ observation data collections (https://forge.ifremer.fr/plugins/mediawiki/wiki/oceanotron/index.php/Oceanotron_description[OCEANOTRON])
+|
+
+|[[ogc]]OGC
+|Open Geospatial Consortium (https://www.ogc.org/[OGC])
+|
+
+|[[ogc-om]]OGC O&M
+|OGC Observations and Measurements standard (https://www.ogc.org/standards/om[OGC O&M])
+|
+
+|[[ola]]OLA
+|Operational-level Agreement (https://en.wikipedia.org/wiki/Operational-level_agreement[OLA])
+|
+
+|[[opendap]]OPeNDAP
+|Open-source Project for a Network Data Access Protocol (https://www.opendap.org/[OPeNDAP]) - reference server implementation
+|
+
+|[[pid]]PID
+|Persistent Identifier (https://en.wikipedia.org/wiki/Persistent_identifier[PID])
+|
+
+|[[rm-odp]]RM-ODP
+|Reference Model of Open Distributed Processing (https://en.wikipedia.org/wiki/RM-ODP[RM-ODP])
+|
+
+|[[prov]]PROV
+|A W3C Working Group on provenance and a Family of Documents (https://www.w3.org/TR/prov-overview/[PROV])
+|
+
+|[[saon]]SAON
+|Sustaining Arctic Observing Networks (https://iasc.info/data-observations/saon[SAON/IASC])
+|
+
+|[[sdi]]SDI
+|<<spatial-data-infrastructure,Spatial Data Infrastructure>> 
+|
+
+|[[sdn]]SDN
+|https://www.seadatanet.org/[SeaDataNet], Pan-European infrastructure for ocean & marine data management
+|
+
+|[[sios]]SIOS
+|Svalbard Integrated Arctic Earth Observing System
+|
+
+|[[sios-kc]]SIOS-KC
+|<<sios,SIOS>> Knowledge Centre, an NFR-supported project 2015-2018  (https://www.sios-svalbard.org/KnowledgeCentre[SIOS-KC])
+|
+
+|[[skos]]SKOS
+|Simple Knowledge Organization System (https://www.w3.org/2004/02/skos/[SKOS])
+|
+
+|[[sla]]SLA
+|Service-level Agreement (https://en.wikipedia.org/wiki/Service-level_agreement[SLA])
+|
+
+|[[solr]]SolR
+|Apache Enterprise search server with a REST-like API (https://lucene.apache.org/solr/[SolR])
+|
+
+|[[stinfosys]]StInfoSys
+|MET Norway’s Station Information System
+|Specific to METnorway
+
+|[[tds]]TDS
+|THREDDS Data Server (https://www.unidata.ucar.edu/software/tds/current/[TDS])
+|
+
+|[[thredds]]THREDDS
+|Thematic Real-time Environmental Distributed Data Services
+|
+
+|[[unsdi]]UNSDI
+|United Nations Spatial Data Infrastructure (https://en.wikipedia.org/wiki/United_Nations_Spatial_Data_Infrastructure[UNSDI])
+|
+
+|[[uuid]]UUID
+|Universally Unique Identifier (https://en.wikipedia.org/wiki/Universally_unique_identifier[UUID])
+|
+
+|[[w3c]]W3C
+|World Wide Web Consortium (https://www.w3.org/[W3C])
+|
+
+|[[wcs]]WCS
+|OGC Web Coverage Service (https://www.ogc.org/standards/wcs[WCS])
+|
+
+|[[wfs]]WFS
+|OGC Web Feature Service (https://www.ogc.org/standards/wfs[WFS])
+|
+
+|[[wigos]]WIGOS
+|WMO Integrated Global Observing System (https://community.wmo.int/activity-areas/wigos[WIGOS])
+|
+
+|[[wis]]WIS
+|WMO Information System (https://community.wmo.int/activity-areas/wis[WIS])
+|
+
+|[[wmo]]WMO
+|World Meteorological Organisation (https://public.wmo.int/en[WMO])
+|
+
+|[[wms]]WMS
+|OGC Web Map Service (https://www.ogc.org/standards/wms[WMS])
+|
+
+|[[wps]]WPS
+|OGC Web Processing Service (https://www.ogc.org/standards/wps[WPS])
+|
+
+|[[yopp]]YOPP
+|Year of Polar Prediction (https://yopp.met.no/metadata_search[YOPP Data Portal])
+|===
