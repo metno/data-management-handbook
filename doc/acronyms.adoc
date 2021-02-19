@@ -115,6 +115,7 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 
 |[[esa]]ESA
 |European Space Agency (http://www.esa.int/[ESA])
+|
 
 |[[esgf]]ESGF
 |Earth System Grid Federation (https://esgf.llnl.gov/[ESGF])
