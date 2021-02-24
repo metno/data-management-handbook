@@ -40,3 +40,12 @@ include::acdd_elements.adoc[]
 
 :numbered!:
 include::glossary.adoc[]
+
+:numbered!:
+include::acronyms.adoc[]
+
+:numbered!:
+include::appendixA.adoc[]
+
+:numbered!:
+include::appendixB.adoc[]
