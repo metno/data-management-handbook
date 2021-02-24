@@ -138,7 +138,7 @@ BUFR
 GRIB
 
 |[[configuration-metadata]]Configuration metadata
-|Used to tune portal services for datasets for users.
+|Used to tune portal services for datasets for users
 |Configuration metadata are used to improve the services offered through a portal to the user community. This can be e.g. how to best visualise a product.
 |
  
@@ -204,7 +204,6 @@ The organisation provides seamless access to data from distributed data centres 
 .. Visualisation (time series, mapping services, etc.)
 .. Aggregation
 .. Upload of new datasets (including enabling and configuring data access services)
-
 
 
 
