@@ -81,7 +81,7 @@ Data management roles in use at [insert institute or organisation here]:
 
 The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
 
-1. There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.
+. There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.
 
 [%header, cols=3*]
 |===
@@ -120,7 +120,8 @@ The data management regime described in this DMH follows the Arctic Data centre 
 | There are authentication and authorisation mechanisms that ensure access control to data with restrictions, and that are compatible with and coupled to relevant public authentication solutions (FEIDE, eduGAIN, Google, etc.).
 |===
 
-2. There is an organisation that provides for the management of each dataset throughout its lifetime (life cycle management).
+[start=2]
+. There is an organisation that provides for the management of each dataset throughout its lifetime (life cycle management).
 
 [%header, cols=3*]
 |===
@@ -138,7 +139,8 @@ The organisation provides seamless access to data from distributed data centres 
 |
 |===
 
-3. There are services or tools that provide the following functionalities on the datasets:
+[start=3]
+. There are services or tools that provide the following functionalities on the datasets:
 
 [%header, cols=3*]
 |===
