@@ -32,7 +32,7 @@ The intended audience for this DMH is any co-worker who is involved in any part 
 The handbook can be used in three ways: 
 
 1. Read the Introduction (Chapter 1) to find out the background and principles of data management;
-2. Read Chapters 2-5 to learn about how data management is currently implemented and how it is expected to evolve in the next few years:
+2. Read Chapters 2-5 to learn about how data management is currently implemented and how it is expected to evolve in the next few years;
 3. Go to the Quick Manual for Data Providers for guidelines on what to do in real-life cases; alternatively Chapter 6 for typical workflow examples.
 
 [[PrinciplesDataManagement]]
@@ -204,7 +204,6 @@ The organisation provides seamless access to data from distributed data centres 
 .. Visualisation (time series, mapping services, etc.)
 .. Aggregation
 .. Upload of new datasets (including enabling and configuring data access services)
-
 
 
 
