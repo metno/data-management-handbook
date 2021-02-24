@@ -18,7 +18,7 @@ The DMH is a strategic governing document and should be used as part of the qual
 
 // Remember to add links/references to the chapters below
 
-This DMH focuses on the management of geophysical data, types of data and the usage of these data are described in the organisation specific information in Section X.X.X.
+This DMH focuses on the management of geophysical data. Types of data and the usage of these data are described in the organisation specific information in Section X.X.X.
 This introduction (Chapter 1) lays forth the background and principles for the data management regime. 
 Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (Chapter 2), data services (Chapter 3), portals and documentation aimed at users (Chapter 4) and governance issues (Chapter 5). 
 Each chapter starts with a brief statement of its purpose, followed by a description of what is implemented at the organisation at present, as well as the planned developments for the short-term (<2 years) and expected developments for the longer term (2-5 years). 
@@ -204,7 +204,6 @@ The organisation provides seamless access to data from distributed data centres 
 .. Visualisation (time series, mapping services, etc.)
 .. Aggregation
 .. Upload of new datasets (including enabling and configuring data access services)
-
 
 
 
