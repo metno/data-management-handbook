@@ -151,7 +151,7 @@ StInfoSys
 
 |[[system-metadata]]System metadata
 |Used to understand the technical structure of the data management system and track changes in it 
-|System metadata covers e.g. technical details of the storage system (e.g. Lustre metadata), web services their purpose and how they interact with other components of the data management system, available and consumed storage, number of users and other KPI elements etc.
+|System metadata covers e.g. technical details of the storage system (e.g. Lustre metadata), web services, their purpose and how they interact with other components of the data management system, available and consumed storage, number of users and other KPI elements etc.
 |SysDok
 |===
 
@@ -204,7 +204,6 @@ The organisation provides seamless access to data from distributed data centres 
 .. Visualisation (time series, mapping services, etc.)
 .. Aggregation
 .. Upload of new datasets (including enabling and configuring data access services)
-
 
 
 
