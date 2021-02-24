@@ -16,7 +16,7 @@
 |A dataset that “may be a NetCDF, HDF5, GRIB, etc. file, an OPeNDAP dataset, a collection of files, or anything else which can be accessed through the NetCDF API.” https://www.unidata.ucar.edu/software/netcdf-java/v4.6/CDM/index.html[Unidata Common Data Model] 
 // need link to acronyms
 
-|[[configuration-metadata]]Configuration metadata
+|[[config-metadata]]Configuration metadata
 |See Configuration metadata definition in Table 2
 
 |[[controlled-vocabulary]]Controlled vocabulary
@@ -57,7 +57,7 @@ In the context of data preservation a dataset consists of the data records and t
 |See Discovery metadata definition in Table 2
 
 |[[dynamic-geodata]]Dynamic geodata
-|Data describing geophysical processes which are continuously evolving over time. Typically these data are used for monitoring and prediction of the weather, sea, climate and environment. 
+|Data describing geophysical processes which are continuously evolving over time. Typically these data are used for monitoring and prediction of the weather, sea, climate and environment. Dynamic geodata is weather, environment and climate-related data that changes in space and time and is thus descriptive of processes in nature. Examples are weather observations, weather forecasts, pollution (environmental toxins) in water, air and sea, information on the drift of cod eggs and salmon lice, water flow in rivers, driving conditions on the roads and the distribution of sea ice. Dynamic geodata provides important constraints for many decision-making processes and activities in society. 
 
 |[[fair-principles]]FAIR principles
 |The four foundational principles of good data management and stewardship: *F*indability, *A*ccessibility, *I*nteroperability and *R*eusability. Nature article [https://www.nature.com/articles/sdata201618[RD3]], https://www.go-fair.org/fair-principles/[FAIR Data Principles], https://github.com/FAIRMetrics/Metrics[FAIR metrics proposal], https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf[EU H2020 Guidelines]

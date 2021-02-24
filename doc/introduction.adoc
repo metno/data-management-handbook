@@ -5,59 +5,61 @@
 //not updated: chapter links, check all links to glossary and acronyms
 //remember: change references to quick manual
 
-The purpose of the Data Management Handbook (DMH) is threefold:
+The purpose of the Data Management Handbook (<<dmh,DMH>>) is threefold:
 
-1. to provide an overview of the principles for data management to be employed.
-2. to help personnel identify their roles and responsibilities for good data management.
-3. to provide personnel with practical guidelines for carrying out good data management.
+1. to provide an overview of the principles for <<data-management,data management>> to be employed.
+2. to help personnel identify their roles and responsibilities for good <<data-management,data management>>.
+3. to provide personnel with practical guidelines for carrying out good <<data-management,data management>>.
 
 _Data management_ is the term used to describe the handling of data in a systematic and cost-effective manner. 
-The data management regime should be continuously evolving, to reflect the evolving nature of data collection. Therefore this DMH is a living document that will be revised and updated from time to time in order to maintain its relevance.
+The data management regime should be continuously evolving, to reflect the evolving nature of data collection. Therefore this <<dmh,DMH>> is a living document that will be revised and updated from time to time in order to maintain its relevance.
 
-The DMH is a strategic governing document and should be used as part of the quality framework the organisation is using. 
+The <<dmh,DMH>> is a strategic governing document and should be used as part of the quality framework the organisation is using. 
 
 // Remember to add links/references to the chapters below
 
-This DMH focuses on the management of geophysical data. Types of data and the usage of these data are described in the organisation specific information in Section X.X.X.
+The first version of this <<dmh,DMH>> was created to focus on the management of <<dynamic-geodata, dynamic geodata>>. <<dynamic-geodata, Dynamic geodata>> is weather, environment and climate-related data that changes in space and time and is thus descriptive of processes in nature. Examples are weather observations, weather forecasts, pollution (environmental toxins) in water, air and sea, information on the drift of cod eggs and salmon lice, water flow in rivers, driving conditions on the roads and the distribution of sea ice. <<dynamic-geodata, Dynamic geodata>> provides important constraints for many decision-making processes and activities in society.
+
+The types of data covered in this version of the <<dmh,DMH>> and the usage of these data are described in the organisation specific information in Section X.X.X.
 This introduction (Chapter 1) lays forth the background and principles for the data management regime. 
 Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (Chapter 2), data services (Chapter 3), portals and documentation aimed at users (Chapter 4) and governance issues (Chapter 5). 
 Each chapter starts with a brief statement of its purpose, followed by a description of what is implemented at the organisation at present, as well as the planned developments for the short-term (<2 years) and expected developments for the longer term (2-5 years). 
-Practical guidelines for carrying out good data management are addressed in Chapter 6 and especially in the Quick Manual for Data Providers. 
-The Quick Manual is a concise, informal HOW-TO for data management practitioners.
+Practical guidelines for carrying out good <<data-management,data management>> are addressed in Chapter 6 and especially in the Quick Manual for Data Providers. 
+The Quick Manual is a concise, informal HOW-TO for <<data-management,data management>> practitioners.
 
 //Remember to change if we move away from the Quick manual
 
-The intended audience for this DMH is any co-worker who is involved in any part of the value chain for geophysical data (<<img-value_chain>>).
+The intended audience for this DMH is any personell involved in the process of making data available for the end user. This process can be viewed as a value chain that moves from the producer of the data to the end user, this is further described in the section <<geophysical-value-chain>> (<<img-value_chain>>).
 
 The handbook can be used in three ways: 
 
-1. Read the Introduction (Chapter 1) to find out the background and principles of data management;
-2. Read Chapters 2-5 to learn about how data management is currently implemented and how it is expected to evolve in the next few years;
+1. Read the Introduction (Chapter 1) to find out the background and principles of <<data-management,data management>>;
+2. Read Chapters 2-5 to learn about how <<data-management,data management>> is currently implemented and how it is expected to evolve in the next few years;
 3. Read the Quick Manual for Data Providers for guidelines on what to do in real-life cases; alternatively read Chapter 6 for typical workflow examples.
 
 [[PrinciplesDataManagement]]
 === The principles of data management for geophysical data
 
-One of the main motivations for implementing a unified data management model is to better serve the users of the data. Primarily, this can be approached by making user needs and requirements the guide for determining what data we provide and how. For example, it will be described below how the specification of datasets should be determined by user needs. By implementing the data management practices described here, it is expected that users will benefit from:
+Principles of standardised data documentation, publication, sharing and preservation have been formalised in the <<fair-principles,FAIR>> Guiding Principles for scientific data management and stewardship [https://www.nature.com/articles/sdata201618[RD3]] through a process facilitated by <<force11,FORCE11>>.
+ 
+FAIR - findability, accessibility, <<interoperability,interoperability>> and reusability
 
-* the ease of discovering, viewing and accessing all the datasets that are offered by the institute;
-* standardised ways of downloading data, which reduces the need for special solutions on the user side;
-* reducing their own data storage needs, by downloading just what they need;
-* easy and standardised access to remote datasets and catalogues, when using their own visualisation/analysis tools;
+By following these <<fair,FAIR>> principles it is easier to reach a common approach to <<data-management,data management>>, or a <<unified-data-management, unified data management>> model. One of the main motivations for implementing a <<unified-data-management, unified data management>> is to better serve the users of the data. Primarily, this can be approached by making user needs and requirements the guide for determining what data we provide and how. For example, it will be described below how the specification of <<dataset,datasets>> should be determined by user needs. By implementing the data management practices described here, it is expected that users will benefit from:
+
+* the ease of discovering, viewing and accessing all the <<dataset,datasets>> that are offered by the institute;
+* standardised ways of accessing data, including downloading or streaming data, which reduces the need for special solutions on the user side;
+* reducing their own data storage needs, by accessing just what they need;
+* easy and standardised access to remote <<dataset,datasets>> and catalogues, when using their own visualisation/analysis tools;
 * the ability to compare and combine data from internal and external sources (through metadata catalogues);
 * the ability to apply common data transformations, like spatial, temporal and variables subsetting and reprojection, before downloading anything;
-*the ease of building specific metadata catalogues and data portals that include data from the institute and can target a specific user community;
-* the access to datasets which can be integrated in their internal and external workflows through standardised web services.
+* the ease of building specific metadata catalogues and data portals that include data from the institute and can target a specific user community;
+* the access to <<dataset,datasets>> which can be integrated in their internal and external workflows through standardised <<web-services,web services>>.
 
-// need to link to glossary terms for FAIR,RD3 and FORCE11
-The principles of standardised data documentation, publication, sharing and preservation have been formalised in the The <<fair-principles,FAIR>> Guiding Principles for scientific data management and stewardship [RD3] through a process facilitated by FORCE11.
- 
-FAIR - findability, accessibility, interoperability and reusability
 
 [[external-requirements]]
 ==== External data management requirements and forcing mechanisms
 
-Any organisation that strives to implement <<fair-principles,FAIR>> data management model has to relate to external forcing mechanisms concerning data management at several levels. At the national level, the organisation must comply with national regulations as decided by the government. Some of these are indications of expected behaviour (e.g. OECD regulations) and some are implemented through a legal framework. The Norwegian government has over time promoted free and open sharing of public data. Mechanisms for how to do this are governed by the <<geodataloven,Geodataloven>> (implemented as <<geonorge,Geonorge>>), which is a national implementation of the European INSPIRE directive (to be amended in 2019). INSPIRE defines a federated multinational Spatial Data Infrastructure (SDI) for the European Union, similar to NSDI in the USA or UNSDI under the United Nations. The goal is to provide a standardised access to data and provide the necessary tools to be able to work with the data in a unified manner. In short, these legal frameworks require standardised documentation (at discovery and use level; these concepts are described later) and access (through specified protocols) to the data identified.
+Any organisation that strives to implement <<fair-principles,FAIR>> data management model has to relate to external forcing mechanisms concerning <<data-management,data management>> at several levels. At the national level, the organisation must comply with national regulations as decided by the government. Some of these are indications of expected behaviour (e.g. <<oecd,OECD>> regulations) and some are implemented through a legal framework. The Norwegian government has over time promoted free and open sharing of public data. Mechanisms for how to do this are governed by the <<geodataloven,Geodataloven>> (implemented as <<geonorge,Geonorge>>), which is a national implementation of the European <<inspire,INSPIRE directive>> (to be amended in 2019). <<inspire,INSPIRE>> defines a federated multinational <<spatial-data-infrastructure,Spatial Data Infrastructure>> (<<sdi,SDI>>) for the European Union, similar to <<nsdi,NSDI>> in the USA or <<unsdi,UNSDI>> under the United Nations. The goal is to provide a standardised access to data and provide the necessary tools to be able to work with the data in a unified manner. In short, these legal frameworks require standardised documentation (at discovery and use level; these concepts are described later) and access (through specified protocols) to the data identified.
 
 Other external requirements and forcing mechanisms that are organisation-specific are listed under section X.X.X
 //link to proper section
@@ -65,55 +67,34 @@ Other external requirements and forcing mechanisms that are organisation-specifi
 [[geophysical-value-chain]]
 ==== The geophysical value chain
 
-An example of a geophysical value chain is presented in Figure 1. Typically, data from a wide variety of providers are used in the value chain. Traditionally, the data used have been transmitted on request from one data centre to another, and used in the specific processing chains that requested the data. 
+The process of getting the data from the producer of the data to the end consumer can be viewed as a value chain. An example of a geophysical value chain is presented in Figure 1. Typically, data from a wide variety of providers are used in the value chain. 
+Traditionally, the data used have been transmitted on request from one <<data-centre,data centre>> to another, and used in the specific processing chains that requested the data. 
 The focus on reuse of data in various contexts has been missing.
 
 // need to solve the link to the image and possibly also the linking to the image
 
 [#img-value_chain]
 .Value chain for geophysical data
-image::value_chain.png[Value chain]
+image::images/value_chain.png[Value chain]
 
-
-At the end of the data management value chain are the users of the data (aka. data consumers, see Section 1.2.2.1), who may be either external or internal to the institute.
-
-[[fair-data-management-model]]
-==== A data management model based on the FAIR principles
-
-This model is based on the model of the Arctic Data Centre, which adheres to the FAIR principles. The model’s basic functions fall into three main categories:
-
-1. *Documentation of data* using discovery and use metadata (metadata are further described below). 
-The documentation identifies who, what, when, where, and how, and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of controlled vocabularies and ontologies where textual representation is required. It also covers the topic of data provenance which is used to describe the origin and all actions done on a dataset. Data provenance is closely linked with workflow management. Furthermore, it covers the relationship between datasets. Application of ontologies in data documentation is closely linked to the concept of linked data. 
-2. *Publication and sharing of data* focuses on making data accessible to consumers internally and externally.
-Application of standardised approaches is vital, along with cost efficient solutions that are sustainable. Direct integration of data in applications for analysis through data streaming minimises the complexity and overhead in dissemination solutions. 
-This category also covers persistent identifiers for data.
-3. *Preservation of data* includes short and long term management of data, which secures access and availability throughout the lifespan of the data. Good solutions in this area depend on expected and actual usage of the data. Preservation of data includes the concept of data life cycle, i.e., the documented flow of data from initial storage through to obsolescence and permanent archiving (or deletion).
-
-For its implementation, the data management model is built upon the following principles:
-
-* *Standardisation* – compliance with established international standards;
-* *Interoperability* – enabling machine-to-machine interfaces and standardised documentation and encoding of data;
-* *Integrity* – ensuring that data and access to them can be maintained over time, ensuring the user receives the same data each time;
-* *Traceability* – documentation of the provenance of a dataset, i.e., all actions taken to produce and maintain the dataset and the usage of the data in downstream systems;
-* *Modularisation* – enabling replacement of one component of the system without necessitating other changes. 
-In this data management model there are two terms that are fundamental and may be addressed immediately: *dataset* and *metadata*.
+Data sets and metadata are what travels through the value chain, and at the end of the <<data-management,data management>> value chain are the users of the data (aka. data consumers, see Section 1.2.2.1), who may be either external or internal to the institute. 
 
 [[dataset]]
 ==== Dataset
 
-A dataset is a collection of data. In the context of the data management model, the storage mode of the dataset is irrelevant, since access mechanisms can be decoupled from the storage layer as experienced by a data consumer. Typically, a dataset represents a number of variables in time and space. A more detailed definition is provided in the <<glossary,Glossary of Terms>>. In order to best serve the data through the web services developed, the following guidance is given for defining datasets:
+A <<dataset,dataset>> is a collection of data. In the context of the <<data-management,data management>> model, the storage mode of the <<dataset,dataset>> is irrelevant, since access mechanisms can be decoupled from the storage layer as experienced by a data consumer. Typically, a <<dataset,dataset>> represents a number of variables in time and space. A more detailed definition is provided in the <<glossary,Glossary of Terms>>. In order to best serve the data through the <<web-service,web services>> developed, the following guidance is given for defining <<dataset,datasets>>:
 
-1. A dataset can be a collection of variables stored in, for example, a relational database or as flat files. 
-2. A dataset is defined as a number of spatial and/or temporal variables. 
-3. A dataset should be defined by the information content and not the production method. This implies that the output of, for example, a numerical model may be divided into several datasets that are related. This is also important in order to efficiently serve the data through <<webservice,web services>>. For instance, model variables defined on different vertical coordinates should be separated as <<linked-data,linked datasets>>, since some OGC //Link here// services (e.g. WMS) are unable to handle mixed coordinates in the same dataset.
-4. A good dataset does not mix feature types, e.g. do not combine trajectories and gridded data in one dataset.
+1. A <<dataset,dataset>> can be a collection of variables stored in, for example, a relational database or as flat files. 
+2. A <<dataset,dataset>> is defined as a number of spatial and/or temporal variables. 
+3. A <<dataset,dataset>> should be defined by the information content and not the production method. This implies that the output of, for example, a numerical model may be divided into several <<dataset,datasets>> that are related. This is also important in order to efficiently serve the data through <<webservice,web services>>. For instance, model variables defined on different vertical coordinates should be separated as <<linked-data,linked datasets>>, since some <<ogc,OGC>> services (e.g. <<wms,WMS>>) are unable to handle mixed coordinates in the same <<dataset,dataset>>.
+4. A good <<dataset,dataset>> does not mix <<feature-type,feature types>>, e.g. do not combine trajectories and gridded data in one <<dataset,dataset>>.
 
-Most importantly, a dataset should be defined to meet a consumer need. This means that the specification of a dataset should follow not only the content guidelines just listed, but also address the user needs for delivery, security and preservation.
+Most importantly, a <<dataset,dataset>> should be defined to meet a consumer need. This means that the specification of a <<dataset,dataset>> should follow not only the content guidelines just listed, but also address the user needs for delivery, security and preservation.
 
 [[metadata]]
 ==== Metadata
 
-Metadata is a broad concept. In our data management model the term “metadata” is used in several contexts, specifically the five categories that are briefly described in <<tabl-metadata>>. 
+Metadata is a broad concept. In our <<data-management,data management>> model the term “metadata” is used in several contexts, specifically the five categories that are briefly described in <<tabl-metadata>>. 
 
 .Brief introduction to different types of metadata.
 [[tabl-metadata]]
@@ -126,85 +107,59 @@ Metadata is a broad concept. In our data management model the term “metadata�
 
 |[[discovery-metadata]]Discovery metadata
 |Used to find relevant data
-|Discovery metadata are also called index metadata and are a digital version of the library index card. They describe who did what, where and when, how to access data and potential constraints on the data. They shall also link to further information on the data like site metadata. Discovery metadata are thus WIS metadata.
+|Discovery metadata are also called index metadata and are a digital version of the library index card. They describe who did what, where and when, how to access data and potential constraints on the data. They shall also link to further information on the data like <<site-metadata,site metadata>>. Discovery metadata are thus WIS metadata.
 |ISO 19115
 GCMD DIF
 
 |[[use-metadata]]Use metadata
 |Used to understand data found
-|Use metadata describe the actual content of a dataset and how it is encoded. The purpose is to enable the user to understand the data without any further communication. They describe the content of variables using standardised vocabularies, units of variable, encoding of missing values, map projections, etc.
+|Use metadata describe the actual content of a <<dataset,dataset>> and how it is encoded. The purpose is to enable the user to understand the data without any further communication. They describe the content of variables using standardised vocabularies, units of variable, encoding of missing values, map projections, etc.
 |Climate and Forecast (CF) Convention
 BUFR
 GRIB
 
-|[[configuration-metadata]]Configuration metadata
-|Used to tune portal services for datasets for users
-|Configuration metadata are used to improve the services offered through a portal to the user community. This can be e.g. how to best visualise a product.
-|
- 
 |[[site-metadata]]Site metadata
 |Used to understand data found
-|Site metadata are used to describe the context of observational data. They describe the location of an observation, the instrumentation, procedures, etc. To a certain extent they overlap with discovery metadata, but also extend the discovery metadata. Site metadata can be used for observation network design. Site metadata can be considered a type of use metadata.
+|Site metadata are used to describe the context of observational data. They describe the location of an observation, the instrumentation, procedures, etc. To a certain extent they overlap with <<discovery-metadata,discovery metadata>>, but also extend <<discovery-metadata,discovery metadata>>. Site metadata can be used for observation network design. Site metadata can be considered a type of <<use-metadata,use metadata>>.
 |WIGOS
 OGC O&M
 StInfoSys
 
+|[[configuration-metadata]]Configuration metadata
+|Used to tune portal services for <<dataset,datasets>> for users
+|Configuration metadata are used to improve the services offered through a portal to the user community. This can be e.g. how to best visualise a <<product,product>>.
+|
+
 |[[system-metadata]]System metadata
-|Used to understand the technical structure of the data management system and track changes in it 
-|System metadata covers e.g. technical details of the storage system (e.g. Lustre metadata), web services, their purpose and how they interact with other components of the data management system, available and consumed storage, number of users and other KPI elements etc.
+|Used to understand the technical structure of the <<data-management,data management>> system and track changes in it 
+|System metadata covers e.g. technical details of the storage system, <<web-service,web services>>, their purpose and how they interact with other components of the <<data-management,data management>> system, available and consumed storage, number of users and other KPI elements etc.
 |SysDok
 |===
 
 The tools and facilities used to manage the information contained in the metadata are further described in Chapter 2.
 //add internal link
 
-[[human-roles]]
-=== Human roles in data management
 
-[[data-consumer]]
-==== Data consumer
+[[fair-data-management-model]]
+==== A data management model based on the FAIR principles
 
-The Data Consumer may be a scientist or student, employee of a governmental agency, consultant or some other person with a professional or personal interest in the data provided. Data consumers may be internal or external to the entities providing and managing the data.
+This model is based on the model of the <<adc,Arctic Data Centre>>, which adheres to the <<fair-principles,FAIR principles>>. 
 
-[[data-provider]]
-==== Data provider
+For its implementation, the <<data-management,data management>> model is built upon the following principles:
 
-The Data Provider is generating datasets managed by the data management system described in this document. Data providers can be internal or external to the system. They should be able to maintain the datasets they have committed.
-​
-[[data-management-roles]]
-==== Data Management Roles
+* *Standardisation* – compliance with established international standards;
+* *<<interoperability,Interoperability>>* – enabling machine-to-machine interfaces and standardised documentation and encoding of data;
+* *Integrity* – ensuring that data and access to them can be maintained over time, ensuring the user receives the same data each time;
+* *Traceability* – documentation of the <<data-provenance,provenance>> of a <<dataset,dataset>>, i.e., all actions taken to produce and maintain the <<dataset,dataset>> and the usage of the data in downstream systems;
+* *Modularisation* – enabling replacement of one component of the system without necessitating other changes.
 
-Between the data providers and data consumers are the processes that manage and deliver the datasets (cf. <<img-value-chain>>). A number of human roles may be defined with responsibilities that, together, ensure that these processes are carried out in accordance with the data management requirements of the organisation. The definition and filling of these roles depend heavily on the particular organisation, and each organisation must devise its own best solution. 
+The model’s basic functions fall into three main categories:
 
-[[summary-requirements]]
-=== Summary of data management requirements
-
-//This whole section might be better suited in the specialized section with links to relevant how-tos
-The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
-
-. There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.
-.. There are sufficient metadata for each dataset for both discovery and use purposes.
-.. Discovery metadata are indexed and can be retrieved from available services in a standard way and with standard protocols.
-.. There are interfaces for discovery, visualisation and download, as well as portals for human access, that operate seamlessly across institutions.
-.. The data are described in a relevant, standardised and managed vocabulary that supports machine-machine interfaces.
-.. Datasets have attached a unique and permanent identifier, i.e., UUID, that enables traceability. 
-.. Datasets have licensing that ensures free use and reuse wherever possible.
-.. Datasets are available for download in a standard form according to the FAIR guiding principles (NetCDF/CF and equivalent) and through standard protocols (OPeNDAP, OGC WCS, secure direct download, etc.) that are accepted and utilised in the user environment.
-.. There are authentication and authorisation mechanisms that ensure access control to data with restrictions, and that are compatible with and coupled to relevant public authentication solutions (FEIDE, eduGAIN, Google, etc.).
-. There is an organisation that provides for the management of each dataset throughout its lifetime (life cycle management).
-.. There is documentation that describes physical storage, lifetime of each dataset, degree of storage redundancy, metadata consistency methods, how dataset versioning is implemented and unique IDs to ensure traceability.
-The organisation provides seamless access to data from distributed data centres through various portals.
-.. The above and a business model at dataset level are described in a Data Management Plan (DMP)
-. There are services or tools that provide the following functionalities on the datasets:
-.. Transformations, including:
-... subsetting
-... slicing of gridded data sets to points, sections, profiles
-... reprojection
-... resampling
-... reformatting
-.. Visualisation (time series, mapping services, etc.)
-.. Aggregation
-.. Upload of new datasets (including enabling and configuring data access services)
-
+1. *Documentation of data* using <<discovery-metadata,discovery>> and <<use-metadata,use metadata>>. 
+The documentation identifies who, what, when, where, and how, and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of <<controlled-vocabulary,controlled vocabularies>> and <<ontology,ontologies>> where textual representation is required. It also covers the topic of <<data-provenance,data provenance>> which is used to describe the origin and all actions done on a <<dataset,dataset>>. <<data-provenance,Data provenance>> is closely linked with <<workflow-management,workflow management>>. Furthermore, it covers the relationship between <<dataset,datasets>>. Application of <<ontology,ontologies>> in data documentation is closely linked to the concept of <<linked-data,linked data>>. 
+2. *Publication and sharing of data* focuses on making data accessible to consumers internally and externally.
+Application of standardised approaches is vital, along with cost efficient solutions that are sustainable. Direct integration of data in applications for analysis through data streaming minimises the complexity and overhead in dissemination solutions. 
+This category also covers persistent identifiers for data.
+3. *Preservation of data* includes short and long term management of data, which secures access and availability throughout the lifespan of the data. Good solutions in this area depend on expected and actual usage of the data. Preservation of data includes the concept of data life cycle, i.e., the documented flow of data from initial storage through to obsolescence and permanent archiving (or deletion) and preserving the metadata for the same data (even after deleting).
 
 

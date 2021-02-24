@@ -36,6 +36,9 @@ toc::[]
 include::introduction.adoc[]
 
 :numbered:
+include::specialized_intro_template.adoc[]
+
+:numbered:
 include::acdd_elements.adoc[]
 
 :numbered!:

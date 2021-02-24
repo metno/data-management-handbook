@@ -1,0 +1,169 @@
+[[specialized part of introduction]]
+== Introduction to the data management at [insert organisation here]
+
+=== Background at [insert organsiation here]
+
+(Example from MET):
+
+At MET Norway, data have always been managed, albeit in a rather narrow technical sense. The main focus has been on storage, primarily for operational data. More recently, the issues of delivering, sharing and reusing data have steadily gained prominence. Still, the legacy of data storage systems built up over many years is an important factor in any uniform data management program.
+During the International Polar Year (<<ipy,IPY>>), MET Norway was the international coordinator for operational data. IPY data management was based on the principle of distributed data management through exchange of standardised descriptions of datasets between contributing data centres.  - are the fundamental principles for data management at MET Norway.
+
+=== External data management requirements and forcing mechanisms specific to [insert organisation here]
+
+(Example from MET):
+
+At the global level, the institute is the primary representative for Norway in the <<wmo,WMO>>. <<wmo,WMO>> has in recent years reorganised its approach to documenting and sharing data through two major activities: <<wis,WIS>> and <<wigos,WIGOS>>. Both are metadata-driven activities that follow the same principles as <<geonorge,Geonorge>> and <<inspire,INSPIRE>>, although there are differences concerning standards required. The <<dmh,DMH>> is addressing these external requirements that MET Norway has to fulfil.
+
+
+
+[[human-roles]]
+=== Human roles in data management
+
+[[data-consumer]]
+==== Data consumer
+
+The Data Consumer may be a scientist or student, employee of a governmental agency, consultant or some other person with a professional or personal interest in the data provided. Data consumers may be internal or external to the entities providing and managing the data.
+
+// add institute or organisation specific examples below
+
+At [add institute or organisation here] the following are examples of data consumers:
+
+* Researcher working on a project
+* Forecaster creating weather reports
+* farmer searching for weather statistics
+* ***
+
+An overview of the users of the data covered by this DMH, including a categorisation and a non-exhaustive list of known users, is given in Appendix B where the diversity of [insert organisation here] data users and their demands on our data services is shown. Users include consumers of both data and metadata. 
+
+// can also link to use cases in chapter 6 here
+
+
+[[data-provider]]
+==== Data provider
+
+The Data Provider is generating datasets managed by the data management system described in this document. Data providers can be internal or external to the system. They should be able to maintain the datasets they have committed.
+
+// add institute or organisation specific examples below
+
+At [add institute or organisation here] the following are examples of data providers:
+
+* Research projects generating data
+* Internal operational data sources (weather stations, model outputs, satellite data...)
+* External operational data sources (data from NVE, SVV, etc)
+* ***
+​
+[[data-management-roles]]
+==== Data Management Roles
+
+Between the data providers and data consumers are the processes that manage and deliver the datasets (cf. <<img-value-chain>>). A number of human roles may be defined with responsibilities that, together, ensure that these processes are carried out in accordance with the data management requirements of the organisation. The definition and filling of these roles depend heavily on the particular organisation, and each organisation must devise its own best solution. 
+
+// add institute or organisation specific examples below
+
+// this part is directly from V1 and should be changed.
+At MET, some roles are familiar, such as data owner, service owner, help/service desk, while others have been introduced in connection with projects, such as service manager, change manager, etc. used in the Copernicus services. In connection with the data management regime described in this DMH, a revision of the human roles is being considered; the result will be described in Section 5.3 or in a separate document. 
+
+Data management roles in use at [insert institute or organisation here]:
+
+[%header, cols=3*]
+|===
+|Role
+|Description
+|Responsibility
+
+|
+|
+|
+
+|===
+
+[[summary-requirements]]
+=== Summary of data management requirements
+
+The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
+
+. There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.
+[%header, cols=3*]
+|===
+|
+|Link to relevant section
+|Example
+
+|There are sufficient metadata for each dataset for both discovery and use purposes.
+|
+|
+
+| Discovery metadata are indexed and can be retrieved from available services in a standard way and with standard protocols.
+|
+|
+
+| There are interfaces for discovery, visualisation and download, as well as portals for human access, that operate seamlessly across institutions.
+|
+|
+
+|The data are described in a relevant, standardised and managed vocabulary that supports machine-machine interfaces.
+|
+|
+
+| Datasets have attached a unique and permanent identifier that enables traceability. 
+|
+|
+
+| Datasets have licensing that ensures free use and reuse wherever possible.
+|
+|
+
+| Datasets are available for download in a standard form according to the FAIR guiding principles and through standard protocols that are accepted and utilised in the user environment.
+|
+|
+
+| There are authentication and authorisation mechanisms that ensure access control to data with restrictions, and that are compatible with and coupled to relevant public authentication solutions (FEIDE, eduGAIN, Google, etc.).
+|===
+
+. There is an organisation that provides for the management of each dataset throughout its lifetime (life cycle management).
+[%header, cols=3*]
+|===
+|
+|Link to relevant section
+|Example
+
+| There is documentation that describes physical storage, lifetime of each dataset, degree of storage redundancy, metadata consistency methods, how dataset versioning is implemented and unique IDs to ensure traceability.
+The organisation provides seamless access to data from distributed data centres through various portals.
+|
+|
+
+| The above and a business model at dataset level are described in a Data Management Plan (DMP)
+|
+|
+|===
+
+. There are services or tools that provide the following functionalities on the datasets:
+
+[%header, cols=3*]
+|===
+|
+|Link to relevant section
+|Example
+
+| Transformations, including:
+. subsetting
+. slicing of gridded data sets to points, sections, profiles
+. reprojection
+. resampling
+. reformatting
+|
+|
+
+| Visualisation (time series, mapping services, etc.)
+|
+|
+
+| Aggregation
+|
+|
+
+| Upload of new datasets (including enabling and configuring data access services)
+|
+|
+|===
+
+
