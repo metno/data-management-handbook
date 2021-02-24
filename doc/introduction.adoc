@@ -83,7 +83,7 @@ At the end of the data management value chain are the users of the data (aka. da
 This model is based on the model of the Arctic Data Centre, which adheres to the FAIR principles. The model’s basic functions fall into three main categories:
 
 1. *Documentation of data* using discovery and use metadata (metadata are further described below). 
-The documentation identifies who, what, when, where, and how and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of controlled vocabularies and ontologies where textual representation is required. It also covers the topic of data provenance which is used to describe the origin and all actions done on a dataset. Data provenance is closely linked with workflow management. Furthermore, it covers the relationship between datasets. Application of ontologies in data documentation is closely linked to the concept of linked data. 
+The documentation identifies who, what, when, where, and how, and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of controlled vocabularies and ontologies where textual representation is required. It also covers the topic of data provenance which is used to describe the origin and all actions done on a dataset. Data provenance is closely linked with workflow management. Furthermore, it covers the relationship between datasets. Application of ontologies in data documentation is closely linked to the concept of linked data. 
 2. *Publication and sharing of data* focuses on making data accessible to consumers internally and externally.
 Application of standardised approaches is vital, along with cost efficient solutions that are sustainable. Direct integration of data in applications for analysis through data streaming minimises the complexity and overhead in dissemination solutions. 
 This category also covers persistent identifiers for data.
@@ -204,7 +204,6 @@ The organisation provides seamless access to data from distributed data centres 
 .. Visualisation (time series, mapping services, etc.)
 .. Aggregation
 .. Upload of new datasets (including enabling and configuring data access services)
-
 
 
 
