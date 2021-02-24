@@ -50,7 +50,7 @@ At [add institute or organisation here] the following are examples of data provi
 * Research projects generating data
 * Internal operational data sources (weather stations, model outputs, satellite data...)
 * External operational data sources (data from NVE, SVV, etc)
-* ***
+
 ​
 [[data-management-roles]]
 ==== Data Management Roles
@@ -146,13 +146,7 @@ The organisation provides seamless access to data from distributed data centres 
 |Link to relevant section
 |Example
 
-| Transformations, including:
-
-* subsetting
-* slicing of gridded data sets to points, sections, profiles
-* reprojection
-* resampling
-* reformatting
+| Transformations, including: subsetting; slicing of gridded data sets to points, sections, profiles; reprojection; resampling; reformatting
 
 |
 |
