@@ -44,7 +44,7 @@ One of the main motivations for implementing a unified data management model is 
 * standardised ways of downloading data, which reduces the need for special solutions on the user side;
 * reducing their own data storage needs, by downloading just what they need;
 * easy and standardised access to remote datasets and catalogues, when using their own visualisation/analysis tools;
-* the ability to compare and combine MET Norway’s data with data from other sources (through metadata catalogues);
+* the ability to compare and combine data from internal and external sources (through metadata catalogues);
 * the ability to apply common data transformations, like spatial, temporal and variables subsetting and reprojection, before downloading anything;
 *the ease of building specific metadata catalogues and data portals that include data from MET Norway and can target a specific user community;
 * the access to datasets which can be integrated in their internal and external workflows through standardised web services.
@@ -204,7 +204,6 @@ The organisation provides seamless access to data from distributed data centres 
 .. Visualisation (time series, mapping services, etc.)
 .. Aggregation
 .. Upload of new datasets (including enabling and configuring data access services)
-
 
 
 
