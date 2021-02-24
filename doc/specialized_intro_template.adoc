@@ -82,6 +82,7 @@ Data management roles in use at [insert institute or organisation here]:
 The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
 
 . There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.
+
 [%header, cols=3*]
 |===
 |
@@ -120,6 +121,7 @@ The data management regime described in this DMH follows the Arctic Data centre 
 |===
 
 . There is an organisation that provides for the management of each dataset throughout its lifetime (life cycle management).
+
 [%header, cols=3*]
 |===
 |
@@ -145,11 +147,13 @@ The organisation provides seamless access to data from distributed data centres 
 |Example
 
 | Transformations, including:
-. subsetting
-. slicing of gridded data sets to points, sections, profiles
-. reprojection
-. resampling
-. reformatting
+
+* subsetting
+* slicing of gridded data sets to points, sections, profiles
+* reprojection
+* resampling
+* reformatting
+
 |
 |
 
