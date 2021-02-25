@@ -462,19 +462,21 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel3">
 <li><a href="#external-requirements">1.1.1. External data management requirements and forcing mechanisms</a></li>
 <li><a href="#geophysical-value-chain">1.1.2. The geophysical value chain</a></li>
-<li><a href="#fair-data-management-model">1.1.3. A data management model based on the FAIR principles</a></li>
-<li><a href="#dataset">1.1.4. Dataset</a></li>
-<li><a href="#metadata">1.1.5. Metadata</a></li>
+<li><a href="#dataset">1.1.3. Dataset</a></li>
+<li><a href="#metadata">1.1.4. Metadata</a></li>
+<li><a href="#fair-data-management-model">1.1.5. A data management model based on the FAIR principles</a></li>
 </ul>
 </li>
-<li><a href="#human-roles">1.2. Human roles in data management</a>
+<li><a href="#_background_at_insert_organsiation_here">1.2. Background at [insert organsiation here]</a></li>
+<li><a href="#_external_data_management_requirements_and_forcing_mechanisms_specific_to_insert_organisation_here">1.3. External data management requirements and forcing mechanisms specific to [insert organisation here]</a></li>
+<li><a href="#human-roles">1.4. Human roles in data management</a>
 <ul class="sectlevel3">
-<li><a href="#data-consumer">1.2.1. Data consumer</a></li>
-<li><a href="#data-provider">1.2.2. Data provider</a></li>
-<li><a href="#data-management-roles">1.2.3. Data Management Roles</a></li>
+<li><a href="#data-consumer">1.4.1. Data consumer</a></li>
+<li><a href="#data-provider">1.4.2. Data provider</a></li>
+<li><a href="#data-management-roles">1.4.3. Data Management Roles</a></li>
 </ul>
 </li>
-<li><a href="#summary-requirements">1.3. Summary of data management requirements</a></li>
+<li><a href="#summary-requirements">1.5. Summary of data management requirements</a></li>
 </ul>
 </li>
 <li><a href="#acdd_elements">2. Global attributes that should be added to NetCDF-CF files</a></li>
@@ -515,38 +517,41 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <h2 id="introduction"><a class="anchor" href="#introduction"></a>1. Introduction</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The purpose of the Data Management Handbook (DMH) is threefold:</p>
+<p>The purpose of the Data Management Handbook (<a href="#dmh">DMH</a>) is threefold:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>to provide an overview of the principles for data management to be employed.</p>
+<p>to provide an overview of the principles for <a href="#data-management">data management</a> to be employed.</p>
 </li>
 <li>
-<p>to help personnel identify their roles and responsibilities for good data management.</p>
+<p>to help personnel identify their roles and responsibilities for good <a href="#data-management">data management</a>.</p>
 </li>
 <li>
-<p>to provide personnel with practical guidelines for carrying out good data management.</p>
+<p>to provide personnel with practical guidelines for carrying out good <a href="#data-management">data management</a>.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
 <p><em>Data management</em> is the term used to describe the handling of data in a systematic and cost-effective manner.
-The data management regime should be continuously evolving, to reflect the evolving nature of data collection. Therefore this DMH is a living document that will be revised and updated from time to time in order to maintain its relevance.</p>
+The data management regime should be continuously evolving, to reflect the evolving nature of data collection. Therefore this <a href="#dmh">DMH</a> is a living document that will be revised and updated from time to time in order to maintain its relevance.</p>
 </div>
 <div class="paragraph">
-<p>The DMH is a strategic governing document and should be used as part of the quality framework the organisation is using.</p>
+<p>The <a href="#dmh">DMH</a> is a strategic governing document and should be used as part of the quality framework the organisation is using.</p>
 </div>
 <div class="paragraph">
-<p>This DMH focuses on the management of geophysical data. Types of data and the usage of these data are described in the organisation specific information in Section X.X.X.
+<p>The first version of this <a href="#dmh">DMH</a> was created to focus on the management of <a href="#dynamic-geodata">dynamic geodata</a>. <a href="#dynamic-geodata">Dynamic geodata</a> is weather, environment and climate-related data that changes in space and time and is thus descriptive of processes in nature. Examples are weather observations, weather forecasts, pollution (environmental toxins) in water, air and sea, information on the drift of cod eggs and salmon lice, water flow in rivers, driving conditions on the roads and the distribution of sea ice. <a href="#dynamic-geodata">Dynamic geodata</a> provides important constraints for many decision-making processes and activities in society.</p>
+</div>
+<div class="paragraph">
+<p>The types of data covered in this version of the <a href="#dmh">DMH</a> and the usage of these data are described in the organisation specific information in Section X.X.X.
 This introduction (Chapter 1) lays forth the background and principles for the data management regime.
 Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (Chapter 2), data services (Chapter 3), portals and documentation aimed at users (Chapter 4) and governance issues (Chapter 5).
 Each chapter starts with a brief statement of its purpose, followed by a description of what is implemented at the organisation at present, as well as the planned developments for the short-term (&lt;2 years) and expected developments for the longer term (2-5 years).
-Practical guidelines for carrying out good data management are addressed in Chapter 6 and especially in the Quick Manual for Data Providers.
-The Quick Manual is a concise, informal HOW-TO for data management practitioners.</p>
+Practical guidelines for carrying out good <a href="#data-management">data management</a> are addressed in Chapter 6 and especially in the Quick Manual for Data Providers.
+The Quick Manual is a concise, informal HOW-TO for <a href="#data-management">data management</a> practitioners.</p>
 </div>
 <div class="paragraph">
-<p>The intended audience for this DMH is any co-worker who is involved in any part of the value chain for geophysical data (<a href="#img-value_chain">Figure 1</a>).</p>
+<p>The intended audience for this DMH is any personell involved in the process of making data available for the end user. This process can be viewed as a value chain that moves from the producer of the data to the end user, this is further described in the section <a href="#geophysical-value-chain">Section 1.1.2</a> (<a href="#img-value_chain">Figure 1</a>).</p>
 </div>
 <div class="paragraph">
 <p>The handbook can be used in three ways:</p>
@@ -554,10 +559,10 @@ The Quick Manual is a concise, informal HOW-TO for data management practitioners
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Read the Introduction (Chapter 1) to find out the background and principles of data management;</p>
+<p>Read the Introduction (Chapter 1) to find out the background and principles of <a href="#data-management">data management</a>;</p>
 </li>
 <li>
-<p>Read Chapters 2-5 to learn about how data management is currently implemented and how it is expected to evolve in the next few years;</p>
+<p>Read Chapters 2-5 to learn about how <a href="#data-management">data management</a> is currently implemented and how it is expected to evolve in the next few years;</p>
 </li>
 <li>
 <p>Read the Quick Manual for Data Providers for guidelines on what to do in real-life cases; alternatively read Chapter 6 for typical workflow examples.</p>
@@ -567,44 +572,46 @@ The Quick Manual is a concise, informal HOW-TO for data management practitioners
 <div class="sect2">
 <h3 id="PrinciplesDataManagement"><a class="anchor" href="#PrinciplesDataManagement"></a>1.1. The principles of data management for geophysical data</h3>
 <div class="paragraph">
-<p>One of the main motivations for implementing a unified data management model is to better serve the users of the data. Primarily, this can be approached by making user needs and requirements the guide for determining what data we provide and how. For example, it will be described below how the specification of datasets should be determined by user needs. By implementing the data management practices described here, it is expected that users will benefit from:</p>
+<p>Principles of standardised data documentation, publication, sharing and preservation have been formalised in the <a href="#fair-principles">FAIR</a> Guiding Principles for scientific data management and stewardship [<a href="https://www.nature.com/articles/sdata201618">RD3</a>] through a process facilitated by <a href="#force11">FORCE11</a>.</p>
+</div>
+<div class="paragraph">
+<p>FAIR - findability, accessibility, <a href="#interoperability">interoperability</a> and reusability</p>
+</div>
+<div class="paragraph">
+<p>By following these <a href="#fair">FAIR</a> principles it is easier to reach a common approach to <a href="#data-management">data management</a>, or a <a href="#unified-data-management">unified data management</a> model. One of the main motivations for implementing a <a href="#unified-data-management">unified data management</a> is to better serve the users of the data. Primarily, this can be approached by making user needs and requirements the guide for determining what data we provide and how. For example, it will be described below how the specification of <a href="#dataset">datasets</a> should be determined by user needs. By implementing the data management practices described here, it is expected that users will benefit from:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>the ease of discovering, viewing and accessing all the datasets that are offered by the institute;</p>
+<p>the ease of discovering, viewing and accessing all the <a href="#dataset">datasets</a> that are offered by the institute;</p>
 </li>
 <li>
-<p>standardised ways of downloading data, which reduces the need for special solutions on the user side;</p>
+<p>standardised ways of accessing data, including downloading or streaming data, which reduces the need for special solutions on the user side;</p>
 </li>
 <li>
-<p>reducing their own data storage needs, by downloading just what they need;</p>
+<p>reducing their own data storage needs, by accessing just what they need;</p>
 </li>
 <li>
-<p>easy and standardised access to remote datasets and catalogues, when using their own visualisation/analysis tools;</p>
+<p>easy and standardised access to remote <a href="#dataset">datasets</a> and catalogues, when using their own visualisation/analysis tools;</p>
 </li>
 <li>
 <p>the ability to compare and combine data from internal and external sources (through metadata catalogues);</p>
 </li>
 <li>
-<p>the ability to apply common data transformations, like spatial, temporal and variables subsetting and reprojection, before downloading anything;
-*the ease of building specific metadata catalogues and data portals that include data from the institute and can target a specific user community;</p>
+<p>the ability to apply common data transformations, like spatial, temporal and variables subsetting and reprojection, before downloading anything;</p>
 </li>
 <li>
-<p>the access to datasets which can be integrated in their internal and external workflows through standardised web services.</p>
+<p>the ease of building specific metadata catalogues and data portals that include data from the institute and can target a specific user community;</p>
+</li>
+<li>
+<p>the access to <a href="#dataset">datasets</a> which can be integrated in their internal and external workflows through standardised <a href="#web-services">web services</a>.</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>The principles of standardised data documentation, publication, sharing and preservation have been formalised in the The <a href="#fair-principles">FAIR</a> Guiding Principles for scientific data management and stewardship [RD3] through a process facilitated by FORCE11.</p>
-</div>
-<div class="paragraph">
-<p>FAIR - findability, accessibility, interoperability and reusability</p>
 </div>
 <div class="sect3">
 <h4 id="external-requirements"><a class="anchor" href="#external-requirements"></a>1.1.1. External data management requirements and forcing mechanisms</h4>
 <div class="paragraph">
-<p>Any organisation that strives to implement <a href="#fair-principles">FAIR</a> data management model has to relate to external forcing mechanisms concerning data management at several levels. At the national level, the organisation must comply with national regulations as decided by the government. Some of these are indications of expected behaviour (e.g. OECD regulations) and some are implemented through a legal framework. The Norwegian government has over time promoted free and open sharing of public data. Mechanisms for how to do this are governed by the <a href="#geodataloven">Geodataloven</a> (implemented as <a href="#geonorge">Geonorge</a>), which is a national implementation of the European INSPIRE directive (to be amended in 2019). INSPIRE defines a federated multinational Spatial Data Infrastructure (SDI) for the European Union, similar to NSDI in the USA or UNSDI under the United Nations. The goal is to provide a standardised access to data and provide the necessary tools to be able to work with the data in a unified manner. In short, these legal frameworks require standardised documentation (at discovery and use level; these concepts are described later) and access (through specified protocols) to the data identified.</p>
+<p>Any organisation that strives to implement <a href="#fair-principles">FAIR</a> data management model has to relate to external forcing mechanisms concerning <a href="#data-management">data management</a> at several levels. At the national level, the organisation must comply with national regulations as decided by the government. Some of these are indications of expected behaviour (e.g. <a href="#oecd">OECD</a> regulations) and some are implemented through a legal framework. The Norwegian government has over time promoted free and open sharing of public data. Mechanisms for how to do this are governed by the <a href="#geodataloven">Geodataloven</a> (implemented as <a href="#geonorge">Geonorge</a>), which is a national implementation of the European <a href="#inspire">INSPIRE directive</a> (to be amended in 2019). <a href="#inspire">INSPIRE</a> defines a federated multinational <a href="#spatial-data-infrastructure">Spatial Data Infrastructure</a> (<a href="#sdi">SDI</a>) for the European Union, similar to <a href="#nsdi">NSDI</a> in the USA or <a href="#unsdi">UNSDI</a> under the United Nations. The goal is to provide a standardised access to data and provide the necessary tools to be able to work with the data in a unified manner. In short, these legal frameworks require standardised documentation (at discovery and use level; these concepts are described later) and access (through specified protocols) to the data identified.</p>
 </div>
 <div class="paragraph">
 <p>Other external requirements and forcing mechanisms that are organisation-specific are listed under section X.X.X</p>
@@ -613,93 +620,49 @@ The Quick Manual is a concise, informal HOW-TO for data management practitioners
 <div class="sect3">
 <h4 id="geophysical-value-chain"><a class="anchor" href="#geophysical-value-chain"></a>1.1.2. The geophysical value chain</h4>
 <div class="paragraph">
-<p>An example of a geophysical value chain is presented in Figure 1. Typically, data from a wide variety of providers are used in the value chain. Traditionally, the data used have been transmitted on request from one data centre to another, and used in the specific processing chains that requested the data.
+<p>The process of getting the data from the producer of the data to the end consumer can be viewed as a value chain. An example of a geophysical value chain is presented in Figure 1. Typically, data from a wide variety of providers are used in the value chain.
+Traditionally, the data used have been transmitted on request from one <a href="#data-centre">data centre</a> to another, and used in the specific processing chains that requested the data.
 The focus on reuse of data in various contexts has been missing.</p>
 </div>
 <div id="img-value_chain" class="imageblock">
 <div class="content">
-<img src="value_chain.png" alt="Value chain">
+<img src="images/value_chain.png" alt="Value chain">
 </div>
 <div class="title">Figure 1. Value chain for geophysical data</div>
 </div>
 <div class="paragraph">
-<p>At the end of the data management value chain are the users of the data (aka. data consumers, see Section 1.2.2.1), who may be either external or internal to the institute.</p>
+<p>Data sets and metadata are what travels through the value chain, and at the end of the <a href="#data-management">data management</a> value chain are the users of the data (aka. data consumers, see Section 1.2.2.1), who may be either external or internal to the institute.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="fair-data-management-model"><a class="anchor" href="#fair-data-management-model"></a>1.1.3. A data management model based on the FAIR principles</h4>
+<h4 id="dataset"><a class="anchor" href="#dataset"></a>1.1.3. Dataset</h4>
 <div class="paragraph">
-<p>This model is based on the model of the Arctic Data Centre, which adheres to the FAIR principles. The model’s basic functions fall into three main categories:</p>
+<p>A <a href="#dataset">dataset</a> is a collection of data. In the context of the <a href="#data-management">data management</a> model, the storage mode of the <a href="#dataset">dataset</a> is irrelevant, since access mechanisms can be decoupled from the storage layer as experienced by a data consumer. Typically, a <a href="#dataset">dataset</a> represents a number of variables in time and space. A more detailed definition is provided in the <a href="#glossary">Glossary of Terms</a>. In order to best serve the data through the <a href="#web-service">web services</a> developed, the following guidance is given for defining <a href="#dataset">datasets</a>:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><strong>Documentation of data</strong> using discovery and use metadata (metadata are further described below).
-The documentation identifies who, what, when, where, and how, and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of controlled vocabularies and ontologies where textual representation is required. It also covers the topic of data provenance which is used to describe the origin and all actions done on a dataset. Data provenance is closely linked with workflow management. Furthermore, it covers the relationship between datasets. Application of ontologies in data documentation is closely linked to the concept of linked data.</p>
+<p>A <a href="#dataset">dataset</a> can be a collection of variables stored in, for example, a relational database or as flat files.</p>
 </li>
 <li>
-<p><strong>Publication and sharing of data</strong> focuses on making data accessible to consumers internally and externally.
-Application of standardised approaches is vital, along with cost efficient solutions that are sustainable. Direct integration of data in applications for analysis through data streaming minimises the complexity and overhead in dissemination solutions.
-This category also covers persistent identifiers for data.</p>
+<p>A <a href="#dataset">dataset</a> is defined as a number of spatial and/or temporal variables.</p>
 </li>
 <li>
-<p><strong>Preservation of data</strong> includes short and long term management of data, which secures access and availability throughout the lifespan of the data. Good solutions in this area depend on expected and actual usage of the data. Preservation of data includes the concept of data life cycle, i.e., the documented flow of data from initial storage through to obsolescence and permanent archiving (or deletion).</p>
+<p>A <a href="#dataset">dataset</a> should be defined by the information content and not the production method. This implies that the output of, for example, a numerical model may be divided into several <a href="#dataset">datasets</a> that are related. This is also important in order to efficiently serve the data through <a href="#webservice">web services</a>. For instance, model variables defined on different vertical coordinates should be separated as <a href="#linked-data">linked datasets</a>, since some <a href="#ogc">OGC</a> services (e.g. <a href="#wms">WMS</a>) are unable to handle mixed coordinates in the same <a href="#dataset">dataset</a>.</p>
+</li>
+<li>
+<p>A good <a href="#dataset">dataset</a> does not mix <a href="#feature-type">feature types</a>, e.g. do not combine trajectories and gridded data in one <a href="#dataset">dataset</a>.</p>
 </li>
 </ol>
 </div>
 <div class="paragraph">
-<p>For its implementation, the data management model is built upon the following principles:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Standardisation</strong> – compliance with established international standards;</p>
-</li>
-<li>
-<p><strong>Interoperability</strong> – enabling machine-to-machine interfaces and standardised documentation and encoding of data;</p>
-</li>
-<li>
-<p><strong>Integrity</strong> – ensuring that data and access to them can be maintained over time, ensuring the user receives the same data each time;</p>
-</li>
-<li>
-<p><strong>Traceability</strong> – documentation of the provenance of a dataset, i.e., all actions taken to produce and maintain the dataset and the usage of the data in downstream systems;</p>
-</li>
-<li>
-<p><strong>Modularisation</strong> – enabling replacement of one component of the system without necessitating other changes.
-In this data management model there are two terms that are fundamental and may be addressed immediately: <strong>dataset</strong> and <strong>metadata</strong>.</p>
-</li>
-</ul>
+<p>Most importantly, a <a href="#dataset">dataset</a> should be defined to meet a consumer need. This means that the specification of a <a href="#dataset">dataset</a> should follow not only the content guidelines just listed, but also address the user needs for delivery, security and preservation.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="dataset"><a class="anchor" href="#dataset"></a>1.1.4. Dataset</h4>
+<h4 id="metadata"><a class="anchor" href="#metadata"></a>1.1.4. Metadata</h4>
 <div class="paragraph">
-<p>A dataset is a collection of data. In the context of the data management model, the storage mode of the dataset is irrelevant, since access mechanisms can be decoupled from the storage layer as experienced by a data consumer. Typically, a dataset represents a number of variables in time and space. A more detailed definition is provided in the <a href="#glossary">Glossary of Terms</a>. In order to best serve the data through the web services developed, the following guidance is given for defining datasets:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>A dataset can be a collection of variables stored in, for example, a relational database or as flat files.</p>
-</li>
-<li>
-<p>A dataset is defined as a number of spatial and/or temporal variables.</p>
-</li>
-<li>
-<p>A dataset should be defined by the information content and not the production method. This implies that the output of, for example, a numerical model may be divided into several datasets that are related. This is also important in order to efficiently serve the data through <a href="#webservice">web services</a>. For instance, model variables defined on different vertical coordinates should be separated as <a href="#linked-data">linked datasets</a>, since some OGC //Link here// services (e.g. WMS) are unable to handle mixed coordinates in the same dataset.</p>
-</li>
-<li>
-<p>A good dataset does not mix feature types, e.g. do not combine trajectories and gridded data in one dataset.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Most importantly, a dataset should be defined to meet a consumer need. This means that the specification of a dataset should follow not only the content guidelines just listed, but also address the user needs for delivery, security and preservation.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="metadata"><a class="anchor" href="#metadata"></a>1.1.5. Metadata</h4>
-<div class="paragraph">
-<p>Metadata is a broad concept. In our data management model the term “metadata” is used in several contexts, specifically the five categories that are briefly described in <a href="#tabl-metadata">Table 1</a>.</p>
+<p>Metadata is a broad concept. In our <a href="#data-management">data management</a> model the term “metadata” is used in several contexts, specifically the five categories that are briefly described in <a href="#tabl-metadata">Table 1</a>.</p>
 </div>
 <table id="tabl-metadata" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. Brief introduction to different types of metadata.</caption>
@@ -721,36 +684,36 @@ In this data management model there are two terms that are fundamental and may b
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="discovery-metadata"></a>Discovery metadata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used to find relevant data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Discovery metadata are also called index metadata and are a digital version of the library index card. They describe who did what, where and when, how to access data and potential constraints on the data. They shall also link to further information on the data like site metadata. Discovery metadata are thus WIS metadata.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discovery metadata are also called index metadata and are a digital version of the library index card. They describe who did what, where and when, how to access data and potential constraints on the data. They shall also link to further information on the data like <a href="#site-metadata">site metadata</a>. Discovery metadata are thus WIS metadata.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ISO 19115
 GCMD DIF</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="use-metadata"></a>Use metadata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used to understand data found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use metadata describe the actual content of a dataset and how it is encoded. The purpose is to enable the user to understand the data without any further communication. They describe the content of variables using standardised vocabularies, units of variable, encoding of missing values, map projections, etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use metadata describe the actual content of a <a href="#dataset">dataset</a> and how it is encoded. The purpose is to enable the user to understand the data without any further communication. They describe the content of variables using standardised vocabularies, units of variable, encoding of missing values, map projections, etc.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Climate and Forecast (CF) Convention
 BUFR
 GRIB</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="configuration-metadata"></a>Configuration metadata</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to tune portal services for datasets for users</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration metadata are used to improve the services offered through a portal to the user community. This can be e.g. how to best visualise a product.</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="site-metadata"></a>Site metadata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used to understand data found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Site metadata are used to describe the context of observational data. They describe the location of an observation, the instrumentation, procedures, etc. To a certain extent they overlap with discovery metadata, but also extend the discovery metadata. Site metadata can be used for observation network design. Site metadata can be considered a type of use metadata.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Site metadata are used to describe the context of observational data. They describe the location of an observation, the instrumentation, procedures, etc. To a certain extent they overlap with <a href="#discovery-metadata">discovery metadata</a>, but also extend <a href="#discovery-metadata">discovery metadata</a>. Site metadata can be used for observation network design. Site metadata can be considered a type of <a href="#use-metadata">use metadata</a>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">WIGOS
 OGC O&amp;M
 StInfoSys</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="configuration-metadata"></a>Configuration metadata</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to tune portal services for <a href="#dataset">datasets</a> for users</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration metadata are used to improve the services offered through a portal to the user community. This can be e.g. how to best visualise a <a href="#product">product</a>.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="system-metadata"></a>System metadata</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used to understand the technical structure of the data management system and track changes in it</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System metadata covers e.g. technical details of the storage system (e.g. Lustre metadata), web services, their purpose and how they interact with other components of the data management system, available and consumed storage, number of users and other KPI elements etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Used to understand the technical structure of the <a href="#data-management">data management</a> system and track changes in it</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">System metadata covers e.g. technical details of the storage system, <a href="#web-service">web services</a>, their purpose and how they interact with other components of the <a href="#data-management">data management</a> system, available and consumed storage, number of users and other KPI elements etc.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SysDok</p></td>
 </tr>
 </tbody>
@@ -759,31 +722,168 @@ StInfoSys</p></td>
 <p>The tools and facilities used to manage the information contained in the metadata are further described in Chapter 2.</p>
 </div>
 </div>
+<div class="sect3">
+<h4 id="fair-data-management-model"><a class="anchor" href="#fair-data-management-model"></a>1.1.5. A data management model based on the FAIR principles</h4>
+<div class="paragraph">
+<p>This model is based on the model of the <a href="#adc">Arctic Data Centre</a>, which adheres to the <a href="#fair-principles">FAIR principles</a>.</p>
+</div>
+<div class="paragraph">
+<p>For its implementation, the <a href="#data-management">data management</a> model is built upon the following principles:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Standardisation</strong> – compliance with established international standards;</p>
+</li>
+<li>
+<p><strong><a href="#interoperability">Interoperability</a></strong> – enabling machine-to-machine interfaces and standardised documentation and encoding of data;</p>
+</li>
+<li>
+<p><strong>Integrity</strong> – ensuring that data and access to them can be maintained over time, ensuring the user receives the same data each time;</p>
+</li>
+<li>
+<p><strong>Traceability</strong> – documentation of the <a href="#data-provenance">provenance</a> of a <a href="#dataset">dataset</a>, i.e., all actions taken to produce and maintain the <a href="#dataset">dataset</a> and the usage of the data in downstream systems;</p>
+</li>
+<li>
+<p><strong>Modularisation</strong> – enabling replacement of one component of the system without necessitating other changes.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The model’s basic functions fall into three main categories:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><strong>Documentation of data</strong> using <a href="#discovery-metadata">discovery</a> and <a href="#use-metadata">use metadata</a>.
+The documentation identifies who, what, when, where, and how, and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of <a href="#controlled-vocabulary">controlled vocabularies</a> and <a href="#ontology">ontologies</a> where textual representation is required. It also covers the topic of <a href="#data-provenance">data provenance</a> which is used to describe the origin and all actions done on a <a href="#dataset">dataset</a>. <a href="#data-provenance">Data provenance</a> is closely linked with <a href="#workflow-management">workflow management</a>. Furthermore, it covers the relationship between <a href="#dataset">datasets</a>. Application of <a href="#ontology">ontologies</a> in data documentation is closely linked to the concept of <a href="#linked-data">linked data</a>.</p>
+</li>
+<li>
+<p><strong>Publication and sharing of data</strong> focuses on making data accessible to consumers internally and externally.
+Application of standardised approaches is vital, along with cost efficient solutions that are sustainable. Direct integration of data in applications for analysis through data streaming minimises the complexity and overhead in dissemination solutions.
+This category also covers persistent identifiers for data.</p>
+</li>
+<li>
+<p><strong>Preservation of data</strong> includes short and long term management of data, which secures access and availability throughout the lifespan of the data. Good solutions in this area depend on expected and actual usage of the data. Preservation of data includes the concept of data life cycle, i.e., the documented flow of data from initial storage through to obsolescence and permanent archiving (or deletion) and preserving the metadata for the same data (even after deleting).</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>[[specialized part of introduction]]
+== Introduction to the data management at [insert organisation here]</p>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="human-roles"><a class="anchor" href="#human-roles"></a>1.2. Human roles in data management</h3>
+<h3 id="_background_at_insert_organsiation_here"><a class="anchor" href="#_background_at_insert_organsiation_here"></a>1.2. Background at [insert organsiation here]</h3>
+<div class="paragraph">
+<p>(Example from MET):</p>
+</div>
+<div class="paragraph">
+<p>At MET Norway, data have always been managed, albeit in a rather narrow technical sense. The main focus has been on storage, primarily for operational data. More recently, the issues of delivering, sharing and reusing data have steadily gained prominence. Still, the legacy of data storage systems built up over many years is an important factor in any uniform data management program.
+During the International Polar Year (<a href="#ipy">IPY</a>), MET Norway was the international coordinator for operational data. IPY data management was based on the principle of distributed data management through exchange of standardised descriptions of datasets between contributing data centres.  - are the fundamental principles for data management at MET Norway.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_external_data_management_requirements_and_forcing_mechanisms_specific_to_insert_organisation_here"><a class="anchor" href="#_external_data_management_requirements_and_forcing_mechanisms_specific_to_insert_organisation_here"></a>1.3. External data management requirements and forcing mechanisms specific to [insert organisation here]</h3>
+<div class="paragraph">
+<p>(Example from MET):</p>
+</div>
+<div class="paragraph">
+<p>At the global level, the institute is the primary representative for Norway in the <a href="#wmo">WMO</a>. <a href="#wmo">WMO</a> has in recent years reorganised its approach to documenting and sharing data through two major activities: <a href="#wis">WIS</a> and <a href="#wigos">WIGOS</a>. Both are metadata-driven activities that follow the same principles as <a href="#geonorge">Geonorge</a> and <a href="#inspire">INSPIRE</a>, although there are differences concerning standards required. The <a href="#dmh">DMH</a> is addressing these external requirements that MET Norway has to fulfil.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="human-roles"><a class="anchor" href="#human-roles"></a>1.4. Human roles in data management</h3>
 <div class="sect3">
-<h4 id="data-consumer"><a class="anchor" href="#data-consumer"></a>1.2.1. Data consumer</h4>
+<h4 id="data-consumer"><a class="anchor" href="#data-consumer"></a>1.4.1. Data consumer</h4>
 <div class="paragraph">
 <p>The Data Consumer may be a scientist or student, employee of a governmental agency, consultant or some other person with a professional or personal interest in the data provided. Data consumers may be internal or external to the entities providing and managing the data.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="data-provider"><a class="anchor" href="#data-provider"></a>1.2.2. Data provider</h4>
 <div class="paragraph">
-<p>The Data Provider is generating datasets managed by the data management system described in this document. Data providers can be internal or external to the system. They should be able to maintain the datasets they have committed.
-​</p>
+<p>At [add institute or organisation here] the following are examples of data consumers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Researcher working on a project</p>
+</li>
+<li>
+<p>Forecaster creating weather reports</p>
+</li>
+<li>
+<p>farmer searching for weather statistics</p>
+</li>
+<li>
+<p><strong>*</strong></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An overview of the users of the data covered by this DMH, including a categorisation and a non-exhaustive list of known users, is given in Appendix B where the diversity of [insert organisation here] data users and their demands on our data services is shown. Users include consumers of both data and metadata.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="data-management-roles"><a class="anchor" href="#data-management-roles"></a>1.2.3. Data Management Roles</h4>
+<h4 id="data-provider"><a class="anchor" href="#data-provider"></a>1.4.2. Data provider</h4>
+<div class="paragraph">
+<p>The Data Provider is generating datasets managed by the data management system described in this document. Data providers can be internal or external to the system. They should be able to maintain the datasets they have committed.</p>
+</div>
+<div class="paragraph">
+<p>At [add institute or organisation here] the following are examples of data providers:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Research projects generating data</p>
+</li>
+<li>
+<p>Internal operational data sources (weather stations, model outputs, satellite data&#8230;&#8203;)</p>
+</li>
+<li>
+<p>External operational data sources (data from NVE, SVV, etc)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>​</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="data-management-roles"><a class="anchor" href="#data-management-roles"></a>1.4.3. Data Management Roles</h4>
 <div class="paragraph">
 <p>Between the data providers and data consumers are the processes that manage and deliver the datasets (cf. <a href="#img-value-chain">[img-value-chain]</a>). A number of human roles may be defined with responsibilities that, together, ensure that these processes are carried out in accordance with the data management requirements of the organisation. The definition and filling of these roles depend heavily on the particular organisation, and each organisation must devise its own best solution.</p>
 </div>
+<div class="paragraph">
+<p>At MET, some roles are familiar, such as data owner, service owner, help/service desk, while others have been introduced in connection with projects, such as service manager, change manager, etc. used in the Copernicus services. In connection with the data management regime described in this DMH, a revision of the human roles is being considered; the result will be described in Section 5.3 or in a separate document.</p>
+</div>
+<div class="paragraph">
+<p>Data management roles in use at [insert institute or organisation here]:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Role</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 <div class="sect2">
-<h3 id="summary-requirements"><a class="anchor" href="#summary-requirements"></a>1.3. Summary of data management requirements</h3>
+<h3 id="summary-requirements"><a class="anchor" href="#summary-requirements"></a>1.5. Summary of data management requirements</h3>
 <div class="paragraph">
 <p>The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:</p>
 </div>
@@ -791,89 +891,137 @@ StInfoSys</p></td>
 <ol class="arabic">
 <li>
 <p>There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>There are sufficient metadata for each dataset for both discovery and use purposes.</p>
-</li>
-<li>
-<p>Discovery metadata are indexed and can be retrieved from available services in a standard way and with standard protocols.</p>
-</li>
-<li>
-<p>There are interfaces for discovery, visualisation and download, as well as portals for human access, that operate seamlessly across institutions.</p>
-</li>
-<li>
-<p>The data are described in a relevant, standardised and managed vocabulary that supports machine-machine interfaces.</p>
-</li>
-<li>
-<p>Datasets have attached a unique and permanent identifier, i.e., UUID, that enables traceability.</p>
-</li>
-<li>
-<p>Datasets have licensing that ensures free use and reuse wherever possible.</p>
-</li>
-<li>
-<p>Datasets are available for download in a standard form according to the FAIR guiding principles (NetCDF/CF and equivalent) and through standard protocols (OPeNDAP, OGC WCS, secure direct download, etc.) that are accepted and utilised in the user environment.</p>
-</li>
-<li>
-<p>There are authentication and authorisation mechanisms that ensure access control to data with restrictions, and that are compatible with and coupled to relevant public authentication solutions (FEIDE, eduGAIN, Google, etc.).</p>
 </li>
 </ol>
 </div>
-</li>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Link to relevant section</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There are sufficient metadata for each dataset for both discovery and use purposes.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discovery metadata are indexed and can be retrieved from available services in a standard way and with standard protocols.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There are interfaces for discovery, visualisation and download, as well as portals for human access, that operate seamlessly across institutions.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The data are described in a relevant, standardised and managed vocabulary that supports machine-machine interfaces.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datasets have attached a unique and permanent identifier that enables traceability.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datasets have licensing that ensures free use and reuse wherever possible.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Datasets are available for download in a standard form according to the FAIR guiding principles and through standard protocols that are accepted and utilised in the user environment.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="2">
 <li>
 <p>There is an organisation that provides for the management of each dataset throughout its lifetime (life cycle management).</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>There is documentation that describes physical storage, lifetime of each dataset, degree of storage redundancy, metadata consistency methods, how dataset versioning is implemented and unique IDs to ensure traceability.
-The organisation provides seamless access to data from distributed data centres through various portals.</p>
-</li>
-<li>
-<p>The above and a business model at dataset level are described in a Data Management Plan (DMP)</p>
 </li>
 </ol>
 </div>
-</li>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Link to relevant section</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">There is documentation that describes physical storage, lifetime of each dataset, degree of storage redundancy, metadata consistency methods, how dataset versioning is implemented and unique IDs to ensure traceability.
+The organisation provides seamless access to data from distributed data centres through various portals.</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The above and a business model at dataset level are described in a Data Management Plan (DMP)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="3">
 <li>
 <p>There are services or tools that provide the following functionalities on the datasets:</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Transformations, including:</p>
-<div class="olist lowerroman">
-<ol class="lowerroman" type="i">
-<li>
-<p>subsetting</p>
-</li>
-<li>
-<p>slicing of gridded data sets to points, sections, profiles</p>
-</li>
-<li>
-<p>reprojection</p>
-</li>
-<li>
-<p>resampling</p>
-</li>
-<li>
-<p>reformatting</p>
 </li>
 </ol>
 </div>
-</li>
-<li>
-<p>Visualisation (time series, mapping services, etc.)</p>
-</li>
-<li>
-<p>Aggregation</p>
-</li>
-<li>
-<p>Upload of new datasets (including enabling and configuring data access services)</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"></th>
+<th class="tableblock halign-left valign-top">Link to relevant section</th>
+<th class="tableblock halign-left valign-top">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Transformations, including: subsetting; slicing of gridded data sets to points, sections, profiles; reprojection; resampling; reformatting</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Visualisation (time series, mapping services, etc.)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Aggregation</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Upload of new datasets (including enabling and configuring data access services)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
@@ -1318,7 +1466,7 @@ The organisation provides seamless access to data from distributed data centres 
 <td class="tableblock halign-left valign-top"><p class="tableblock">A dataset that “may be a NetCDF, HDF5, GRIB, etc. file, an OPeNDAP dataset, a collection of files, or anything else which can be accessed through the NetCDF API.” <a href="https://www.unidata.ucar.edu/software/netcdf-java/v4.6/CDM/index.html">Unidata Common Data Model</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="configuration-metadata"></a>Configuration metadata</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="config-metadata"></a>Configuration metadata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">See Configuration metadata definition in Table 2</p></td>
 </tr>
 <tr>
@@ -1365,7 +1513,7 @@ In the context of data preservation a dataset consists of the data records and t
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="dynamic-geodata"></a>Dynamic geodata</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data describing geophysical processes which are continuously evolving over time. Typically these data are used for monitoring and prediction of the weather, sea, climate and environment.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data describing geophysical processes which are continuously evolving over time. Typically these data are used for monitoring and prediction of the weather, sea, climate and environment. Dynamic geodata is weather, environment and climate-related data that changes in space and time and is thus descriptive of processes in nature. Examples are weather observations, weather forecasts, pollution (environmental toxins) in water, air and sea, information on the drift of cod eggs and salmon lice, water flow in rivers, driving conditions on the roads and the distribution of sea ice. Dynamic geodata provides important constraints for many decision-making processes and activities in society.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="fair-principles"></a>FAIR principles</p></td>
@@ -1814,6 +1962,11 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="oecd"></a>OECD</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The organisation for Economic Co-operation and Developement. <a href="https://www.oecd.org/">OECD</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="ogc"></a>OGC</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Open Geospatial Consortium (<a href="https://www.ogc.org/">OGC</a>)</p></td>
 <td class="tableblock halign-left valign-top"></td>
@@ -1951,6 +2104,11 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="wps"></a>WPS</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">OGC Web Processing Service (<a href="https://www.ogc.org/standards/wps">WPS</a>)</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="yopp"></a>YOPP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Year of Polar Prediction (<a href="https://yopp.met.no/metadata_search">YOPP Data Portal</a>)</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
@@ -2102,7 +2260,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-02-25 13:28:28 UTC
+Last updated 2021-02-25 13:39:25 UTC
 </div>
 </div>
 </body>
