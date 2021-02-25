@@ -285,6 +285,10 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 |Web server dedicated to the dissemination of ocean in situ observation data collections (https://forge.ifremer.fr/plugins/mediawiki/wiki/oceanotron/index.php/Oceanotron_description[OCEANOTRON])
 |
 
+|[[oecd]]OECD
+|The organisation for Economic Co-operation and Developement. https://www.oecd.org/[OECD]
+|
+
 |[[ogc]]OGC
 |Open Geospatial Consortium (https://www.ogc.org/[OGC])
 |
@@ -399,4 +403,6 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 
 |[[yopp]]YOPP
 |Year of Polar Prediction (https://yopp.met.no/metadata_search[YOPP Data Portal])
+|
+
 |===
