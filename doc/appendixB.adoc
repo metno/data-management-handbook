@@ -22,7 +22,7 @@ Users are divided into categories by type of collaboration with MET, not by type
 |Use open data in proprietary services, often commercial. Value-added and repackaging services. Weak requirements on the data. 
 |Little or no collaboration with MET Norway.
 
-Examples: StormGeo (forecasting, consultancy, Navtor (ship routing services), offshore operators, news media, Skiforeningen (iMarka), web and mobile app developers, … 
+Examples: StormGeo (forecasting, consultancy), Navtor (ship routing services), offshore operators, news media, Skiforeningen (iMarka), web and mobile app developers, … 
 
 |Commercial services
 |Data services provided under commercial contract, SLA, OLA, or similar. 
