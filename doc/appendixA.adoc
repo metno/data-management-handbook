@@ -54,7 +54,7 @@ https://github.com/metno/fimex[github repository]
 |XML Schema document for MMD
 |https://github.com/metno/mmd[github repository: mmd]
 
-|nc_to_mmd.pl
+|nc_to_mmd.py
 |Builds <<mmd,MMD>> metadata from <<acdd,ACDD>>-compliant <<netcdf,NetCDF>> file attributes.
 |https://github.com/metno/py-mmd-tools/tree/master/py_mmd_tools[github repository: py-mmd-tools]
 
@@ -66,4 +66,3 @@ https://github.com/metno/fimex[github repository]
 |Extracting discovery metadata from NetCDF/CF files with ACDD to ISO 19115
 |https://github.com/Unidata/threddsIso[github repository]
 |===
-
