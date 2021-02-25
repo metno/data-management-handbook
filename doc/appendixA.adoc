@@ -1,0 +1,68 @@
+[[appendixa]]
+== Appendix A: List of Referenced Software or Services 
+
+//this list is currently METNorway specific. Should perhaps be split in software and services from S-EnDA (general) and a partner specific part. 
+// when the general part of the document is finished, check where these are referenced.
+
+[%header, cols=3*]
+|===
+|Name
+|Description
+|Reference
+
+|Fimex package
+
+including fimex
+|File Interpolation, Manipulation and EXtraction library for gridded geospatial data
+|https://wiki.met.no/fimex/start[wiki.met.no documentation]
+
+https://github.com/metno/fimex[github repository]
+
+|frost2nc
+|Dump observational time series from KDVH to NetCDF files
+|https://github.com/metno/frost2nc[github repository]
+
+|met_moai
+|OAI-PMH implementation based on MOAI
+|https://github.com/metno/met_moai[github repository]
+
+|mdharvest
+|Perl and Python code to harvest discovery metadata using OAI-PMH, OpenSearch and OGC CSW
+|https://github.com/steingod/mdharvest[github repository]
+
+|METSIS-data
+
+-ingestion
+|A generic utility to index <<mmd,MMD>> dataset, thumbnails to <<solr,SolR>>.
+|https://github.com/metno/metsis-metadata[github repository: metsis-metadata]
+
+|METSIS-data
+
+-drupal
+|A module linking the <<metsis,METSIS>> back-end services to the Drupal <<cms,CMS>>
+|https://github.com/metno/metsis-metadata[github repository: metsis-metadata]
+
+|METSIS-station-handling
+|TBC
+|TBC
+
+|METSIS-ts
+|WPS or HTTP interface to graphical diagrams.
+|Not yet openly available, but beta-version is in use in ADC, SIOS, GCW, NorDataNet, YOPP and APPLICATE portals.
+
+|MMD XSD
+|XML Schema document for MMD
+|https://github.com/metno/mmd[github repository: mmd]
+
+|nc_to_mmd.py
+|Builds <<mmd,MMD>> metadata from <<acdd,ACDD>>-compliant <<netcdf,NetCDF>> file attributes.
+|https://github.com/metno/py-mmd-tools/tree/master/py_mmd_tools[github repository: py-mmd-tools]
+
+|NorDataNet validator
+|Validates <<netcdf,NetCDF>> files for <<cf,CF>> and <<acdd,ACDD>> compliance.
+|https://nordatanet.metsis.met.no/user/login?destination=dataset_validation/form[Access URL]
+
+|threddslso
+|Extracting discovery metadata from NetCDF/CF files with ACDD to ISO 19115
+|https://github.com/Unidata/threddsIso[github repository]
+|===

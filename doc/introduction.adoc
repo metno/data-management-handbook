@@ -179,6 +179,7 @@ Between the data providers and data consumers are the processes that manage and 
 [[summary-requirements]]
 === Summary of data management requirements
 
+//This whole section might be better suited in the specialized section with links to relevant how-tos
 The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
 
 . There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.
@@ -195,7 +196,7 @@ The data management regime described in this DMH follows the Arctic Data centre 
 The organisation provides seamless access to data from distributed data centres through various portals.
 .. The above and a business model at dataset level are described in a Data Management Plan (DMP)
 . There are services or tools that provide the following functionalities on the datasets:
-.. Transformations
+.. Transformations, including:
 ... subsetting
 ... slicing of gridded data sets to points, sections, profiles
 ... reprojection
