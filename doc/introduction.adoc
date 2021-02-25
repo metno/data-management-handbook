@@ -139,7 +139,6 @@ StInfoSys
 The tools and facilities used to manage the information contained in the metadata are further described in Chapter 2.
 //add internal link
 
-
 [[fair-data-management-model]]
 ==== A data management model based on the FAIR principles
 
