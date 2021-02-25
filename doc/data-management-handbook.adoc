@@ -39,7 +39,7 @@ include::introduction.adoc[]
 include::specialized_intro_template.adoc[]
 
 :numbered:
-include::structure_and_documentation.adoc[]
+include::structure_and_documenting.adoc[]
 
 :numbered:
 include::specialized_strudoc_template.adoc[]
