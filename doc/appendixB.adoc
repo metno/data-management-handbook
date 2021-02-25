@@ -16,7 +16,7 @@ Users are divided into categories by type of collaboration with MET, not by type
 
 |Public service collaborators
 |Use the data as part of collaborative public services. Includes public sector agencies and companies, government-supported enterprises.  Specific requirements on the data and delivery, possibly by SLA or OLA. 
-|Examples: NVE (flood warning service), NRK (yr.no, radio, TV), Norwegian Defence Research Establishment (FFI), Avinor (aviation forecasting), research infrastructures (NORMAP, SIOS, NorDataNet), Norwegian Public Roads Administration (SVV), The Norwegian Coastal Administration (BarentsWatch), JRCC (search-and-rescue support), Bane NOR (Railway Infrastructure Company), Norwegian Environment Agency, NERSC (Copernicus Marine Service), NIVA (), NILU (air quality monitoring), NRPA (radiation emergency response support), IMR (fish eggs/larvae dispersion)
+|Examples: NVE (flood warning service), NRK (yr.no, radio, TV), Norwegian Defence Research Establishment (FFI), Avinor (aviation forecasting), research infrastructures (NORMAP, SIOS, NorDataNet), Norwegian Public Roads Administration (SVV), The Norwegian Coastal Administration (BarentsWatch), JRCC (search-and-rescue support), Bane NOR (Railway Infrastructure Company), Norwegian Environment Agency, NERSC (Copernicus Marine Service), NIVA (Norwegian Institute for Water Research), NILU (air quality monitoring), NRPA (radiation emergency response support), IMR (fish eggs/larvae dispersion)
 
 |Value-added service providers
 |Use open data in proprietary services, often commercial. Value-added and repackaging services. Weak requirements on the data. 
