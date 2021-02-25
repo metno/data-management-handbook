@@ -29,7 +29,7 @@ Examples: StormGeo (forecasting, consultancy), Navtor (ship routing services), o
 |Examples: Statkraft, Copernicus (CMEMS, C3S, CAMS), offshore operators (EXWW/VXWW), ...
 
 |Direct consumers
-|Use data in their own activities (e.g., decision-making, research). Both public and private enterprises. Requirements on data and delivery vary; open data use is preferred; 
+|Use data in their own activities (e.g., decision-making, research). Both public and private enterprises. Requirements on data and delivery vary; open data use is preferred.
 |Halo has tailored datasets for public users.
 
 Examples: academic researchers, students, commercial researchers, Defence (FFI), NGOs, DnV
