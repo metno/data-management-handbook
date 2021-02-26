@@ -1,0 +1,12 @@
+[[structuring-and-documenting]]
+== Structuring and Documenting Data for Efficient Discovery and Use
+:xrefstyle: short
+
+In order to properly find, understand and use <<dynamic-geodata,dynamic geodata>>, standardised encoding and documentation are required, i.e., <<metadata,metadata>>. 
+Both <<discovery-metadata,discovery metadata>> and <<use-metadata,use metadata>> can be embedded in the files produced for a <<dataset,dataset>> through utilisation of self-explaining file formats. If properly done by the <<data-provider,data provider>>, publication and preservation of data through services is simplified and can be automated.
+
+An essential prerequisite for structuring and documenting data is the specification of the <<dataset,dataset(s)>>. The <<dataset,dataset>> is the basic building block of our <<fair-data-management-model,data management model>>; all the documentation and services described in this <<dmh,DMH>> are built on <<dataset,datasets>>. It is the first step in structuring one’s data for efficient management, and it is mandatory.
+
+
+
+

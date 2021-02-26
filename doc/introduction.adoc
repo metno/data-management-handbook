@@ -29,7 +29,7 @@ The Quick Manual is a concise, informal HOW-TO for <<data-management,data manage
 
 //Remember to change if we move away from the Quick manual
 
-The intended audience for this DMH is any personell involved in the process of making data available for the end user. This process can be viewed as a value chain that moves from the producer of the data to the end user, this is further described in the section <<geophysical-value-chain>> (<<img-value_chain>>).
+The intended audience for this DMH is any personell involved in the process of making data available for the end user. This process can be viewed as a value chain that moves from the producer of the data to the end user, this is further described in the section <<value-chain>> (<<img-value_chain>>).
 
 The handbook can be used in three ways: 
 
@@ -38,7 +38,7 @@ The handbook can be used in three ways:
 3. Read the Quick Manual for Data Providers for guidelines on what to do in real-life cases; alternatively read Chapter 6 for typical workflow examples.
 
 [[PrinciplesDataManagement]]
-=== The principles of data management for geophysical data
+=== The principles of data management for dynamic geodata
 
 Principles of standardised data documentation, publication, sharing and preservation have been formalised in the <<fair-principles,FAIR>> Guiding Principles for scientific data management and stewardship [https://www.nature.com/articles/sdata201618[RD3]] through a process facilitated by <<force11,FORCE11>>.
  
@@ -64,17 +64,17 @@ Any organisation that strives to implement <<fair-principles,FAIR>> data managem
 Other external requirements and forcing mechanisms that are organisation-specific are listed under section X.X.X
 //link to proper section
 
-[[geophysical-value-chain]]
-==== The geophysical value chain
+[[value-chain]]
+==== The data value chain
 
-The process of getting the data from the producer of the data to the end consumer can be viewed as a value chain. An example of a geophysical value chain is presented in Figure 1. Typically, data from a wide variety of providers are used in the value chain. 
+The process of getting the data from the producer of the data to the end consumer can be viewed as a value chain. An example of a data value chain is presented in Figure 1. Typically, data from a wide variety of providers are used in the value chain. 
 Traditionally, the data used have been transmitted on request from one <<data-centre,data centre>> to another, and used in the specific processing chains that requested the data. 
 The focus on reuse of data in various contexts has been missing.
 
 // need to solve the link to the image and possibly also the linking to the image
 
 [#img-value_chain]
-.Value chain for geophysical data
+.Value chain for data
 image::images/value_chain.png[Value chain]
 
 Data sets and metadata are what travels through the value chain, and at the end of the <<data-management,data management>> value chain are the users of the data (aka. data consumers, see Section 1.2.2.1), who may be either external or internal to the institute. 

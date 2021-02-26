@@ -1,0 +1,42 @@
+[[specialized-struct-and-doc]]
+=== Structuring and documenting data at [insert organisation here]
+
+[[Current-practice]]
+==== Current practice in structuring and documenting data
+
+// add intro text here
+
+.Data types available at [insert institution here], with the fileformats supported. The primary fileformat is marked in *bold*
+[[tabl-localdatatypes]]
+[%header, cols=4*a]
+|===
+|Supported file formats/structures
+|Datatype
+|Available metadata
+|Examples
+|Comments
+
+|
+|
+|
+|
+|
+
+|
+|
+|
+|
+|
+|===
+
+// add any supplementary text here. 
+
+==== Planned developments in the near-term (< 2 years)
+
+// add a description of the short-term planned developements for your institution
+
+
+==== Expected evolution in the longer term (> 2 years)
+
+// add a description of the long-term planned developements for your institution
+

@@ -1,57 +1,59 @@
 [[specialized-part-of-introduction]]
-=== Introduction to the data management at [insert organisation here]
+== Introduction to the data management at METNorway
 
 // Data 
 
-==== Background at [insert organsiation here]
+=== Background at METNorway
 
+At MET Norway, data have always been managed, albeit in a rather narrow technical sense. The main focus has been on storage, primarily for operational data. More recently, the issues of delivering, sharing and reusing data have steadily gained prominence. Still, the legacy of data storage systems built up over many years is an important factor in any uniform data management program.
+During the International Polar Year (<<ipy,IPY>>), MET Norway was the international coordinator for operational data. IPY data management was based on the principle of distributed data management through exchange of standardised descriptions of datasets between contributing data centres.  - are the fundamental principles for data management at MET Norway.
 
+=== External data management requirements and forcing mechanisms specific to METNorway
 
-
-==== External data management requirements and forcing mechanisms specific to [insert organisation here]
-
+At the global level, the institute is the primary representative for Norway in the <<wmo,WMO>>. <<wmo,WMO>> has in recent years reorganised its approach to documenting and sharing data through two major activities: <<wis,WIS>> and <<wigos,WIGOS>>. Both are metadata-driven activities that follow the same principles as <<geonorge,Geonorge>> and <<inspire,INSPIRE>>, although there are differences concerning standards required. The <<dmh,DMH>> is addressing these external requirements that MET Norway has to fulfil.
 
 
 [[human-roles]]
-==== Human roles in data management
+=== Human roles in data management
 
 [[data-consumer]]
-===== Data consumer
+==== Data consumer
 
 The Data Consumer may be a scientist or student, employee of a governmental agency, consultant or some other person with a professional or personal interest in the data provided. Data consumers may be internal or external to the entities providing and managing the data.
 
-// add institute or organisation specific examples below
-
-At [add institute or organisation here] the following are examples of data consumers:
+At METNorway the following are examples of data consumers:
 
 * Researcher working on a project
-* 
+* Forecaster creating weather reports
+* farmer searching for weather statistics
+* ***
 
-An overview of the users of the data covered by this DMH, including a categorisation and a non-exhaustive list of known users, is given in Appendix B where the diversity of [insert organisation here] data users and their demands on our data services is shown. Users include consumers of both data and metadata. 
+An overview of the users of the data covered by this DMH, including a categorisation and a non-exhaustive list of known users, is given in <<appendix-b,Appendix B>> where the diversity of METNorway data users and their demands on our data services is shown. Users include consumers of both data and metadata. 
 
 // can also link to use cases in chapter 6 here
 
 
 [[data-provider]]
-===== Data provider
+==== Data provider
 
 The Data Provider is generating datasets managed by the data management system described in this document. Data providers can be internal or external to the system. They should be able to maintain the datasets they have committed.
 
-// add institute or organisation specific examples below
+At METNorway the following are examples of data providers:
 
-At [add institute or organisation here] the following are examples of data providers:
-
-* 
+* Research projects generating data
+* Internal operational data sources (weather stations, model outputs, satellite data...)
+* External operational data sources (data from NVE, SVV, etc)
 
 ​
 [[data-management-roles]]
-===== Data Management Roles
+==== Data Management Roles
 
 Between the data providers and data consumers are the processes that manage and deliver the datasets (cf. <<img-value-chain>>). A number of human roles may be defined with responsibilities that, together, ensure that these processes are carried out in accordance with the data management requirements of the organisation. The definition and filling of these roles depend heavily on the particular organisation, and each organisation must devise its own best solution. 
 
 // add institute or organisation specific examples below
 
- 
+// this part is directly from V1 and should be changed.
+At MET, some roles are familiar, such as data owner, service owner, help/service desk, while others have been introduced in connection with projects, such as service manager, change manager, etc. used in the Copernicus services. In connection with the data management regime described in this DMH, a revision of the human roles is being considered; the result will be described in Section 5.3 or in a separate document. 
 
 Data management roles in use at [insert institute or organisation here]:
 
@@ -68,7 +70,7 @@ Data management roles in use at [insert institute or organisation here]:
 |===
 
 [[summary-requirements]]
-==== Summary of data management requirements
+=== Summary of data management requirements
 
 The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
 
