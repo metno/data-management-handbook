@@ -458,28 +458,43 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel1">
 <li><a href="#introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#PrinciplesDataManagement">1.1. The principles of data management for geophysical data</a>
+<li><a href="#PrinciplesDataManagement">1.1. The principles of data management for dynamic geodata</a>
 <ul class="sectlevel3">
 <li><a href="#external-requirements">1.1.1. External data management requirements and forcing mechanisms</a></li>
-<li><a href="#geophysical-value-chain">1.1.2. The geophysical value chain</a></li>
+<li><a href="#value-chain">1.1.2. The data value chain</a></li>
 <li><a href="#dataset">1.1.3. Dataset</a></li>
 <li><a href="#metadata">1.1.4. Metadata</a></li>
 <li><a href="#fair-data-management-model">1.1.5. A data management model based on the FAIR principles</a></li>
 </ul>
 </li>
-<li><a href="#_background_at_insert_organsiation_here">1.2. Background at [insert organsiation here]</a></li>
-<li><a href="#_external_data_management_requirements_and_forcing_mechanisms_specific_to_insert_organisation_here">1.3. External data management requirements and forcing mechanisms specific to [insert organisation here]</a></li>
-<li><a href="#human-roles">1.4. Human roles in data management</a>
+<li><a href="#specialized-part-of-introduction">1.2. Introduction to the data management at [insert organisation here]</a>
 <ul class="sectlevel3">
-<li><a href="#data-consumer">1.4.1. Data consumer</a></li>
-<li><a href="#data-provider">1.4.2. Data provider</a></li>
-<li><a href="#data-management-roles">1.4.3. Data Management Roles</a></li>
+<li><a href="#_background_at_insert_organsiation_here">1.2.1. Background at [insert organsiation here]</a></li>
+<li><a href="#_external_data_management_requirements_and_forcing_mechanisms_specific_to_insert_organisation_here">1.2.2. External data management requirements and forcing mechanisms specific to [insert organisation here]</a></li>
+<li><a href="#human-roles">1.2.3. Human roles in data management</a>
+<ul class="sectlevel4">
+<li><a href="#data-consumer">1.2.3.1. Data consumer</a></li>
+<li><a href="#data-provider">1.2.3.2. Data provider</a></li>
+<li><a href="#data-management-roles">1.2.3.3. Data Management Roles</a></li>
 </ul>
 </li>
-<li><a href="#summary-requirements">1.5. Summary of data management requirements</a></li>
+<li><a href="#summary-requirements">1.2.4. Summary of data management requirements</a></li>
 </ul>
 </li>
-<li><a href="#acdd_elements">2. Global attributes that should be added to NetCDF-CF files</a></li>
+</ul>
+</li>
+<li><a href="#structuring-and-documenting">2. Structuring and Documenting Data for Efficient Discovery and Use</a>
+<ul class="sectlevel2">
+<li><a href="#specialized-struct-and-doc">2.1. Structuring and documenting data at [insert organisation here]</a>
+<ul class="sectlevel3">
+<li><a href="#Current-practice">2.1.1. Current practice in structuring and documenting data</a></li>
+<li><a href="#_planned_developments_in_the_near_term_2_years">2.1.2. Planned developments in the near-term (&lt; 2 years)</a></li>
+<li><a href="#_expected_evolution_in_the_longer_term_2_years">2.1.3. Expected evolution in the longer term (&gt; 2 years)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#acdd_elements">3. Global attributes that should be added to NetCDF-CF files</a></li>
 <li><a href="#glossary">Glossary of Terms and Names</a></li>
 <li><a href="#acronyms">List of Acronyms</a></li>
 <li><a href="#appendixa">Appendix A: List of Referenced Software or Services</a></li>
@@ -551,7 +566,7 @@ Practical guidelines for carrying out good <a href="#data-management">data manag
 The Quick Manual is a concise, informal HOW-TO for <a href="#data-management">data management</a> practitioners.</p>
 </div>
 <div class="paragraph">
-<p>The intended audience for this DMH is any personell involved in the process of making data available for the end user. This process can be viewed as a value chain that moves from the producer of the data to the end user, this is further described in the section <a href="#geophysical-value-chain">Section 1.1.2</a> (<a href="#img-value_chain">Figure 1</a>).</p>
+<p>The intended audience for this DMH is any personell involved in the process of making data available for the end user. This process can be viewed as a value chain that moves from the producer of the data to the end user, this is further described in the section <a href="#value-chain">Section 1.1.2</a> (<a href="#img-value_chain">Figure 1</a>).</p>
 </div>
 <div class="paragraph">
 <p>The handbook can be used in three ways:</p>
@@ -570,7 +585,7 @@ The Quick Manual is a concise, informal HOW-TO for <a href="#data-management">da
 </ol>
 </div>
 <div class="sect2">
-<h3 id="PrinciplesDataManagement"><a class="anchor" href="#PrinciplesDataManagement"></a>1.1. The principles of data management for geophysical data</h3>
+<h3 id="PrinciplesDataManagement"><a class="anchor" href="#PrinciplesDataManagement"></a>1.1. The principles of data management for dynamic geodata</h3>
 <div class="paragraph">
 <p>Principles of standardised data documentation, publication, sharing and preservation have been formalised in the <a href="#fair-principles">FAIR</a> Guiding Principles for scientific data management and stewardship [<a href="https://www.nature.com/articles/sdata201618">RD3</a>] through a process facilitated by <a href="#force11">FORCE11</a>.</p>
 </div>
@@ -618,9 +633,9 @@ The Quick Manual is a concise, informal HOW-TO for <a href="#data-management">da
 </div>
 </div>
 <div class="sect3">
-<h4 id="geophysical-value-chain"><a class="anchor" href="#geophysical-value-chain"></a>1.1.2. The geophysical value chain</h4>
+<h4 id="value-chain"><a class="anchor" href="#value-chain"></a>1.1.2. The data value chain</h4>
 <div class="paragraph">
-<p>The process of getting the data from the producer of the data to the end consumer can be viewed as a value chain. An example of a geophysical value chain is presented in Figure 1. Typically, data from a wide variety of providers are used in the value chain.
+<p>The process of getting the data from the producer of the data to the end consumer can be viewed as a value chain. An example of a data value chain is presented in Figure 1. Typically, data from a wide variety of providers are used in the value chain.
 Traditionally, the data used have been transmitted on request from one <a href="#data-centre">data centre</a> to another, and used in the specific processing chains that requested the data.
 The focus on reuse of data in various contexts has been missing.</p>
 </div>
@@ -628,7 +643,7 @@ The focus on reuse of data in various contexts has been missing.</p>
 <div class="content">
 <img src="images/value_chain.png" alt="Value chain">
 </div>
-<div class="title">Figure 1. Value chain for geophysical data</div>
+<div class="title">Figure 1. Value chain for data</div>
 </div>
 <div class="paragraph">
 <p>Data sets and metadata are what travels through the value chain, and at the end of the <a href="#data-management">data management</a> value chain are the users of the data (aka. data consumers, see Section 1.2.2.1), who may be either external or internal to the institute.</p>
@@ -768,35 +783,22 @@ This category also covers persistent identifiers for data.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p>[[specialized part of introduction]]
-== Introduction to the data management at [insert organisation here]</p>
-</div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_background_at_insert_organsiation_here"><a class="anchor" href="#_background_at_insert_organsiation_here"></a>1.2. Background at [insert organsiation here]</h3>
-<div class="paragraph">
-<p>(Example from MET):</p>
-</div>
-<div class="paragraph">
-<p>At MET Norway, data have always been managed, albeit in a rather narrow technical sense. The main focus has been on storage, primarily for operational data. More recently, the issues of delivering, sharing and reusing data have steadily gained prominence. Still, the legacy of data storage systems built up over many years is an important factor in any uniform data management program.
-During the International Polar Year (<a href="#ipy">IPY</a>), MET Norway was the international coordinator for operational data. IPY data management was based on the principle of distributed data management through exchange of standardised descriptions of datasets between contributing data centres.  - are the fundamental principles for data management at MET Norway.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_external_data_management_requirements_and_forcing_mechanisms_specific_to_insert_organisation_here"><a class="anchor" href="#_external_data_management_requirements_and_forcing_mechanisms_specific_to_insert_organisation_here"></a>1.3. External data management requirements and forcing mechanisms specific to [insert organisation here]</h3>
-<div class="paragraph">
-<p>(Example from MET):</p>
-</div>
-<div class="paragraph">
-<p>At the global level, the institute is the primary representative for Norway in the <a href="#wmo">WMO</a>. <a href="#wmo">WMO</a> has in recent years reorganised its approach to documenting and sharing data through two major activities: <a href="#wis">WIS</a> and <a href="#wigos">WIGOS</a>. Both are metadata-driven activities that follow the same principles as <a href="#geonorge">Geonorge</a> and <a href="#inspire">INSPIRE</a>, although there are differences concerning standards required. The <a href="#dmh">DMH</a> is addressing these external requirements that MET Norway has to fulfil.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="human-roles"><a class="anchor" href="#human-roles"></a>1.4. Human roles in data management</h3>
+<h3 id="specialized-part-of-introduction"><a class="anchor" href="#specialized-part-of-introduction"></a>1.2. Introduction to the data management at [insert organisation here]</h3>
 <div class="sect3">
-<h4 id="data-consumer"><a class="anchor" href="#data-consumer"></a>1.4.1. Data consumer</h4>
+<h4 id="_background_at_insert_organsiation_here"><a class="anchor" href="#_background_at_insert_organsiation_here"></a>1.2.1. Background at [insert organsiation here]</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_external_data_management_requirements_and_forcing_mechanisms_specific_to_insert_organisation_here"><a class="anchor" href="#_external_data_management_requirements_and_forcing_mechanisms_specific_to_insert_organisation_here"></a>1.2.2. External data management requirements and forcing mechanisms specific to [insert organisation here]</h4>
+
+</div>
+<div class="sect3">
+<h4 id="human-roles"><a class="anchor" href="#human-roles"></a>1.2.3. Human roles in data management</h4>
+<div class="sect4">
+<h5 id="data-consumer"><a class="anchor" href="#data-consumer"></a>1.2.3.1. Data consumer</h5>
 <div class="paragraph">
 <p>The Data Consumer may be a scientist or student, employee of a governmental agency, consultant or some other person with a professional or personal interest in the data provided. Data consumers may be internal or external to the entities providing and managing the data.</p>
 </div>
@@ -806,16 +808,8 @@ During the International Polar Year (<a href="#ipy">IPY</a>), MET Norway was the
 <div class="ulist">
 <ul>
 <li>
-<p>Researcher working on a project</p>
-</li>
-<li>
-<p>Forecaster creating weather reports</p>
-</li>
-<li>
-<p>farmer searching for weather statistics</p>
-</li>
-<li>
-<p><strong>*</strong></p>
+<p>Researcher working on a project
+*</p>
 </li>
 </ul>
 </div>
@@ -823,38 +817,25 @@ During the International Polar Year (<a href="#ipy">IPY</a>), MET Norway was the
 <p>An overview of the users of the data covered by this DMH, including a categorisation and a non-exhaustive list of known users, is given in Appendix B where the diversity of [insert organisation here] data users and their demands on our data services is shown. Users include consumers of both data and metadata.</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-provider"><a class="anchor" href="#data-provider"></a>1.4.2. Data provider</h4>
+<div class="sect4">
+<h5 id="data-provider"><a class="anchor" href="#data-provider"></a>1.2.3.2. Data provider</h5>
 <div class="paragraph">
 <p>The Data Provider is generating datasets managed by the data management system described in this document. Data providers can be internal or external to the system. They should be able to maintain the datasets they have committed.</p>
 </div>
 <div class="paragraph">
 <p>At [add institute or organisation here] the following are examples of data providers:</p>
 </div>
-<div class="ulist">
-<ul>
-<li>
-<p>Research projects generating data</p>
-</li>
-<li>
-<p>Internal operational data sources (weather stations, model outputs, satellite data&#8230;&#8203;)</p>
-</li>
-<li>
-<p>External operational data sources (data from NVE, SVV, etc)</p>
-</li>
-</ul>
+<div class="paragraph">
+<p>*</p>
 </div>
 <div class="paragraph">
 <p>​</p>
 </div>
 </div>
-<div class="sect3">
-<h4 id="data-management-roles"><a class="anchor" href="#data-management-roles"></a>1.4.3. Data Management Roles</h4>
+<div class="sect4">
+<h5 id="data-management-roles"><a class="anchor" href="#data-management-roles"></a>1.2.3.3. Data Management Roles</h5>
 <div class="paragraph">
 <p>Between the data providers and data consumers are the processes that manage and deliver the datasets (cf. <a href="#img-value-chain">[img-value-chain]</a>). A number of human roles may be defined with responsibilities that, together, ensure that these processes are carried out in accordance with the data management requirements of the organisation. The definition and filling of these roles depend heavily on the particular organisation, and each organisation must devise its own best solution.</p>
-</div>
-<div class="paragraph">
-<p>At MET, some roles are familiar, such as data owner, service owner, help/service desk, while others have been introduced in connection with projects, such as service manager, change manager, etc. used in the Copernicus services. In connection with the data management regime described in this DMH, a revision of the human roles is being considered; the result will be described in Section 5.3 or in a separate document.</p>
 </div>
 <div class="paragraph">
 <p>Data management roles in use at [insert institute or organisation here]:</p>
@@ -882,8 +863,8 @@ During the International Polar Year (<a href="#ipy">IPY</a>), MET Norway was the
 </table>
 </div>
 </div>
-<div class="sect2">
-<h3 id="summary-requirements"><a class="anchor" href="#summary-requirements"></a>1.5. Summary of data management requirements</h3>
+<div class="sect3">
+<h4 id="summary-requirements"><a class="anchor" href="#summary-requirements"></a>1.2.4. Summary of data management requirements</h4>
 <div class="paragraph">
 <p>The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:</p>
 </div>
@@ -1025,8 +1006,68 @@ The organisation provides seamless access to data from distributed data centres 
 </div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="acdd_elements"><a class="anchor" href="#acdd_elements"></a>2. Global attributes that should be added to NetCDF-CF files</h2>
+<h2 id="structuring-and-documenting"><a class="anchor" href="#structuring-and-documenting"></a>2. Structuring and Documenting Data for Efficient Discovery and Use</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>In order to properly find, understand and use <a href="#dynamic-geodata">dynamic geodata</a>, standardised encoding and documentation are required, i.e., <a href="#metadata">metadata</a>.
+Both <a href="#discovery-metadata">discovery metadata</a> and <a href="#use-metadata">use metadata</a> can be embedded in the files produced for a <a href="#dataset">dataset</a> through utilisation of self-explaining file formats. If properly done by the <a href="#data-provider">data provider</a>, publication and preservation of data through services is simplified and can be automated.</p>
+</div>
+<div class="paragraph">
+<p>An essential prerequisite for structuring and documenting data is the specification of the <a href="#dataset">dataset(s)</a>. The <a href="#dataset">dataset</a> is the basic building block of our <a href="#fair-data-management-model">data management model</a>; all the documentation and services described in this <a href="#dmh">DMH</a> are built on <a href="#dataset">datasets</a>. It is the first step in structuring one’s data for efficient management, and it is mandatory.</p>
+</div>
+<div class="sect2">
+<h3 id="specialized-struct-and-doc"><a class="anchor" href="#specialized-struct-and-doc"></a>2.1. Structuring and documenting data at [insert organisation here]</h3>
+<div class="sect3">
+<h4 id="Current-practice"><a class="anchor" href="#Current-practice"></a>2.1.1. Current practice in structuring and documenting data</h4>
+<table id="tabl-localdatatypes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Data types available at [insert institution here], with the fileformats supported. The primary fileformat is marked in <strong>bold</strong></caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Supported file formats/structures</th>
+<th class="tableblock halign-left valign-top">Datatype</th>
+<th class="tableblock halign-left valign-top">Available metadata</th>
+<th class="tableblock halign-left valign-top">Examples</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Comments</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_planned_developments_in_the_near_term_2_years"><a class="anchor" href="#_planned_developments_in_the_near_term_2_years"></a>2.1.2. Planned developments in the near-term (&lt; 2 years)</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_expected_evolution_in_the_longer_term_2_years"><a class="anchor" href="#_expected_evolution_in_the_longer_term_2_years"></a>2.1.3. Expected evolution in the longer term (&gt; 2 years)</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="acdd_elements"><a class="anchor" href="#acdd_elements"></a>3. Global attributes that should be added to NetCDF-CF files</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In order to add netCDF-CF datasets to the discovery metadata catalog, the data producer should populate the file with certain global attributes mainly described in the Attribute Convention for Data Discovery (ACDD). For a complete description of the ACDD elements, please refer to <a href="http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery" class="bare">http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery</a>.</p>
@@ -1092,28 +1133,28 @@ The organisation provides seamless access to data from distributed data centres 
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lat_max</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">90</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;north</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lat_min</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-90</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;south</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lon_max</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">180</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;east</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lon_min</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">-180</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;west</p></td>
 </tr>
 <tr>
@@ -1155,7 +1196,7 @@ The organisation provides seamless access to data from distributed data centres 
 <td class="tableblock halign-left valign-top"><p class="tableblock">time_coverage_start</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">1850-01-01T00:00:00Z</p></td>
+<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">temporal_extent&gt;start_date</p></td>
 </tr>
 <tr>
@@ -2260,7 +2301,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-02-26 02:40:28 UTC
+Last updated 2021-02-26 13:06:05 UTC
 </div>
 </div>
 </body>

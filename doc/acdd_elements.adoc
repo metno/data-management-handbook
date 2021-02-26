@@ -23,10 +23,10 @@ The following ACDD elements are required:
 |date_metadata_modified | yes | , |  | last_metadata_update>update>datetime
 |title | yes | ; |  | title>title
 |summary | yes | ; |  | abstract>abstract
-|geospatial_lat_max | no |  | 90 | geographic_extent>rectangle>north
-|geospatial_lat_min | no |  | -90 | geographic_extent>rectangle>south
-|geospatial_lon_max | no |  | 180 | geographic_extent>rectangle>east
-|geospatial_lon_min | no |  | -180 | geographic_extent>rectangle>west
+|geospatial_lat_max | no |  |  | geographic_extent>rectangle>north
+|geospatial_lat_min | no |  |  | geographic_extent>rectangle>south
+|geospatial_lon_max | no |  |  | geographic_extent>rectangle>east
+|geospatial_lon_min | no |  |  | geographic_extent>rectangle>west
 |keywords_vocabulary | yes | , |  | keywords>vocabulary
 |keywords | yes | , |  | keywords>keyword
 |=======================================================================
@@ -35,7 +35,7 @@ The following ACDD elements are recommended:
 [cols=",,,,"]
 |=======================================================================
 |ACDD Attribute |Repetition allowed |Separator |Default |MMD equivalent
-|time_coverage_start | yes | , | 1850-01-01T00:00:00Z | temporal_extent>start_date
+|time_coverage_start | yes | , |  | temporal_extent>start_date
 |time_coverage_end | yes | , |  | temporal_extent>end_date
 |processing_level | no |  |  | operational_status
 |license | no |  |  | use_constraint>identifier
