@@ -2,23 +2,11 @@
 == Structuring and Documenting Data for Efficient Discovery and Use
 :xrefstyle: short
 
-[[purpose-chapter2]]
-=== Purpose
-
 In order to properly find, understand and use <<dynamic-geodata,dynamic geodata>>, standardised encoding and documentation are required, i.e., <<metadata,metadata>>. 
 Both <<discovery-metadata,discovery metadata>> and <<use-metadata,use metadata>> can be embedded in the files produced for a <<dataset,dataset>> through utilisation of self-explaining file formats. If properly done by the <<data-provider,data provider>>, publication and preservation of data through services is simplified and can be automated.
 
-[[implementation-chapter2]]
-=== Implementation
-
 An essential prerequisite for structuring and documenting data is the specification of the <<dataset,dataset(s)>>. The <<dataset,dataset>> is the basic building block of our <<fair-data-management-model,data management model>>; all the documentation and services described in this <<dmh,DMH>> are built on <<dataset,datasets>>. It is the first step in structuring one’s data for efficient management, and it is mandatory.
 
-<<dynamic-geodata,Dynamic geodata>> can be categorized into the following two types based on the structure of the data:
 
-//Do we have a good description of these two types? These descriptions are from https://www.ssec.wisc.edu/mcidas/doc/prog_man/2015/access-3.html and https://www.ssec.wisc.edu/mcidas/doc/prog_man/2015/access-4.html
-
-[[gridded-data]]*Gridded data:* Grids may contain any data that can be represented in a two-dimensional matrix.  
-
-[[non-gridded-data]]*Non-gridded data:* Typically point data, data occuring at irregularly spaces location on the Earth or vertically. Can contain mixed data types.
 
 

@@ -28,6 +28,14 @@ The dynamical geodata at MET Norway can be either <<gridded-data,gridded data>> 
 |
 |
 |===
+
+<<dynamic-geodata,Dynamic geodata>> can be categorized into the following two types based on the structure of the data:
+
+//Do we have a good description of these two types? These descriptions are from https://www.ssec.wisc.edu/mcidas/doc/prog_man/2015/access-3.html and https://www.ssec.wisc.edu/mcidas/doc/prog_man/2015/access-4.html
+
+[[gridded-data]]*Gridded data:* Grids may contain any data that can be represented in a two-dimensional matrix.  
+
+[[non-gridded-data]]*Non-gridded data:* Typically point data, data occuring at irregularly spaces location on the Earth or vertically. Can contain mixed data types.
  
 *Gridded data* include numerical model output, many satellite-derived datasets. The institute has already committed to employing NetCDF/CF as the primary method for structuring gridded data and the implementation is largely complete, although CF-compliance is not enforced for all data files. For documentation, CF-compliance ensures the availability of adequate use metadata in each file. Discovery metadata are not as well-implemented at present. In some cases (e.g. in ADC-based projects, see Section 2.2.2) they are provided by applying compliance to the ACDD convention in structuring the NetCDF files, in others through manual processes; in still others, no discovery metadata are produced at all.
  
