@@ -1,22 +1,22 @@
 [[specialized-part-of-introduction]]
-== Introduction to the data management at [insert organisation here]
+=== Introduction to the data management at [insert organisation here]
 
 // Data 
 
-=== Background at [insert organsiation here]
+==== Background at [insert organsiation here]
 
 
 
 
-=== External data management requirements and forcing mechanisms specific to [insert organisation here]
+==== External data management requirements and forcing mechanisms specific to [insert organisation here]
 
 
 
 [[human-roles]]
-=== Human roles in data management
+==== Human roles in data management
 
 [[data-consumer]]
-==== Data consumer
+===== Data consumer
 
 The Data Consumer may be a scientist or student, employee of a governmental agency, consultant or some other person with a professional or personal interest in the data provided. Data consumers may be internal or external to the entities providing and managing the data.
 
@@ -33,7 +33,7 @@ An overview of the users of the data covered by this DMH, including a categorisa
 
 
 [[data-provider]]
-==== Data provider
+===== Data provider
 
 The Data Provider is generating datasets managed by the data management system described in this document. Data providers can be internal or external to the system. They should be able to maintain the datasets they have committed.
 
@@ -45,7 +45,7 @@ At [add institute or organisation here] the following are examples of data provi
 
 ​
 [[data-management-roles]]
-==== Data Management Roles
+===== Data Management Roles
 
 Between the data providers and data consumers are the processes that manage and deliver the datasets (cf. <<img-value-chain>>). A number of human roles may be defined with responsibilities that, together, ensure that these processes are carried out in accordance with the data management requirements of the organisation. The definition and filling of these roles depend heavily on the particular organisation, and each organisation must devise its own best solution. 
 
@@ -68,7 +68,7 @@ Data management roles in use at [insert institute or organisation here]:
 |===
 
 [[summary-requirements]]
-=== Summary of data management requirements
+==== Summary of data management requirements
 
 The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
 
