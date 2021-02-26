@@ -30,7 +30,7 @@
 |===
 
 // add any supplementary text here. 
-​
+
 ==== Planned developments in the near-term (< 2 years)
 
 // add a description of the short-term planned developements for your institution
