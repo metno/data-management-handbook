@@ -57,7 +57,7 @@ include::user_portals.adoc[]
 include::specialized_userportals_template.adoc[]
 
 :numbered:
-include:: data_governance.adoc[]
+include::data_governance.adoc[]
 
 :numbered:
 include::specialized_datagov_template.adoc[]
