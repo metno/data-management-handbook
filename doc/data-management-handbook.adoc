@@ -45,6 +45,13 @@ include::structure_and_documenting.adoc[]
 include::specialized_strudoc_template.adoc[]
 
 :numbered:
+include::data_services.adoc[]
+
+:numbered:
+include::specialized_data_services_template.adoc[]
+
+
+:numbered:
 include::acdd_elements.adoc[]
 
 :numbered!:
