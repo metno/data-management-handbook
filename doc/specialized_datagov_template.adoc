@@ -1,0 +1,39 @@
+[[specialized-datagov]]
+=== Data governance data at [insert organisation here]
+
+// background or other information
+
+[[current-datagov]]
+==== Current implementation
+
+
+===== Organisational Roles
+
+//NB! this is not filled in V1 for MET and I am unsure if this is the right location and what it is supposed to cover.
+
+===== Status <<dmh,DMH>>
+
+// which version has been adopted/published etc-
+
+===== Status <<discovery-metadata,Discovery metadata>>:
+
+// decisions regaring discovery-metdata, description on how/what to do or links to relevant chapters
+
+===== Status <<dmp,DMP>>:
+
+// link to recommended dmp-template or documentation
+
+
+ 
+[[near-future-datagov]]
+==== Planned developments in the near-term (< 2 years)
+
+Revise DMH annually or when needed.
+// add a description of the short-term planned developements in data governance for your institution
+
+[[far-future-datagov]]
+==== Expected evolution in the longer term (> 2 years)
+
+Revise DMH annually or when needed.
+// add a description of the long-term planned developements for your institution
+
