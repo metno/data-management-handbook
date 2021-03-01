@@ -20,10 +20,10 @@ The <<dmh,DMH>> is a strategic governing document and should be used as part of 
 
 The first version of this <<dmh,DMH>> was created to focus on the management of <<dynamic-geodata, dynamic geodata>>. <<dynamic-geodata, Dynamic geodata>> is weather, environment and climate-related data that changes in space and time and is thus descriptive of processes in nature. Examples are weather observations, weather forecasts, pollution (environmental toxins) in water, air and sea, information on the drift of cod eggs and salmon lice, water flow in rivers, driving conditions on the roads and the distribution of sea ice. <<dynamic-geodata, Dynamic geodata>> provides important constraints for many decision-making processes and activities in society.
 
-The types of data covered in this version of the <<dmh,DMH>> and the usage of these data are described in the organisation specific information in Section X.X.X.
-This introduction (Chapter 1) lays forth the background and principles for the data management regime. 
-Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (Chapter 2), data services (Chapter 3), portals and documentation aimed at users (Chapter 4) and governance issues (Chapter 5). 
-Each chapter starts with a brief statement of its purpose, followed by a description of what is implemented at the organisation at present, as well as the planned developments for the short-term (<2 years) and expected developments for the longer term (2-5 years). 
+This introduction (<<introduction>>) lays forth the background and principles for the data management regime. 
+Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (<<structuring-and-documenting>>), data services (<<data-services>>), portals and documentation aimed at users (<<user-portals>>) and governance issues (<<data-governance>>). 
+Each chapter starts with a brief statement of its purpose, followed by a description of what is implemented at the organisation at present, as well as the planned developments for the short-term (<2 years) and expected developments for the longer term (2-5 years).
+ 
 Practical guidelines for carrying out good <<data-management,data management>> are addressed in Chapter 6 and especially in the Quick Manual for Data Providers. 
 The Quick Manual is a concise, informal HOW-TO for <<data-management,data management>> practitioners.
 
