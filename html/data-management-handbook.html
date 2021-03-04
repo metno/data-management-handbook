@@ -494,7 +494,55 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#acdd_elements">3. Global attributes that should be added to NetCDF-CF files</a></li>
+<li><a href="#data-services">3. Data Services</a>
+<ul class="sectlevel2">
+<li><a href="#ds-implementation">3.1. Implementation of data services at [institution]</a>
+<ul class="sectlevel3">
+<li><a href="#_planned_developments_in_near_term_2_years">3.1.1. Planned developments in near-term (&lt; 2 years)</a></li>
+<li><a href="#_expected_evolution_in_the_longer_term_2_years_2">3.1.2. Expected evolution in the longer term (&gt; 2 years)</a></li>
+<li><a href="#_legacy_data_organisationbackgroundhistorical_developement">3.1.3. Legacy data organisation/background/historical developement</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#user-portals">4. User Portals and Documentation</a>
+<ul class="sectlevel2">
+<li><a href="#up-implementation">4.1. Implementation of user portals at [institution]</a>
+<ul class="sectlevel3">
+<li><a href="#example">4.1.1. Example portal, current implementation</a>
+<ul class="sectlevel4">
+<li><a href="#_planned_developments_in_near_term_2_years_2">4.1.1.1. Planned developments in near-term (&lt; 2 years)</a></li>
+<li><a href="#_expected_evolution_in_the_longer_term_2_years_3">4.1.1.2. Expected evolution in the longer term (&gt; 2 years)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#data-governance">5. Data Governance</a>
+<ul class="sectlevel2">
+<li><a href="#ch-data-life-cycl">5.1. Data life cycle management</a>
+<ul class="sectlevel3">
+<li><a href="#generic-dmp">5.1.1. Data Management Plan</a></li>
+</ul>
+</li>
+<li><a href="#specialized-datagov">5.2. Data governance data at [insert organisation here]</a>
+<ul class="sectlevel3">
+<li><a href="#current-datagov">5.2.1. Current implementation</a>
+<ul class="sectlevel4">
+<li><a href="#_organisational_roles">5.2.1.1. Organisational Roles</a></li>
+<li><a href="#_status_dmh">5.2.1.2. Status DMH</a></li>
+<li><a href="#_status_discovery_metadata">5.2.1.3. Status Discovery metadata:</a></li>
+<li><a href="#_status_dmp">5.2.1.4. Status DMP:</a></li>
+</ul>
+</li>
+<li><a href="#near-future-datagov">5.2.2. Planned developments in the near-term (&lt; 2 years)</a></li>
+<li><a href="#far-future-datagov">5.2.3. Expected evolution in the longer term (&gt; 2 years)</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#acdd_elements">6. Global attributes that should be added to NetCDF-CF files</a></li>
 <li><a href="#glossary">Glossary of Terms and Names</a></li>
 <li><a href="#acronyms">List of Acronyms</a></li>
 <li><a href="#appendixa">Appendix A: List of Referenced Software or Services</a></li>
@@ -558,11 +606,12 @@ The data management regime should be continuously evolving, to reflect the evolv
 <p>The first version of this <a href="#dmh">DMH</a> was created to focus on the management of <a href="#dynamic-geodata">dynamic geodata</a>. <a href="#dynamic-geodata">Dynamic geodata</a> is weather, environment and climate-related data that changes in space and time and is thus descriptive of processes in nature. Examples are weather observations, weather forecasts, pollution (environmental toxins) in water, air and sea, information on the drift of cod eggs and salmon lice, water flow in rivers, driving conditions on the roads and the distribution of sea ice. <a href="#dynamic-geodata">Dynamic geodata</a> provides important constraints for many decision-making processes and activities in society.</p>
 </div>
 <div class="paragraph">
-<p>The types of data covered in this version of the <a href="#dmh">DMH</a> and the usage of these data are described in the organisation specific information in Section X.X.X.
-This introduction (Chapter 1) lays forth the background and principles for the data management regime.
-Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (Chapter 2), data services (Chapter 3), portals and documentation aimed at users (Chapter 4) and governance issues (Chapter 5).
-Each chapter starts with a brief statement of its purpose, followed by a description of what is implemented at the organisation at present, as well as the planned developments for the short-term (&lt;2 years) and expected developments for the longer term (2-5 years).
-Practical guidelines for carrying out good <a href="#data-management">data management</a> are addressed in Chapter 6 and especially in the Quick Manual for Data Providers.
+<p>This introduction (<a href="#introduction">Chapter 1</a>) lays forth the background and principles for the data management regime.
+Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (<a href="#structuring-and-documenting">Chapter 2</a>), data services (<a href="#data-services">Chapter 3</a>), portals and documentation aimed at users (<a href="#user-portals">Chapter 4</a>) and governance issues (<a href="#data-governance">Chapter 5</a>).
+Each chapter starts with a brief statement of its purpose, followed by a description of what is implemented at the organisation at present, as well as the planned developments for the short-term (&lt;2 years) and expected developments for the longer term (2-5 years).</p>
+</div>
+<div class="paragraph">
+<p>Practical guidelines for carrying out good <a href="#data-management">data management</a> are addressed in Chapter 6 and especially in the Quick Manual for Data Providers.
 The Quick Manual is a concise, informal HOW-TO for <a href="#data-management">data management</a> practitioners.</p>
 </div>
 <div class="paragraph">
@@ -1067,7 +1116,192 @@ Both <a href="#discovery-metadata">discovery metadata</a> and <a href="#use-meta
 </div>
 </div>
 <div class="sect1">
-<h2 id="acdd_elements"><a class="anchor" href="#acdd_elements"></a>3. Global attributes that should be added to NetCDF-CF files</h2>
+<h2 id="data-services"><a class="anchor" href="#data-services"></a>3. Data Services</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The purpose of this chapter is to describe the services existing and to be developed that benefit from the standardisation performed in the previous step. The information structures described in the previous chapter pave the way for efficient data discovery and use through tools and automated services. Implementation of the services must be in line with the institute’s delivery architecture.</p>
+</div>
+<div class="paragraph">
+<p>This includes:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>data ingestion, storing the data in the proper locations for long term preservation and sharing;</p>
+</li>
+<li>
+<p>data cataloging, extracting the relevant information for proper discovery of the data;</p>
+</li>
+<li>
+<p>configuration of visualisation and data publication services.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>When planning and implementing data services, there are a number of external requirements that constrain choices, especially if reuse of solutions nationally and internationally is intended and wanted for the data in question. At the national level, important constraints are imposed by the national implementation of the <a href="#inspire">INSPIRE</a> directive through Norge digitalt.</p>
+</div>
+<div class="sect2">
+<h3 id="ds-implementation"><a class="anchor" href="#ds-implementation"></a>3.1. Implementation of data services at [institution]</h3>
+<div class="sect3">
+<h4 id="_planned_developments_in_near_term_2_years"><a class="anchor" href="#_planned_developments_in_near_term_2_years"></a>3.1.1. Planned developments in near-term (&lt; 2 years)</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_expected_evolution_in_the_longer_term_2_years_2"><a class="anchor" href="#_expected_evolution_in_the_longer_term_2_years_2"></a>3.1.2. Expected evolution in the longer term (&gt; 2 years)</h4>
+
+</div>
+<div class="sect3">
+<h4 id="_legacy_data_organisationbackgroundhistorical_developement"><a class="anchor" href="#_legacy_data_organisationbackgroundhistorical_developement"></a>3.1.3. Legacy data organisation/background/historical developement</h4>
+
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="user-portals"><a class="anchor" href="#user-portals"></a>4. User Portals and Documentation</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The purpose of this chapter is to describe the human interfaces data consumers would use to navigate data and the related services. A portal is an entry point for data consumers, enabling them to discover and search for datasets and services, and providing sufficient documentation and guidance to ensure that they are able to serve themselves using the interactive and machine interfaces offered.</p>
+</div>
+<div class="paragraph">
+<p>Here, we can distinguish between a general portal for all publishable datasets from the institution and targeted portals that offer a focused selection of data, which may include external datasets. Targeted portals cater to specific user groups and may have a limited lifetime, but also can be long-term commitments.</p>
+</div>
+<div class="sect2">
+<h3 id="up-implementation"><a class="anchor" href="#up-implementation"></a>4.1. Implementation of user portals at [institution]</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. User portals in use at [institution]</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">User portal</th>
+<th class="tableblock halign-left valign-top">Description</th>
+<th class="tableblock halign-left valign-top">General or targeted portal</th>
+<th class="tableblock halign-left valign-top">Data consumer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#example">Example</a></p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="example"><a class="anchor" href="#example"></a>4.1.1. Example portal, current implementation</h4>
+<div class="sect4">
+<h5 id="_planned_developments_in_near_term_2_years_2"><a class="anchor" href="#_planned_developments_in_near_term_2_years_2"></a>4.1.1.1. Planned developments in near-term (&lt; 2 years)</h5>
+
+</div>
+<div class="sect4">
+<h5 id="_expected_evolution_in_the_longer_term_2_years_3"><a class="anchor" href="#_expected_evolution_in_the_longer_term_2_years_3"></a>4.1.1.2. Expected evolution in the longer term (&gt; 2 years)</h5>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="data-governance"><a class="anchor" href="#data-governance"></a>5. Data Governance</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This chapter describes how we organise and steer data management activities in order to ensure that:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>the guidelines described above are implemented throughout the organisation;</p>
+</li>
+<li>
+<p>our data management practices are in line with and contribute to the institute’s strategic aims;</p>
+</li>
+<li>
+<p>our data management regime is subject to review, analysis and revision in a timely manner.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>These higher level aspects of data management are often referred to as <a href="#data-governance">data governance</a>. A useful definition is:
+<em>“Data governance &#8230;&#8203; is the overall management of the availability, usability, integrity and security of data used in an enterprise.  A sound data governance program includes a governing body or council, a defined set of procedures and a plan to execute those procedures.”</em></p>
+</div>
+<div class="paragraph">
+<p>In this chapter we address many aspects of this definition, but a full description of data governance touches on management structures that are beyond the scope of this handbook.</p>
+</div>
+<div class="sect2">
+<h3 id="ch-data-life-cycl"><a class="anchor" href="#ch-data-life-cycl"></a>5.1. Data life cycle management</h3>
+<div class="paragraph">
+<p><a href="#data-life-cycle-management">Data life cycle management</a> is steered by documentation describing how data generated or used in an activity will be handled throughout the lifetime of the activity and after the activity has been completed. This is living documentation that follows the activity and specifies what kind of data will be generated or acquired, how the data will be described, where the data will be stored, whether and how they can be shared, and how they will be retired (archived or deleted). The purpose of life cycle management is to safeguard the data, not just during their “active” period but also for future reuse of the data, and to facilitate cost-effective data handling.</p>
+</div>
+<div class="paragraph">
+<p>This DMH recommends the following two concepts of <a href="#data-life-cycle-managment">life cycle management</a> to be implemented for the institution:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Extended <a href="#discovery-metadata">discovery metadata</a> for data in internal production chains. These are metadata elements that provide the necessary information for life cycle management just described.</p>
+</li>
+<li>
+<p>A <a href="#dmp">data management plan</a> document. A DMP is expected for datasets produced in external projects, but may also be useful for internal datasets, as a supplement to the extended discovery metadata.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The goal is that life cycle management information shall be readily available for every dataset managed by the institute. How these concepts are implemented are described in the institution specific subsection below</p>
+</div>
+<div class="sect3">
+<h4 id="generic-dmp"><a class="anchor" href="#generic-dmp"></a>5.1.1. Data Management Plan</h4>
+<div class="paragraph">
+<p>A Data Management Plan (<a href="#dmp">DMP</a>) is a document that describes textually how the <a href="#data-life-cycle-management">data life cycle management</a> will be carried out for <a href="#dataset">datasets</a> used and produced in specific projects. Generally, these are externally financed projects for which such documentation is required by funding agencies. However, larger internal projects covering many datasets may also find it beneficial to create a specific document of this type.</p>
+</div>
+<div class="paragraph">
+<p>Currently, agencies funding R&amp;D (such as <a href="#nfr">NFR</a> and the EU) do not strictly require a DMP from the start of any project. However, for projects in the geosciences, data management is an issue that must be addressed, and the agencies strongly recommend a DMP solution. For example, NFR publishes <a href="https://www.forskningsradet.no/en/Adviser-research-policy/open-science/open-access-to-research-data/">guidelines</a> for the contents of a DMP, including links to tools (templates and online services); these guidelines are recommended for any data management project or activity and will in time become a requirement according to <a href="#nfr">NFR</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="specialized-datagov"><a class="anchor" href="#specialized-datagov"></a>5.2. Data governance data at [insert organisation here]</h3>
+<div class="sect3">
+<h4 id="current-datagov"><a class="anchor" href="#current-datagov"></a>5.2.1. Current implementation</h4>
+<div class="sect4">
+<h5 id="_organisational_roles"><a class="anchor" href="#_organisational_roles"></a>5.2.1.1. Organisational Roles</h5>
+
+</div>
+<div class="sect4">
+<h5 id="_status_dmh"><a class="anchor" href="#_status_dmh"></a>5.2.1.2. Status <a href="#dmh">DMH</a></h5>
+
+</div>
+<div class="sect4">
+<h5 id="_status_discovery_metadata"><a class="anchor" href="#_status_discovery_metadata"></a>5.2.1.3. Status <a href="#discovery-metadata">Discovery metadata</a>:</h5>
+
+</div>
+<div class="sect4">
+<h5 id="_status_dmp"><a class="anchor" href="#_status_dmp"></a>5.2.1.4. Status <a href="#dmp">DMP</a>:</h5>
+
+</div>
+</div>
+<div class="sect3">
+<h4 id="near-future-datagov"><a class="anchor" href="#near-future-datagov"></a>5.2.2. Planned developments in the near-term (&lt; 2 years)</h4>
+<div class="paragraph">
+<p>Revise DMH annually or when needed.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="far-future-datagov"><a class="anchor" href="#far-future-datagov"></a>5.2.3. Expected evolution in the longer term (&gt; 2 years)</h4>
+<div class="paragraph">
+<p>Revise DMH annually or when needed.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="acdd_elements"><a class="anchor" href="#acdd_elements"></a>6. Global attributes that should be added to NetCDF-CF files</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>In order to add netCDF-CF datasets to the discovery metadata catalog, the data producer should populate the file with certain global attributes mainly described in the Attribute Convention for Data Discovery (ACDD). For a complete description of the ACDD elements, please refer to <a href="http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery" class="bare">http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery</a>.</p>
@@ -1513,6 +1747,10 @@ Both <a href="#discovery-metadata">discovery metadata</a> and <a href="#use-meta
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="controlled-vocabulary"></a>Controlled vocabulary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">A carefully selected list of terms (words and phrases) controlled by some authority. They are used to tag information elements (such as datasets) so that they are easier to search for. (see <a href="https://en.wikipedia.org/wiki/Controlled_vocabulary">Wikipedia article</a>) A basic element in the implementation of the <a href="#semantic-web">Semantic web</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a id="data-governance"></a>Data Governance</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tech Target (<a href="https://searchdatamanagement.techtarget.com/definition/data-governance" class="bare">https://searchdatamanagement.techtarget.com/definition/data-governance</a>). An alternative definition by George Firican: “Data Governance is the discipline which provides all data management practices with the necessary foundation, strategy, and structure needed to ensure that data is managed as an asset and transformed into meaningful information.” (<a href="http://www.lightsondata.com/what-is-data-governance/" class="bare">http://www.lightsondata.com/what-is-data-governance/</a> which also contains several more definitions.)</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="data-life-cycle-management"></a>Data life cycle management</p></td>
@@ -2301,7 +2539,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-03-04 02:44:50 UTC
+Last updated 2021-03-04 13:24:16 UTC
 </div>
 </div>
 </body>
