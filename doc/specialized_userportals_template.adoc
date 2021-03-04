@@ -1,0 +1,33 @@
+[[up-implementation]]
+=== Implementation of user portals at [institution]
+
+// general introducion:
+
+
+//add portals with links to relevant sub-section
+
+.User portals in use at [institution]
+[%header, cols=4*]
+|===
+|User portal
+|Description
+|General or targeted portal
+|Data consumer
+
+|<<example,Example>>
+|
+|
+|
+|===
+
+[[example]]
+==== Example portal, current implementation
+
+
+===== Planned developments in near-term (< 2 years)
+
+
+
+===== Expected evolution in the longer term (> 2 years)
+// (optional sub-chapter)
+

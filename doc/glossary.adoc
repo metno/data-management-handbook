@@ -22,6 +22,9 @@
 |[[controlled-vocabulary]]Controlled vocabulary
 |A carefully selected list of terms (words and phrases) controlled by some authority. They are used to tag information elements (such as datasets) so that they are easier to search for. (see https://en.wikipedia.org/wiki/Controlled_vocabulary[Wikipedia article]) A basic element in the implementation of the <<semantic-web,Semantic web>>.
 
+|[[data-governance]]Data Governance
+|Tech Target (https://searchdatamanagement.techtarget.com/definition/data-governance). An alternative definition by George Firican: “Data Governance is the discipline which provides all data management practices with the necessary foundation, strategy, and structure needed to ensure that data is managed as an asset and transformed into meaningful information.” (http://www.lightsondata.com/what-is-data-governance/ which also contains several more definitions.) 
+
 |[[data-life-cycle-management]]Data life cycle management
 |“Data life cycle management (DLM) is a policy-based approach to managing the flow of an information system's data throughout its life cycle: from creation and initial storage to the time when it becomes obsolete and is deleted.” Excerpt from https://searchstorage.techtarget.com/definition/data-life-cycle-management[TechTarget] article.
 Alias: life cycle management

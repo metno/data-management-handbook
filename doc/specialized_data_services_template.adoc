@@ -1,0 +1,21 @@
+[[ds-implementation]]
+=== Implementation of data services at [institution]
+
+// general introducion: local requirements etc.
+
+// add descriptions to existing systems, documentation and how the systems are connected.
+
+
+
+
+
+==== Planned developments in near-term (< 2 years)
+
+
+
+==== Expected evolution in the longer term (> 2 years)
+
+
+==== Legacy data organisation/background/historical developement 
+// (optional sub-chapter)
+
