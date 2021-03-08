@@ -27,7 +27,7 @@ toc::[]
 |Version |Date |Comment |Responsible
 
 |2.0 |2021-??-?? |New version based on original MET DMH
-|Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, ...
+|Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano ...
 
 |=======================================================================
 
@@ -64,6 +64,9 @@ include::specialized_datagov_template.adoc[]
 
 :numbered:
 include::acdd_elements.adoc[]
+
+:numbered!:
+include::acknowledgements.adoc[]
 
 :numbered!:
 include::glossary.adoc[]
