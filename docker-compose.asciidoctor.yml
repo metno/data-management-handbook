@@ -1,6 +1,7 @@
 version: '3.4'
 
 services:
+
   html:
     build:
       context: .
@@ -8,7 +9,16 @@ services:
     volumes:
       - ./doc:/workdir
       - ./html:/html
-    command: asciidoctor -n /workdir/data-management-handbook.adoc -D /html
+    command: >
+      asciidoctor 
+      -a special_intro=${SPECIAL_INTRO:-specialized_intro_template.adoc} 
+      -a special_strudoc=${SPECIAL_STRUDOC:-specialized_strudoc_template.adoc}
+      -a special_data_services=${SPECIAL_DATA_SERVICES:-specialized_data_services_template.adoc}
+      -a special_user_portals=${SPECIAL_USER_PORTALS:-specialized_userportals_template.adoc}
+      -a special_data_governance=${SPECIAL_DATA_GOVERNANCE:-specialized_datagov_template.adoc}
+      -n /workdir/data-management-handbook.adoc 
+      -D /html
+    #command: echo $SPECIAL_INTRO
 
   pdf:
     build:
@@ -17,7 +27,17 @@ services:
     volumes:
       - ./doc:/workdir
       - ./pdf:/pdf
-    command: asciidoctor-pdf -a pdf-themesdir=/workdir -a pdf-theme=dmh -n /workdir/data-management-handbook.adoc -D /pdf
+    command: >
+      asciidoctor-pdf 
+      -a special_intro=${SPECIAL_INTRO:-specialized_intro_template.adoc} 
+      -a special_strudoc=${SPECIAL_STRUDOC:-specialized_strudoc_template.adoc}
+      -a special_data_services=${SPECIAL_DATA_SERVICES:-specialized_data_services_template.adoc}
+      -a special_user_portals=${SPECIAL_USER_PORTALS:-specialized_userportals_template.adoc}
+      -a special_data_governance=${SPECIAL_DATA_GOVERNANCE:-specialized_datagov_template.adoc}
+      -a pdf-themesdir=/workdir
+      -a pdf-theme=dmh
+      -n /workdir/data-management-handbook.adoc
+      -D /pdf
 
 
 
