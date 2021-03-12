@@ -12,7 +12,7 @@ This repo includes only the general parts of the data management handbook that s
 
 ## How to use this handbook:
 
- * Create a separate repo in Github or Gitlab, (If the data management handbook will include detailed information about IT systems, secrets or other information that should not be available outside of your organization, Gitlab is recommended)
+ * Create a separate repo in Github or Gitlab, (If the data management handbook will include detailed information about IT systems, secrets or other information that should not be available outside of your organization, a private repository is recommended)
  * doc folder: Add only the templates for the chapters and appendices that includes partner specific information (all starting with specialized):
 	* specialized_intro_template.adoc
 	* specialized_data_services_template.adoc
@@ -42,4 +42,3 @@ The following files need to be updated with environment variables and/or links t
 
 ## Other information
 The docker-compose.acdd_elements.yml creates the acdd file via CI. This appendix is relevant for all partners that use NetCDf- files.
-
