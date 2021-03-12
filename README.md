@@ -34,7 +34,7 @@ The repo also needs the following files:
 The file “data-management-handbook.adoc”, includes the specialized files via variables. These variables are defined in the docker-compose.asciidoctor.yml file. (If one of the partner-specific files does not exist in your local repository, The CI will add the template). This is also the file that sets up the pdf.
 
 ## Compiling the documentation
-
+The general part of the documentation can be compiled by running `vagrant up`. You can reuse the code here to add CI and compile your own version. Please ask if you need help.
 compile-docs.sh compiles the documentation. The document is compiled everytime something is committed.
 gitlab-ci.yml connects the files in your local repo to the environment variables. currently this is hardcoded, will perhaps be changed in the future.
 
