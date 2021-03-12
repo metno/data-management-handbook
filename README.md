@@ -35,7 +35,9 @@ The file “data-management-handbook.adoc”, includes the specialized files via
 
 ## Compiling the documentation
 The general part of the documentation can be compiled by running `vagrant up`. You can reuse the code here to add CI and compile your own version. Please ask if you need help.
-compile-docs.sh compiles the documentation. The document is compiled everytime something is committed.
+### Compilinig your own version (in the new repository)
+
+- compile-docs.sh compiles the documentation.
 gitlab-ci.yml connects the files in your local repo to the environment variables. currently this is hardcoded, will perhaps be changed in the future.
 
 Adding new special files other than the ones with templates(new chapters):
