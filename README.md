@@ -13,7 +13,9 @@ This repo includes only the general parts of the data management handbook that s
 ## How to use this handbook:
 
  * Create a separate repo in Github or Gitlab, (If the data management handbook will include detailed information about IT systems, secrets or other information that should not be available outside of your organization, a private repository is recommended)
- * doc folder: Add only the templates for the chapters and appendices that includes partner specific information (all starting with specialized):
+   
+   * doc folder: Add only the templates for the chapters and appendices that includes partner specific information (all starting with specialized):
+   
 	* specialized_intro_template.adoc
 	* specialized_data_services_template.adoc
 	* specialized_datagov_template.adoc
