@@ -63,7 +63,7 @@ include::data_governance.adoc[]
 include::{special_data_governance}[]
 
 :numbered:
-include::acdd_elements.adoc[]
+include::{special_practical_guidance}[]
 
 :numbered!:
 include::acknowledgements.adoc[]
@@ -78,4 +78,7 @@ include::acronyms.adoc[]
 include::appendixA.adoc[]
 
 :numbered!:
-include::appendixB.adoc[]
+include::{special_appendix_users}[]
+
+:numbered!:
+include::acdd_elements.adoc[]
