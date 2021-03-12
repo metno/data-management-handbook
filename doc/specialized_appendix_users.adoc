@@ -1,0 +1,17 @@
+[[appendixb]]
+== Appendix B: Users of [insert institution]’s data
+
+//the table and tex below is a suggestion, feel free to rewrite in a format that fits your organisation
+
+Users are divided into categories by type of collaboration with [insert institution], not by type of service they consume.
+
+[%header, cols=3*]
+|===
+|User category
+|Description
+|Examples
+
+|
+| 
+|
+|===
