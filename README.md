@@ -10,6 +10,8 @@ This handbook template is based on the first version of the Data Management Hand
 
 This repo includes only the general parts of the data management handbook that should be universal for all partners, and templates for the chapters that include partner specific information. 
 
+In case of questions and need for help - please submit an issue on this repository!
+
 ## How to use this handbook:
 
  * Create a separate repo in Github or Gitlab, (If the data management handbook will include detailed information about IT systems, secrets or other information that should not be available outside of your organization, a private repository is recommended)
