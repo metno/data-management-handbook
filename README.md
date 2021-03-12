@@ -38,7 +38,7 @@ The general part of the documentation can be compiled by running `vagrant up`. Y
 ### Compilinig your own version (in the new repository)
 
 - compile-docs.sh compiles the documentation.
-gitlab-ci.yml connects the files in your local repo to the environment variables. currently this is hardcoded, will perhaps be changed in the future.
+- gitlab-ci.yml connects the files in your local repo to the environment variables
 
 Adding new special files other than the ones with templates(new chapters):
 The following files need to be updated with environment variables and/or links to the new files:
