@@ -27,24 +27,10 @@ In case of questions and need for help - please submit an issue on this reposito
 	* specialized_appendixB_template.adoc
 	* To get your organisations visual profile on the DMH, create or add a .yml file with the theme for the handbook.
 
-The repo also needs the following files:
- * gitlab-ci.yml
- * compile-docs.sh
-
 The file “data-management-handbook.adoc”, includes the specialized files via variables. These variables are defined in the docker-compose.asciidoctor.yml file. (If one of the partner-specific files does not exist in your local repository, The CI will add the template). This is also the file that sets up the pdf.
 
 ## Compiling the documentation
 The general part of the documentation can be compiled by running `vagrant up`. You can reuse the code here to add CI and compile your own version. Please ask if you need help.
-### Compilinig your own version (in the new repository)
-
-- compile-docs.sh compiles the documentation.
-- gitlab-ci.yml connects the files in your local repo to the environment variables
-
-Adding new special files other than the ones with templates(new chapters):
-The following files need to be updated with environment variables and/or links to the new files:
- * compile-docs.sh (local/gitlab repository)
- * gitlab-ci.yml (local/gitlab repository)
- * data-management.handbook.adoc (template/github repository)
 
 ## Other information
 The docker-compose.acdd_elements.yml creates the acdd file via CI. This appendix is relevant for all partners that use NetCDf- files.
