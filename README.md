@@ -10,10 +10,14 @@ This handbook template is based on the first version of the Data Management Hand
 
 This repo includes only the general parts of the data management handbook that should be universal for all partners, and templates for the chapters that include partner specific information. 
 
+In case of questions and need for help - please submit an issue on this repository!
+
 ## How to use this handbook:
 
- * Create a separate repo in Github or Gitlab, (If the data management handbook will include detailed information about IT systems, secrets or other information that should not be available outside of your organization, Gitlab is recommended)
- * doc folder: Add only the templates for the chapters and appendices that includes partner specific information (all starting with specialized):
+ * Create a separate repo in Github or Gitlab, (If the data management handbook will include detailed information about IT systems, secrets or other information that should not be available outside of your organization, a private repository is recommended)
+   
+   * doc folder: Add only the templates for the chapters and appendices that includes partner specific information (all starting with specialized):
+   
 	* specialized_intro_template.adoc
 	* specialized_data_services_template.adoc
 	* specialized_datagov_template.adoc
@@ -23,23 +27,10 @@ This repo includes only the general parts of the data management handbook that s
 	* specialized_appendixB_template.adoc
 	* To get your organisations visual profile on the DMH, create or add a .yml file with the theme for the handbook.
 
-The repo also needs the following files:
- * gitlab-ci.yml
- * compile-docs.sh
-
 The file “data-management-handbook.adoc”, includes the specialized files via variables. These variables are defined in the docker-compose.asciidoctor.yml file. (If one of the partner-specific files does not exist in your local repository, The CI will add the template). This is also the file that sets up the pdf.
 
 ## Compiling the documentation
-
-compile-docs.sh compiles the documentation. The document is compiled everytime something is committed.
-gitlab-ci.yml connects the files in your local repo to the environment variables. currently this is hardcoded, will perhaps be changed in the future.
-
-Adding new special files other than the ones with templates(new chapters):
-The following files need to be updated with environment variables and/or links to the new files:
- * compile-docs.sh (local/gitlab repository)
- * gitlab-ci.yml (local/gitlab repository)
- * data-management.handbook.adoc (template/github repository)
+The general part of the documentation can be compiled by running `vagrant up`. You can reuse the code here to add CI and compile your own version. Please ask if you need help.
 
 ## Other information
 The docker-compose.acdd_elements.yml creates the acdd file via CI. This appendix is relevant for all partners that use NetCDf- files.
-
