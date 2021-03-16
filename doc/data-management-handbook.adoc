@@ -19,8 +19,6 @@ This document describes general data management practices in line with the FAIR 
 
 The present handbook is a general text that can be applied by anyone. We have prepared templates for organisation specific information that can be updated and merged into the general handbook by the user organisations.
 
-This document is based on a template shared with several other institutions.
-
 toc::[]
 
 [discrete]
