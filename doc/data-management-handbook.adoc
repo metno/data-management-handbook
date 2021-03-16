@@ -15,7 +15,9 @@ Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, ...
 [discrete]
 == Abstract
 
-Insert abstract here...
+This document describes general data management practices in line with the FAIR principles, and focuses on the management and sharing of dynamical geodata (i.e., geolocated data about processes in nature). The practices aim at a metadata-driven data management regime. Data management principles are described and summarised. Details of the practical implementation of the principles are described along 4 pillars: structuring and documenting data; data services; user portals and documentation; and data governance. Practical guidance for data producers is also provided.
+
+The present handbook is a general text that can be applied by anyone. We have prepared templates for organisation specific information that can be updated and merged into the general handbook by the user organisations.
 
 toc::[]
 
