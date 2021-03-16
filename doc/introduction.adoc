@@ -3,7 +3,6 @@
 :xrefstyle: short
 
 //not updated: chapter links, check all links to glossary and acronyms
-//remember: change references to quick manual
 
 The purpose of the Data Management Handbook (<<dmh,DMH>>) is threefold:
 
@@ -24,10 +23,7 @@ This introduction (<<introduction>>) lays forth the background and principles fo
 Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (<<structuring-and-documenting>>), data services (<<data-services>>), portals and documentation aimed at users (<<user-portals>>) and governance issues (<<data-governance>>). 
 Each chapter starts with a brief statement of its purpose, followed by a description of what is implemented at the organisation at present, as well as the planned developments for the short-term (<2 years) and expected developments for the longer term (2-5 years).
  
-Practical guidelines for carrying out good <<data-management,data management>> are addressed in Chapter 6 and especially in the Quick Manual for Data Providers. 
-The Quick Manual is a concise, informal HOW-TO for <<data-management,data management>> practitioners.
-
-//Remember to change if we move away from the Quick manual
+Practical guidelines for carrying out good <<data-management,data management>> are addressed in Chapter 6.
 
 The intended audience for this DMH is any personell involved in the process of making data available for the end user. This process can be viewed as a value chain that moves from the producer of the data to the end user, this is further described in the section <<value-chain>> (<<img-value_chain>>).
 
@@ -35,7 +31,7 @@ The handbook can be used in three ways:
 
 1. Read the Introduction (Chapter 1) to find out the background and principles of <<data-management,data management>>;
 2. Read Chapters 2-5 to learn about how <<data-management,data management>> is currently implemented and how it is expected to evolve in the next few years;
-3. Read the Quick Manual for Data Providers for guidelines on what to do in real-life cases; alternatively read Chapter 6 for typical workflow examples.
+3. Read chapter 6 to find how-to's and practical guidelines.
 
 [[PrinciplesDataManagement]]
 === The principles of data management for dynamic geodata

@@ -15,7 +15,7 @@ Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, ...
 [discrete]
 == Abstract
 
-Abstract will come here..
+Insert abstract here...
 
 toc::[]
 
@@ -26,8 +26,9 @@ toc::[]
 |=======================================================================
 |Version |Date |Comment |Responsible
 
-|2.0 |2021-??-?? |New version based on original MET DMH
-|Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano ...
+|2.0 beta |2021-03-12 |New version based on original MET DMH
+|Bruce Hackett, Audun Christoffersen, Øystein Godøy, Vegar Kristiansen, 
+Martin Grønlien Pejcoch, Eivind Støylen, Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano
 
 |=======================================================================
 
