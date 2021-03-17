@@ -3,7 +3,7 @@
 :media: prepress
 :title-logo-image: image::images/Met_RGB_Horisontal_Engelsk.png[pdfwidth=10cm,align=right]
 = Data Management Handbook template for MET and partners in S-ENDA written in asciidoc
-Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, ...
+Nina E. Larsgård, Bruce Hackett, Audun Christoffersen, Øystein Godøy, Vegar Kristiansen, Martin Grønlien Pejcoch, Eivind Støylen, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano
 :sectnums:
 :sectnumlevels: 6
 :sectanchors:
