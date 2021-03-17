@@ -657,13 +657,10 @@ Each chapter starts with a brief statement of its purpose, followed by a descrip
 <div class="sect2">
 <h3 id="PrinciplesDataManagement"><a class="anchor" href="#PrinciplesDataManagement"></a>1.1. The principles of data management for dynamic geodata</h3>
 <div class="paragraph">
-<p>Principles of standardised data documentation, publication, sharing and preservation have been formalised in the <a href="#fair-principles">FAIR</a> Guiding Principles for scientific data management and stewardship [<a href="https://www.nature.com/articles/sdata201618">RD3</a>] through a process facilitated by <a href="#force11">FORCE11</a>.</p>
+<p>Principles of standardised data documentation, publication, sharing and preservation have been formalised in the <a href="#fair-principles">FAIR</a> Guiding Principles for scientific data management and stewardship [<a href="https://www.nature.com/articles/sdata201618">RD3</a>] through a process facilitated by <a href="#force11">FORCE11</a>. FAIR stands for findability, accessibility, <a href="#interoperability">interoperability</a> and reusability.</p>
 </div>
 <div class="paragraph">
-<p>FAIR - findability, accessibility, <a href="#interoperability">interoperability</a> and reusability</p>
-</div>
-<div class="paragraph">
-<p>By following these <a href="#fair">FAIR</a> principles it is easier to reach a common approach to <a href="#data-management">data management</a>, or a <a href="#unified-data-management">unified data management</a> model. One of the main motivations for implementing a <a href="#unified-data-management">unified data management</a> is to better serve the users of the data. Primarily, this can be approached by making user needs and requirements the guide for determining what data we provide and how. For example, it will be described below how the specification of <a href="#dataset">datasets</a> should be determined by user needs. By implementing the data management practices described here, it is expected that users will benefit from:</p>
+<p>By following the <a href="#fair">FAIR</a> principles it is easier to reach a common approach to <a href="#data-management">data management</a>, or a <a href="#unified-data-management">unified data management</a> model. One of the main motivations for implementing a <a href="#unified-data-management">unified data management</a> is to better serve the users of the data. Primarily, this can be approached by making user needs and requirements the guide for determining what data we provide and how. For example, it will be described below how the specification of <a href="#dataset">datasets</a> should be determined by user needs. By implementing the data management practices described here, it is expected that users will benefit from:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -769,36 +766,36 @@ The focus on reuse of data in various contexts has been missing.</p>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="discovery-metadata"></a>Discovery metadata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used to find relevant data</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Discovery metadata are also called index metadata and are a digital version of the library index card. They describe who did what, where and when, how to access data and potential constraints on the data. They shall also link to further information on the data like <a href="#site-metadata">site metadata</a>. Discovery metadata are thus WIS metadata.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISO 19115
+<td class="tableblock halign-left valign-top"><p class="tableblock">Discovery metadata are also called index metadata and are a digital version of the library index card. They describe who did what, where and when, how to access data and potential constraints on the data. They shall also link to further information on the data like <a href="#site-metadata">site metadata</a> (metadata following the World Meteorological Organization (WMO) Information System (WIS) specification is, e.g., discovery metadata).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO 19115<br>
 GCMD DIF</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="use-metadata"></a>Use metadata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used to understand data found</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use metadata describe the actual content of a <a href="#dataset">dataset</a> and how it is encoded. The purpose is to enable the user to understand the data without any further communication. They describe the content of variables using standardised vocabularies, units of variable, encoding of missing values, map projections, etc.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Climate and Forecast (CF) Convention
-BUFR
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use metadata describe the actual content of a <a href="#dataset">dataset</a> and how it is encoded. The purpose is to enable the user to understand the data without any further communication. They describe the content of variables using standardised vocabularies, units of variables, encoding of missing values, map projections, etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Climate and Forecast (CF) Convention<br>
+BUFR<br>
 GRIB</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="site-metadata"></a>Site metadata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used to understand data found</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Site metadata are used to describe the context of observational data. They describe the location of an observation, the instrumentation, procedures, etc. To a certain extent they overlap with <a href="#discovery-metadata">discovery metadata</a>, but also extend <a href="#discovery-metadata">discovery metadata</a>. Site metadata can be used for observation network design. Site metadata can be considered a type of <a href="#use-metadata">use metadata</a>.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">WIGOS
-OGC O&amp;M
+<td class="tableblock halign-left valign-top"><p class="tableblock">WIGOS<br>
+OGC O&amp;M<br>
 StInfoSys</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="configuration-metadata"></a>Configuration metadata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used to tune portal services for <a href="#dataset">datasets</a> for users</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration metadata are used to improve the services offered through a portal to the user community. This can be e.g. how to best visualise a <a href="#product">product</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Configuration metadata are used to improve the services offered through a portal to the user community. This can, e.g., be how to best visualise a <a href="#product">product</a>.</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="system-metadata"></a>System metadata</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Used to understand the technical structure of the <a href="#data-management">data management</a> system and track changes in it</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">System metadata covers e.g. technical details of the storage system, <a href="#web-service">web services</a>, their purpose and how they interact with other components of the <a href="#data-management">data management</a> system, available and consumed storage, number of users and other KPI elements etc.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">System metadata covers, e.g., technical details of the storage system, <a href="#web-service">web services</a>, their purpose and how they interact with other components of the <a href="#data-management">data management</a> system, available and consumed storage, number of users and other KPI elements etc.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SysDok</p></td>
 </tr>
 </tbody>
@@ -821,10 +818,10 @@ StInfoSys</p></td>
 <p><strong>Standardisation</strong> – compliance with established international standards;</p>
 </li>
 <li>
-<p><strong><a href="#interoperability">Interoperability</a></strong> – enabling machine-to-machine interfaces and standardised documentation and encoding of data;</p>
+<p><strong><a href="#interoperability">Interoperability</a></strong> – enabling machine-to-machine interfaces including standardised documentation and encoding of data;</p>
 </li>
 <li>
-<p><strong>Integrity</strong> – ensuring that data and access to them can be maintained over time, ensuring the user receives the same data each time;</p>
+<p><strong>Integrity</strong> – ensuring that data and data access can be maintained over time, and ensuring that the user receives the same data at any time of request;</p>
 </li>
 <li>
 <p><strong>Traceability</strong> – documentation of the <a href="#data-provenance">provenance</a> of a <a href="#dataset">dataset</a>, i.e., all actions taken to produce and maintain the <a href="#dataset">dataset</a> and the usage of the data in downstream systems;</p>
@@ -2546,7 +2543,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-03-17 13:28:46 UTC
+Last updated 2021-03-17 16:19:55 UTC
 </div>
 </div>
 </body>
