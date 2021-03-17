@@ -28,9 +28,14 @@ toc::[]
 |=======================================================================
 |Version |Date |Comment |Responsible
 
-|2.0 beta |2021-03-12 |New version based on original MET DMH
-|Bruce Hackett, Audun Christoffersen, Øystein Godøy, Vegar Kristiansen, 
-Martin Grønlien Pejcoch, Eivind Støylen, Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano
+|2.0.0 beta |2021-03-12 |New version based on original MET DMH and developments in S-ENDA
+|Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano
+
+|1.0 |2019-06-30 |First edition |Audun Christoffersen, Øystein Godøy, Bruce Hackett, Vegar Kristiansen, Martin Grønlien Pejcoch, Eivind Støylen
+
+|0.7 |2019-06-07 |Final draft revised to address comments from SENDA-SG |AC, ØG, BH, VK, MGP, ES
+
+|0.6 |2019-04-12 |Final draft from working group |AC, ØG, BH, VK, MGP, ES
 
 |=======================================================================
 
