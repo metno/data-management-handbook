@@ -36,11 +36,9 @@ The handbook can be used in three ways:
 [[PrinciplesDataManagement]]
 === The principles of data management for dynamic geodata
 
-Principles of standardised data documentation, publication, sharing and preservation have been formalised in the <<fair-principles,FAIR>> Guiding Principles for scientific data management and stewardship [https://www.nature.com/articles/sdata201618[RD3]] through a process facilitated by <<force11,FORCE11>>.
- 
-FAIR - findability, accessibility, <<interoperability,interoperability>> and reusability
+Principles of standardised data documentation, publication, sharing and preservation have been formalised in the <<fair-principles,FAIR>> Guiding Principles for scientific data management and stewardship [https://www.nature.com/articles/sdata201618[RD3]] through a process facilitated by <<force11,FORCE11>>. FAIR stands for findability, accessibility, <<interoperability,interoperability>> and reusability.
 
-By following these <<fair,FAIR>> principles it is easier to reach a common approach to <<data-management,data management>>, or a <<unified-data-management, unified data management>> model. One of the main motivations for implementing a <<unified-data-management, unified data management>> is to better serve the users of the data. Primarily, this can be approached by making user needs and requirements the guide for determining what data we provide and how. For example, it will be described below how the specification of <<dataset,datasets>> should be determined by user needs. By implementing the data management practices described here, it is expected that users will benefit from:
+By following the <<fair,FAIR>> principles it is easier to reach a common approach to <<data-management,data management>>, or a <<unified-data-management, unified data management>> model. One of the main motivations for implementing a <<unified-data-management, unified data management>> is to better serve the users of the data. Primarily, this can be approached by making user needs and requirements the guide for determining what data we provide and how. For example, it will be described below how the specification of <<dataset,datasets>> should be determined by user needs. By implementing the data management practices described here, it is expected that users will benefit from:
 
 * the ease of discovering, viewing and accessing all the <<dataset,datasets>> that are offered by the institute;
 * standardised ways of accessing data, including downloading or streaming data, which reduces the need for special solutions on the user side;
@@ -103,32 +101,32 @@ Metadata is a broad concept. In our <<data-management,data management>> model th
 
 |[[discovery-metadata]]Discovery metadata
 |Used to find relevant data
-|Discovery metadata are also called index metadata and are a digital version of the library index card. They describe who did what, where and when, how to access data and potential constraints on the data. They shall also link to further information on the data like <<site-metadata,site metadata>>. Discovery metadata are thus WIS metadata.
-|ISO 19115
+|Discovery metadata are also called index metadata and are a digital version of the library index card. They describe who did what, where and when, how to access data and potential constraints on the data. They shall also link to further information on the data like <<site-metadata,site metadata>> (metadata following the World Meteorological Organization (WMO) Information System (WIS) specification is, e.g., discovery metadata).
+|ISO 19115 +
 GCMD DIF
 
 |[[use-metadata]]Use metadata
 |Used to understand data found
-|Use metadata describe the actual content of a <<dataset,dataset>> and how it is encoded. The purpose is to enable the user to understand the data without any further communication. They describe the content of variables using standardised vocabularies, units of variable, encoding of missing values, map projections, etc.
-|Climate and Forecast (CF) Convention
-BUFR
+|Use metadata describe the actual content of a <<dataset,dataset>> and how it is encoded. The purpose is to enable the user to understand the data without any further communication. They describe the content of variables using standardised vocabularies, units of variables, encoding of missing values, map projections, etc.
+|Climate and Forecast (CF) Convention +
+BUFR +
 GRIB
 
 |[[site-metadata]]Site metadata
 |Used to understand data found
 |Site metadata are used to describe the context of observational data. They describe the location of an observation, the instrumentation, procedures, etc. To a certain extent they overlap with <<discovery-metadata,discovery metadata>>, but also extend <<discovery-metadata,discovery metadata>>. Site metadata can be used for observation network design. Site metadata can be considered a type of <<use-metadata,use metadata>>.
-|WIGOS
-OGC O&M
+|WIGOS +
+OGC O&M +
 StInfoSys
 
 |[[configuration-metadata]]Configuration metadata
 |Used to tune portal services for <<dataset,datasets>> for users
-|Configuration metadata are used to improve the services offered through a portal to the user community. This can be e.g. how to best visualise a <<product,product>>.
+|Configuration metadata are used to improve the services offered through a portal to the user community. This can, e.g., be how to best visualise a <<product,product>>.
 |
 
 |[[system-metadata]]System metadata
 |Used to understand the technical structure of the <<data-management,data management>> system and track changes in it 
-|System metadata covers e.g. technical details of the storage system, <<web-service,web services>>, their purpose and how they interact with other components of the <<data-management,data management>> system, available and consumed storage, number of users and other KPI elements etc.
+|System metadata covers, e.g., technical details of the storage system, <<web-service,web services>>, their purpose and how they interact with other components of the <<data-management,data management>> system, available and consumed storage, number of users and other KPI elements etc.
 |SysDok
 |===
 
@@ -143,8 +141,8 @@ This model is based on the model of the <<adc,Arctic Data Centre>>, which adhere
 For its implementation, the <<data-management,data management>> model is built upon the following principles:
 
 * *Standardisation* – compliance with established international standards;
-* *<<interoperability,Interoperability>>* – enabling machine-to-machine interfaces and standardised documentation and encoding of data;
-* *Integrity* – ensuring that data and access to them can be maintained over time, ensuring the user receives the same data each time;
+* *<<interoperability,Interoperability>>* – enabling machine-to-machine interfaces including standardised documentation and encoding of data;
+* *Integrity* – ensuring that data and data access can be maintained over time, and ensuring that the user receives the same data at any time of request;
 * *Traceability* – documentation of the <<data-provenance,provenance>> of a <<dataset,dataset>>, i.e., all actions taken to produce and maintain the <<dataset,dataset>> and the usage of the data in downstream systems;
 * *Modularisation* – enabling replacement of one component of the system without necessitating other changes.
 
