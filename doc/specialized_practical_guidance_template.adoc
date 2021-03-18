@@ -1,0 +1,10 @@
+[[specialized-practical_guidance]]
+=== Practical Guidance to Data Management at [insert institution here]
+
+This chapter includes how-to's and other practical guidance for...
+
+// add any descriptions and introductions needed, add any subchapters needed below. This chapter shoud describe what is being done, how it is done and who is doing it.
+
+==== Workflow for data management
+
+// optional subchapter that can be used as a checklist for data managers.
