@@ -554,10 +554,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_user_searches_from_qgis">6.3.4. User searches from QGIS</a></li>
 </ul>
 </li>
-<<<<<<< HEAD
 <li><a href="#specialized-practical_guidance">6.4. Practical Guidance to data producers at [INSTITUTION]</a></li>
-=======
->>>>>>> 8d246d9d3ce706d674119e495806b48bccc1cd9d
 </ul>
 </li>
 <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -1584,186 +1581,8 @@ select * from records;</code></pre>
 <div class="paragraph">
 <p>The csw-catalog-service is now started, and the catalog can be accessed on `&lt;<a href="http://10.20.30.10&gt;`_" class="bare">http://10.20.30.10&gt;`_</a>. Note that there is no point in debugging or changing code used in this environment. It is only meant to test the MMD files. If you want to modify code used in the catalog service, please refer to <a href="#local-developmen-env">[local-developmen-env]</a></p>
 </div>
-<<<<<<< HEAD
 <div class="paragraph">
 <p>Search the metadata catalog using <a href="https://qgis.org/en/site/">QGIS</a> (v3.14 or higher):</p>
-=======
-<div class="paragraph">
-<p>Search the metadata catalog using <a href="https://qgis.org/en/site/">QGIS</a> (v3.14 or higher):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://qgis.org/en/site/forusers/download.html">Download and install QGIS</a></p>
-</li>
-<li>
-<p>Run <code>qgis</code></p>
-</li>
-<li>
-<p>Select <code>Web &gt; MetaSearch &gt; MetaSearch</code> menu item</p>
-</li>
-<li>
-<p>Select <code>Services &gt; New</code></p>
-</li>
-<li>
-<p>Type, e.g., <code>localtest</code> for the name</p>
-</li>
-<li>
-<p>Type <code><a href="http://10.20.30.10" class="bare">http://10.20.30.10</a></code> for the URL</p>
-</li>
-<li>
-<p>Under the <code>Search</code> tab, you can then add search parameters, click <code>Search</code>, and get a list of available datasets.</p>
-</li>
-<li>
-<p>Select a dataset</p>
-</li>
-<li>
-<p>Click <code>Add Data</code> and select a WMS channel - the data will then be displayed in QGIS</p>
-</li>
-</ul>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>If you get an error about unexpected keyword argument 'auth' when searching for data, it is most likely due to a bug in QGIS: link:https://github.com/qgis/QGIS/issues/38074</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_s_enda_metadata_service_gives_feedback"><a class="anchor" href="#_s_enda_metadata_service_gives_feedback"></a>6.2.5. S-ENDA Metadata Service gives feedback</h4>
-<div class="paragraph">
-<p>S-ENDA Metadata Service has two main types of feedback for the data provider:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Questions/praise/bug reports etc. from users.</p>
-</li>
-<li>
-<p>Operational metrics about downloads and production runs for each dataset.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Feedback from users would come as either e-mails into a ticketing system, or as messages in a forum.</p>
-</div>
-<div class="paragraph">
-<p>Operational metrics will be harvested from metrics server (e.g Prometheus), giving the data provider information such as number of downloads pr. day for each type of service(WMS, DAP etc.) and delays in producing the datasets.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="search_context"><a class="anchor" href="#search_context"></a>6.3. Search context</h3>
-<div class="sect3">
-<h4 id="_user_searches_the_catalog_with_opensearch"><a class="anchor" href="#_user_searches_the_catalog_with_opensearch"></a>6.3.1. User searches the catalog with OpenSearch</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Local testing *</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>The <code>localtest</code> and <code>localdev</code> virtual machines provide OpenSearch support through <a href="https://github.com/geopython/pycsw">PyCSW</a>. To test OpenSearch via the browser, start the <code>localtest</code> vm (<code>vagrant up localtest</code>) and go to the following address:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>link:http://10.20.30.10/pycsw/csw.py?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>This will return a description document of the catalog service. The <code>URL</code> field in the description document is a template format that can be used to represent a parameterized form of the search. The search client will process the URL template and attempt to replace each instance of a template parameter, generally represented in the form {name}, with a value determined at query time (<a href="https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-url-template-syntax">OpenSearch URL template syntax</a>). The question mark following any search parameter means that the parameter is optional.</p>
-</div>
-<div class="paragraph">
-<p>We can now find all datasets in the catalog:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>link:http://10.20.30.10/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Or datasets within a given time span:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>link:http://10.20.30.10/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;time=2000-01-01/2020-09-01</p>
-</li>
-</ol>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>pyCSW opensearch time queries do not relate to the "expected" <code>start_date</code> and <code>end_date</code> MMD fields, or the associated <code>beginPosition</code> and <code>endPosition</code>, in the pyCSW ISO19139 profile. We are working to understand and handle this&#8230;&#8203;</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Or, datasets from any of the Sentinel satellites:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>link:http://10.20.30.10/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=sentinel&gt;`_</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_online_catalog"><a class="anchor" href="#_online_catalog"></a>6.3.2. Online catalog</h4>
-<div class="paragraph">
-<p>For searching the online metadata catalog, please refer to link:http://senda1.lab-a.met.no/ instead of link:http://10.20.30.10/:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="http://senda1.lab-a.met.no/pycsw/csw.py?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities">Service description document</a></p>
-</li>
-<li>
-<p><a href="http://senda1.lab-a.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results">All available datasets</a></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_user_searches_web_portals"><a class="anchor" href="#_user_searches_web_portals"></a>6.3.3. User searches web portals</h4>
-<div class="paragraph">
-<p><strong>GeoNorge.no</strong></p>
-</div>
-<div class="paragraph">
-<p><strong>TODO:</strong> describe how to search in geonorge, possibly with screenshots</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_user_searches_from_qgis"><a class="anchor" href="#_user_searches_from_qgis"></a>6.3.4. User searches from QGIS</h4>
-<div class="paragraph">
-<p>A staging server for the CSW catalog service is available at link:http://senda1.lab-a.met.no:8000/. This can be used from QGIS, as follows:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Select <code>Web &gt; MetaSearch &gt; MetaSearch</code> menu item</p>
-</li>
-<li>
-<p>Select <code>Services &gt; New</code></p>
-</li>
-<li>
-<p>Type, e.g., <code>senda1-lab-a</code> for the name</p>
-</li>
-<li>
-<p>Type <code><a href="http://senda1.lab-a.met.no" class="bare">http://senda1.lab-a.met.no</a></code> for the URL</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>Under the <code>Search</code> tab, you can then add search parameters, click <code>Search</code>, and get a list of available datasets.</p>
->>>>>>> 8d246d9d3ce706d674119e495806b48bccc1cd9d
 </div>
 <div class="ulist">
 <ul>
@@ -3033,7 +2852,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">;</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;title</p></td>
 </tr>
@@ -3170,11 +2989,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 </div>
 <div id="footer">
 <div id="footer-text">
-<<<<<<< HEAD
-Last updated 2021-03-18 16:57:31 UTC
-=======
-Last updated 2021-03-18 14:12:23 UTC
->>>>>>> 8d246d9d3ce706d674119e495806b48bccc1cd9d
+Last updated 2021-03-18 17:03:45 UTC
 </div>
 </div>
 </body>
