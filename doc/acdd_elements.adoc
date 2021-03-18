@@ -57,7 +57,7 @@ The following ACDD elements are recommended:
 |source | yes | ; |  | activity_type
 |creator_name | yes | , |  | dataset_citation>author
 |date_created | yes | , |  | dataset_citation>publication_date
-|title | yes | , |  | dataset_citation>title
+|title | yes | ; |  | dataset_citation>title
 |publisher_name | yes | , |  | dataset_citation>publisher
 |metadata_link | yes | , |  | dataset_citation>url
 |references | yes | , |  | dataset_citation>other
