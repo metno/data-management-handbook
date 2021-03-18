@@ -1,0 +1,143 @@
+[[register_context]]
+=== Register context
+
+
+==== Submitting data as NetCDF/CF
+
+By documenting and formatting your data using <<netcdf,NetCDF>> following the link:https://cfconventions.org/[CF conventions] and the link:https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3[Attribute Convention for Data Discovery (ACDD)], <<mmd,MMD>> files can be automatically generated from the <<netcdf,NetCDF>> files. The <<cf,CF conventions>> is a controlled vocabulary providing a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. The <<acdd,ACDD>> vocabulary describes attributes recommended for describing a <<netcdf,NetCDF>> dataset to data discovery systems.
+
+Information about how to format the NetCDF files is available at link:https://adc.met.no/node/4 and in <<acdd-elements>>. The latter contains an updated overview of the global NetCDF attributes required to generate an MMD file.
+  
+[NOTE]
+====
+The NASA GCMD/DIF keywords can be used for many of the <<acdd,ACDD>> attributes. You can use link:https://github.com/nansencenter/py-thesaurus-interface[py-thesaurus-interface] to get them (helps to avoid typos etc.). link:https://github.com/nansencenter/py-thesaurus-interface[py-thesaurus-interface] is also synchronized with the link:https://github.com/metno/mmd/tree/master/thesauri[MMD thesauri] (although not yet merged) and the link:http://mmisw.org/ont/cf/parameter[CF variables].
+====
+
+==== How to add NetCDF-CF data to thredds
+
+How should you proceed to add your <<netcdf-cf,NetCDF-CF>> data to <<thredds,thredds>>? Follow these steps and your data will be discoverable by <<thredds,thredds>> (this is valid for the existing thredds server at MET NORWAY), and then harvestable by the link:https://github.com/metno/py-mmd-tools[py-mmd-tools]
+
+1. You need to make your NetCDF-CF data available on our lustre filesystem.
+
+  a. If you need help to transfer data, please contact service desk.
+  b. Please also make sure you have sufficient quota on lustre for your data.
+  c. You can either use your userspace or some other area you have access to within a project.
+  d. Make sure you add the same data to both the A and B side if you need redundancy. Extra steps need to be taken for this to work.
+
+2. Then, thredds needs to be able to discover your data.
+
+  a. Take contact with service desk which will put you in contact the responsible person for adding data to thredds. He or she will need the full path to your data or base directory of your data structure. All data files ending with `.nc` ( or `.ncml` ) below this basedir will be displayed on thredds.
+  b. You can have a look here for some user data link:https://thredds.met.no/thredds/catalog/metusers/catalog.html. All users can add <<netcdf-cf,NetCDF-CF>> data under their user area, mainly for testing.
+
+3. Your <<netcdf-cf,NetCDF-CF>> data will now become visible on thredds. You can look here in the base catalog link:https://thredds.met.no/thredds/catalog.html to discover your data.
+
+If your files are correctly formatted and following the conventions, it is now also straightforward to add them to the discovery metadata catalog.
+
+==== How to test MMD records and register datasets
+
+In order to make a dataset findable, a dataset must be registered in a searchable catalog with appropriate metadata. The (meta)data catalog is indexed and exposed through link:https://en.wikipedia.org/wiki/Catalogue_Service_for_the_Web[CSW]. 
+
+The procedure to register a dataset in the catalog is as follows:
+
+. Create link:https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] XML record of metadata
+. Translate from MMD to ISO19115
+. Index in CSW
+. Expose ISO19115 metadata via CSW to the internet
+
+We have prepared Virtual Machine (VM) configurations and Docker containers to handle points 2-4 above.
+
+[NOTE]
+====
+Note to reviewers: Please consider if this makes sense, and can be done now
+====
+
+The workflow which a MET data provider should follow in order to add new datasets to the common metadata catalog service is then as follows:
+
+. Create link:https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] XML record of metadata
+. Clone the link:https://github.com/metno/S-ENDA-csw-catalog-service[S-ENDA-csw-catalog] repository
+. Test your MMD XML file(s) using the localtest vm (<<local-test-env>>)
+. Add an issue to the link:https://gitlab.met.no/mmd/s-enda-mmd-xml[S-ENDA-mmd-xml] repository (e.g., "New foo model dataset" [the issue is numbered, e.g., 131]; note that this is only available inside the network of MET Norway)
+. Clone the link:https://gitlab.met.no/mmd/s-enda-mmd-xml[S-ENDA-mmd-xml] repository
+. Create an issue branch: `git branch issue131_foo_dataset`
+. Add your MMD file in the new branch, then commit, push, and create a pull request
+. A reviewer will evaluate the new dataset, and provide feedback or direcly accept and merge
+
+[NOTE]
+====
+Note to reviewers: I now interpret http://senda1.lab-a.met.no as a staging server. How do we go from that to production, and what needs to be done? Please review and/or add issues in https://github.com/metno/S-ENDA-project-plan..
+====
+
+When the new MMD file is added to the metadata repository, it will be translated to a link:https://github.com/geopython/pycsw[PyCSW] ISO19139 profile, indexed in a postgis database, and exposed to the public via the link:http://senda1.lab-a.met.no/[(meta)data catalog] in the same way as demonstrated in the localtest vm (<<local-test-env>>).
+
+[[local-test-env]]
+==== Local test environment
+
+This vm is used to test your MMD XML-files locally before pushing them to the main discovery metadata repository. 
+
+. Put your test files in the folder `lib/input_mmd_file` (you may have to create this folder)
+. Start VM:
+
+[source]
+--
+vagrant up localtest
+--
+
+. If you want to test other MMD files after `vagrant up localtest`:
+
+[source]
+--
+vagrant ssh localtest
+cd /vagrant
+sudo MMD_IN=/vagrant/lib/input_mmd_files ./deploy-metadata.sh
+--
+
+. Or, if you want to translate and index MMD files from the main gitlab repository (requires vpn connection to MET):
+
+[source]
+--
+sudo MMD_IN=/vagrant/lib/s-enda-mmd-xml ./deploy-metadata.sh
+--
+
+. Check that the postgis db is added
+
+[source]
+--
+vagrant ssh localtest
+cd /vagrant/
+sudo docker-compose exec postgis bash
+psql -U postgis csw_db
+\dt
+select * from records;
+--
+
+The csw-catalog-service is now started, and the catalog can be accessed on `<http://10.20.30.10>`_. Note that there is no point in debugging or changing code used in this environment. It is only meant to test the MMD files. If you want to modify code used in the catalog service, please refer to <<local-developmen-env>>
+
+Search the metadata catalog using link:https://qgis.org/en/site/[QGIS] (v3.14 or higher):
+
+* link:https://qgis.org/en/site/forusers/download.html[Download and install QGIS]
+* Run `qgis`
+* Select `Web > MetaSearch > MetaSearch` menu item
+* Select `Services > New`
+* Type, e.g., `localtest` for the name
+* Type `http://10.20.30.10` for the URL
+* Under the `Search` tab, you can then add search parameters, click `Search`, and get a list of available datasets.
+* Select a dataset
+* Click `Add Data` and select a WMS channel - the data will then be displayed in QGIS
+
+[note]
+====
+If you get an error about unexpected keyword argument 'auth' when searching for data, it is most likely due to a bug in QGIS: link:https://github.com/qgis/QGIS/issues/38074
+====
+
+==== S-ENDA Metadata Service gives feedback
+
+S-ENDA Metadata Service has two main types of feedback for the data provider:
+
+. Questions/praise/bug reports etc. from users.
+. Operational metrics about downloads and production runs for each dataset.
+
+
+Feedback from users would come as either e-mails into a ticketing system, or as messages in a forum.
+
+Operational metrics will be harvested from metrics server (e.g Prometheus), giving the data provider information such as number of downloads pr. day for each type of service(WMS, DAP etc.) and delays in producing the datasets.
+
