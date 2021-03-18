@@ -534,6 +534,28 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
+<li><a href="#specialized-practical_guidance">6. Practical Guidance to data producers</a>
+<ul class="sectlevel2">
+<li><a href="#_workflow">6.1. Workflow</a></li>
+<li><a href="#register_context">6.2. Register context</a>
+<ul class="sectlevel3">
+<li><a href="#_submitting_data_as_netcdfcf">6.2.1. Submitting data as NetCDF/CF</a></li>
+<li><a href="#_how_to_add_netcdf_cf_data_to_thredds">6.2.2. How to add NetCDF-CF data to thredds</a></li>
+<li><a href="#_how_to_test_mmd_records_and_register_datasets">6.2.3. How to test MMD records and register datasets</a></li>
+<li><a href="#local-test-env">6.2.4. Local test environment</a></li>
+<li><a href="#_s_enda_metadata_service_gives_feedback">6.2.5. S-ENDA Metadata Service gives feedback</a></li>
+</ul>
+</li>
+<li><a href="#search_context">6.3. Search context</a>
+<ul class="sectlevel3">
+<li><a href="#_user_searches_the_catalog_with_opensearch">6.3.1. User searches the catalog with OpenSearch</a></li>
+<li><a href="#_online_catalog">6.3.2. Online catalog</a></li>
+<li><a href="#_user_searches_web_portals">6.3.3. User searches web portals</a></li>
+<li><a href="#_user_searches_from_qgis">6.3.4. User searches from QGIS</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#acknowledgements">Acknowledgements</a></li>
 <li><a href="#glossary">Glossary of Terms and Names</a></li>
 <li><a href="#acronyms">List of Acronyms</a></li>
@@ -1315,8 +1337,424 @@ Both <a href="#discovery-metadata">discovery metadata</a> and <a href="#use-meta
 <div class="paragraph">
 <p>Revise DMH annually or when needed.</p>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="specialized-practical_guidance"><a class="anchor" href="#specialized-practical_guidance"></a>6. Practical Guidance to data producers</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Unresolved directive in data-management-handbook.adoc - include::specialized_practical_guidance.adoc[]</p>
+<p>This chapter includes how-to&#8217;s and other practical guidance for&#8230;&#8203;</p>
+</div>
+<div class="sect2">
+<h3 id="_workflow"><a class="anchor" href="#_workflow"></a>6.1. Workflow</h3>
+
+</div>
+<div class="sect2">
+<h3 id="register_context"><a class="anchor" href="#register_context"></a>6.2. Register context</h3>
+<div class="sect3">
+<h4 id="_submitting_data_as_netcdfcf"><a class="anchor" href="#_submitting_data_as_netcdfcf"></a>6.2.1. Submitting data as NetCDF/CF</h4>
+<div class="paragraph">
+<p>By documenting and formatting your data using <a href="#netcdf">NetCDF</a> following the <a href="https://cfconventions.org/">CF conventions</a> and the <a href="https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3">Attribute Convention for Data Discovery (ACDD)</a>, <a href="#mmd">MMD</a> files can be automatically generated from the <a href="#netcdf">NetCDF</a> files. The <a href="#cf">CF conventions</a> is a controlled vocabulary providing a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. The <a href="#acdd">ACDD</a> vocabulary describes attributes recommended for describing a <a href="#netcdf">NetCDF</a> dataset to data discovery systems.</p>
+</div>
+<div class="paragraph">
+<p>Information about how to format the NetCDF files is available at link:https://adc.met.no/node/4 and in <a href="#acdd-elements">[acdd-elements]</a>. The latter contains an updated overview of the global NetCDF attributes required to generate an MMD file.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The NASA GCMD/DIF keywords can be used for many of the <a href="#acdd">ACDD</a> attributes. You can use <a href="https://github.com/nansencenter/py-thesaurus-interface">py-thesaurus-interface</a> to get them (helps to avoid typos etc.). <a href="https://github.com/nansencenter/py-thesaurus-interface">py-thesaurus-interface</a> is also synchronized with the <a href="https://github.com/metno/mmd/tree/master/thesauri">MMD thesauri</a> (although not yet merged) and the <a href="http://mmisw.org/ont/cf/parameter">CF variables</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_add_netcdf_cf_data_to_thredds"><a class="anchor" href="#_how_to_add_netcdf_cf_data_to_thredds"></a>6.2.2. How to add NetCDF-CF data to thredds</h4>
+<div class="paragraph">
+<p>How should you proceed to add your <a href="#netcdf-cf">NetCDF-CF</a> data to <a href="#thredds">thredds</a>? Follow these steps and your data will be discoverable by <a href="#thredds">thredds</a> (this is valid for the existing thredds server at MET NORWAY), and then harvestable by the <a href="https://github.com/metno/py-mmd-tools">py-mmd-tools</a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You need to make your NetCDF-CF data available on our lustre filesystem.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha">
+<li>
+<p>If you need help to transfer data, please contact service desk.</p>
+</li>
+<li>
+<p>Please also make sure you have sufficient quota on lustre for your data.</p>
+</li>
+<li>
+<p>You can either use your userspace or some other area you have access to within a project.</p>
+</li>
+<li>
+<p>Make sure you add the same data to both the A and B side if you need redundancy. Extra steps need to be taken for this to work.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Then, thredds needs to be able to discover your data.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha">
+<li>
+<p>Take contact with service desk which will put you in contact the responsible person for adding data to thredds. He or she will need the full path to your data or base directory of your data structure. All data files ending with <code>.nc</code> ( or <code>.ncml</code> ) below this basedir will be displayed on thredds.</p>
+</li>
+<li>
+<p>You can have a look here for some user data link:https://thredds.met.no/thredds/catalog/metusers/catalog.html. All users can add <a href="#netcdf-cf">NetCDF-CF</a> data under their user area, mainly for testing.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Your <a href="#netcdf-cf">NetCDF-CF</a> data will now become visible on thredds. You can look here in the base catalog link:https://thredds.met.no/thredds/catalog.html to discover your data.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If your files are correctly formatted and following the conventions, it is now also straightforward to add them to the discovery metadata catalog.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_how_to_test_mmd_records_and_register_datasets"><a class="anchor" href="#_how_to_test_mmd_records_and_register_datasets"></a>6.2.3. How to test MMD records and register datasets</h4>
+<div class="paragraph">
+<p>In order to make a dataset findable, a dataset must be registered in a searchable catalog with appropriate metadata. The (meta)data catalog is indexed and exposed through <a href="https://en.wikipedia.org/wiki/Catalogue_Service_for_the_Web">CSW</a>.</p>
+</div>
+<div class="paragraph">
+<p>The procedure to register a dataset in the catalog is as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create <a href="https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> XML record of metadata</p>
+</li>
+<li>
+<p>Translate from MMD to ISO19115</p>
+</li>
+<li>
+<p>Index in CSW</p>
+</li>
+<li>
+<p>Expose ISO19115 metadata via CSW to the internet</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>We have prepared Virtual Machine (VM) configurations and Docker containers to handle points 2-4 above.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Note to reviewers: Please consider if this makes sense, and can be done now</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>The workflow which a MET data provider should follow in order to add new datasets to the common metadata catalog service is then as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create <a href="https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> XML record of metadata</p>
+</li>
+<li>
+<p>Clone the <a href="https://github.com/metno/S-ENDA-csw-catalog-service">S-ENDA-csw-catalog</a> repository</p>
+</li>
+<li>
+<p>Test your MMD XML file(s) using the localtest vm (<a href="#local-test-env">Section 6.2.4</a>)</p>
+</li>
+<li>
+<p>Add an issue to the <a href="https://gitlab.met.no/mmd/s-enda-mmd-xml">S-ENDA-mmd-xml</a> repository (e.g., "New foo model dataset" [the issue is numbered, e.g., 131]; note that this is only available inside the network of MET Norway)</p>
+</li>
+<li>
+<p>Clone the <a href="https://gitlab.met.no/mmd/s-enda-mmd-xml">S-ENDA-mmd-xml</a> repository</p>
+</li>
+<li>
+<p>Create an issue branch: <code>git branch issue131_foo_dataset</code></p>
+</li>
+<li>
+<p>Add your MMD file in the new branch, then commit, push, and create a pull request</p>
+</li>
+<li>
+<p>A reviewer will evaluate the new dataset, and provide feedback or direcly accept and merge</p>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Note to reviewers: I now interpret <a href="http://senda1.lab-a.met.no" class="bare">http://senda1.lab-a.met.no</a> as a staging server. How do we go from that to production, and what needs to be done? Please review and/or add issues in <a href="https://github.com/metno/S-ENDA-project-plan" class="bare">https://github.com/metno/S-ENDA-project-plan</a>..</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>When the new MMD file is added to the metadata repository, it will be translated to a <a href="https://github.com/geopython/pycsw">PyCSW</a> ISO19139 profile, indexed in a postgis database, and exposed to the public via the <a href="http://senda1.lab-a.met.no/">(meta)data catalog</a> in the same way as demonstrated in the localtest vm (<a href="#local-test-env">Section 6.2.4</a>).</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="local-test-env"><a class="anchor" href="#local-test-env"></a>6.2.4. Local test environment</h4>
+<div class="paragraph">
+<p>This vm is used to test your MMD XML-files locally before pushing them to the main discovery metadata repository.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Put your test files in the folder <code>lib/input_mmd_file</code> (you may have to create this folder)</p>
+</li>
+<li>
+<p>Start VM:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>vagrant up localtest</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>If you want to test other MMD files after <code>vagrant up localtest</code>:</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>vagrant ssh localtest
+cd /vagrant
+sudo MMD_IN=/vagrant/lib/input_mmd_files ./deploy-metadata.sh</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Or, if you want to translate and index MMD files from the main gitlab repository (requires vpn connection to MET):</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>sudo MMD_IN=/vagrant/lib/s-enda-mmd-xml ./deploy-metadata.sh</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Check that the postgis db is added</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>vagrant ssh localtest
+cd /vagrant/
+sudo docker-compose exec postgis bash
+psql -U postgis csw_db
+\dt
+select * from records;</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>The csw-catalog-service is now started, and the catalog can be accessed on `&lt;<a href="http://10.20.30.10&gt;`_" class="bare">http://10.20.30.10&gt;`_</a>. Note that there is no point in debugging or changing code used in this environment. It is only meant to test the MMD files. If you want to modify code used in the catalog service, please refer to <a href="#local-developmen-env">[local-developmen-env]</a></p>
+</div>
+<div class="paragraph">
+<p>Search the metadata catalog using <a href="https://qgis.org/en/site/">QGIS</a> (v3.14 or higher):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://qgis.org/en/site/forusers/download.html">Download and install QGIS</a></p>
+</li>
+<li>
+<p>Run <code>qgis</code></p>
+</li>
+<li>
+<p>Select <code>Web &gt; MetaSearch &gt; MetaSearch</code> menu item</p>
+</li>
+<li>
+<p>Select <code>Services &gt; New</code></p>
+</li>
+<li>
+<p>Type, e.g., <code>localtest</code> for the name</p>
+</li>
+<li>
+<p>Type <code><a href="http://10.20.30.10" class="bare">http://10.20.30.10</a></code> for the URL</p>
+</li>
+<li>
+<p>Under the <code>Search</code> tab, you can then add search parameters, click <code>Search</code>, and get a list of available datasets.</p>
+</li>
+<li>
+<p>Select a dataset</p>
+</li>
+<li>
+<p>Click <code>Add Data</code> and select a WMS channel - the data will then be displayed in QGIS</p>
+</li>
+</ul>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>If you get an error about unexpected keyword argument 'auth' when searching for data, it is most likely due to a bug in QGIS: link:https://github.com/qgis/QGIS/issues/38074</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_s_enda_metadata_service_gives_feedback"><a class="anchor" href="#_s_enda_metadata_service_gives_feedback"></a>6.2.5. S-ENDA Metadata Service gives feedback</h4>
+<div class="paragraph">
+<p>S-ENDA Metadata Service has two main types of feedback for the data provider:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Questions/praise/bug reports etc. from users.</p>
+</li>
+<li>
+<p>Operational metrics about downloads and production runs for each dataset.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Feedback from users would come as either e-mails into a ticketing system, or as messages in a forum.</p>
+</div>
+<div class="paragraph">
+<p>Operational metrics will be harvested from metrics server (e.g Prometheus), giving the data provider information such as number of downloads pr. day for each type of service(WMS, DAP etc.) and delays in producing the datasets.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="search_context"><a class="anchor" href="#search_context"></a>6.3. Search context</h3>
+<div class="sect3">
+<h4 id="_user_searches_the_catalog_with_opensearch"><a class="anchor" href="#_user_searches_the_catalog_with_opensearch"></a>6.3.1. User searches the catalog with OpenSearch</h4>
+<div class="ulist">
+<ul>
+<li>
+<p>Local testing *</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The <code>localtest</code> and <code>localdev</code> virtual machines provide OpenSearch support through <a href="https://github.com/geopython/pycsw">PyCSW</a>. To test OpenSearch via the browser, start the <code>localtest</code> vm (<code>vagrant up localtest</code>) and go to the following address:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>link:http://10.20.30.10/pycsw/csw.py?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This will return a description document of the catalog service. The <code>URL</code> field in the description document is a template format that can be used to represent a parameterized form of the search. The search client will process the URL template and attempt to replace each instance of a template parameter, generally represented in the form {name}, with a value determined at query time (<a href="https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-url-template-syntax">OpenSearch URL template syntax</a>). The question mark following any search parameter means that the parameter is optional.</p>
+</div>
+<div class="paragraph">
+<p>We can now find all datasets in the catalog:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>link:http://10.20.30.10/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Or datasets within a given time span:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>link:http://10.20.30.10/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;time=2000-01-01/2020-09-01</p>
+</li>
+</ol>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>pyCSW opensearch time queries do not relate to the "expected" <code>start_date</code> and <code>end_date</code> MMD fields, or the associated <code>beginPosition</code> and <code>endPosition</code>, in the pyCSW ISO19139 profile. We are working to understand and handle this&#8230;&#8203;</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Or, datasets from any of the Sentinel satellites:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>link:http://10.20.30.10/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=sentinel&gt;`_</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_online_catalog"><a class="anchor" href="#_online_catalog"></a>6.3.2. Online catalog</h4>
+<div class="paragraph">
+<p>For searching the online metadata catalog, please refer to link:http://senda1.lab-a.met.no/ instead of link:http://10.20.30.10/:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="http://senda1.lab-a.met.no/pycsw/csw.py?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities">Service description document</a></p>
+</li>
+<li>
+<p><a href="http://senda1.lab-a.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results">All available datasets</a></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_user_searches_web_portals"><a class="anchor" href="#_user_searches_web_portals"></a>6.3.3. User searches web portals</h4>
+<div class="paragraph">
+<p><strong>GeoNorge.no</strong></p>
+</div>
+<div class="paragraph">
+<p><strong>TODO:</strong> describe how to search in geonorge, possibly with screenshots</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_user_searches_from_qgis"><a class="anchor" href="#_user_searches_from_qgis"></a>6.3.4. User searches from QGIS</h4>
+<div class="paragraph">
+<p>A staging server for the CSW catalog service is available at link:http://senda1.lab-a.met.no:8000/. This can be used from QGIS, as follows:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Select <code>Web &gt; MetaSearch &gt; MetaSearch</code> menu item</p>
+</li>
+<li>
+<p>Select <code>Services &gt; New</code></p>
+</li>
+<li>
+<p>Type, e.g., <code>senda1-lab-a</code> for the name</p>
+</li>
+<li>
+<p>Type <code><a href="http://senda1.lab-a.met.no" class="bare">http://senda1.lab-a.met.no</a></code> for the URL</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Under the <code>Search</code> tab, you can then add search parameters, click <code>Search</code>, and get a list of available datasets.</p>
 </div>
 </div>
 </div>
@@ -2544,7 +2982,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-03-18 10:11:00 UTC
+Last updated 2021-03-18 14:12:23 UTC
 </div>
 </div>
 </body>
