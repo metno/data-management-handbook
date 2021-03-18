@@ -71,6 +71,9 @@ include::data_governance.adoc[]
 include::{special_data_governance}[]
 
 :numbered:
+include::practical_guide.adoc[]
+
+:numbered:
 include::{special_practical_guidance}[]
 
 :numbered!:
