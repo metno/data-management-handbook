@@ -1,7 +1,7 @@
 [[specialized-practical_guidance]]
-== Practical Guidance to data producers
+== Practical Guidance to producers of NetCDF-CF datasets
 
-This chapter includes how-to's and other practical guidance for...
+This chapter includes how-to's and other practical guidance for producers of NetCDF-CF datasets.
 
 // add any descriptions and introductions needed, add any subchapters needed below. This chapter shoud describe what is being done, how it is done and who is doing it.
 
@@ -14,4 +14,3 @@ include::register_context.adoc[]
 include::search_context.adoc[]
 
 // optional subchapter that can be used as a checklist for data managers.
-
