@@ -7,6 +7,18 @@ This chapter includes how-to's and other practical guidance for producers of Net
 
 === Workflow
 
+1. Define your dataset (see <<dataset,Dataset>>)
+2. Create a netCDF-CF file (see, e.g., link:https://unidata.github.io/netcdf4-python/[netCDF4-python docs])
+3. Add discovery metadata as global attributes (see <<acdd_elements,section about global netCDF attibutes>>)
+4. Add variables and use metadata following the link:https://cfconventions.org/[CF conventions]
+5. Test that your dataset contains the necessary discovery metadata (see ...)
+6. Store the file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <<add-to-thredds>>)
+7. Index your data in a searchable metadata catalog under a development environment
+8. Verify that the development CSW service works as expected (e.g., that it provides correct metadata)
+9. Index your data in a staging/production environment
+
+The data producer should be able to handle points 1-5, whereas the last four points (6-9) should be done with help from a system expert.
+
 :numbered:
 include::register_context.adoc[]
 

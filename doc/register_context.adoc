@@ -13,6 +13,7 @@ Information about how to format the NetCDF files is available at link:https://ad
 The NASA GCMD/DIF keywords can be used for many of the <<acdd,ACDD>> attributes. You can use link:https://github.com/nansencenter/py-thesaurus-interface[py-thesaurus-interface] to get them (helps to avoid typos etc.). link:https://github.com/nansencenter/py-thesaurus-interface[py-thesaurus-interface] is also synchronized with the link:https://github.com/metno/mmd/tree/master/thesauri[MMD thesauri] (although not yet merged) and the link:http://mmisw.org/ont/cf/parameter[CF variables].
 ====
 
+[[add-to-thredds]]
 ==== How to add NetCDF-CF data to thredds
 
 How should you proceed to add your <<netcdf-cf,NetCDF-CF>> data to <<thredds,thredds>>? Follow these steps and your data will be discoverable by <<thredds,thredds>> (this is valid for the existing thredds server at MET NORWAY), and then harvestable by the link:https://github.com/metno/py-mmd-tools[py-mmd-tools]
