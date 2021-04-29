@@ -559,7 +559,12 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#acronyms">List of Acronyms</a></li>
 <li><a href="#appendixa">Appendix A: List of Referenced Software or Services</a></li>
 <li><a href="#appendixb">Appendix B: Users of [insert institution]’s data</a></li>
-<li><a href="#acdd_elements">Global attributes that should be added to NetCDF-CF files</a></li>
+<li><a href="#acdd_elements">Global attributes that should be added to NetCDF-CF files</a>
+<ul class="sectlevel2">
+<li><a href="#_notes">Notes</a></li>
+<li><a href="#_list_of_attributes">List of Attributes</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
@@ -2608,6 +2613,25 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 <div class="paragraph">
 <p>The ACDD recommendations should always be followed in order to properly document your netCDF-CF files. However, the below tables summarize the attributes that are needed to properly populate a discovery metadata catalog which fulfills the requirements of international standards (e.g., GCMD/DIF, the WMO profile of ISO19115, etc.).</p>
 </div>
+<div class="sect2">
+<h3 id="_notes"><a class="anchor" href="#_notes"></a>Notes</h3>
+<div class="paragraph">
+<p><strong>Keywords</strong> describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., <code>short_name:keyword</code>. Example: "GCMD:Earth Science &gt; Atmosphere &gt; Atmospheric radiation, Norwegian thematic categories:Weather and climate".</p>
+</div>
+<div class="paragraph">
+<p>Two elements should be provided to support the <code>keywords</code> element:
+* <code>keywords_vocabulary</code> provides information about the vocabulary defining the keywords. It should be provided as a string with a short name and a description in the format <code>short_name:description</code>. Example: "GCMD:NASA/GCMD Earth Science Keywords, Norwegian thematic categories:Nasjonal tematisk inndeling (DOK-kategori)".
+* <code>keywords_resource</code> is not an ACDD element but has been added to support a linked data approach, where the vocabulary definitions are provided through a web link. It should be provided as a string with the short name used in the definition of the <code>keywords_vocabulary</code> followed by a link, i.e., <code>short_name:url</code>. Example: "GCMD:https://gcmdservices.gsfc.nasa.gov/static/kms/, Norwegian thematic categories:https://register.geonorge.no/subregister/metadata-kodelister/kartverket/nasjonal-temainndeling".</p>
+</div>
+<div class="paragraph">
+<p>A data <strong>license</strong> provides information about any restrictions on the use of the dataset. To support a linked data approach, the <code>license</code> element should be supported by a <code>license_resource</code> element, providing a link to the license definition.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_list_of_attributes"><a class="anchor" href="#_list_of_attributes"></a>List of Attributes</h3>
+<div class="paragraph">
+<p>This section provides lists of ACDD elements that are required and recommended, as well as some extra elements that are useful to support the findability of the data. The right columns of these tables provide the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MET Norway Metadata Specification (MMD)</a> fields that map to the ACDD (and our extension to ACDD) elements. Please refer to <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for definitions of these elements, as well as controlled vocabularies that should be used.</p>
+</div>
 <div class="paragraph">
 <p>The following ACDD elements are required:</p>
 </div>
@@ -2738,6 +2762,13 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 <td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">temporal_extent&gt;end_date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_bounds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;polygon</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">processing_level</p></td>
@@ -2950,7 +2981,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 <td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;lang</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">abstract_lang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">summary_lang</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
@@ -2978,7 +3009,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">contributor_organisation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['contributor_institution', 'contributor_organisation']</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">unknown</p></td>
@@ -3017,9 +3048,10 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-04-28 02:38:23 UTC
+Last updated 2021-04-29 02:37:32 UTC
 </div>
 </div>
 </body>
