@@ -54,10 +54,10 @@ The following ACDD elements are recommended:
 |geospatial_bounds | no |  |  | geographic_extent>polygon
 |processing_level | no |  |  | operational_status
 |license | no |  |  | use_constraint>identifier
-|['creator_role', 'contributor_role'] | yes | , | unknown | personnel>role
-|['creator_name', 'contributor_name'] | yes | , | unknown | personnel>name
-|creator_email | yes | , | unknown | personnel>email
-|creator_institution | yes | , | unknown | personnel>organisation
+|['creator_role', 'contributor_role'] | yes | , | Investigator | personnel>role
+|['creator_name', 'contributor_name'] | yes | , | Not available | personnel>name
+|creator_email | yes | , | Not available | personnel>email
+|creator_institution | yes | , | Not available | personnel>organisation
 |institution | yes | , |  | data_center>data_center_name>short_name
 |institution | yes | , |  | data_center>data_center_name>long_name
 |publisher_url | yes | , |  | data_center>data_center_url
@@ -88,8 +88,8 @@ In addition, some global attributes are useful for the discovery metadata catalo
 |summary_lang | yes | , | en | abstract>lang
 |dataset_production_status | no |  |  | dataset_production_status
 |license_resource | no |  |  | use_constraint>resource
-|contributor_email | yes | , | unknown | personnel>email
-|['contributor_institution', 'contributor_organisation'] | yes | , | unknown | personnel>organisation
+|contributor_email | yes | , | Not available | personnel>email
+|['contributor_institution', 'contributor_organisation'] | yes | , | Not available | personnel>organisation
 |related_dataset_relation_type | yes |  |  | related_dataset>relation_type
 |related_dataset_id | yes |  |  | related_dataset>id
 |iso_topic_category | yes | , |  | iso_topic_category
