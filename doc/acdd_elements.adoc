@@ -35,8 +35,8 @@ The following ACDD elements are required:
 |id | no |  |  | metadata_identifier
 |date_created | yes | , |  | last_metadata_update>update>datetime
 |date_metadata_modified | yes | , |  | last_metadata_update>update>datetime
-|title | yes | ; |  | title>title
-|summary | yes | ; |  | abstract>abstract
+|title | yes |  |  | title>title
+|summary | yes |  |  | abstract>abstract
 |geospatial_lat_max | no |  |  | geographic_extent>rectangle>north
 |geospatial_lat_min | no |  |  | geographic_extent>rectangle>south
 |geospatial_lon_max | no |  |  | geographic_extent>rectangle>east
@@ -72,7 +72,7 @@ The following ACDD elements are recommended:
 |source | yes | ; |  | activity_type
 |creator_name | yes | , |  | dataset_citation>author
 |date_created | yes | , |  | dataset_citation>publication_date
-|title | yes | ; |  | dataset_citation>title
+|title | yes |  |  | dataset_citation>title
 |publisher_name | yes | , |  | dataset_citation>publisher
 |metadata_link | yes | , |  | dataset_citation>url
 |references | yes | , |  | dataset_citation>other
@@ -84,8 +84,10 @@ In addition, some global attributes are useful for the discovery metadata catalo
 |Extra Attribute |Repetition allowed |Separator |Default |MMD equivalent
 |date_created_type | yes | , | Created | last_metadata_update>update>type
 |collection | yes | , |  | collection
-|title_lang | yes | , | en | title>lang
-|summary_lang | yes | , | en | abstract>lang
+|['title_no'] | yes |  |  | title>title
+|title_lang | yes |  | en | title>lang
+|['summary_no'] | yes |  |  | abstract>abstract
+|summary_lang | yes |  | en | abstract>lang
 |dataset_production_status | no |  |  | dataset_production_status
 |license_resource | no |  |  | use_constraint>resource
 |contributor_email | yes | , | Not available | personnel>email
