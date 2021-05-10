@@ -30,10 +30,10 @@ Or, datasets from any of the Sentinel satellites:
 
 ==== Online catalog
 
-For searching the online metadata catalog, please refer to link:http://senda1.lab-a.met.no/ instead of link:http://10.20.30.10/:
+For searching the online metadata catalog, please refer to link:https://csw-staging.s-enda.k8s.met.no/ instead of link:http://10.20.30.10/:
 
-* link:http://senda1.lab-a.met.no/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities[Service description document]
-* link:http://senda1.lab-a.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results[All available datasets]
+* link:https://csw-staging.s-enda.k8s.met.no/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities[Service description document]
+* link:https://csw-staging.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results[All available datasets]
 
 ==== User searches web portals
 
@@ -43,12 +43,12 @@ For searching the online metadata catalog, please refer to link:http://senda1.la
 
 ==== User searches from QGIS
 
-A staging server for the CSW catalog service is available at link:http://senda1.lab-a.met.no:8000/. This can be used from QGIS, as follows:
+A staging server for the CSW catalog service is available at link:https://csw-staging.s-enda.k8s.met.no. This can be used from QGIS, as follows:
 
 . Select `Web > MetaSearch > MetaSearch` menu item
 . Select `Services > New`
-. Type, e.g., `senda1-lab-a` for the name
-. Type `http://senda1.lab-a.met.no` for the URL
+. Type, e.g., `csw-staging-senda` for the name
+. Type `https://csw-staging.s-enda.k8s.met.no` for the URL
 
 Under the `Search` tab, you can then add search parameters, click `Search`, and get a list of available datasets.
 
