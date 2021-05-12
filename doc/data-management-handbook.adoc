@@ -44,7 +44,13 @@ toc::[]
 include::introduction.adoc[]
 
 :numbered:
+include::human-roles.adoc[]
+
+:numbered:
 include::{special_intro}[]
+
+:numbered:
+include::summary-requirements.adoc[]
 
 :numbered:
 include::structure_and_documenting.adoc[]
