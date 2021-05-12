@@ -53,31 +53,31 @@ include::{special_intro}[]
 include::summary-requirements.adoc[]
 
 :numbered:
-include::structure_and_documenting.adoc[]
+include::structure-and-documenting.adoc[]
 
 :numbered:
 include::{special_strudoc}[]
 
 :numbered:
-include::data_services.adoc[]
+include::data-services.adoc[]
 
 :numbered:
 include::{special_data_services}[]
 
 :numbered:
-include::user_portals.adoc[]
+include::user-portals.adoc[]
 
 :numbered:
 include::{special_user_portals}[]
 
 :numbered:
-include::data_governance.adoc[]
+include::data-governance.adoc[]
 
 :numbered:
 include::{special_data_governance}[]
 
 :numbered:
-include::practical_guide.adoc[]
+include::practical-guide.adoc[]
 
 :numbered:
 include::{special_practical_guidance}[]
