@@ -95,5 +95,5 @@ In addition, some global attributes are useful for the discovery metadata catalo
 |related_dataset_relation_type | yes |  |  | related_dataset>relation_type
 |related_dataset_id | yes |  |  | related_dataset>id
 |iso_topic_category | yes | , |  | iso_topic_category
-|keywords_resource | yes | , |  | keywords>resource
+|spatial_representation | no |  |  | spatial_representation
 |=======================================================================
