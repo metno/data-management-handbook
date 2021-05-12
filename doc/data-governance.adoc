@@ -20,11 +20,11 @@ In this chapter we address many aspects of this definition, but a full descripti
 [[ch-data-life-cycl]]
 === Data life cycle management
 
-<<data-life-cycle-management,Data life cycle management>> is steered by documentation describing how data generated or used in an activity will be handled throughout the lifetime of the activity and after the activity has been completed. This is living documentation that follows the activity and specifies what kind of data will be generated or acquired, how the data will be described, where the data will be stored, whether and how the data can be shared, and how the data will be retired (archived or deleted). The purpose of life cycle management is to safeguard the data, not just during their “active” period but also for future reuse of the data, and to facilitate cost-effective data handling.
+<<glossary-data-life-cycle-management,Data life cycle management>> is steered by documentation describing how data generated or used in an activity will be handled throughout the lifetime of the activity and after the activity has been completed. This is living documentation that follows the activity and specifies what kind of data will be generated or acquired, how the data will be described, where the data will be stored, whether and how the data can be shared, and how the data will be retired (archived or deleted). The purpose of life cycle management is to safeguard the data, not just during their “active” period but also for future reuse of the data, and to facilitate cost-effective data handling.
  
 This DMH recommends the following two concepts of <<data-life-cycle-managment,life cycle management>> to be implemented for the institution:
  
-* Extended <<discovery-metadata,discovery metadata>> for data in internal production chains. These are metadata elements that provide the necessary information for life cycle management just described.
+* Extended <<glossary-discovery-metadata,discovery metadata>> for data in internal production chains. These are metadata elements that provide the necessary information for life cycle management just described.
 * A <<dmp,Data Management Plan>> (DMP) document. A DMP is expected for datasets produced in external projects, but may also be useful for internal datasets, as a supplement to the extended discovery metadata.
  
 The goal is that life cycle management information shall be readily available for every dataset managed by the institute. How these concepts are implemented are described in the institution specific subsection below.
@@ -33,7 +33,7 @@ The goal is that life cycle management information shall be readily available fo
 [[generic-dmp]]
 ==== Data Management Plan
 
-A Data Management Plan (<<dmp,DMP>>) is a document that describes textually how the <<data-life-cycle-management,data life cycle management>> will be carried out for <<dataset,datasets>> used and produced in specific projects. Generally, these are externally financed projects for which such documentation is required by funding agencies. However, larger internal projects covering many datasets may also find it beneficial to create a specific document of this type.
+A Data Management Plan (<<dmp,DMP>>) is a document that describes textually how the <<glossary-data-life-cycle-management,data life cycle management>> will be carried out for <<glossary-dataset,datasets>> used and produced in specific projects. Generally, these are externally financed projects for which such documentation is required by funding agencies. However, larger internal projects covering many datasets may also find it beneficial to create a specific document of this type.
  
 Currently, agencies funding R&D (such as <<nfr,NFR>> and the EU) do not strictly require a DMP from the start of any project. However, for projects in the geosciences, data management is an issue that must be addressed, and the agencies strongly recommend a DMP solution. For example, NFR publishes https://www.forskningsradet.no/en/Adviser-research-policy/open-science/open-access-to-research-data/[guidelines] for the contents of a DMP, including links to tools (templates and online services); these guidelines are recommended for any data management project or activity and will in time become a requirement according to <<nfr,NFR>>.
 

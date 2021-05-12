@@ -45,7 +45,7 @@ services:
         -a special_data_services=${SPECIAL_DATA_SERVICES:-specialized_data_services_template.adoc}
         -a special_user_portals=${SPECIAL_USER_PORTALS:-specialized_userportals_template.adoc}
         -a special_data_governance=${SPECIAL_DATA_GOVERNANCE:-specialized_datagov_template.adoc}
-        -a special_practical_guidance=${SPECIAL_PRACTICAL_GUIDANCE:-specialized_practical_guidance.adoc}
+        -a special_practical_guidance=${SPECIAL_PRACTICAL_GUIDANCE:-specialized_practical_guidance_template.adoc}
         -a special_appendix_users=${SPECIAL_APPENDIX_USERS:-specialized_appendix_users.adoc}
         -a pdf-themesdir=/workdir
         -a pdf-theme=dmh

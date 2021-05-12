@@ -29,7 +29,7 @@ DiagramBlock <|-- PlantUmlBlock
 Data here means the numerical values needed to analyse and interpret a natural process (i.e., calibrated or with calibration information, provenance, etc.; it must be possible to understand the meaning of the numerical value from the available and machine-readable information).
 ====
 
-Advanced users typically consume some type of data in order to process and interpret it, and produce new knowledge, e.g., in the form of a new dataset or other information. The datasets can be organised in different levels, such as the link:http://codes.wmo.int/wmdr/_SourceOfObservation"[WMO WIGOS definition for levels of data]. Less advanced users apply information based on data (e.g., an illustration without ) to make decisions (e.g., clothes adapted to the forecast weather).
+Advanced users typically consume some type of data in order to process and interpret it, and produce new knowledge, e.g., in the form of a new dataset or other information. The datasets can be organised in different levels, such as the link:http://codes.wmo.int/wmdr/_SourceOfObservation[WMO WIGOS definition for levels of data]. Less advanced users apply information based on data (e.g., an illustration without ) to make decisions (e.g., clothes adapted to the forecast weather).
 
 [[user-definitions]]
 ==== User definitions
