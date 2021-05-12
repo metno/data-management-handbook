@@ -15,11 +15,11 @@
 
 // which version has been adopted/published etc-
 
-===== Status <<discovery-metadata,Discovery metadata>>:
+===== Status <<discovery-metadata,Discovery metadata>>
 
 // decisions regaring discovery-metdata, description on how/what to do or links to relevant chapters
 
-===== Status <<dmp,DMP>>:
+===== Status <<dmp,DMP>>
 
 // link to recommended dmp-template or documentation
 
