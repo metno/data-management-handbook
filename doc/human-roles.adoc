@@ -6,6 +6,24 @@
 
 Data is processed and interpreted to generate knowledge (e.g., about the weather) for end users. The knowledge can be presented as information in the form of actual data, illustrations, text or other forms of communication. In this context, an illustration is a representation of data, whereas data means the numerical values needed to analyse and interpret a natural process (i.e., calibrated or with calibration information; it must be possible to understand the meaning of the numerical value from the available and machine-readable information).
 
+// The UML is not generated as expected, maybe because asciidoc requires 
+// java to generate the figures... The very poor documentation at 
+// https://asciidoctor.org/docs/asciidoctor-diagram/ doesn't specify what
+// java stuff that is needed, and I'm not even sure if that is the problem.
+// TODO: make this asciidoctor-diagram work and update the below diagram 
+// with correct code from the S-ENDA-documentation
+[plantuml, information-to-knowledge, png]
+....
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+....
+
 [DEFINITION]
 ====
 Data here means the numerical values needed to analyse and interpret a natural process (i.e., calibrated or with calibration information, provenance, etc.; it must be possible to understand the meaning of the numerical value from the available and machine-readable information).
@@ -15,6 +33,26 @@ Advanced users typically consume some type of data in order to process and inter
 
 [[user-definitions]]
 ==== User definitions
+
+We define two types of users:
+
+1. Producers: Those that create / produce data
+2. Consumers: Those that consume data
+
+A consumer of one level of data is typically a producer of data at the next level. A user can both consume data and produce data, or just have one of these roles (i.e., at the start/end of the production chain).
+
+// TODO: update diagram in line with the one in S-ENDA-documentation
+[plantuml, user-definitions, png]
+....
+class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor <|-- DiagramBlock
+DiagramBlock <|-- DitaaBlock
+DiagramBlock <|-- PlantUmlBlock
+....
 
 [[data-consumer]]
 ===== Data consumers

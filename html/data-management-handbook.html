@@ -886,6 +886,18 @@ StInfoSys</p></td>
 <div class="paragraph">
 <p>Data is processed and interpreted to generate knowledge (e.g., about the weather) for end users. The knowledge can be presented as information in the form of actual data, illustrations, text or other forms of communication. In this context, an illustration is a representation of data, whereas data means the numerical values needed to analyse and interpret a natural process (i.e., calibrated or with calibration information; it must be possible to understand the meaning of the numerical value from the available and machine-readable information).</p>
 </div>
+<div class="literalblock">
+<div class="content">
+<pre>class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor &lt;|-- DiagramBlock
+DiagramBlock &lt;|-- DitaaBlock
+DiagramBlock &lt;|-- PlantUmlBlock</pre>
+</div>
+</div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
@@ -899,6 +911,34 @@ StInfoSys</p></td>
 </div>
 <div class="sect3">
 <h4 id="user-definitions"><a class="anchor" href="#user-definitions"></a>1.2.2. User definitions</h4>
+<div class="paragraph">
+<p>We define two types of users:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Producers: Those that create / produce data</p>
+</li>
+<li>
+<p>Consumers: Those that consume data</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>A consumer of one level of data is typically a producer of data at the next level. A user can both consume data and produce data, or just have one of these roles (i.e., at the start/end of the production chain).</p>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>class BlockProcessor
+class DiagramBlock
+class DitaaBlock
+class PlantUmlBlock
+
+BlockProcessor &lt;|-- DiagramBlock
+DiagramBlock &lt;|-- DitaaBlock
+DiagramBlock &lt;|-- PlantUmlBlock</pre>
+</div>
+</div>
 <div class="sect4">
 <h5 id="data-consumer"><a class="anchor" href="#data-consumer"></a>1.2.2.1. Data consumers</h5>
 <div class="paragraph">
