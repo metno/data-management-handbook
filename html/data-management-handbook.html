@@ -2616,12 +2616,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 <div class="sect2">
 <h3 id="_notes"><a class="anchor" href="#_notes"></a>Notes</h3>
 <div class="paragraph">
-<p><strong>Keywords</strong> describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., <code>short_name:keyword</code>. Example: "GCMD:Earth Science &gt; Atmosphere &gt; Atmospheric radiation, Norwegian thematic categories:Weather and climate".</p>
-</div>
-<div class="paragraph">
-<p>Two elements should be provided to support the <code>keywords</code> element:
-* <code>keywords_vocabulary</code> provides information about the vocabulary defining the keywords. It should be provided as a string with a short name and a description in the format <code>short_name:description</code>. Example: "GCMD:NASA/GCMD Earth Science Keywords, Norwegian thematic categories:Nasjonal tematisk inndeling (DOK-kategori)".
-* <code>keywords_resource</code> is not an ACDD element but has been added to support a linked data approach, where the vocabulary definitions are provided through a web link. It should be provided as a string with the short name used in the definition of the <code>keywords_vocabulary</code> followed by a link, i.e., <code>short_name:url</code>. Example: "GCMD:https://gcmdservices.gsfc.nasa.gov/static/kms/, Norwegian thematic categories:https://register.geonorge.no/subregister/metadata-kodelister/kartverket/nasjonal-temainndeling".</p>
+<p><strong>Keywords</strong> describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., <code>short_name:keyword</code>. Example: "GCMDSK:Earth Science &gt; Atmosphere &gt; Atmospheric radiation, NORTHEMES:Weather and climate". In addition, <code>keywords_vocabulary</code> provides information about the vocabulary defining the keywords. <strong>Please see <a href="https://adc.met.no/node/96" class="bare">https://adc.met.no/node/96</a> for detailed information about how to define the ACDD keywords</strong>.</p>
 </div>
 <div class="paragraph">
 <p>A data <strong>license</strong> provides information about any restrictions on the use of the dataset. To support a linked data approach, the <code>license</code> element should be supported by a <code>license_resource</code> element, providing a link to the license definition.</p>
@@ -2630,7 +2625,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 <div class="sect2">
 <h3 id="_list_of_attributes"><a class="anchor" href="#_list_of_attributes"></a>List of Attributes</h3>
 <div class="paragraph">
-<p>This section provides lists of ACDD elements that are required and recommended, as well as some extra elements that are useful to support the findability of the data. The right columns of these tables provide the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MET Norway Metadata Specification (MMD)</a> fields that map to the ACDD (and our extension to ACDD) elements. Please refer to <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for definitions of these elements, as well as controlled vocabularies that should be used.</p>
+<p>This section provides lists of ACDD elements that are required and recommended, as well as some extra elements that are needed to fully support our data management needs. The right columns of these tables provide the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MET Norway Metadata Specification (MMD)</a> fields that map to the ACDD (and our extension to ACDD) elements. Please refer to <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for definitions of these elements, as well as controlled vocabularies that should be used.</p>
 </div>
 <div class="paragraph">
 <p>The following ACDD elements are required:</p>
@@ -2941,7 +2936,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 </tbody>
 </table>
 <div class="paragraph">
-<p>In addition, some global attributes are useful for the discovery metadata catalog but do not exist in ACDD. Please refer to the documentation of <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for a description of these elements:</p>
+<p>Please refer to the documentation of <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for a description of these elements:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3065,7 +3060,7 @@ SDI has evolved from <a href="#geographic-information-system">GIS</a>. Among the
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-05-12 02:59:42 UTC
+Last updated 2021-05-13 03:01:50 UTC
 </div>
 </div>
 </body>
