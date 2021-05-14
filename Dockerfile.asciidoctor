@@ -3,12 +3,13 @@
 # versions of metno/data-management-handbook
 #
 
-FROM ruby:alpine
+#FROM ruby:alpine
+FROM asciidoctor/docker-asciidoctor:latest
 LABEL maintainer="mortenwh@met.no"
 
-RUN gem install asciidoctor; \
-    gem install asciidoctor-pdf --pre; \
-    gem install asciidoctor-diagram
+#RUN gem install asciidoctor; \
+#    gem install asciidoctor-pdf --pre; \
+#    gem install asciidoctor-diagram
 
 RUN mkdir /workdir; \
     mkdir /pdf; \
