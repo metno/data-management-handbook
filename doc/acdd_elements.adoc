@@ -86,7 +86,6 @@ Please refer to the documentation of https://htmlpreview.github.io/?https://gith
 |['summary_no'] | yes |  |  | abstract>abstract
 |summary_lang | yes |  | en | abstract>lang
 |dataset_production_status | no |  |  | dataset_production_status
-|access_constraint | no |  |  | access_constraint
 |license_resource | no |  |  | use_constraint>resource
 |contributor_email | yes | , | Not available | personnel>email
 |['contributor_institution', 'contributor_organisation'] | yes | , | Not available | personnel>organisation
