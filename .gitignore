@@ -1,4 +1,5 @@
 .env
 .vagrant
+.asciidoctor
 *.lock
 ubuntu-*

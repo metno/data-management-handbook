@@ -14,14 +14,26 @@ Data is processed and interpreted to generate knowledge (e.g., about the weather
 // with correct code from the S-ENDA-documentation
 [plantuml, information-to-knowledge, png]
 ....
-class BlockProcessor
-class DiagramBlock
-class DitaaBlock
-class PlantUmlBlock
+state "Knowledge generation" as kg {
+state Data {
+  Data : Mercury pressure
+  Data : Wind speed and direction
+}
 
-BlockProcessor <|-- DiagramBlock
-DiagramBlock <|-- DitaaBlock
-DiagramBlock <|-- PlantUmlBlock
+state "Processing and interpretation" as PI { 
+  PI : Temperature changes
+  PI : Wind changes
+}
+
+state Knowledge {
+  Knowledge :  It will most likely be raining
+}
+
+}
+
+Data --> PI
+PI --> Knowledge
+Knowledge --> Data : Trace and verify
 ....
 
 [DEFINITION]
@@ -44,14 +56,21 @@ A consumer of one level of data is typically a producer of data at the next leve
 // TODO: update diagram in line with the one in S-ENDA-documentation
 [plantuml, user-definitions, png]
 ....
-class BlockProcessor
-class DiagramBlock
-class DitaaBlock
-class PlantUmlBlock
+package "Level 0 data" as L0 {
+  (Consume data) as (CD0)
+}
 
-BlockProcessor <|-- DiagramBlock
-DiagramBlock <|-- DitaaBlock
-DiagramBlock <|-- PlantUmlBlock
+package "Level 1 data" as L1 {
+  (Produce data) as (PD1)
+  (Consume data) as (CD1)
+}
+
+actor "L0 consumer / L1 producer" as L0C
+actor "L1 consumer" as L1C
+
+L0C --> (CD0)
+L0C --> (PD1)
+L1C --> (CD1)
 ....
 
 [[data-consumer]]
