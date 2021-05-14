@@ -1,23 +1,31 @@
-[[practical-guidance]]
-== Practical Guidance to producers of NetCDF-CF datasets
+[[practical-guides]]
+== Practical Guides
 
-This chapter includes how-to's and other practical guidance for producers of NetCDF-CF datasets.
+This chapter includes how-to's and other practical guidance for data producers.
 
 // add any descriptions and introductions needed, add any subchapters needed below. This chapter shoud describe what is being done, how it is done and who is doing it.
 
-=== Workflow
+[[netcdf-cf-guide]]
+=== NetCDF-CF datasets
 
-1. Define your dataset (see <<glossary-dataset,Dataset>>)
-2. Create a netCDF-CF file (see, e.g., link:https://unidata.github.io/netcdf4-python/[netCDF4-python docs])
-3. Add discovery metadata as global attributes (see <<acdd_elements,section about global netCDF attibutes>>)
-4. Add variables and use metadata following the link:https://cfconventions.org/[CF conventions]
-5. Test that your dataset contains the necessary discovery metadata (see ...)
-6. Store the file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <<add-to-thredds>>)
-7. Index your data in a searchable metadata catalog under a development environment
-8. Verify that the development CSW service works as expected (e.g., that it provides correct metadata)
-9. Index your data in a staging/production environment
+==== Workflow
+
+. Define your dataset (see <<glossary-dataset,Dataset>>)
+. Create a netCDF-CF file (see, e.g., link:https://unidata.github.io/netcdf4-python/[netCDF4-python docs], or link:http://xarray.pydata.org/en/stable/user-guide/io.html[xarray docs])
+
+  * Add discovery metadata as global attributes (see <<acdd-elements,global attibutes section>>)
+  * Add variables and <<glossary-use-metadata,use metadata>> following the link:https://cfconventions.org/[CF conventions]
+
+. Test that your dataset contains the necessary discovery metadata and create MMD xml file(s) (see <<test-and-create-mmd-file>>)
+. Store the file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <<add-to-thredds>>)
+. Index your data in a searchable metadata catalog under a development environment
+. Verify that the development CSW service works as expected (e.g., that it provides correct metadata)
+. Index your data in a staging/production environment
 
 The data producer should be able to handle points 1-5, whereas the last four points (6-9) should be done with help from a system expert.
+
+:numbered:
+include::acdd-elements.adoc[]
 
 :numbered:
 include::register_context.adoc[]
