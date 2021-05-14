@@ -154,7 +154,7 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 |
 
 |[[gis]]GIS
-|<<geographic-information-system,Geographic Information System>>
+|<<glossary-geographic-information-system,Geographic Information System>>
 |
 
 |[[grib]]GRIB

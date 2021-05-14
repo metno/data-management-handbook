@@ -21,13 +21,13 @@
 |===
 
 [[example]]
-==== Example portal, current implementation
+==== Current implementation
 
 
-===== Planned developments in near-term (< 2 years)
+==== Planned developments in near-term (< 2 years)
 
 
 
-===== Expected evolution in the longer term (> 2 years)
+==== Expected evolution in the longer term (> 2 years)
 // (optional sub-chapter)
 

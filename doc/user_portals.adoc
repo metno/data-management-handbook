@@ -1,9 +1,0 @@
-[[user-portals]]
-== User Portals and Documentation
-:xrefstyle: short
-
-The purpose of this chapter is to describe the human interfaces data consumers would use to navigate data and the related services. A portal is an entry point for data consumers, enabling them to discover and search for datasets and services, and providing sufficient documentation and guidance to ensure that they are able to serve themselves using the interactive and machine interfaces offered. 
-
-Here, we can distinguish between a general portal for all publishable datasets from the institution and targeted portals that offer a focused selection of data, which may include external datasets. Targeted portals cater to specific user groups and may have a limited lifetime, but also can be long-term commitments. 
-
-
