@@ -1,5 +1,5 @@
 [[test-and-create-mmd-file]]
-=== How to test your datasets and create MMD files
+==== How to test your datasets and create MMD files
 
 In order to make a dataset findable, a dataset must be registered in a searchable catalog with appropriate metadata. The (meta)data catalog is indexed and exposed through link:https://en.wikipedia.org/wiki/Catalogue_Service_for_the_Web[CSW].
 
@@ -104,10 +104,10 @@ If you get an error about unexpected keyword argument 'auth' when searching for 
 
 
 [[register_context]]
-=== Register context
+==== Register context
 
 
-==== Submitting data as NetCDF/CF
+===== Submitting data as NetCDF/CF
 
 By documenting and formatting your data using <<netcdf,NetCDF>> following the link:https://cfconventions.org/[CF conventions] and the link:https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3[Attribute Convention for Data Discovery (ACDD)], <<mmd,MMD>> files can be automatically generated from the <<netcdf,NetCDF>> files. The <<cf,CF conventions>> is a controlled vocabulary providing a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. The <<acdd,ACDD>> vocabulary describes attributes recommended for describing a <<netcdf,NetCDF>> dataset to data discovery systems.
 
@@ -119,7 +119,7 @@ The NASA GCMD/DIF keywords can be used for many of the <<acdd,ACDD>> attributes.
 ====
 
 [[add-to-thredds]]
-==== How to add NetCDF-CF data to thredds
+===== How to add NetCDF-CF data to thredds
 
 How should you proceed to add your <<netcdf-cf,NetCDF-CF>> data to <<thredds,thredds>>? Follow these steps and your data will be discoverable by <<thredds,thredds>> (this is valid for the existing thredds server at MET NORWAY), and then harvestable by the link:https://github.com/metno/py-mmd-tools[py-mmd-tools]
 
@@ -139,7 +139,7 @@ How should you proceed to add your <<netcdf-cf,NetCDF-CF>> data to <<thredds,thr
 
 If your files are correctly formatted and following the conventions, it is now also straightforward to add them to the discovery metadata catalog.
 
-==== S-ENDA Metadata Service gives feedback
+===== S-ENDA Metadata Service gives feedback
 
 S-ENDA Metadata Service has two main types of feedback for the data provider:
 

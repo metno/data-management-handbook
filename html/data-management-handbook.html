@@ -540,27 +540,37 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 </ul>
 </li>
-<li><a href="#practical-guidance">6. Practical Guidance to producers of NetCDF-CF datasets</a>
+<li><a href="#practical-guides">6. Practical Guides</a>
 <ul class="sectlevel2">
-<li><a href="#_workflow">6.1. Workflow</a></li>
-<li><a href="#register_context">6.2. Register context</a>
+<li><a href="#netcdf-cf-guide">6.1. NetCDF-CF datasets</a>
 <ul class="sectlevel3">
-<li><a href="#_submitting_data_as_netcdfcf">6.2.1. Submitting data as NetCDF/CF</a></li>
-<li><a href="#add-to-thredds">6.2.2. How to add NetCDF-CF data to thredds</a></li>
-<li><a href="#_how_to_test_mmd_records_and_register_datasets">6.2.3. How to test MMD records and register datasets</a></li>
-<li><a href="#local-test-env">6.2.4. Local test environment</a></li>
-<li><a href="#_s_enda_metadata_service_gives_feedback">6.2.5. S-ENDA Metadata Service gives feedback</a></li>
+<li><a href="#_workflow">6.1.1. Workflow</a></li>
+<li><a href="#acdd-elements">6.1.2. Global attributes</a>
+<ul class="sectlevel4">
+<li><a href="#_notes">6.1.2.1. Notes</a></li>
+<li><a href="#_list_of_attributes">6.1.2.2. List of Attributes</a></li>
 </ul>
 </li>
-<li><a href="#search_context">6.3. Search context</a>
-<ul class="sectlevel3">
-<li><a href="#_user_searches_the_catalog_with_opensearch">6.3.1. User searches the catalog with OpenSearch</a></li>
-<li><a href="#_online_catalog">6.3.2. Online catalog</a></li>
-<li><a href="#_user_searches_web_portals">6.3.3. User searches web portals</a></li>
-<li><a href="#_user_searches_from_qgis">6.3.4. User searches from QGIS</a></li>
+<li><a href="#test-and-create-mmd-file">6.1.3. How to test your datasets and create MMD files</a></li>
+<li><a href="#local-test-env">6.1.4. Local test environment</a></li>
+<li><a href="#register_context">6.1.5. Register context</a>
+<ul class="sectlevel4">
+<li><a href="#_submitting_data_as_netcdfcf">6.1.5.1. Submitting data as NetCDF/CF</a></li>
+<li><a href="#add-to-thredds">6.1.5.2. How to add NetCDF-CF data to thredds</a></li>
+<li><a href="#_s_enda_metadata_service_gives_feedback">6.1.5.3. S-ENDA Metadata Service gives feedback</a></li>
 </ul>
 </li>
-<li><a href="#specialized-practical_guidance">6.4. Practical Guidance to data producers at [INSTITUTION]</a></li>
+</ul>
+</li>
+<li><a href="#search_context">6.2. Search context</a>
+<ul class="sectlevel3">
+<li><a href="#_user_searches_the_catalog_with_opensearch">6.2.1. User searches the catalog with OpenSearch</a></li>
+<li><a href="#_online_catalog">6.2.2. Online catalog</a></li>
+<li><a href="#_user_searches_web_portals">6.2.3. User searches web portals</a></li>
+<li><a href="#_user_searches_from_qgis">6.2.4. User searches from QGIS</a></li>
+</ul>
+</li>
+<li><a href="#specialized-practical_guidance">6.3. Practical Guidance to data producers at [INSTITUTION]</a></li>
 </ul>
 </li>
 <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -568,12 +578,6 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#acronyms">List of Acronyms</a></li>
 <li><a href="#appendixa">Appendix A: List of Referenced Software or Services</a></li>
 <li><a href="#appendixb">Appendix B: Users of [insert institution]’s data</a></li>
-<li><a href="#acdd_elements">Global attributes that should be added to NetCDF-CF files</a>
-<ul class="sectlevel2">
-<li><a href="#_notes">Notes</a></li>
-<li><a href="#_list_of_attributes">List of Attributes</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -885,7 +889,7 @@ StInfoSys</p></td>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="information-to-knowledge.png" alt="information to knowledge" width="273" height="284">
+<img src="information-to-knowledge.png" alt="information to knowledge" width="381" height="326">
 </div>
 </div>
 <div class="exampleblock">
@@ -919,7 +923,7 @@ StInfoSys</p></td>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="user-definitions.png" alt="user definitions" width="273" height="284">
+<img src="user-definitions.png" alt="user definitions" width="587" height="201">
 </div>
 </div>
 <div class="sect4">
@@ -1505,32 +1509,38 @@ The organisation provides seamless access to data from distributed data centres 
 </div>
 </div>
 <div class="sect1">
-<h2 id="practical-guidance"><a class="anchor" href="#practical-guidance"></a>6. Practical Guidance to producers of NetCDF-CF datasets</h2>
+<h2 id="practical-guides"><a class="anchor" href="#practical-guides"></a>6. Practical Guides</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This chapter includes how-to&#8217;s and other practical guidance for producers of NetCDF-CF datasets.</p>
+<p>This chapter includes how-to&#8217;s and other practical guidance for data producers.</p>
 </div>
 <div class="sect2">
-<h3 id="_workflow"><a class="anchor" href="#_workflow"></a>6.1. Workflow</h3>
+<h3 id="netcdf-cf-guide"><a class="anchor" href="#netcdf-cf-guide"></a>6.1. NetCDF-CF datasets</h3>
+<div class="sect3">
+<h4 id="_workflow"><a class="anchor" href="#_workflow"></a>6.1.1. Workflow</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Define your dataset (see <a href="#glossary-dataset">Dataset</a>)</p>
 </li>
 <li>
-<p>Create a netCDF-CF file (see, e.g., <a href="https://unidata.github.io/netcdf4-python/">netCDF4-python docs</a>)</p>
+<p>Create a netCDF-CF file (see, e.g., <a href="https://unidata.github.io/netcdf4-python/">netCDF4-python docs</a>, or <a href="http://xarray.pydata.org/en/stable/user-guide/io.html">xarray docs</a>)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Add discovery metadata as global attributes (see <a href="#acdd-elements">global attibutes section</a>)</p>
 </li>
 <li>
-<p>Add discovery metadata as global attributes (see <a href="#acdd_elements">section about global netCDF attibutes</a>)</p>
+<p>Add variables and <a href="#glossary-use-metadata">use metadata</a> following the <a href="https://cfconventions.org/">CF conventions</a></p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p>Add variables and use metadata following the <a href="https://cfconventions.org/">CF conventions</a></p>
+<p>Test that your dataset contains the necessary discovery metadata and create MMD xml file(s) (see <a href="#test-and-create-mmd-file">Section 6.1.3</a>)</p>
 </li>
 <li>
-<p>Test that your dataset contains the necessary discovery metadata (see &#8230;&#8203;)</p>
-</li>
-<li>
-<p>Store the file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <a href="#add-to-thredds">Section 6.2.2</a>)</p>
+<p>Store the file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <a href="#add-to-thredds">Section 6.1.5.2</a>)</p>
 </li>
 <li>
 <p>Index your data in a searchable metadata catalog under a development environment</p>
@@ -1547,83 +1557,431 @@ The organisation provides seamless access to data from distributed data centres 
 <p>The data producer should be able to handle points 1-5, whereas the last four points (6-9) should be done with help from a system expert.</p>
 </div>
 </div>
-<div class="sect2">
-<h3 id="register_context"><a class="anchor" href="#register_context"></a>6.2. Register context</h3>
 <div class="sect3">
-<h4 id="_submitting_data_as_netcdfcf"><a class="anchor" href="#_submitting_data_as_netcdfcf"></a>6.2.1. Submitting data as NetCDF/CF</h4>
+<h4 id="acdd-elements"><a class="anchor" href="#acdd-elements"></a>6.1.2. Global attributes</h4>
 <div class="paragraph">
-<p>By documenting and formatting your data using <a href="#netcdf">NetCDF</a> following the <a href="https://cfconventions.org/">CF conventions</a> and the <a href="https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3">Attribute Convention for Data Discovery (ACDD)</a>, <a href="#mmd">MMD</a> files can be automatically generated from the <a href="#netcdf">NetCDF</a> files. The <a href="#cf">CF conventions</a> is a controlled vocabulary providing a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. The <a href="#acdd">ACDD</a> vocabulary describes attributes recommended for describing a <a href="#netcdf">NetCDF</a> dataset to data discovery systems.</p>
+<p>In order to add netCDF-CF datasets to the discovery metadata catalog, the data producer should populate the file with certain global attributes mainly described in the Attribute Convention for Data Discovery (ACDD). For a complete description of the ACDD elements, please refer to <a href="http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery" class="bare">http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery</a>.</p>
 </div>
 <div class="paragraph">
-<p>Information about how to format the NetCDF files is available at link:https://adc.met.no/node/4 and in <a href="#acdd-elements">[acdd-elements]</a>. The latter contains an updated overview of the global NetCDF attributes required to generate an MMD file.</p>
+<p>The ACDD recommendations should always be followed in order to properly document your netCDF-CF files. However, the below tables summarize the ACDD and some additional attributes that are needed to properly populate a discovery metadata catalog which fulfills the requirements of international standards (e.g., GCMD/DIF, the WMO profile of ISO19115, etc.).</p>
 </div>
-<div class="admonitionblock note">
-<table>
+<div class="sect4">
+<h5 id="_notes"><a class="anchor" href="#_notes"></a>6.1.2.1. Notes</h5>
+<div class="paragraph">
+<p><strong>Keywords</strong> describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., <code>short_name:keyword</code>. Example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>:keywords = "GCMDSK:Earth Science &gt; Atmosphere &gt; Atmospheric radiation, NORTHEMES:Weather and climate" ;</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>In addition, <code>keywords_vocabulary</code> provides information about the vocabulary defining the keywords. Example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>:keywords_vocabulary = "GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords, GCMDPROV:GCMD Providers:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/providers, GCMDLOC:GCMD Locations:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/locations" ;</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>See <a href="https://adc.met.no/node/96" class="bare">https://adc.met.no/node/96</a> for more information about how to define the ACDD keywords.</p>
+</div>
+<div class="paragraph">
+<p>A data <strong>license</strong> provides information about any restrictions on the use of the dataset. To support a linked data approach, the <code>license</code> element should be supported by a <code>license_resource</code> element, providing a link to the license definition. Example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>:license = "CC-BY-4.0" ;<br>
+:license_resource = "http://spdx.org/licenses/CC-BY-4.0" ;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_list_of_attributes"><a class="anchor" href="#_list_of_attributes"></a>6.1.2.2. List of Attributes</h5>
+<div class="paragraph">
+<p>This section provides lists of ACDD elements that are required and recommended, as well as some extra elements that are needed to fully support our data management needs. The right columns of these tables provide the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MET Norway Metadata Specification (MMD)</a> fields that map to the ACDD (and our extension to ACDD) elements. Please refer to <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for definitions of these elements, as well as controlled vocabularies that should be used. Note that the below tables are automatically generated - check <a href="https://github.com/metno/py-mmd-tools/blob/master/py_mmd_tools/mmd_elements.yaml" class="bare">https://github.com/metno/py-mmd-tools/blob/master/py_mmd_tools/mmd_elements.yaml</a> if anything is unclear.</p>
+</div>
+<div class="paragraph">
+<p>The following ACDD elements are required:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<tbody>
 <tr>
-<td class="icon">
-<div class="title">Note</div>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>The NASA GCMD/DIF keywords can be used for many of the <a href="#acdd">ACDD</a> attributes. You can use <a href="https://github.com/nansencenter/py-thesaurus-interface">py-thesaurus-interface</a> to get them (helps to avoid typos etc.). <a href="https://github.com/nansencenter/py-thesaurus-interface">py-thesaurus-interface</a> is also synchronized with the <a href="https://github.com/metno/mmd/tree/master/thesauri">MMD thesauri</a> (although not yet merged) and the <a href="http://mmisw.org/ont/cf/parameter">CF variables</a>.</p>
-</div>
-</td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ACDD Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Repetition</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MMD equivalent</strong></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metadata_identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use date_metadata_modified with comma separation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;datetime</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date_metadata_modified</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use date_metadata_modified with comma separation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;datetime</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use ACDD extension for translations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;title</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">summary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use ACDD extension for translations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;abstract</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lat_max</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;north</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lat_min</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;south</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lon_max</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;east</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lon_min</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;west</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keywords</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keywords&gt;keyword</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keywords_vocabulary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keywords&gt;vocabulary</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following ACDD elements are recommended:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ACDD Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Repetition</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Default</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MMD equivalent</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">time_coverage_start</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">temporal_extent&gt;start_date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">time_coverage_end</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">temporal_extent&gt;end_date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_bounds</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;polygon</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">processing_level</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">operational_status</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use_constraint&gt;identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['creator_role', 'contributor_role']</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Investigator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;role</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['creator_name', 'contributor_name']</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creator_email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creator_institution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">institution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name&gt;short_name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">institution</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name&gt;long_name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">publisher_url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_url</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Semicolon separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;short_name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Semicolon separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;long_name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;short_name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;long_name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform_vocabulary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">instrument</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;short_name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">instrument</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;long_name</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">instrument_vocabulary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Semicolon separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">activity_type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creator_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;author</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;publication_date</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;title</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">publisher_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;publisher</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metadata_link</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;url</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">references</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;other</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The following elements are ACDD extensions that are needed to improve (meta)data interoperability. Please refer to the documentation of <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for more details:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Extra Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Repetition</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Default</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MMD equivalent</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date_created_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">collection</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">collection</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['title_no']</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use ACDD extension for translations</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;title</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title_lang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;lang</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['summary_no']</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use ACDD extension for translations</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;abstract</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">summary_lang</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;lang</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_production_status</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_production_status</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access_constraint</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">access_constraint</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">license_resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">use_constraint&gt;resource</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">contributor_email</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['contributor_institution', 'contributor_organisation']</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;id</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_relation_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;relation_type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spatial_representation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">spatial_representation</p></td>
+</tr>
+</tbody>
 </table>
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-to-thredds"><a class="anchor" href="#add-to-thredds"></a>6.2.2. How to add NetCDF-CF data to thredds</h4>
-<div class="paragraph">
-<p>How should you proceed to add your <a href="#netcdf-cf">NetCDF-CF</a> data to <a href="#thredds">thredds</a>? Follow these steps and your data will be discoverable by <a href="#thredds">thredds</a> (this is valid for the existing thredds server at MET NORWAY), and then harvestable by the <a href="https://github.com/metno/py-mmd-tools">py-mmd-tools</a></p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>You need to make your NetCDF-CF data available on our lustre filesystem.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha">
-<li>
-<p>If you need help to transfer data, please contact service desk.</p>
-</li>
-<li>
-<p>Please also make sure you have sufficient quota on lustre for your data.</p>
-</li>
-<li>
-<p>You can either use your userspace or some other area you have access to within a project.</p>
-</li>
-<li>
-<p>Make sure you add the same data to both the A and B side if you need redundancy. Extra steps need to be taken for this to work.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Then, thredds needs to be able to discover your data.</p>
-<div class="olist loweralpha">
-<ol class="loweralpha">
-<li>
-<p>Take contact with service desk which will put you in contact the responsible person for adding data to thredds. He or she will need the full path to your data or base directory of your data structure. All data files ending with <code>.nc</code> ( or <code>.ncml</code> ) below this basedir will be displayed on thredds.</p>
-</li>
-<li>
-<p>You can have a look here for some user data link:https://thredds.met.no/thredds/catalog/metusers/catalog.html. All users can add <a href="#netcdf-cf">NetCDF-CF</a> data under their user area, mainly for testing.</p>
-</li>
-</ol>
-</div>
-</li>
-<li>
-<p>Your <a href="#netcdf-cf">NetCDF-CF</a> data will now become visible on thredds. You can look here in the base catalog link:https://thredds.met.no/thredds/catalog.html to discover your data.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>If your files are correctly formatted and following the conventions, it is now also straightforward to add them to the discovery metadata catalog.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_how_to_test_mmd_records_and_register_datasets"><a class="anchor" href="#_how_to_test_mmd_records_and_register_datasets"></a>6.2.3. How to test MMD records and register datasets</h4>
+<h4 id="test-and-create-mmd-file"><a class="anchor" href="#test-and-create-mmd-file"></a>6.1.3. How to test your datasets and create MMD files</h4>
 <div class="paragraph">
 <p>In order to make a dataset findable, a dataset must be registered in a searchable catalog with appropriate metadata. The (meta)data catalog is indexed and exposed through <a href="https://en.wikipedia.org/wiki/Catalogue_Service_for_the_Web">CSW</a>.</p>
+</div>
+<div class="paragraph">
+<p>The first step of this process is to run a netCDF-CF to MMD converter to check the global attributes and create an MMD xml file.</p>
+</div>
+<div class="paragraph">
+<p>Old..
+===</p>
 </div>
 <div class="paragraph">
 <p>The procedure to register a dataset in the catalog is as follows:</p>
@@ -1673,7 +2031,7 @@ The organisation provides seamless access to data from distributed data centres 
 <p>Clone the <a href="https://github.com/metno/S-ENDA-csw-catalog-service">S-ENDA-csw-catalog</a> repository</p>
 </li>
 <li>
-<p>Test your MMD XML file(s) using the localtest vm (<a href="#local-test-env">Section 6.2.4</a>)</p>
+<p>Test your MMD XML file(s) using the localtest vm (<a href="#local-test-env">Section 6.1.4</a>)</p>
 </li>
 <li>
 <p>Add an issue to the <a href="https://gitlab.met.no/mmd/s-enda-mmd-xml">S-ENDA-mmd-xml</a> repository (e.g., "New foo model dataset" [the issue is numbered, e.g., 131]; note that this is only available inside the network of MET Norway)</p>
@@ -1707,11 +2065,11 @@ The organisation provides seamless access to data from distributed data centres 
 </table>
 </div>
 <div class="paragraph">
-<p>When the new MMD file is added to the metadata repository, it will be translated to a <a href="https://github.com/geopython/pycsw">PyCSW</a> ISO19139 profile, indexed in a postgis database, and exposed to the public via the <a href="http://senda1.lab-a.met.no/">(meta)data catalog</a> in the same way as demonstrated in the localtest vm (<a href="#local-test-env">Section 6.2.4</a>).</p>
+<p>When the new MMD file is added to the metadata repository, it will be translated to a <a href="https://github.com/geopython/pycsw">PyCSW</a> ISO19139 profile, indexed in a postgis database, and exposed to the public via the <a href="http://senda1.lab-a.met.no/">(meta)data catalog</a> in the same way as demonstrated in the localtest vm (<a href="#local-test-env">Section 6.1.4</a>).</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="local-test-env"><a class="anchor" href="#local-test-env"></a>6.2.4. Local test environment</h4>
+<h4 id="local-test-env"><a class="anchor" href="#local-test-env"></a>6.1.4. Local test environment</h4>
 <div class="paragraph">
 <p>This vm is used to test your MMD XML-files locally before pushing them to the main discovery metadata repository.</p>
 </div>
@@ -1819,7 +2177,80 @@ select * from records;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_s_enda_metadata_service_gives_feedback"><a class="anchor" href="#_s_enda_metadata_service_gives_feedback"></a>6.2.5. S-ENDA Metadata Service gives feedback</h4>
+<h4 id="register_context"><a class="anchor" href="#register_context"></a>6.1.5. Register context</h4>
+<div class="sect4">
+<h5 id="_submitting_data_as_netcdfcf"><a class="anchor" href="#_submitting_data_as_netcdfcf"></a>6.1.5.1. Submitting data as NetCDF/CF</h5>
+<div class="paragraph">
+<p>By documenting and formatting your data using <a href="#netcdf">NetCDF</a> following the <a href="https://cfconventions.org/">CF conventions</a> and the <a href="https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3">Attribute Convention for Data Discovery (ACDD)</a>, <a href="#mmd">MMD</a> files can be automatically generated from the <a href="#netcdf">NetCDF</a> files. The <a href="#cf">CF conventions</a> is a controlled vocabulary providing a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. The <a href="#acdd">ACDD</a> vocabulary describes attributes recommended for describing a <a href="#netcdf">NetCDF</a> dataset to data discovery systems.</p>
+</div>
+<div class="paragraph">
+<p>Information about how to format the NetCDF files is available at link:https://adc.met.no/node/4 and in <a href="#acdd-elements">Section 6.1.2</a>. The latter contains an updated overview of the global NetCDF attributes required to generate an MMD file.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>The NASA GCMD/DIF keywords can be used for many of the <a href="#acdd">ACDD</a> attributes. You can use <a href="https://github.com/nansencenter/py-thesaurus-interface">py-thesaurus-interface</a> to get them (helps to avoid typos etc.). <a href="https://github.com/nansencenter/py-thesaurus-interface">py-thesaurus-interface</a> is also synchronized with the <a href="https://github.com/metno/mmd/tree/master/thesauri">MMD thesauri</a> (although not yet merged) and the <a href="http://mmisw.org/ont/cf/parameter">CF variables</a>.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect4">
+<h5 id="add-to-thredds"><a class="anchor" href="#add-to-thredds"></a>6.1.5.2. How to add NetCDF-CF data to thredds</h5>
+<div class="paragraph">
+<p>How should you proceed to add your <a href="#netcdf-cf">NetCDF-CF</a> data to <a href="#thredds">thredds</a>? Follow these steps and your data will be discoverable by <a href="#thredds">thredds</a> (this is valid for the existing thredds server at MET NORWAY), and then harvestable by the <a href="https://github.com/metno/py-mmd-tools">py-mmd-tools</a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>You need to make your NetCDF-CF data available on our lustre filesystem.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha">
+<li>
+<p>If you need help to transfer data, please contact service desk.</p>
+</li>
+<li>
+<p>Please also make sure you have sufficient quota on lustre for your data.</p>
+</li>
+<li>
+<p>You can either use your userspace or some other area you have access to within a project.</p>
+</li>
+<li>
+<p>Make sure you add the same data to both the A and B side if you need redundancy. Extra steps need to be taken for this to work.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Then, thredds needs to be able to discover your data.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha">
+<li>
+<p>Take contact with service desk which will put you in contact the responsible person for adding data to thredds. He or she will need the full path to your data or base directory of your data structure. All data files ending with <code>.nc</code> ( or <code>.ncml</code> ) below this basedir will be displayed on thredds.</p>
+</li>
+<li>
+<p>You can have a look here for some user data link:https://thredds.met.no/thredds/catalog/metusers/catalog.html. All users can add <a href="#netcdf-cf">NetCDF-CF</a> data under their user area, mainly for testing.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Your <a href="#netcdf-cf">NetCDF-CF</a> data will now become visible on thredds. You can look here in the base catalog link:https://thredds.met.no/thredds/catalog.html to discover your data.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>If your files are correctly formatted and following the conventions, it is now also straightforward to add them to the discovery metadata catalog.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_s_enda_metadata_service_gives_feedback"><a class="anchor" href="#_s_enda_metadata_service_gives_feedback"></a>6.1.5.3. S-ENDA Metadata Service gives feedback</h5>
 <div class="paragraph">
 <p>S-ENDA Metadata Service has two main types of feedback for the data provider:</p>
 </div>
@@ -1841,10 +2272,11 @@ select * from records;</code></pre>
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="search_context"><a class="anchor" href="#search_context"></a>6.3. Search context</h3>
+<h3 id="search_context"><a class="anchor" href="#search_context"></a>6.2. Search context</h3>
 <div class="sect3">
-<h4 id="_user_searches_the_catalog_with_opensearch"><a class="anchor" href="#_user_searches_the_catalog_with_opensearch"></a>6.3.1. User searches the catalog with OpenSearch</h4>
+<h4 id="_user_searches_the_catalog_with_opensearch"><a class="anchor" href="#_user_searches_the_catalog_with_opensearch"></a>6.2.1. User searches the catalog with OpenSearch</h4>
 <div class="ulist">
 <ul>
 <li>
@@ -1904,7 +2336,7 @@ select * from records;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_online_catalog"><a class="anchor" href="#_online_catalog"></a>6.3.2. Online catalog</h4>
+<h4 id="_online_catalog"><a class="anchor" href="#_online_catalog"></a>6.2.2. Online catalog</h4>
 <div class="paragraph">
 <p>For searching the online metadata catalog, please refer to link:http://senda1.lab-a.met.no/ instead of link:http://10.20.30.10/:</p>
 </div>
@@ -1920,7 +2352,7 @@ select * from records;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_user_searches_web_portals"><a class="anchor" href="#_user_searches_web_portals"></a>6.3.3. User searches web portals</h4>
+<h4 id="_user_searches_web_portals"><a class="anchor" href="#_user_searches_web_portals"></a>6.2.3. User searches web portals</h4>
 <div class="paragraph">
 <p><strong>GeoNorge.no</strong></p>
 </div>
@@ -1929,7 +2361,7 @@ select * from records;</code></pre>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_user_searches_from_qgis"><a class="anchor" href="#_user_searches_from_qgis"></a>6.3.4. User searches from QGIS</h4>
+<h4 id="_user_searches_from_qgis"><a class="anchor" href="#_user_searches_from_qgis"></a>6.2.4. User searches from QGIS</h4>
 <div class="paragraph">
 <p>A staging server for the CSW catalog service is available at link:http://senda1.lab-a.met.no:8000/. This can be used from QGIS, as follows:</p>
 </div>
@@ -1955,7 +2387,7 @@ select * from records;</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="specialized-practical_guidance"><a class="anchor" href="#specialized-practical_guidance"></a>6.4. Practical Guidance to data producers at [INSTITUTION]</h3>
+<h3 id="specialized-practical_guidance"><a class="anchor" href="#specialized-practical_guidance"></a>6.3. Practical Guidance to data producers at [INSTITUTION]</h3>
 <div class="paragraph">
 <p>This chapter includes how-to&#8217;s and other practical guidance for&#8230;&#8203;</p>
 </div>
@@ -2763,470 +3195,10 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </table>
 </div>
 </div>
-<div class="sect1">
-<h2 id="acdd_elements"><a class="anchor" href="#acdd_elements"></a>Global attributes that should be added to NetCDF-CF files</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>In order to add netCDF-CF datasets to the discovery metadata catalog, the data producer should populate the file with certain global attributes mainly described in the Attribute Convention for Data Discovery (ACDD). For a complete description of the ACDD elements, please refer to <a href="http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery" class="bare">http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery</a>.</p>
-</div>
-<div class="paragraph">
-<p>The ACDD recommendations should always be followed in order to properly document your netCDF-CF files. However, the below tables summarize the attributes that are needed to properly populate a discovery metadata catalog which fulfills the requirements of international standards (e.g., GCMD/DIF, the WMO profile of ISO19115, etc.).</p>
-</div>
-<div class="sect2">
-<h3 id="_notes"><a class="anchor" href="#_notes"></a>Notes</h3>
-<div class="paragraph">
-<p><strong>Keywords</strong> describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., <code>short_name:keyword</code>. Example: "GCMDSK:Earth Science &gt; Atmosphere &gt; Atmospheric radiation, NORTHEMES:Weather and climate". In addition, <code>keywords_vocabulary</code> provides information about the vocabulary defining the keywords. <strong>Please see <a href="https://adc.met.no/node/96" class="bare">https://adc.met.no/node/96</a> for detailed information about how to define the ACDD keywords</strong>.</p>
-</div>
-<div class="paragraph">
-<p>A data <strong>license</strong> provides information about any restrictions on the use of the dataset. To support a linked data approach, the <code>license</code> element should be supported by a <code>license_resource</code> element, providing a link to the license definition.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_list_of_attributes"><a class="anchor" href="#_list_of_attributes"></a>List of Attributes</h3>
-<div class="paragraph">
-<p>This section provides lists of ACDD elements that are required and recommended, as well as some extra elements that are needed to fully support our data management needs. The right columns of these tables provide the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MET Norway Metadata Specification (MMD)</a> fields that map to the ACDD (and our extension to ACDD) elements. Please refer to <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for definitions of these elements, as well as controlled vocabularies that should be used.</p>
-</div>
-<div class="paragraph">
-<p>The following ACDD elements are required:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ACDD Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Repetition allowed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Separator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MMD equivalent</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metadata_identifier</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;datetime</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_metadata_modified</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;datetime</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;title</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">summary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;abstract</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lat_max</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;north</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lat_min</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;south</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lon_max</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;east</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lon_min</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;west</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keywords_vocabulary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keywords&gt;vocabulary</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keywords</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keywords&gt;keyword</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The following ACDD elements are recommended:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ACDD Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Repetition allowed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Separator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MMD equivalent</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">time_coverage_start</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">temporal_extent&gt;start_date</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">time_coverage_end</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">temporal_extent&gt;end_date</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_bounds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;polygon</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">processing_level</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">operational_status</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">use_constraint&gt;identifier</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">['creator_role', 'contributor_role']</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Investigator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;role</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">['creator_name', 'contributor_name']</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">creator_email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">creator_institution</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">institution</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name&gt;short_name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">institution</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name&gt;long_name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">publisher_url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_url</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">;</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;short_name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">;</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;long_name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;short_name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;long_name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform_vocabulary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;resource</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">instrument</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;short_name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">instrument</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;long_name</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">instrument_vocabulary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;resource</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">;</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">activity_type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">creator_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;author</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;publication_date</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;title</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">publisher_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;publisher</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metadata_link</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;url</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">references</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;other</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>Please refer to the documentation of <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for a description of these elements:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Extra Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Repetition allowed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Separator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MMD equivalent</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_created_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Created</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">collection</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">collection</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">['title_no']</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;title</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">title_lang</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;lang</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">['summary_no']</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;abstract</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">summary_lang</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;lang</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_production_status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_production_status</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">access_constraint</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">access_constraint</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">license_resource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">use_constraint&gt;resource</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">contributor_email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">['contributor_institution', 'contributor_organisation']</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_relation_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;relation_type</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;id</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">spatial_representation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">spatial_representation</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-05-14 09:14:12 UTC
+Last updated 2021-05-14 09:45:13 UTC
 </div>
 </div>
 </body>
