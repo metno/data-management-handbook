@@ -25,7 +25,6 @@ services:
         -a toc=left
         -n /workdir/data-management-handbook.adoc 
         -D /html
-    #command: echo $SPECIAL_INTRO
 
   pdf:
     build:
