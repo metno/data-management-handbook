@@ -567,11 +567,14 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#glossary">Glossary of Terms and Names</a></li>
 <li><a href="#acronyms">List of Acronyms</a></li>
 <li><a href="#appendixa">Appendix A: List of Referenced Software or Services</a></li>
-<li><a href="#appendixb">Appendix B: Users of [insert institution]’s data</a></li>
-<li><a href="#acdd_elements">Global attributes that should be added to NetCDF-CF files</a>
-<ul class="sectlevel2">
+<li><a href="#appendixb">Appendix B: Users of [insert institution]’s data</a>
+<ul class="sectlevel3">
+<li><a href="#acdd-elements">Global attributes</a>
+<ul class="sectlevel4">
 <li><a href="#_notes">Notes</a></li>
 <li><a href="#_list_of_attributes">List of Attributes</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -1555,7 +1558,7 @@ The organisation provides seamless access to data from distributed data centres 
 <p>By documenting and formatting your data using <a href="#netcdf">NetCDF</a> following the <a href="https://cfconventions.org/">CF conventions</a> and the <a href="https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3">Attribute Convention for Data Discovery (ACDD)</a>, <a href="#mmd">MMD</a> files can be automatically generated from the <a href="#netcdf">NetCDF</a> files. The <a href="#cf">CF conventions</a> is a controlled vocabulary providing a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. The <a href="#acdd">ACDD</a> vocabulary describes attributes recommended for describing a <a href="#netcdf">NetCDF</a> dataset to data discovery systems.</p>
 </div>
 <div class="paragraph">
-<p>Information about how to format the NetCDF files is available at link:https://adc.met.no/node/4 and in <a href="#acdd-elements">[acdd-elements]</a>. The latter contains an updated overview of the global NetCDF attributes required to generate an MMD file.</p>
+<p>Information about how to format the NetCDF files is available at link:https://adc.met.no/node/4 and in <a href="#acdd-elements">Global attributes</a>. The latter contains an updated overview of the global NetCDF attributes required to generate an MMD file.</p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -2761,126 +2764,125 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </tr>
 </tbody>
 </table>
-</div>
-</div>
-<div class="sect1">
-<h2 id="acdd_elements"><a class="anchor" href="#acdd_elements"></a>Global attributes that should be added to NetCDF-CF files</h2>
-<div class="sectionbody">
+<div class="sect3">
+<h4 id="acdd-elements"><a class="anchor" href="#acdd-elements"></a>Global attributes</h4>
 <div class="paragraph">
 <p>In order to add netCDF-CF datasets to the discovery metadata catalog, the data producer should populate the file with certain global attributes mainly described in the Attribute Convention for Data Discovery (ACDD). For a complete description of the ACDD elements, please refer to <a href="http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery" class="bare">http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery</a>.</p>
 </div>
 <div class="paragraph">
-<p>The ACDD recommendations should always be followed in order to properly document your netCDF-CF files. However, the below tables summarize the attributes that are needed to properly populate a discovery metadata catalog which fulfills the requirements of international standards (e.g., GCMD/DIF, the WMO profile of ISO19115, etc.).</p>
+<p>The ACDD recommendations should always be followed in order to properly document your netCDF-CF files. However, the below tables summarize the ACDD and some additional attributes that are needed to properly populate a discovery metadata catalog which fulfills the requirements of international standards (e.g., GCMD/DIF, the WMO profile of ISO19115, etc.).</p>
 </div>
-<div class="sect2">
-<h3 id="_notes"><a class="anchor" href="#_notes"></a>Notes</h3>
+<div class="sect4">
+<h5 id="_notes"><a class="anchor" href="#_notes"></a>Notes</h5>
 <div class="paragraph">
-<p><strong>Keywords</strong> describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., <code>short_name:keyword</code>. Example: "GCMDSK:Earth Science &gt; Atmosphere &gt; Atmospheric radiation, NORTHEMES:Weather and climate". In addition, <code>keywords_vocabulary</code> provides information about the vocabulary defining the keywords. <strong>Please see <a href="https://adc.met.no/node/96" class="bare">https://adc.met.no/node/96</a> for detailed information about how to define the ACDD keywords</strong>.</p>
+<p><strong>Keywords</strong> describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., <code>short_name:keyword</code>. Example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>:keywords = "GCMDSK:Earth Science &gt; Atmosphere &gt; Atmospheric radiation, NORTHEMES:Weather and climate" ;</p>
+</div>
+</div>
 </div>
 <div class="paragraph">
-<p>A data <strong>license</strong> provides information about any restrictions on the use of the dataset. To support a linked data approach, the <code>license</code> element should be supported by a <code>license_resource</code> element, providing a link to the license definition.</p>
+<p>In addition, <code>keywords_vocabulary</code> provides information about the vocabulary defining the keywords. Example:</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_list_of_attributes"><a class="anchor" href="#_list_of_attributes"></a>List of Attributes</h3>
+<div class="exampleblock">
+<div class="content">
 <div class="paragraph">
-<p>This section provides lists of ACDD elements that are required and recommended, as well as some extra elements that are needed to fully support our data management needs. The right columns of these tables provide the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MET Norway Metadata Specification (MMD)</a> fields that map to the ACDD (and our extension to ACDD) elements. Please refer to <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for definitions of these elements, as well as controlled vocabularies that should be used.</p>
+<p>:keywords_vocabulary = "GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords, GCMDPROV:GCMD Providers:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/providers, GCMDLOC:GCMD Locations:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/locations" ;</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>See <a href="https://adc.met.no/node/96" class="bare">https://adc.met.no/node/96</a> for more information about how to define the ACDD keywords.</p>
+</div>
+<div class="paragraph">
+<p>A data <strong>license</strong> provides information about any restrictions on the use of the dataset. To support a linked data approach, the <code>license</code> element should be supported by a <code>license_resource</code> element, providing a link to the license definition. Example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>:license = "CC-BY-4.0" ;<br>
+:license_resource = "http://spdx.org/licenses/CC-BY-4.0" ;</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_list_of_attributes"><a class="anchor" href="#_list_of_attributes"></a>List of Attributes</h5>
+<div class="paragraph">
+<p>This section provides lists of ACDD elements that are required and recommended, as well as some extra elements that are needed to fully support our data management needs. The right columns of these tables provide the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MET Norway Metadata Specification (MMD)</a> fields that map to the ACDD (and our extension to ACDD) elements. Please refer to <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for definitions of these elements, as well as controlled vocabularies that should be used. Note that the below tables are automatically generated - check <a href="https://github.com/metno/py-mmd-tools/blob/master/py_mmd_tools/mmd_elements.yaml" class="bare">https://github.com/metno/py-mmd-tools/blob/master/py_mmd_tools/mmd_elements.yaml</a> if anything is unclear.</p>
 </div>
 <div class="paragraph">
 <p>The following ACDD elements are required:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ACDD Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Repetition allowed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Separator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MMD equivalent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ACDD Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Repetition</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MMD equivalent</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">metadata_identifier</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use date_metadata_modified with comma separation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;datetime</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date_metadata_modified</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use date_metadata_modified with comma separation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;datetime</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use ACDD extension for translations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;title</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">summary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use ACDD extension for translations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;abstract</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lat_max</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;north</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lat_min</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;south</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lon_max</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;east</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lon_min</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;west</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keywords_vocabulary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keywords&gt;vocabulary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keywords</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keywords&gt;keyword</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keywords</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keywords&gt;keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keywords_vocabulary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keywords&gt;vocabulary</p></td>
 </tr>
 </tbody>
 </table>
@@ -2889,332 +2891,286 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ACDD Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Repetition allowed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Separator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MMD equivalent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ACDD Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Repetition</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Default</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MMD equivalent</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">time_coverage_start</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">temporal_extent&gt;start_date</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">time_coverage_end</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">temporal_extent&gt;end_date</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_bounds</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;polygon</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">processing_level</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">operational_status</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">use_constraint&gt;identifier</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">['creator_role', 'contributor_role']</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Investigator</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;role</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">['creator_name', 'contributor_name']</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">creator_email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">creator_institution</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">institution</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name&gt;short_name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">institution</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name&gt;long_name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">publisher_url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_url</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Semicolon separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;short_name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Semicolon separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;long_name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;short_name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;long_name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform_vocabulary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;resource</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">instrument</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;short_name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">instrument</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;long_name</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">instrument_vocabulary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;resource</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Semicolon separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">activity_type</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">creator_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;author</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;publication_date</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;title</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">publisher_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;publisher</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">metadata_link</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;url</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">references</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;other</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>Please refer to the documentation of <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for a description of these elements:</p>
+<p>The following elements are ACDD extensions that are needed to improve (meta)data interoperability. Please refer to the documentation of <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for more details:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
-<col style="width: 20%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Extra Attribute</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Repetition allowed</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Separator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Default</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">MMD equivalent</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Extra Attribute</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Repetition</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Default</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MMD equivalent</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date_created_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Created</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;type</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">collection</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">collection</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">['title_no']</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use ACDD extension for translations</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;title</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title_lang</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;lang</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">['summary_no']</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Use ACDD extension for translations</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;abstract</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">summary_lang</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;lang</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_production_status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_production_status</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">access_constraint</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">access_constraint</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">license_resource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">use_constraint&gt;resource</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">contributor_email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">['contributor_institution', 'contributor_organisation']</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_relation_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;relation_type</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;id</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_relation_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;relation_type</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">yes</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">,</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">spatial_representation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">no</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
 <td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">spatial_representation</p></td>
 </tr>
@@ -3224,9 +3180,10 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 </div>
 </div>
+</div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-05-14 09:27:28 UTC
+Last updated 2021-05-15 02:58:58 UTC
 </div>
 </div>
 </body>

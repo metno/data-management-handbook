@@ -8,90 +8,110 @@
         MMD should be changed, the changes should be made in that file.
 ////
 
-[[acdd_elements]]
-== Global attributes that should be added to NetCDF-CF files
+[[acdd-elements]]
+==== Global attributes
 
 In order to add netCDF-CF datasets to the discovery metadata catalog, the data producer should populate the file with certain global attributes mainly described in the Attribute Convention for Data Discovery (ACDD). For a complete description of the ACDD elements, please refer to http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery.
 
-The ACDD recommendations should always be followed in order to properly document your netCDF-CF files. However, the below tables summarize the attributes that are needed to properly populate a discovery metadata catalog which fulfills the requirements of international standards (e.g., GCMD/DIF, the WMO profile of ISO19115, etc.).
+The ACDD recommendations should always be followed in order to properly document your netCDF-CF files. However, the below tables summarize the ACDD and some additional attributes that are needed to properly populate a discovery metadata catalog which fulfills the requirements of international standards (e.g., GCMD/DIF, the WMO profile of ISO19115, etc.).
 
-=== Notes 
+===== Notes 
 
-*Keywords* describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., ``short_name:keyword``. Example: "GCMDSK:Earth Science > Atmosphere > Atmospheric radiation, NORTHEMES:Weather and climate". In addition, ``keywords_vocabulary`` provides information about the vocabulary defining the keywords. *Please see https://adc.met.no/node/96 for detailed information about how to define the ACDD keywords*.
+*Keywords* describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., ``short_name:keyword``. Example:
 
-A data *license* provides information about any restrictions on the use of the dataset. To support a linked data approach, the ``license`` element should be supported by a ``license_resource`` element, providing a link to the license definition.
+[EXAMPLE]
+====
+:keywords = "GCMDSK:Earth Science > Atmosphere > Atmospheric radiation, NORTHEMES:Weather and climate" ;
+====
 
-=== List of Attributes
+In addition, ``keywords_vocabulary`` provides information about the vocabulary defining the keywords. Example:
 
-This section provides lists of ACDD elements that are required and recommended, as well as some extra elements that are needed to fully support our data management needs. The right columns of these tables provide the https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MET Norway Metadata Specification (MMD)] fields that map to the ACDD (and our extension to ACDD) elements. Please refer to https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] for definitions of these elements, as well as controlled vocabularies that should be used.
+[EXAMPLE]
+====
+:keywords_vocabulary = "GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords, GCMDPROV:GCMD Providers:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/providers, GCMDLOC:GCMD Locations:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/locations" ;
+====
+
+See https://adc.met.no/node/96 for more information about how to define the ACDD keywords.
+
+A data *license* provides information about any restrictions on the use of the dataset. To support a linked data approach, the ``license`` element should be supported by a ``license_resource`` element, providing a link to the license definition. Example:
+
+[EXAMPLE]
+====
+:license = "CC-BY-4.0" ; +
+:license_resource = "http://spdx.org/licenses/CC-BY-4.0" ;
+====
+
+===== List of Attributes
+
+This section provides lists of ACDD elements that are required and recommended, as well as some extra elements that are needed to fully support our data management needs. The right columns of these tables provide the https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MET Norway Metadata Specification (MMD)] fields that map to the ACDD (and our extension to ACDD) elements. Please refer to https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] for definitions of these elements, as well as controlled vocabularies that should be used. Note that the below tables are automatically generated - check https://github.com/metno/py-mmd-tools/blob/master/py_mmd_tools/mmd_elements.yaml if anything is unclear.
 
 The following ACDD elements are required:
-[cols=",,,,"]
+[cols=",,"]
 |=======================================================================
-|ACDD Attribute |Repetition allowed |Separator |Default |MMD equivalent
-|id | no |  |  | metadata_identifier
-|date_created | yes | , |  | last_metadata_update>update>datetime
-|date_metadata_modified | yes | , |  | last_metadata_update>update>datetime
-|title | yes |  |  | title>title
-|summary | yes |  |  | abstract>abstract
-|geospatial_lat_max | no |  |  | geographic_extent>rectangle>north
-|geospatial_lat_min | no |  |  | geographic_extent>rectangle>south
-|geospatial_lon_max | no |  |  | geographic_extent>rectangle>east
-|geospatial_lon_min | no |  |  | geographic_extent>rectangle>west
-|keywords_vocabulary | yes | , |  | keywords>vocabulary
-|keywords | yes | , |  | keywords>keyword
+|*ACDD Attribute* |*Repetition* |*MMD equivalent*
+|id | No repetition allowed | metadata_identifier
+|date_created | Use date_metadata_modified with comma separation | last_metadata_update>update>datetime
+|date_metadata_modified | Use date_metadata_modified with comma separation | last_metadata_update>update>datetime
+|title | Use ACDD extension for translations | title>title
+|summary | Use ACDD extension for translations | abstract>abstract
+|geospatial_lat_max | No repetition allowed | geographic_extent>rectangle>north
+|geospatial_lat_min | No repetition allowed | geographic_extent>rectangle>south
+|geospatial_lon_max | No repetition allowed | geographic_extent>rectangle>east
+|geospatial_lon_min | No repetition allowed | geographic_extent>rectangle>west
+|keywords | Comma separated list | keywords>keyword
+|keywords_vocabulary | Comma separated list | keywords>vocabulary
 |=======================================================================
 
 The following ACDD elements are recommended:
-[cols=",,,,"]
+[cols=",,,"]
 |=======================================================================
-|ACDD Attribute |Repetition allowed |Separator |Default |MMD equivalent
-|time_coverage_start | yes | , |  | temporal_extent>start_date
-|time_coverage_end | yes | , |  | temporal_extent>end_date
-|geospatial_bounds | no |  |  | geographic_extent>polygon
-|processing_level | no |  |  | operational_status
-|license | no |  |  | use_constraint>identifier
-|['creator_role', 'contributor_role'] | yes | , | Investigator | personnel>role
-|['creator_name', 'contributor_name'] | yes | , | Not available | personnel>name
-|creator_email | yes | , | Not available | personnel>email
-|creator_institution | yes | , | Not available | personnel>organisation
-|institution | yes | , |  | data_center>data_center_name>short_name
-|institution | yes | , |  | data_center>data_center_name>long_name
-|publisher_url | yes | , |  | data_center>data_center_url
-|project | yes | ; |  | project>short_name
-|project | yes | ; |  | project>long_name
-|platform | yes | , |  | platform>short_name
-|platform | yes | , |  | platform>long_name
-|platform_vocabulary | yes | , |  | platform>resource
-|instrument | yes | , |  | platform>instrument>short_name
-|instrument | yes | , |  | platform>instrument>long_name
-|instrument_vocabulary | yes | , |  | platform>instrument>resource
-|source | yes | ; |  | activity_type
-|creator_name | yes | , |  | dataset_citation>author
-|date_created | yes | , |  | dataset_citation>publication_date
-|title | yes |  |  | dataset_citation>title
-|publisher_name | yes | , |  | dataset_citation>publisher
-|metadata_link | yes | , |  | dataset_citation>url
-|references | yes | , |  | dataset_citation>other
+|*ACDD Attribute* |*Repetition* |*Default* |*MMD equivalent*
+|time_coverage_start | Comma separated list |  | temporal_extent>start_date
+|time_coverage_end | Comma separated list |  | temporal_extent>end_date
+|geospatial_bounds | No repetition allowed |  | geographic_extent>polygon
+|processing_level | No repetition allowed |  | operational_status
+|license | No repetition allowed |  | use_constraint>identifier
+|['creator_role', 'contributor_role'] | Comma separated list | Investigator | personnel>role
+|['creator_name', 'contributor_name'] | Comma separated list | Not available | personnel>name
+|creator_email | Comma separated list | Not available | personnel>email
+|creator_institution | Comma separated list | Not available | personnel>organisation
+|institution | Comma separated list |  | data_center>data_center_name>short_name
+|institution | Comma separated list |  | data_center>data_center_name>long_name
+|publisher_url | Comma separated list |  | data_center>data_center_url
+|project | Semicolon separated list |  | project>short_name
+|project | Semicolon separated list |  | project>long_name
+|platform | Comma separated list |  | platform>short_name
+|platform | Comma separated list |  | platform>long_name
+|platform_vocabulary | Comma separated list |  | platform>resource
+|instrument | Comma separated list |  | platform>instrument>short_name
+|instrument | Comma separated list |  | platform>instrument>long_name
+|instrument_vocabulary | Comma separated list |  | platform>instrument>resource
+|source | Semicolon separated list |  | activity_type
+|creator_name | Comma separated list |  | dataset_citation>author
+|date_created | Comma separated list |  | dataset_citation>publication_date
+|title |  |  | dataset_citation>title
+|publisher_name | Comma separated list |  | dataset_citation>publisher
+|metadata_link | Comma separated list |  | dataset_citation>url
+|references | Comma separated list |  | dataset_citation>other
 |=======================================================================
 
-Please refer to the documentation of https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] for a description of these elements:
-[cols=",,,,"]
+The following elements are ACDD extensions that are needed to improve (meta)data interoperability. Please refer to the documentation of https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] for more details:
+[cols=",,,"]
 |=======================================================================
-|Extra Attribute |Repetition allowed |Separator |Default |MMD equivalent
-|date_created_type | yes | , | Created | last_metadata_update>update>type
-|collection | yes | , |  | collection
-|['title_no'] | yes |  |  | title>title
-|title_lang | yes |  | en | title>lang
-|['summary_no'] | yes |  |  | abstract>abstract
-|summary_lang | yes |  | en | abstract>lang
-|dataset_production_status | no |  |  | dataset_production_status
-|access_constraint | no |  |  | access_constraint
-|license_resource | no |  |  | use_constraint>resource
-|contributor_email | yes | , | Not available | personnel>email
-|['contributor_institution', 'contributor_organisation'] | yes | , | Not available | personnel>organisation
-|related_dataset_relation_type | yes |  |  | related_dataset>relation_type
-|related_dataset_id | yes |  |  | related_dataset>id
-|iso_topic_category | yes | , |  | iso_topic_category
-|spatial_representation | no |  |  | spatial_representation
+|*Extra Attribute* |*Repetition* |*Default* |*MMD equivalent*
+|date_created_type | Comma separated list | Created | last_metadata_update>update>type
+|collection | Comma separated list |  | collection
+|['title_no'] | Use ACDD extension for translations |  | title>title
+|title_lang | No repetition allowed | en | title>lang
+|['summary_no'] | Use ACDD extension for translations |  | abstract>abstract
+|summary_lang | No repetition allowed | en | abstract>lang
+|dataset_production_status | No repetition allowed |  | dataset_production_status
+|access_constraint | No repetition allowed |  | access_constraint
+|license_resource | No repetition allowed |  | use_constraint>resource
+|contributor_email | Comma separated list | Not available | personnel>email
+|['contributor_institution', 'contributor_organisation'] | Comma separated list | Not available | personnel>organisation
+|related_dataset_id | Comma separated list |  | related_dataset>id
+|related_dataset_relation_type | Comma separated list |  | related_dataset>relation_type
+|iso_topic_category | Comma separated list |  | iso_topic_category
+|spatial_representation | No repetition allowed |  | spatial_representation
 |=======================================================================
