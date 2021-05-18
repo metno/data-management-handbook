@@ -1,23 +1,29 @@
 [[search_context]]
 === Search context
 
-==== User searches the catalog with OpenSearch
+==== Using OpenSearch
 
-* Local testing *
+===== on local test machines
 
 The `localtest` and `localdev` virtual machines provide OpenSearch support through link:https://github.com/geopython/pycsw[PyCSW]. To test OpenSearch via the browser, start the `localtest` vm (`vagrant up localtest`) and go to the following address:
 
-. link:http://10.20.30.10/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities
+* `http://10.20.30.10/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities`
 
 This will return a description document of the catalog service. The `URL` field in the description document is a template format that can be used to represent a parameterized form of the search. The search client will process the URL template and attempt to replace each instance of a template parameter, generally represented in the form {name}, with a value determined at query time (link:https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-url-template-syntax[OpenSearch URL template syntax]). The question mark following any search parameter means that the parameter is optional.
 
-We can now find all datasets in the catalog:
+===== on the online catalog
 
-. link:http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results
+For searching the online metadata catalog, please refer to `https://csw.s-enda.k8s.met.no/` instead of `http://10.20.30.10/`.
+
+===== OpenSearch examples
+
+To find all datasets in the catalog:
+
+* `http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results`
 
 Or datasets within a given time span:
 
-. link:http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&time=2000-01-01/2020-09-01
+* `http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&time=2000-01-01/2020-09-01`
 
 [note]
 ====
@@ -26,26 +32,19 @@ pyCSW opensearch time queries do not relate to the "expected" `start_date` and `
 
 Or datasets within a geographical domain (defined as a box with parameters min_longitude, min_latitude, max_longitude, max_latitude):
 
-. link:http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&bbox=0,40,10,60
+* `http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&bbox=0,40,10,60`
 
 Or, datasets from any of the Sentinel satellites:
 
-. link:http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=sentinel>`_
+* `http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=sentinel>`_`
 
-==== Online catalog
-
-For searching the online metadata catalog, please refer to link:https://csw-staging.s-enda.k8s.met.no/ instead of link:http://10.20.30.10/:
-
-* link:https://csw-staging.s-enda.k8s.met.no/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities[Service description document]
-* link:https://csw-staging.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results[All available datasets]
-
-==== User searches web portals
+==== Using web portals
 
 *GeoNorge.no*
 
 *TODO:* describe how to search in geonorge, possibly with screenshots
 
-==== User searches from QGIS
+==== Using QGIS
 
 The production server for the CSW catalog service is available at link:https://csw.s-enda.k8s.met.no. This can be used from QGIS, as follows:
 
