@@ -24,6 +24,10 @@ Or datasets within a given time span:
 pyCSW opensearch time queries do not relate to the "expected" `start_date` and `end_date` MMD fields, or the associated `beginPosition` and `endPosition`, in the pyCSW ISO19139 profile. We are working to understand and handle this...
 ====
 
+Or datasets within a geographical domain (defined as a box with parameters min_longitude, min_latitude, max_longitude, max_latitude):
+
+. link:http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&bbox=0,40,10,60
+
 Or, datasets from any of the Sentinel satellites:
 
 . link:http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=sentinel>`_
