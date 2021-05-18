@@ -43,12 +43,12 @@ For searching the online metadata catalog, please refer to link:https://csw-stag
 
 ==== User searches from QGIS
 
-A staging server for the CSW catalog service is available at link:https://csw-staging.s-enda.k8s.met.no. This can be used from QGIS, as follows:
+The production server for the CSW catalog service is available at link:https://csw.s-enda.k8s.met.no. This can be used from QGIS, as follows:
 
 . Select `Web > MetaSearch > MetaSearch` menu item
 . Select `Services > New`
-. Type, e.g., `csw-staging-senda` for the name
-. Type `https://csw-staging.s-enda.k8s.met.no` for the URL
+. Type, e.g., `csw-senda` for the name
+. Type `https://csw.s-enda.k8s.met.no` for the URL
 
 Under the `Search` tab, you can then add search parameters, click `Search`, and get a list of available datasets.
 
