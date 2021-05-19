@@ -11,7 +11,7 @@ The `localtest` and `localdev` virtual machines provide OpenSearch support throu
 
 This will return a description document of the catalog service. The `URL` field in the description document is a template format that can be used to represent a parameterized form of the search. The search client will process the URL template and attempt to replace each instance of a template parameter, generally represented in the form {name}, with a value determined at query time (link:https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-url-template-syntax[OpenSearch URL template syntax]). The question mark following any search parameter means that the parameter is optional.
 
-===== on the online catalog
+===== Online catalog
 
 For searching the online metadata catalog, please refer to `https://csw.s-enda.k8s.met.no/` instead of `http://10.20.30.10/`.
 
@@ -54,7 +54,6 @@ The production server for the CSW catalog service is available at link:https://c
 . Type `https://csw.s-enda.k8s.met.no` for the URL
 
 Under the `Search` tab, you can then add search parameters, click `Search`, and get a list of available datasets.
-
 
 
 
