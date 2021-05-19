@@ -46,7 +46,7 @@ Or, datasets from any of the Sentinel satellites:
 
 ==== QGIS
 
-The production server for the CSW catalog service is available at link:https://csw.s-enda.k8s.met.no. This can be used from QGIS, as follows:
+The production server for the CSW catalog service is available at link:https://csw.s-enda.k8s.met.no. This can be used from QGIS as follows:
 
 . Select `Web > MetaSearch > MetaSearch` menu item
 . Select `Services > New`
@@ -54,4 +54,3 @@ The production server for the CSW catalog service is available at link:https://c
 . Type `https://csw.s-enda.k8s.met.no` for the URL
 
 Under the `Search` tab, you can then add search parameters, click `Search`, and get a list of available datasets.
-
