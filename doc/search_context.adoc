@@ -23,7 +23,7 @@ To find all datasets in the catalog:
 
 Or datasets within a given time span:
 
-* `http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&time=2000-01-01/2020-09-01`
+* `http://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&time=2000-01-01/2020-09-01`
 
 Or datasets within a geographical domain (defined as a box with parameters min_longitude, min_latitude, max_longitude, max_latitude):
 
@@ -41,7 +41,7 @@ Or, datasets from any of the Sentinel satellites:
 
 ==== QGIS
 
-The production server for the CSW catalog service is available at link:https://csw.s-enda.k8s.met.no. This can be used from QGIS as follows:
+The production server for the CSW catalog service is available at `https://csw.s-enda.k8s.met.no`. This can be used from QGIS as follows:
 
 . Select `Web > MetaSearch > MetaSearch` menu item
 . Select `Services > New`
