@@ -3,7 +3,7 @@
 
 ==== Using OpenSearch
 
-===== on local test machines
+===== Local test machines
 
 The `localtest` and `localdev` virtual machines provide OpenSearch support through link:https://github.com/geopython/pycsw[PyCSW]. To test OpenSearch via the browser, start the `localtest` vm (`vagrant up localtest`) and go to the following address:
 
@@ -54,7 +54,6 @@ The production server for the CSW catalog service is available at link:https://c
 . Type `https://csw.s-enda.k8s.met.no` for the URL
 
 Under the `Search` tab, you can then add search parameters, click `Search`, and get a list of available datasets.
-
 
 
 
