@@ -10,7 +10,8 @@ services:
       - ./doc:/workdir
       - ./html:/html
     command: >
-      asciidoctor -r asciidoctor-diagram
+      sh -c "cp /workdir/images/*.png /html/ &&
+      asciidoctor
       -a special_intro=${SPECIAL_INTRO:-specialized_intro_template.adoc} 
       -a special_strudoc=${SPECIAL_STRUDOC:-specialized_strudoc_template.adoc}
       -a special_data_services=${SPECIAL_DATA_SERVICES:-specialized_data_services_template.adoc}
@@ -20,7 +21,7 @@ services:
       -a special_appendix_users=${SPECIAL_APPENDIX_USERS:-specialized_appendix_users.adoc}
       -a toc=left
       -n /workdir/data-management-handbook.adoc 
-      -D /html
+      -D /html"
 
   pdf:
     build:
@@ -40,5 +41,6 @@ services:
       -a special_appendix_users=${SPECIAL_APPENDIX_USERS:-specialized_appendix_users.adoc}
       -a pdf-themesdir=/workdir
       -a pdf-theme=dmh
+      -a imagesdir=/workdir/images
       -n /workdir/data-management-handbook.adoc
       -D /pdf

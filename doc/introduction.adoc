@@ -62,7 +62,7 @@ The process of getting the data from the data producer to the consumer can be vi
 
 [#img-value_chain]
 .Value chain for data
-image::images/value_chain.png[Value chain]
+image::value_chain.png[Value chain]
 
 Datasets and metadata are what travels through the value chain, and at the end of the <<glossary-data-management,data management>> value chain are the data consumers.
 
