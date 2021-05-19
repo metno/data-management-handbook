@@ -3,30 +3,33 @@
 
 In order to make a dataset findable, a dataset must be registered in a searchable catalog with appropriate metadata. The (meta)data catalog is indexed and exposed through link:https://en.wikipedia.org/wiki/Catalogue_Service_for_the_Web[CSW].
 
-The first step of this process is to run a netCDF-CF to MMD converter to check the global attributes and create an MMD xml file.
+There are two main steps.
 
+. First you should have your netcdf file, generate MMD xml from that and then test you mmd xml metadata file as described below <<local-mmd-xml-generation>>.
+. Second when you are satisfied with the results you need to add the MMD xml file to the public CSW.
 
-Old..
-===
+[[local-mmd-xml-generation]]
+===== Generation of test MMD xml files from netcdf
 
-The procedure to register a dataset in the catalog is as follows:
+Clone the link:https://github.com/metno/py-mmd-tools.git[py-mmd-tools] repo and make a local installation with eg `pip install .`. This should bring in all needed dependencies (However you favorite virtual environment is recommended.).
 
-. Create link:https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] XML record of metadata
-. Translate from MMD to ISO19115
-. Index in CSW
-. Expose ISO19115 metadata via CSW to the internet
+Then `script/nc_to_mmd -i <your netcdf file> -o <your xml output directory> <other options>` will generate your mmd xml file.
 
-We have prepared Virtual Machine (VM) configurations and Docker containers to handle points 2-4 above.
+===== Translate from test MMD to test ISO19115
 
-[NOTE]
-====
-Note to reviewers: Please consider if this makes sense, and can be done now
-====
+Clone the link:https://github.com/metno/mmd.git[MMD] repository. Then something like this should work:
+[source]
+--
+PYTHONPATH=. bin/convert_from_mmd -i <your mmd xml file> -f iso -o <your iso output file name>
+--
 
+===== Expose the test ISO19115 metadata
+Expose ISO19115 metadata via CSW to the internet. This is better done with the test described below <<local-test-env>>
+
+==== From test to operation
 The workflow which a MET data provider should follow in order to add new datasets to the common metadata catalog service is then as follows:
 
-. Create link:https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] XML record of metadata
-. Clone the link:https://github.com/metno/S-ENDA-csw-catalog-service[S-ENDA-csw-catalog] repository
+. Create link:https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] XML record of metadata as described above <<local-mmd-xml-generation>>
 . Test your MMD XML file(s) using the localtest vm (<<local-test-env>>)
 . Add an issue to the link:https://gitlab.met.no/mmd/s-enda-mmd-xml[S-ENDA-mmd-xml] repository (e.g., "New foo model dataset" [the issue is numbered, e.g., 131]; note that this is only available inside the network of MET Norway)
 . Clone the link:https://gitlab.met.no/mmd/s-enda-mmd-xml[S-ENDA-mmd-xml] repository
@@ -82,7 +85,7 @@ psql -U postgis csw_db
 select * from records;
 --
 
-The csw-catalog-service is now started, and the catalog can be accessed on `<http://10.20.30.10>`_. Note that there is no point in debugging or changing code used in this environment. It is only meant to test the MMD files. If you want to modify code used in the catalog service, please refer to <<local-developmen-env>>
+If the select gives some results then the csw-catalog-service is now started, and the catalog can be accessed on `<http://10.20.30.10>`. Note that there is no point in debugging or changing code used in this environment. It is only meant to test the MMD files. If you want to modify code used in the catalog service, please refer to <<local-development-env>>
 
 Search the metadata catalog using link:https://qgis.org/en/site/[QGIS] (v3.14 or higher):
 
@@ -101,6 +104,14 @@ Search the metadata catalog using link:https://qgis.org/en/site/[QGIS] (v3.14 or
 If you get an error about unexpected keyword argument 'auth' when searching for data, it is most likely due to a bug in QGIS: link:https://github.com/qgis/QGIS/issues/38074
 ====
 
+Or you can do a local opensearch like this:
+
+[source]
+--
+curl -s "http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&time=2021-03-11T00:00:00/2021-03-11T12:00:00" | xmllint --format -
+--
+
+Please update the time search interval to match you test xml files.
 
 
 [[register_context]]
@@ -150,4 +161,3 @@ S-ENDA Metadata Service has two main types of feedback for the data provider:
 Feedback from users would come as either e-mails into a ticketing system, or as messages in a forum.
 
 Operational metrics will be harvested from metrics server (e.g Prometheus), giving the data provider information such as number of downloads pr. day for each type of service(WMS, DAP etc.) and delays in producing the datasets.
-
