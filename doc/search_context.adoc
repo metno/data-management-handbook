@@ -38,7 +38,7 @@ Or, datasets from any of the Sentinel satellites:
 
 * `http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=sentinel>`_`
 
-==== Using web portals
+==== Web portals
 
 *GeoNorge.no*
 
@@ -54,7 +54,6 @@ The production server for the CSW catalog service is available at link:https://c
 . Type `https://csw.s-enda.k8s.met.no` for the URL
 
 Under the `Search` tab, you can then add search parameters, click `Search`, and get a list of available datasets.
-
 
 
 
