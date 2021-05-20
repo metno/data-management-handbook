@@ -31,7 +31,7 @@ Or datasets within a geographical domain (defined as a box with parameters min_l
 
 Or, datasets from any of the Sentinel satellites:
 
-* `https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=sentinel>`_`
+* `https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=sentinel`
 
 ==== Web portals
 
