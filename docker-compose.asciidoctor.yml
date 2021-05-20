@@ -10,7 +10,6 @@ services:
       - ./doc:/workdir
       - ./html:/html
     command: >
-      sh -c "cp /workdir/images/*.png /html/ &&
       asciidoctor
       -a special_intro=${SPECIAL_INTRO:-specialized_intro_template.adoc} 
       -a special_strudoc=${SPECIAL_STRUDOC:-specialized_strudoc_template.adoc}
@@ -20,8 +19,10 @@ services:
       -a special_practical_guidance=${SPECIAL_PRACTICAL_GUIDANCE:-specialized_practical_guidance_template.adoc}
       -a special_appendix_users=${SPECIAL_APPENDIX_USERS:-specialized_appendix_users.adoc}
       -a toc=left
+      -a imagesdir=/workdir/images
+      -a data-uri=Yes
       -n /workdir/data-management-handbook.adoc 
-      -D /html"
+      -D /html
 
   pdf:
     build:
