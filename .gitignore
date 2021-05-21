@@ -3,3 +3,5 @@
 .asciidoctor
 *.lock
 ubuntu-*
+html/
+pdf/
