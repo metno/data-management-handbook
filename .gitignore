@@ -3,5 +3,6 @@
 .asciidoctor
 *.lock
 ubuntu-*
+doc/acdd-elements.adoc
 html/
 pdf/

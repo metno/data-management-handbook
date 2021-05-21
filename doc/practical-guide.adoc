@@ -1,23 +1,30 @@
-[[practical-guidance]]
-== Practical Guidance to producers of NetCDF-CF datasets
+[[practical-guides]]
+== Practical Guides
 
-This chapter includes how-to's and other practical guidance for producers of NetCDF-CF datasets.
+This chapter includes how-to's and other practical guidance for data producers.
 
-// add any descriptions and introductions needed, add any subchapters needed below. This chapter shoud describe what is being done, how it is done and who is doing it.
+// add any descriptions and introductions needed, add any subchapters needed below. This chapter should describe what is being done, how it is done and who is doing it.
 
-=== Workflow
+[[netcdf-cf-guide]]
+=== Submitting data as NetCDF-CF
 
-1. Define your dataset (see <<glossary-dataset,Dataset>>)
-2. Create a netCDF-CF file (see, e.g., link:https://unidata.github.io/netcdf4-python/[netCDF4-python docs])
-3. Add discovery metadata as global attributes (see <<acdd_elements,section about global netCDF attibutes>>)
-4. Add variables and use metadata following the link:https://cfconventions.org/[CF conventions]
-5. Test that your dataset contains the necessary discovery metadata (see ...)
-6. Store the file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <<add-to-thredds>>)
-7. Index your data in a searchable metadata catalog under a development environment
-8. Verify that the development CSW service works as expected (e.g., that it provides correct metadata)
-9. Index your data in a staging/production environment
+==== Workflow
 
-The data producer should be able to handle points 1-5, whereas the last four points (6-9) should be done with help from a system expert.
+. Define your dataset (see <<glossary-dataset,Dataset>>)
+. Create a NetCDF-CF file (see <<data-as-netcdf-cf>>)
+
+  * Add discovery metadata as global attributes (see <<acdd-elements,global attibutes section>>)
+  * Add variables and <<glossary-use-metadata,use metadata>> following the link:https://cfconventions.org/[CF conventions]
+
+. Store the NetCDF-CF file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <<add-to-thredds>>)
+. Register your dataset in a searchable catalog (see <<register-dataset-in-catalog>>)
+
+  * Test that your dataset contains the necessary discovery metadata and create an MMD xml file (see <<local-mmd-xml-generation>>)
+  * Test the MMD xml file (see <<test-mmd-file>>)
+  * Push the MMD xml file to the discovery metadata catalog (see <<push-mmd-file>>)
+
+:numbered:
+include::acdd-elements.adoc[]
 
 :numbered:
 include::register_context.adoc[]
