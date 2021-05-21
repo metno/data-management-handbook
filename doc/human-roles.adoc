@@ -6,11 +6,7 @@
 
 Data is processed and interpreted to generate knowledge (e.g., about the weather) for end users. The knowledge can be presented as information in the form of actual data, illustrations, text or other forms of communication. In this context, an illustration is a representation of data, whereas data means the numerical values needed to analyse and interpret a natural process (i.e., calibrated or with calibration information; it must be possible to understand the meaning of the numerical value from the available and machine-readable information).
 
-// The UML is not generated as expected, maybe because asciidoc requires 
-// java to generate the figures... The very poor documentation at 
-// https://asciidoctor.org/docs/asciidoctor-diagram/ doesn't specify what
-// java stuff that is needed, and I'm not even sure if that is the problem.
-// TODO: make this asciidoctor-diagram work and update the below diagram 
+// TODO: update the below diagram
 // with correct code from the S-ENDA-documentation
 [plantuml, information-to-knowledge, png]
 ....
