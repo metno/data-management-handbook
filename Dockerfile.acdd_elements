@@ -5,8 +5,9 @@
 FROM python:3.8-slim
 LABEL maintainer="mortenwh@met.no"
 
+ARG PY_MMD_TOOLS_VERSION=master
+
 ENV PY_MMD_TOOLS=https://github.com/metno/py-mmd-tools
-ENV PY_MMD_TOOLS_VERSION=${PY_MMD_TOOLS_VERSION:-master}
 
 RUN apt-get update && \
     apt-get install -y git && \

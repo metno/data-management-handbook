@@ -1,7 +1,6 @@
 :doctype: book
 :pdf-folio-placement: physical
 :media: prepress
-:title-logo-image: image::images/Met_RGB_Horisontal_Engelsk.png[pdfwidth=10cm,align=right]
 = Data Management Handbook template for MET and partners in S-ENDA written in asciidoc
 Nina E. Larsgård, Bruce Hackett, Audun Christoffersen, Øystein Godøy, Vegar Kristiansen, Martin Grønlien Pejcoch, Eivind Støylen, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano
 :sectnums:
@@ -44,34 +43,40 @@ toc::[]
 include::introduction.adoc[]
 
 :numbered:
+include::human-roles.adoc[]
+
+:numbered:
 include::{special_intro}[]
 
 :numbered:
-include::structure_and_documenting.adoc[]
+include::summary-requirements.adoc[]
+
+:numbered:
+include::structure-and-documenting.adoc[]
 
 :numbered:
 include::{special_strudoc}[]
 
 :numbered:
-include::data_services.adoc[]
+include::data-services.adoc[]
 
 :numbered:
 include::{special_data_services}[]
 
 :numbered:
-include::user_portals.adoc[]
+include::user-portals.adoc[]
 
 :numbered:
 include::{special_user_portals}[]
 
 :numbered:
-include::data_governance.adoc[]
+include::data-governance.adoc[]
 
 :numbered:
 include::{special_data_governance}[]
 
 :numbered:
-include::practical_guide.adoc[]
+include::practical-guide.adoc[]
 
 :numbered:
 include::{special_practical_guidance}[]

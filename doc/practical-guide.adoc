@@ -1,4 +1,4 @@
-[[specialized-practical_guidance]]
+[[practical-guidance]]
 == Practical Guidance to producers of NetCDF-CF datasets
 
 This chapter includes how-to's and other practical guidance for producers of NetCDF-CF datasets.
@@ -7,7 +7,7 @@ This chapter includes how-to's and other practical guidance for producers of Net
 
 === Workflow
 
-1. Define your dataset (see <<dataset,Dataset>>)
+1. Define your dataset (see <<glossary-dataset,Dataset>>)
 2. Create a netCDF-CF file (see, e.g., link:https://unidata.github.io/netcdf4-python/[netCDF4-python docs])
 3. Add discovery metadata as global attributes (see <<acdd_elements,section about global netCDF attibutes>>)
 4. Add variables and use metadata following the link:https://cfconventions.org/[CF conventions]
