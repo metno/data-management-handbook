@@ -6,12 +6,12 @@ This chapter includes how-to's and other practical guidance for data producers.
 // add any descriptions and introductions needed, add any subchapters needed below. This chapter should describe what is being done, how it is done and who is doing it.
 
 [[netcdf-cf-guide]]
-=== NetCDF-CF datasets
+=== Submitting data as NetCDF-CF
 
 ==== Workflow
 
 . Define your dataset (see <<glossary-dataset,Dataset>>)
-. Create a netCDF-CF file (see, e.g., link:https://unidata.github.io/netcdf4-python/[netCDF4-python docs], or link:http://xarray.pydata.org/en/stable/user-guide/io.html[xarray docs])
+. Create a netCDF-CF file (see <<data-as-netcdf-cf>>)
 
   * Add discovery metadata as global attributes (see <<acdd-elements,global attibutes section>>)
   * Add variables and <<glossary-use-metadata,use metadata>> following the link:https://cfconventions.org/[CF conventions]
