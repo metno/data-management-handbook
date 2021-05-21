@@ -6,6 +6,8 @@ Data Management Handbook template for MET and partners in S-ENDA written in asci
 
 See it [here](https://htmlpreview.github.io/?https://github.com/metno/data-management-handbook/blob/master/html/data-management-handbook.html).
 
+[here](https://htmlpreview.github.io/?https://raw.githubusercontent.com/metno/data-management-handbook/master/html/data-management-handbook.html)
+
 This handbook template is based on the first version of the Data Management Handbook used at the Meteorological Institute in Norway (METNorway). The handbook was rewritten into this template version so that other institutions and partners could use it to create their own data management handbook.
 
 This repo includes only the general parts of the data management handbook that should be universal for all partners, and templates for the chapters that include partner specific information. 
