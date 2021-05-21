@@ -4,7 +4,7 @@
 :numbered:
 include::specialized_nc2thredds.adoc[]
 
-[[test-and-create-mmd-file]]
+[[register-dataset-in-catalog]]
 ==== How to register your data in the catalog service
 
 In order to make a dataset findable, a dataset must be registered in a searchable catalog with appropriate metadata. The (meta)data catalog is indexed and exposed through link:https://en.wikipedia.org/wiki/Catalogue_Service_for_the_Web[CSW].
@@ -65,4 +65,3 @@ For production (the official catalog):
 ----
 curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert
 ----
-

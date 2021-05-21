@@ -11,18 +11,17 @@ This chapter includes how-to's and other practical guidance for data producers.
 ==== Workflow
 
 . Define your dataset (see <<glossary-dataset,Dataset>>)
-. Create a netCDF-CF file (see <<data-as-netcdf-cf>>)
+. Create a NetCDF-CF file (see <<data-as-netcdf-cf>>)
 
   * Add discovery metadata as global attributes (see <<acdd-elements,global attibutes section>>)
   * Add variables and <<glossary-use-metadata,use metadata>> following the link:https://cfconventions.org/[CF conventions]
 
-. Store the file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <<add-to-thredds>>)
-. Test that your dataset contains the necessary discovery metadata and create MMD xml file(s) (see <<test-and-create-mmd-file>>)
-. Index your data in a searchable metadata catalog under a development environment
-. Verify that the development CSW service works as expected (e.g., that it provides correct metadata)
-. Index your data in a staging/production environment
+. Store the NetCDF-CF file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <<add-to-thredds>>)
+. Register your dataset in a searchable catalog (see <<register-dataset-in-catalog>>)
 
-The data producer should be able to handle points 1-4, whereas the last four points (5-7) should be done with help from a system expert.
+  * Test that your dataset contains the necessary discovery metadata and create an MMD xml file (see <<local-mmd-xml-generation>>)
+  * Test the MMD xml file (see <<test-mmd-file>>)
+  * Push the MMD xml file to the discovery metadata catalog (see <<push-mmd-file>>)
 
 :numbered:
 include::acdd-elements.adoc[]
