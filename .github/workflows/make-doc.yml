@@ -38,7 +38,7 @@ jobs:
         git push "${remote_repo}" HEAD:${{ github.ref }} --follow-tags
 
     - name: Archive html output document
-        uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v2
         with:
           name: dmh
           path: html/data-management-handbook.html
