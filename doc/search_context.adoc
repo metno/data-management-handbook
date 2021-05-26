@@ -97,7 +97,7 @@ PyCSW opensearch only supports geographical searches querying for a box. For mor
 </csw:GetRecords>
 ----
 
-* How to use the XML file to query the CSW endpoint with python:
+* Then, you can query the CSW endpoint with, e.g., python:
 
 [source, python]
 ----
