@@ -36,11 +36,3 @@ jobs:
       run: |
         remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
         git push "${remote_repo}" HEAD:${{ github.ref }} --follow-tags
-
-    - name: Archive html output document
-      uses: actions/upload-artifact@v2
-      with:
-        name: dmh
-        path: html/data-management-handbook.html
-        if-no-files-found: error
-        retention-days: 90
