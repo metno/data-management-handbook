@@ -35,7 +35,7 @@ Or, datasets from any of the Sentinel satellites:
 
 ==== Advanced geographical search
 
-Pycsw only supports geographical searches querying for a box. For more advanced geographical searches, one must write his own XML files. For example:
+PyCSW opensearch only supports geographical searches querying for a box. For more advanced geographical searches, one must write specific XML files. For example:
 
 * to find all datasets that contains a point
 
