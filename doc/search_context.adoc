@@ -64,7 +64,7 @@ PyCSW opensearch only supports geographical searches querying for a box. For mor
 </csw:GetRecords>
 ----
 
-* to find all datasets that intersects a polygon
+* To find all datasets intersecting a polygon:
 
 [source, xml]
 ----
