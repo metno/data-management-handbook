@@ -30,12 +30,9 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add -f doc/acdd-elements.adoc
-        git add -f html/data-management-handbook.html
-        git add -f pdf/data-management-handbook.pdf
         git commit -m "Automatically updated by GitHub Action"
 
     - name: push code to ${{ github.ref }}
       run: |
         remote_repo="https://${GITHUB_ACTOR}:${{ secrets.GITHUB_TOKEN }}@github.com/${GITHUB_REPOSITORY}.git"
         git push "${remote_repo}" HEAD:${{ github.ref }} --follow-tags
-
