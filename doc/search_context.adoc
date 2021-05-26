@@ -5,15 +5,17 @@
 
 ===== Local test machines
 
-The `localtest` and `localdev` virtual machines provide OpenSearch support through link:https://github.com/geopython/pycsw[PyCSW]. To test OpenSearch via the browser, start the `localtest` vm (`vagrant up localtest`) and go to the following address:
+The link:https://github.com/metno/vagrant-s-enda[`vagrant-s-enda`] environment found at link:https://github.com/metno/vagrant-s-enda[vagrant-s-enda] provides OpenSearch support through link:https://github.com/geopython/pycsw[PyCSW]. To test OpenSearch via the browser, start the `vagrant-s-enda` vm (`vagrant up`) and go to the following address:
 
-* `http://10.20.30.10/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities`
+* `http://10.10.10.10/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities`
 
 This will return a description document of the catalog service. The `URL` field in the description document is a template format that can be used to represent a parameterized form of the search. The search client will process the URL template and attempt to replace each instance of a template parameter, generally represented in the form {name}, with a value determined at query time (link:https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-url-template-syntax[OpenSearch URL template syntax]). The question mark following any search parameter means that the parameter is optional.
 
 ===== Online catalog
 
-For searching the online metadata catalog, the base url (`http://10.20.30.10/`) must be replaced by `https://csw.s-enda.k8s.met.no/`.
+For searching the online metadata catalog, the base url (`http://10.10.10.10/`) must be replaced by `https://csw.s-enda.k8s.met.no/`:
+* `http://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results`
+
 
 ===== OpenSearch examples
 
@@ -43,24 +45,30 @@ PyCSW opensearch only supports geographical searches querying for a box. For mor
 ----
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
 <csw:GetRecords
-        xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
-        xmlns:ogc="http://www.opengis.net/ogc"
-        xmlns:gml="http://www.opengis.net/gml"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        service="CSW" version="2.0.2" resultType="results" maxRecords="10" outputFormat="application/xml" outputSchema="http://www.opengis.net/cat/csw/2.0.2" xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd" >
-    <csw:Query typeNames="csw:Record">
-        <csw:ElementSetName>full</csw:ElementSetName>
-        <csw:Constraint version="1.1.0">
-            <ogc:Filter>
-                <ogc:Contains>
-		            <ogc:PropertyName>ows:BoundingBox</ogc:PropertyName>
-			        <gml:Point>
-                	        <gml:pos srsDimension="2">59.0 4.0</gml:pos>
-                    </gml:Point>
-                </ogc:Contains>
-            </ogc:Filter>
-        </csw:Constraint>
-    </csw:Query>
+    xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+    xmlns:ogc="http://www.opengis.net/ogc"
+    xmlns:gml="http://www.opengis.net/gml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    service="CSW"
+    version="2.0.2"
+    resultType="results"
+    maxRecords="10"
+    outputFormat="application/xml" 
+    outputSchema="http://www.opengis.net/cat/csw/2.0.2"
+    xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd" >
+  <csw:Query typeNames="csw:Record">
+    <csw:ElementSetName>full</csw:ElementSetName>
+    <csw:Constraint version="1.1.0">
+      <ogc:Filter>
+        <ogc:Contains>
+          <ogc:PropertyName>ows:BoundingBox</ogc:PropertyName>
+          <gml:Point>
+            <gml:pos srsDimension="2">59.0 4.0</gml:pos>
+          </gml:Point>
+        </ogc:Contains>
+      </ogc:Filter>
+    </csw:Constraint>
+  </csw:Query>
 </csw:GetRecords>
 ----
 
@@ -70,30 +78,36 @@ PyCSW opensearch only supports geographical searches querying for a box. For mor
 ----
 <?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
 <csw:GetRecords
-        xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
-        xmlns:gml="http://www.opengis.net/gml"
-        xmlns:ogc="http://www.opengis.net/ogc"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        service="CSW" version="2.0.2" resultType="results" maxRecords="10" outputFormat="application/xml" outputSchema="http://www.opengis.net/cat/csw/2.0.2" xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd" >
-    <csw:Query typeNames="csw:Record">
-        <csw:ElementSetName>full</csw:ElementSetName>
-        <csw:Constraint version="1.1.0">
-            <ogc:Filter>
-                <ogc:Intersects>
-		            <ogc:PropertyName>ows:BoundingBox</ogc:PropertyName>
-                      <gml:Polygon>
-                           <gml:exterior>
-                                <gml:LinearRing>
-                                    <gml:posList>
-                                        47.00 -5.00 55.00 -5.00 55.00 20.00 47.00 20.00 47.00 -5.00
-                                    </gml:posList>
-                                </gml:LinearRing>
-                           </gml:exterior>
-                    </gml:Polygon>
-                </ogc:Intersects>
-            </ogc:Filter>
-        </csw:Constraint>
-    </csw:Query>
+    xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+    xmlns:gml="http://www.opengis.net/gml"
+    xmlns:ogc="http://www.opengis.net/ogc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    service="CSW"
+    version="2.0.2"
+    resultType="results"
+    maxRecords="10"
+    outputFormat="application/xml"
+    outputSchema="http://www.opengis.net/cat/csw/2.0.2"
+    xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd" >
+  <csw:Query typeNames="csw:Record">
+    <csw:ElementSetName>full</csw:ElementSetName>
+    <csw:Constraint version="1.1.0">
+      <ogc:Filter>
+        <ogc:Intersects>
+          <ogc:PropertyName>ows:BoundingBox</ogc:PropertyName>
+          <gml:Polygon>
+            <gml:exterior>
+              <gml:LinearRing>
+                <gml:posList>
+                  47.00 -5.00 55.00 -5.00 55.00 20.00 47.00 20.00 47.00 -5.00
+                </gml:posList>
+              </gml:LinearRing>
+            </gml:exterior>
+          </gml:Polygon>
+        </ogc:Intersects>
+      </ogc:Filter>
+    </csw:Constraint>
+  </csw:Query>
 </csw:GetRecords>
 ----
 
@@ -117,7 +131,7 @@ MET Norway's S-ENDA CSW catalog service is available at `https://csw.s-enda.k8s.
 
 . Select `Web > MetaSearch > MetaSearch` menu item
 . Select `Services > New`
-. Type, e.g., `csw-senda` for the name
+. Type, e.g., `csw.s-enda.k8s.met.no` for the name
 . Type `https://csw.s-enda.k8s.met.no` for the URL
 
 Under the `Search` tab, you can then add search parameters, click `Search`, and get a list of available datasets.
