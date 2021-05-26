@@ -1,5 +1,5 @@
 [[specialized-datagov]]
-=== Data governance data at [insert organisation here]
+=== Data governance at [insert organisation here]
 
 // background or other information
 

@@ -7,7 +7,7 @@
 // add intro text here
 
 .Data types available at [insert institution here], with the fileformats supported. The primary fileformat is marked in *bold*
-[[tabl-localdatatypes]]
+[[table-localdatatypes]]
 [%header, cols=4*a]
 |===
 |Supported file formats/structures
