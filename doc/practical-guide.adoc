@@ -10,7 +10,7 @@ This chapter includes how-to's and other practical guidance for data producers.
 
 ==== Workflow
 
-. Define your dataset (see <<glossary-dataset,Dataset>>)
+. Define your dataset (see <<glossary-dataset,dataset>> and <<dataset>>)
 . Create a NetCDF-CF file (see <<data-as-netcdf-cf>>)
 
   * Add discovery metadata as global attributes (see <<acdd-elements,global attibutes section>>)

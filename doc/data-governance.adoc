@@ -8,7 +8,7 @@ This chapter describes how we organise and steer data management activities in o
 . Our data management practices are in line with and contribute to the institute’s strategic aims; 
 . Our data management regime is subject to review, analysis and revision in a timely manner.
 
-These higher level aspects of data management are often referred to as <<data-governance,data governance>>. A useful definition is:
+These higher level aspects of data management are often referred to as data governance. A useful definition is:
 
 [DEFINITION]
 ====
