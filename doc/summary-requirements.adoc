@@ -3,90 +3,33 @@
 
 The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
 
-. There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines.
+. There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines
 
-[%header, cols=3*]
-|===
-|
-|Link to relevant section
-|Example
+  * There are sufficient metadata for each dataset for both discovery and use purposes
+  * Discovery metadata are indexed and can be retrieved from available services in a standard way and with standard protocols
+  * There are interfaces for discovery, visualisation and download, as well as portals for human access, that operate seamlessly across institutions
+  * The data are described in a relevant, standardised and managed vocabulary that supports machine-machine interfaces
+  * Datasets have attached a unique and permanent identifier that enables traceability
+  * Datasets have licensing that ensures free use and reuse wherever possible
+  * Datasets are available for download in a standard form according to the FAIR guiding principles and through standard protocols that are accepted and utilised in the user environment
+  * There are authentication and authorisation mechanisms that ensure access control to data with restrictions, and that are compatible with and coupled to relevant public authentication solutions (FEIDE, eduGAIN, Google, etc.)
 
-|There are sufficient metadata for each dataset for both discovery and use purposes.
-|
-|
+. There is an organisation that provides for the management of each dataset throughout its lifetime (life cycle management)
 
-| Discovery metadata are indexed and can be retrieved from available services in a standard way and with standard protocols.
-|
-|
+  * There is documentation that describes physical storage, lifetime of each dataset, degree of storage redundancy, metadata consistency methods, how dataset versioning is implemented and unique IDs to ensure traceability
+  * The organisation provides seamless access to data from distributed data centres through various portals
+  * The above and a business model at dataset level are described in a Data Management Plan (DMP)
 
-| There are interfaces for discovery, visualisation and download, as well as portals for human access, that operate seamlessly across institutions.
-|
-|
-
-|The data are described in a relevant, standardised and managed vocabulary that supports machine-machine interfaces.
-|
-|
-
-| Datasets have attached a unique and permanent identifier that enables traceability. 
-|
-|
-
-| Datasets have licensing that ensures free use and reuse wherever possible.
-|
-|
-
-| Datasets are available for download in a standard form according to the FAIR guiding principles and through standard protocols that are accepted and utilised in the user environment.
-|
-|
-
-| There are authentication and authorisation mechanisms that ensure access control to data with restrictions, and that are compatible with and coupled to relevant public authentication solutions (FEIDE, eduGAIN, Google, etc.).
-|===
-
-[start=2]
-. There is an organisation that provides for the management of each dataset throughout its lifetime (life cycle management).
-
-[%header, cols=3*]
-|===
-|
-|Link to relevant section
-|Example
-
-| There is documentation that describes physical storage, lifetime of each dataset, degree of storage redundancy, metadata consistency methods, how dataset versioning is implemented and unique IDs to ensure traceability.
-The organisation provides seamless access to data from distributed data centres through various portals.
-|
-|
-
-| The above and a business model at dataset level are described in a Data Management Plan (DMP)
-|
-|
-|===
-
-[start=3]
 . There are services or tools that provide the following functionalities on the datasets:
 
-[%header, cols=3*]
-|===
-|
-|Link to relevant section
-|Example
+  * Transformations
 
-| Transformations, including: subsetting; slicing of gridded data sets to points, sections, profiles; reprojection; resampling; reformatting
+    ** Subsetting
+    ** Slicing of gridded datasets to points, sections, profiles
+    ** Reprojection
+    ** Resampling
+    ** Reformatting
 
-|
-|
-
-| Visualisation (time series, mapping services, etc.)
-|
-|
-
-| Aggregation
-|
-|
-
-| Upload of new datasets (including enabling and configuring data access services)
-|
-|
-|===
-
-
-
+  * Visualisation (time series, mapping services, etc.)
+  * Aggregation
+  * Upload of new datasets (including enabling and configuring data access services)
