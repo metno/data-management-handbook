@@ -25,7 +25,7 @@ In this chapter we address many aspects of this definition, but a full descripti
  
 This DMH recommends the following concepts of <<data-life-cycle-managment,life cycle management>> to be implemented for the institution:
  
-* An institution specific Data Management Handbook (DMH) based on the present general template;
+* An institution specific Data Management Handbook (DMH) based on a common general template;
 * Extended <<glossary-discovery-metadata,discovery metadata>> for data in internal production chains (these are metadata elements that provide the necessary information for life cycle management just described); and
 * A <<dmp,Data Management Plan>> (DMP) document (a DMP is expected for datasets produced in external projects, but may also be useful for internal datasets, as a supplement to the extended discovery metadata).
  
