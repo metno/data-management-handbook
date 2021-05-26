@@ -4,6 +4,8 @@ services:
   acdd_elements:
     build:
       context: .
+      args:
+        PY_MMD_TOOLS_VERSION: ${PY_MMD_TOOLS_VERSION:-master}
       dockerfile: Dockerfile.acdd_elements
     volumes:
       - ./doc:/doc
