@@ -42,5 +42,3 @@ jobs:
       with:
         name: dmh
         path: html/data-management-handbook.html
-        retention-days: 10
-
