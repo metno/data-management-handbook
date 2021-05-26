@@ -1,6 +1,7 @@
 [[user-portals]]
 == User Portals and Documentation
-:xrefstyle: short
+
+=== Purpose
 
 The purpose of this chapter is to describe the human interfaces which data consumers would use to navigate data and the related services. A portal is an entry point for data consumers, enabling them to discover and search for datasets and services, and providing sufficient documentation and guidance to ensure that they are able to serve themselves using the interactive and machine interfaces offered.
 
