@@ -563,10 +563,16 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#search_context">6.2. Search context</a>
 <ul class="sectlevel3">
-<li><a href="#_user_searches_the_catalog_with_opensearch">6.2.1. User searches the catalog with OpenSearch</a></li>
-<li><a href="#_online_catalog">6.2.2. Online catalog</a></li>
-<li><a href="#_user_searches_web_portals">6.2.3. User searches web portals</a></li>
-<li><a href="#_user_searches_from_qgis">6.2.4. User searches from QGIS</a></li>
+<li><a href="#_using_opensearch">6.2.1. Using OpenSearch</a>
+<ul class="sectlevel4">
+<li><a href="#_local_test_machines">6.2.1.1. Local test machines</a></li>
+<li><a href="#_online_catalog">6.2.1.2. Online catalog</a></li>
+<li><a href="#_opensearch_examples">6.2.1.3. OpenSearch examples</a></li>
+</ul>
+</li>
+<li><a href="#_advanced_geographical_search">6.2.2. Advanced geographical search</a></li>
+<li><a href="#_web_portals">6.2.3. Web portals</a></li>
+<li><a href="#_qgis">6.2.4. QGIS</a></li>
 </ul>
 </li>
 <li><a href="#specialized-practical_guidance">6.3. Practical Guidance to data producers at [INSTITUTION]</a></li>
@@ -2064,83 +2070,164 @@ The organisation provides seamless access to data from distributed data centres 
 <div class="sect2">
 <h3 id="search_context"><a class="anchor" href="#search_context"></a>6.2. Search context</h3>
 <div class="sect3">
-<h4 id="_user_searches_the_catalog_with_opensearch"><a class="anchor" href="#_user_searches_the_catalog_with_opensearch"></a>6.2.1. User searches the catalog with OpenSearch</h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Local testing *</p>
-</li>
-</ul>
-</div>
+<h4 id="_using_opensearch"><a class="anchor" href="#_using_opensearch"></a>6.2.1. Using OpenSearch</h4>
+<div class="sect4">
+<h5 id="_local_test_machines"><a class="anchor" href="#_local_test_machines"></a>6.2.1.1. Local test machines</h5>
 <div class="paragraph">
 <p>The <code>localtest</code> and <code>localdev</code> virtual machines provide OpenSearch support through <a href="https://github.com/geopython/pycsw">PyCSW</a>. To test OpenSearch via the browser, start the <code>localtest</code> vm (<code>vagrant up localtest</code>) and go to the following address:</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
+<div class="ulist">
+<ul>
 <li>
-<p>link:http://10.20.30.10/pycsw/csw.py?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</p>
+<p><code><a href="http://10.20.30.10/pycsw/csw.py?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities" class="bare">http://10.20.30.10/pycsw/csw.py?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities</a></code></p>
 </li>
-</ol>
+</ul>
 </div>
 <div class="paragraph">
 <p>This will return a description document of the catalog service. The <code>URL</code> field in the description document is a template format that can be used to represent a parameterized form of the search. The search client will process the URL template and attempt to replace each instance of a template parameter, generally represented in the form {name}, with a value determined at query time (<a href="https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-url-template-syntax">OpenSearch URL template syntax</a>). The question mark following any search parameter means that the parameter is optional.</p>
 </div>
+</div>
+<div class="sect4">
+<h5 id="_online_catalog"><a class="anchor" href="#_online_catalog"></a>6.2.1.2. Online catalog</h5>
 <div class="paragraph">
-<p>We can now find all datasets in the catalog:</p>
+<p>For searching the online metadata catalog, the base url (<code><a href="http://10.20.30.10/" class="bare">http://10.20.30.10/</a></code>) must be replaced by <code><a href="https://csw.s-enda.k8s.met.no/" class="bare">https://csw.s-enda.k8s.met.no/</a></code>.</p>
 </div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>link:http://10.20.30.10/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results</p>
-</li>
-</ol>
 </div>
+<div class="sect4">
+<h5 id="_opensearch_examples"><a class="anchor" href="#_opensearch_examples"></a>6.2.1.3. OpenSearch examples</h5>
 <div class="paragraph">
-<p>Or datasets within a given time span:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>link:http://10.20.30.10/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;time=2000-01-01/2020-09-01</p>
-</li>
-</ol>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>pyCSW opensearch time queries do not relate to the "expected" <code>start_date</code> and <code>end_date</code> MMD fields, or the associated <code>beginPosition</code> and <code>endPosition</code>, in the pyCSW ISO19139 profile. We are working to understand and handle this&#8230;&#8203;</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>Or, datasets from any of the Sentinel satellites:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>link:http://10.20.30.10/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=sentinel&gt;`_</p>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_online_catalog"><a class="anchor" href="#_online_catalog"></a>6.2.2. Online catalog</h4>
-<div class="paragraph">
-<p>For searching the online metadata catalog, please refer to link:http://senda1.lab-a.met.no/ instead of link:http://10.20.30.10/:</p>
+<p>To find all datasets in the catalog:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p><a href="http://senda1.lab-a.met.no/pycsw/csw.py?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetCapabilities">Service description document</a></p>
+<p><code><a href="https://csw.s-enda.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results" class="bare">https://csw.s-enda.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results</a></code></p>
 </li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Or datasets within a given time span:</p>
+</div>
+<div class="ulist">
+<ul>
 <li>
-<p><a href="http://senda1.lab-a.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results">All available datasets</a></p>
+<p><code><a href="http://csw.s-enda.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;time=2000-01-01/2020-09-01" class="bare">http://csw.s-enda.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;time=2000-01-01/2020-09-01</a></code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Or datasets within a geographical domain (defined as a box with parameters min_longitude, min_latitude, max_longitude, max_latitude):</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="https://csw.s-enda.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;bbox=0,40,10,60" class="bare">https://csw.s-enda.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;bbox=0,40,10,60</a></code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Or, datasets from any of the Sentinel satellites:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="https://csw.s-enda.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=sentinel" class="bare">https://csw.s-enda.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=sentinel</a></code></p>
 </li>
 </ul>
 </div>
 </div>
+</div>
 <div class="sect3">
-<h4 id="_user_searches_web_portals"><a class="anchor" href="#_user_searches_web_portals"></a>6.2.3. User searches web portals</h4>
+<h4 id="_advanced_geographical_search"><a class="anchor" href="#_advanced_geographical_search"></a>6.2.2. Advanced geographical search</h4>
+<div class="paragraph">
+<p>PyCSW opensearch only supports geographical searches querying for a box. For more advanced geographical searches, one must write specific XML files. For example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To find all datasets containing a point:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;
+&lt;csw:GetRecords
+        xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+        xmlns:ogc="http://www.opengis.net/ogc"
+        xmlns:gml="http://www.opengis.net/gml"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        service="CSW" version="2.0.2" resultType="results" maxRecords="10" outputFormat="application/xml" outputSchema="http://www.opengis.net/cat/csw/2.0.2" xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd" &gt;
+    &lt;csw:Query typeNames="csw:Record"&gt;
+        &lt;csw:ElementSetName&gt;full&lt;/csw:ElementSetName&gt;
+        &lt;csw:Constraint version="1.1.0"&gt;
+            &lt;ogc:Filter&gt;
+                &lt;ogc:Contains&gt;
+		            &lt;ogc:PropertyName&gt;ows:BoundingBox&lt;/ogc:PropertyName&gt;
+			        &lt;gml:Point&gt;
+                	        &lt;gml:pos srsDimension="2"&gt;59.0 4.0&lt;/gml:pos&gt;
+                    &lt;/gml:Point&gt;
+                &lt;/ogc:Contains&gt;
+            &lt;/ogc:Filter&gt;
+        &lt;/csw:Constraint&gt;
+    &lt;/csw:Query&gt;
+&lt;/csw:GetRecords&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>To find all datasets intersecting a polygon:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;
+&lt;csw:GetRecords
+        xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+        xmlns:gml="http://www.opengis.net/gml"
+        xmlns:ogc="http://www.opengis.net/ogc"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        service="CSW" version="2.0.2" resultType="results" maxRecords="10" outputFormat="application/xml" outputSchema="http://www.opengis.net/cat/csw/2.0.2" xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd" &gt;
+    &lt;csw:Query typeNames="csw:Record"&gt;
+        &lt;csw:ElementSetName&gt;full&lt;/csw:ElementSetName&gt;
+        &lt;csw:Constraint version="1.1.0"&gt;
+            &lt;ogc:Filter&gt;
+                &lt;ogc:Intersects&gt;
+		            &lt;ogc:PropertyName&gt;ows:BoundingBox&lt;/ogc:PropertyName&gt;
+                      &lt;gml:Polygon&gt;
+                           &lt;gml:exterior&gt;
+                                &lt;gml:LinearRing&gt;
+                                    &lt;gml:posList&gt;
+                                        47.00 -5.00 55.00 -5.00 55.00 20.00 47.00 20.00 47.00 -5.00
+                                    &lt;/gml:posList&gt;
+                                &lt;/gml:LinearRing&gt;
+                           &lt;/gml:exterior&gt;
+                    &lt;/gml:Polygon&gt;
+                &lt;/ogc:Intersects&gt;
+            &lt;/ogc:Filter&gt;
+        &lt;/csw:Constraint&gt;
+    &lt;/csw:Query&gt;
+&lt;/csw:GetRecords&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Then, you can query the CSW endpoint with, e.g., python:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">import requests
+requests.post('https://csw.s-enda.k8s.met.no', data=open(my_xml_request).read()).text</code></pre>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_web_portals"><a class="anchor" href="#_web_portals"></a>6.2.3. Web portals</h4>
 <div class="paragraph">
 <p><strong>GeoNorge.no</strong></p>
 </div>
@@ -2149,9 +2236,9 @@ The organisation provides seamless access to data from distributed data centres 
 </div>
 </div>
 <div class="sect3">
-<h4 id="_user_searches_from_qgis"><a class="anchor" href="#_user_searches_from_qgis"></a>6.2.4. User searches from QGIS</h4>
+<h4 id="_qgis"><a class="anchor" href="#_qgis"></a>6.2.4. QGIS</h4>
 <div class="paragraph">
-<p>A staging server for the CSW catalog service is available at link:http://senda1.lab-a.met.no:8000/. This can be used from QGIS, as follows:</p>
+<p>MET Norway&#8217;s S-ENDA CSW catalog service is available at <code><a href="https://csw.s-enda.k8s.met.no" class="bare">https://csw.s-enda.k8s.met.no</a></code>. This can be used from QGIS as follows:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
@@ -2162,10 +2249,10 @@ The organisation provides seamless access to data from distributed data centres 
 <p>Select <code>Services &gt; New</code></p>
 </li>
 <li>
-<p>Type, e.g., <code>senda1-lab-a</code> for the name</p>
+<p>Type, e.g., <code>csw-senda</code> for the name</p>
 </li>
 <li>
-<p>Type <code><a href="http://senda1.lab-a.met.no" class="bare">http://senda1.lab-a.met.no</a></code> for the URL</p>
+<p>Type <code><a href="https://csw.s-enda.k8s.met.no" class="bare">https://csw.s-enda.k8s.met.no</a></code> for the URL</p>
 </li>
 </ol>
 </div>
@@ -2986,7 +3073,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-05-25 03:18:27 UTC
+Last updated 2021-05-26 11:51:54 UTC
 </div>
 </div>
 </body>
