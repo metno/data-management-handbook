@@ -1,5 +1,5 @@
 [[search_context]]
-=== Search context
+=== Search data in the Catalog Service for the Web (CSW) interface
 
 ==== Using OpenSearch
 
