@@ -39,8 +39,8 @@ jobs:
 
     - name: Archive html output document
       uses: actions/upload-artifact@v2
-        with:
-          name: dmh
-          path: html/data-management-handbook.html
-          retention-days: 10
+      with:
+        name: dmh
+        path: html/data-management-handbook.html
+        retention-days: 10
 
