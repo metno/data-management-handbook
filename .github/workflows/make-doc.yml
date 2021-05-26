@@ -42,3 +42,5 @@ jobs:
       with:
         name: dmh
         path: html/data-management-handbook.html
+        if-no-files-found: error
+        retention-days: 90
