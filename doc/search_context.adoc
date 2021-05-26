@@ -1,61 +1,123 @@
 [[search_context]]
 === Search context
 
-==== User searches the catalog with OpenSearch
+==== Using OpenSearch
 
-* Local testing *
+===== Local test machines
 
 The `localtest` and `localdev` virtual machines provide OpenSearch support through link:https://github.com/geopython/pycsw[PyCSW]. To test OpenSearch via the browser, start the `localtest` vm (`vagrant up localtest`) and go to the following address:
 
-. link:http://10.20.30.10/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities
+* `http://10.20.30.10/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities`
 
 This will return a description document of the catalog service. The `URL` field in the description document is a template format that can be used to represent a parameterized form of the search. The search client will process the URL template and attempt to replace each instance of a template parameter, generally represented in the form {name}, with a value determined at query time (link:https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-url-template-syntax[OpenSearch URL template syntax]). The question mark following any search parameter means that the parameter is optional.
 
-We can now find all datasets in the catalog:
+===== Online catalog
 
-. link:http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results
+For searching the online metadata catalog, the base url (`http://10.20.30.10/`) must be replaced by `https://csw.s-enda.k8s.met.no/`.
+
+===== OpenSearch examples
+
+To find all datasets in the catalog:
+
+* `https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results`
 
 Or datasets within a given time span:
 
-. link:http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&time=2000-01-01/2020-09-01
+* `http://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&time=2000-01-01/2020-09-01`
 
-[note]
-====
-pyCSW opensearch time queries do not relate to the "expected" `start_date` and `end_date` MMD fields, or the associated `beginPosition` and `endPosition`, in the pyCSW ISO19139 profile. We are working to understand and handle this...
-====
+Or datasets within a geographical domain (defined as a box with parameters min_longitude, min_latitude, max_longitude, max_latitude):
+
+* `https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&bbox=0,40,10,60`
 
 Or, datasets from any of the Sentinel satellites:
 
-. link:http://10.20.30.10/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=sentinel>`_
+* `https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=sentinel`
 
-==== Online catalog
+==== Advanced geographical search
 
-For searching the online metadata catalog, please refer to link:http://senda1.lab-a.met.no/ instead of link:http://10.20.30.10/:
+PyCSW opensearch only supports geographical searches querying for a box. For more advanced geographical searches, one must write specific XML files. For example:
 
-* link:http://senda1.lab-a.met.no/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities[Service description document]
-* link:http://senda1.lab-a.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results[All available datasets]
+* To find all datasets containing a point:
 
-==== User searches web portals
+[source, xml]
+----
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<csw:GetRecords
+        xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+        xmlns:ogc="http://www.opengis.net/ogc"
+        xmlns:gml="http://www.opengis.net/gml"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        service="CSW" version="2.0.2" resultType="results" maxRecords="10" outputFormat="application/xml" outputSchema="http://www.opengis.net/cat/csw/2.0.2" xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd" >
+    <csw:Query typeNames="csw:Record">
+        <csw:ElementSetName>full</csw:ElementSetName>
+        <csw:Constraint version="1.1.0">
+            <ogc:Filter>
+                <ogc:Contains>
+		            <ogc:PropertyName>ows:BoundingBox</ogc:PropertyName>
+			        <gml:Point>
+                	        <gml:pos srsDimension="2">59.0 4.0</gml:pos>
+                    </gml:Point>
+                </ogc:Contains>
+            </ogc:Filter>
+        </csw:Constraint>
+    </csw:Query>
+</csw:GetRecords>
+----
+
+* To find all datasets intersecting a polygon:
+
+[source, xml]
+----
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<csw:GetRecords
+        xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+        xmlns:gml="http://www.opengis.net/gml"
+        xmlns:ogc="http://www.opengis.net/ogc"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        service="CSW" version="2.0.2" resultType="results" maxRecords="10" outputFormat="application/xml" outputSchema="http://www.opengis.net/cat/csw/2.0.2" xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd" >
+    <csw:Query typeNames="csw:Record">
+        <csw:ElementSetName>full</csw:ElementSetName>
+        <csw:Constraint version="1.1.0">
+            <ogc:Filter>
+                <ogc:Intersects>
+		            <ogc:PropertyName>ows:BoundingBox</ogc:PropertyName>
+                      <gml:Polygon>
+                           <gml:exterior>
+                                <gml:LinearRing>
+                                    <gml:posList>
+                                        47.00 -5.00 55.00 -5.00 55.00 20.00 47.00 20.00 47.00 -5.00
+                                    </gml:posList>
+                                </gml:LinearRing>
+                           </gml:exterior>
+                    </gml:Polygon>
+                </ogc:Intersects>
+            </ogc:Filter>
+        </csw:Constraint>
+    </csw:Query>
+</csw:GetRecords>
+----
+
+* Then, you can query the CSW endpoint with, e.g., python:
+
+[source, python]
+----
+import requests
+requests.post('https://csw.s-enda.k8s.met.no', data=open(my_xml_request).read()).text
+----
+
+==== Web portals
 
 *GeoNorge.no*
 
 *TODO:* describe how to search in geonorge, possibly with screenshots
 
-==== User searches from QGIS
+==== QGIS
 
-A staging server for the CSW catalog service is available at link:http://senda1.lab-a.met.no:8000/. This can be used from QGIS, as follows:
+MET Norway's S-ENDA CSW catalog service is available at `https://csw.s-enda.k8s.met.no`. This can be used from QGIS as follows:
 
 . Select `Web > MetaSearch > MetaSearch` menu item
 . Select `Services > New`
-. Type, e.g., `senda1-lab-a` for the name
-. Type `http://senda1.lab-a.met.no` for the URL
+. Type, e.g., `csw-senda` for the name
+. Type `https://csw.s-enda.k8s.met.no` for the URL
 
 Under the `Search` tab, you can then add search parameters, click `Search`, and get a list of available datasets.
-
-
-
-
-
-
-
-
