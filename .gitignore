@@ -4,5 +4,7 @@
 *.lock
 ubuntu-*
 doc/acdd-elements.adoc
+doc/images/information-to-knowledge.png
+doc/images/user-definitions.png
 html/
 pdf/
