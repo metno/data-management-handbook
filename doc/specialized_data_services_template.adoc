@@ -1,5 +1,7 @@
 [[ds-implementation]]
-=== Implementation of data services at [institution]
+=== Implementation
+
+When planning and implementing data services, there are a number of external requirements that constrain choices, especially if reuse of solutions nationally and internationally is intended and wanted for the data in question. At the national level, important constraints are imposed by the national implementation of the <<inspire,INSPIRE>> directive through Norge digitalt. 
 
 // general introducion: local requirements etc.
 
