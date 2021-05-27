@@ -22,7 +22,7 @@ This introduction (<<introduction>>) lays forth the background and principles fo
  
 Practical guidelines for carrying out good <<glossary-data-management,data management>> are addressed in Chapter 6.
 
-The intended audience for this DMH is any personell involved in the process of making data available for the end user. This process can be viewed as a value chain that moves from the producer of the data to the data consumer (i.e., the end user). The process is further described in <<value-chain>> (<<img-value-chain>>). 
+The intended audience for this DMH is any personell involved in the process of making data available for the end user. This process can be viewed as a value chain that moves from the producer of the data to the data consumer (i.e., the end user). The process is further described in <<value-chain>> (<<img-value-chain>>).  
 
 The handbook can be used in three ways: 
 
