@@ -23,6 +23,23 @@ This chapter includes how-to's and other practical guidance for data producers.
   * Test the MMD xml file (see <<test-mmd-file>>)
   * Push the MMD xml file to the discovery metadata catalog (see <<push-mmd-file>>)
 
+[[dmp-guide]]
+=== Create a Data Management Plan (DMP)
+
+The funding agency of your project will usually provide requirements, guidelines or a template for the DMP. If this is not the case or for datasets that are not part of a project use the template provided by your institution or the template based on the link:https://www.forskningsradet.no/contentassets/e4cd6d2c23cf49d4989bb10c5eea087a/se_rdm_practical_guide_final.pdf[recommendations by Science Europe].
+
+==== Using easyDMP
+
+1. Log in to link:https://easydmp.sigma2.no/login/[easyDMP], use *Dataporten* if your institution supports that, otherwise pick one of the other login methods.
+1. Click on *+ Create a new plan* and pick a template
+1. By using the *Summary* button from page two and on, you can get an overview of all the questions.
+
+
+==== Publishing the plan
+
+Currently you can use the _export_ function in easyDMP to download an HTML or PDF version of the DMP and use it further.
+This might change if "link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP]" gets implemented.
+
 :numbered:
 include::acdd-elements.adoc[]
 
