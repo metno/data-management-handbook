@@ -19,9 +19,9 @@ services:
       -a special_practical_guidance=${SPECIAL_PRACTICAL_GUIDANCE:-specialized_practical_guidance_template.adoc}
       -a special_appendix_users=${SPECIAL_APPENDIX_USERS:-specialized_appendix_users.adoc}
       -a toc=left
-      -a imagesdir=/workdir/images
+      -a imagesdir=${IMAGES_DIR:-images}
       -a data-uri=Yes
-      -n /workdir/data-management-handbook.adoc 
+      -n data-management-handbook.adoc 
       -D /html
 
   pdf:
@@ -42,6 +42,6 @@ services:
       -a special_appendix_users=${SPECIAL_APPENDIX_USERS:-specialized_appendix_users.adoc}
       -a pdf-themesdir=/workdir
       -a pdf-theme=dmh
-      -a imagesdir=/workdir/images
-      -n /workdir/data-management-handbook.adoc
+      -a imagesdir=${IMAGES_DIR:-images}
+      -n data-management-handbook.adoc
       -D /pdf
