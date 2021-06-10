@@ -11,6 +11,7 @@ services:
       - ./html:/html
     command: >
       asciidoctor -r asciidoctor-diagram
+      -a title_page=${TITLE_PAGE:-title_page.adoc}
       -a special_intro=${SPECIAL_INTRO:-specialized_intro_template.adoc} 
       -a special_strudoc=${SPECIAL_STRUDOC:-specialized_strudoc_template.adoc}
       -a special_data_services=${SPECIAL_DATA_SERVICES:-specialized_data_services_template.adoc}
@@ -33,6 +34,7 @@ services:
       - ./pdf:/pdf
     command: >
       asciidoctor-pdf -r asciidoctor-diagram
+      -a title_page=${TITLE_PAGE:-title_page.adoc}
       -a special_intro=${SPECIAL_INTRO:-specialized_intro_template.adoc} 
       -a special_strudoc=${SPECIAL_STRUDOC:-specialized_strudoc_template.adoc}
       -a special_data_services=${SPECIAL_DATA_SERVICES:-specialized_data_services_template.adoc}
