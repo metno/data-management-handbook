@@ -12,9 +12,9 @@ The funding agency of your project will usually provide requirements, guidelines
 
 ==== Using easyDMP
 
-1. Log in to link:https://easydmp.sigma2.no/login/[easyDMP], use *Dataporten* if your institution supports that, otherwise pick one of the other login methods.
-1. Click on *+ Create a new plan* and pick a template
-1. By using the *Summary* button from page two and on, you can get an overview of all the questions.
+. Log in to link:https://easydmp.sigma2.no/login/[easyDMP], use *Dataporten* if your institution supports that, otherwise pick one of the other login methods.
+. Click on *+ Create a new plan* and pick a template
+. By using the *Summary* button from page two and on, you can get an overview of all the questions.
 
 
 ==== Publishing the plan
