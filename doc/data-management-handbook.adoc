@@ -1,8 +1,6 @@
 :doctype: book
 :pdf-folio-placement: physical
 :media: prepress
-= Data Management Handbook template for MET and partners in S-ENDA
-Nina E. Larsgård, Bruce Hackett, Audun Christoffersen, Øystein Godøy, Vegar Kristiansen, Martin Grønlien Pejcoch, Eivind Støylen, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano
 :sectnums:
 :sectnumlevels: 6
 :sectanchors:
@@ -11,33 +9,7 @@ Nina E. Larsgård, Bruce Hackett, Audun Christoffersen, Øystein Godøy, Vegar K
 :xrefstyle: short
 :toclevels: 6
 
-[discrete]
-== Abstract
-
-This document describes general data management practices in line with the FAIR principles, and focuses on the management and sharing of dynamical geodata (i.e., geolocated data about processes in nature). The practices aim at a metadata-driven data management regime. Data management principles are described and summarised. Details of the practical implementation of the principles are described along 4 pillars: structuring and documenting data; data services; user portals and documentation; and data governance. Practical guidance for data producers is also provided.
-
-The present handbook is a general text that can be applied by anyone. We have prepared templates for organisation specific information that can be updated and merged into the general handbook by the user organisations.
-
-toc::[]
-
-[discrete]
-== Revision history
-
-[cols=",,,",]
-|=======================================================================
-|Version |Date |Comment |Responsible
-
-|2.0.0 beta |2021-03-12 |New version based on original MET DMH and developments in S-ENDA
-|Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano
-
-|1.0 |2019-06-30 |First edition |Audun Christoffersen, Øystein Godøy, Bruce Hackett, Vegar Kristiansen, Martin Grønlien Pejcoch, Eivind Støylen
-
-|0.7 |2019-06-07 |Final draft revised to address comments from SENDA-SG |AC, ØG, BH, VK, MGP, ES
-
-|0.6 |2019-04-12 |Final draft from working group |AC, ØG, BH, VK, MGP, ES
-
-|=======================================================================
-
+include::{title_page}[]
 
 :numbered:
 include::introduction.adoc[]
