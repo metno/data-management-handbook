@@ -547,40 +547,46 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </li>
 <li><a href="#practical-guides">6. Practical Guides</a>
 <ul class="sectlevel2">
-<li><a href="#netcdf-cf-guide">6.1. Submitting data as NetCDF-CF</a>
+<li><a href="#dmp-guide">6.1. Create a Data Management Plan (DMP)</a>
 <ul class="sectlevel3">
-<li><a href="#_workflow">6.1.1. Workflow</a></li>
-<li><a href="#data-as-netcdf-cf">6.1.2. Creating NetCDF-CF files</a>
-<ul class="sectlevel4">
-<li><a href="#_notes">6.1.2.1. Notes</a></li>
-<li><a href="#acdd-elements">6.1.2.2. List of Attributes</a></li>
+<li><a href="#_using_easydmp">6.1.1. Using easyDMP</a></li>
+<li><a href="#_publishing_the_plan">6.1.2. Publishing the plan</a></li>
 </ul>
 </li>
-<li><a href="#add-to-thredds">6.1.3. How to add NetCDF-CF data to thredds</a></li>
-<li><a href="#register-dataset-in-catalog">6.1.4. How to register your data in the catalog service</a>
-<ul class="sectlevel4">
-<li><a href="#local-mmd-xml-generation">6.1.4.1. Generation of MMD xml file from NetCDF-CF</a></li>
-<li><a href="#test-mmd-file">6.1.4.2. Test the MMD xml file</a></li>
-<li><a href="#push-mmd-file">6.1.4.3. Push the MMD xml file to the discovery metadata catalog</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#search_context">6.2. Searching data in the Catalog Service for the Web (CSW) interface</a>
+<li><a href="#netcdf-cf-guide">6.2. Submitting data as NetCDF-CF</a>
 <ul class="sectlevel3">
-<li><a href="#_using_opensearch">6.2.1. Using OpenSearch</a>
+<li><a href="#_workflow">6.2.1. Workflow</a></li>
+<li><a href="#data-as-netcdf-cf">6.2.2. Creating NetCDF-CF files</a>
 <ul class="sectlevel4">
-<li><a href="#_local_test_machines">6.2.1.1. Local test machines</a></li>
-<li><a href="#_online_catalog">6.2.1.2. Online catalog</a></li>
-<li><a href="#_opensearch_examples">6.2.1.3. OpenSearch examples</a></li>
+<li><a href="#_notes">6.2.2.1. Notes</a></li>
+<li><a href="#acdd-elements">6.2.2.2. List of Attributes</a></li>
 </ul>
 </li>
-<li><a href="#_advanced_geographical_search">6.2.2. Advanced geographical search</a></li>
-<li><a href="#_web_portals">6.2.3. Web portals</a></li>
-<li><a href="#_qgis">6.2.4. QGIS</a></li>
+<li><a href="#add-to-thredds">6.2.3. How to add NetCDF-CF data to thredds</a></li>
+<li><a href="#register-dataset-in-catalog">6.2.4. How to register your data in the catalog service</a>
+<ul class="sectlevel4">
+<li><a href="#local-mmd-xml-generation">6.2.4.1. Generation of MMD xml file from NetCDF-CF</a></li>
+<li><a href="#test-mmd-file">6.2.4.2. Test the MMD xml file</a></li>
+<li><a href="#push-mmd-file">6.2.4.3. Push the MMD xml file to the discovery metadata catalog</a></li>
 </ul>
 </li>
-<li><a href="#specialized-practical_guidance">6.3. Practical Guidance to data producers at [INSTITUTION]</a></li>
+</ul>
+</li>
+<li><a href="#search_context">6.3. Searching data in the Catalog Service for the Web (CSW) interface</a>
+<ul class="sectlevel3">
+<li><a href="#_using_opensearch">6.3.1. Using OpenSearch</a>
+<ul class="sectlevel4">
+<li><a href="#_local_test_machines">6.3.1.1. Local test machines</a></li>
+<li><a href="#_online_catalog">6.3.1.2. Online catalog</a></li>
+<li><a href="#_opensearch_examples">6.3.1.3. OpenSearch examples</a></li>
+</ul>
+</li>
+<li><a href="#_advanced_geographical_search">6.3.2. Advanced geographical search</a></li>
+<li><a href="#_web_portals">6.3.3. Web portals</a></li>
+<li><a href="#_qgis">6.3.4. QGIS</a></li>
+</ul>
+</li>
+<li><a href="#specialized-practical_guidance">6.4. Practical Guidance to data producers at [INSTITUTION]</a></li>
 </ul>
 </li>
 <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -1486,16 +1492,45 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>This chapter includes how-to&#8217;s and other practical guidance for data producers.</p>
 </div>
 <div class="sect2">
-<h3 id="netcdf-cf-guide"><a class="anchor" href="#netcdf-cf-guide"></a>6.1. Submitting data as NetCDF-CF</h3>
+<h3 id="dmp-guide"><a class="anchor" href="#dmp-guide"></a>6.1. Create a Data Management Plan (DMP)</h3>
+<div class="paragraph">
+<p>The funding agency of your project will usually provide requirements, guidelines or a template for the DMP. If this is not the case or for datasets that are not part of a project use the template provided by your institution or the template based on the <a href="https://www.forskningsradet.no/contentassets/e4cd6d2c23cf49d4989bb10c5eea087a/se_rdm_practical_guide_final.pdf">recommendations by Science Europe</a>.</p>
+</div>
 <div class="sect3">
-<h4 id="_workflow"><a class="anchor" href="#_workflow"></a>6.1.1. Workflow</h4>
+<h4 id="_using_easydmp"><a class="anchor" href="#_using_easydmp"></a>6.1.1. Using easyDMP</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Log in to <a href="https://easydmp.sigma2.no/login/">easyDMP</a>, use <strong>Dataporten</strong> if your institution supports that, otherwise pick one of the other login methods.</p>
+</li>
+<li>
+<p>Click on <strong>+ Create a new plan</strong> and pick a template</p>
+</li>
+<li>
+<p>By using the <strong>Summary</strong> button from page two and on, you can get an overview of all the questions.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_publishing_the_plan"><a class="anchor" href="#_publishing_the_plan"></a>6.1.2. Publishing the plan</h4>
+<div class="paragraph">
+<p>Currently you can use the <em>export</em> function in easyDMP to download an HTML or PDF version of the DMP and use it further.
+This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hosted DMP</a>" gets implemented.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="netcdf-cf-guide"><a class="anchor" href="#netcdf-cf-guide"></a>6.2. Submitting data as NetCDF-CF</h3>
+<div class="sect3">
+<h4 id="_workflow"><a class="anchor" href="#_workflow"></a>6.2.1. Workflow</h4>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
 <p>Define your dataset (see <a href="#glossary-dataset">dataset</a> and <a href="#dataset">Section 1.1.3</a>)</p>
 </li>
 <li>
-<p>Create a NetCDF-CF file (see <a href="#data-as-netcdf-cf">Section 6.1.2</a>)</p>
+<p>Create a NetCDF-CF file (see <a href="#data-as-netcdf-cf">Section 6.2.2</a>)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -1508,20 +1543,20 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </li>
 <li>
-<p>Store the NetCDF-CF file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <a href="#add-to-thredds">Section 6.1.3</a>)</p>
+<p>Store the NetCDF-CF file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <a href="#add-to-thredds">Section 6.2.3</a>)</p>
 </li>
 <li>
-<p>Register your dataset in a searchable catalog (see <a href="#register-dataset-in-catalog">Section 6.1.4</a>)</p>
+<p>Register your dataset in a searchable catalog (see <a href="#register-dataset-in-catalog">Section 6.2.4</a>)</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Test that your dataset contains the necessary discovery metadata and create an MMD xml file (see <a href="#local-mmd-xml-generation">Section 6.1.4.1</a>)</p>
+<p>Test that your dataset contains the necessary discovery metadata and create an MMD xml file (see <a href="#local-mmd-xml-generation">Section 6.2.4.1</a>)</p>
 </li>
 <li>
-<p>Test the MMD xml file (see <a href="#test-mmd-file">Section 6.1.4.2</a>)</p>
+<p>Test the MMD xml file (see <a href="#test-mmd-file">Section 6.2.4.2</a>)</p>
 </li>
 <li>
-<p>Push the MMD xml file to the discovery metadata catalog (see <a href="#push-mmd-file">Section 6.1.4.3</a>)</p>
+<p>Push the MMD xml file to the discovery metadata catalog (see <a href="#push-mmd-file">Section 6.2.4.3</a>)</p>
 </li>
 </ul>
 </div>
@@ -1530,7 +1565,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="data-as-netcdf-cf"><a class="anchor" href="#data-as-netcdf-cf"></a>6.1.2. Creating NetCDF-CF files</h4>
+<h4 id="data-as-netcdf-cf"><a class="anchor" href="#data-as-netcdf-cf"></a>6.2.2. Creating NetCDF-CF files</h4>
 <div class="paragraph">
 <p>By documenting and formatting your data using <a href="#netcdf">NetCDF</a> following the <a href="https://cfconventions.org/">CF conventions</a> and the <a href="https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3">Attribute Convention for Data Discovery (ACDD)</a>, <a href="#mmd">MMD</a> files can be automatically generated from the <a href="#netcdf">NetCDF</a> files. The <a href="#cf">CF conventions</a> is a controlled vocabulary providing a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. The <a href="#acdd">ACDD</a> vocabulary describes attributes recommended for describing a <a href="#netcdf">NetCDF</a> dataset to data discovery systems. See, e.g., <a href="https://unidata.github.io/netcdf4-python/">netCDF4-python docs</a>, or <a href="http://xarray.pydata.org/en/stable/user-guide/io.html">xarray docs</a> for documentation about how to create netCDF files.</p>
 </div>
@@ -1538,7 +1573,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <p>The ACDD recommendations should be followed in order to properly document your netCDF-CF files. The below tables summarize required and recommended ACDD and some additional attributes that are needed to properly populate a discovery metadata catalog which fulfills the requirements of international standards (e.g., GCMD/DIF, the INSPIRE and WMO profiles of ISO19115, etc.).</p>
 </div>
 <div class="sect4">
-<h5 id="_notes"><a class="anchor" href="#_notes"></a>6.1.2.1. Notes</h5>
+<h5 id="_notes"><a class="anchor" href="#_notes"></a>6.2.2.1. Notes</h5>
 <div class="paragraph">
 <p><strong>Keywords</strong> describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., <code>short_name:keyword</code>. Example:</p>
 </div>
@@ -1575,7 +1610,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect4">
-<h5 id="acdd-elements"><a class="anchor" href="#acdd-elements"></a>6.1.2.2. List of Attributes</h5>
+<h5 id="acdd-elements"><a class="anchor" href="#acdd-elements"></a>6.2.2.2. List of Attributes</h5>
 <div class="paragraph">
 <p>This section provides lists of ACDD elements that are required and recommended, as well as some extra elements that are needed to fully support our data management needs. The right columns of these tables provide the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MET Norway Metadata Specification (MMD)</a> fields that map to the ACDD (and our extension to ACDD) elements. Please refer to <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for definitions of these elements, as well as controlled vocabularies that should be used. Note that the below tables are automatically generated - check <a href="https://github.com/metno/py-mmd-tools/blob/master/py_mmd_tools/mmd_elements.yaml" class="bare">https://github.com/metno/py-mmd-tools/blob/master/py_mmd_tools/mmd_elements.yaml</a> if anything is unclear.</p>
 </div>
@@ -1944,13 +1979,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="add-to-thredds"><a class="anchor" href="#add-to-thredds"></a>6.1.3. How to add NetCDF-CF data to thredds</h4>
+<h4 id="add-to-thredds"><a class="anchor" href="#add-to-thredds"></a>6.2.3. How to add NetCDF-CF data to thredds</h4>
 <div class="paragraph">
 <p>This section should contain institution specific information about how to add netcdf-cf files to thredds.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="register-dataset-in-catalog"><a class="anchor" href="#register-dataset-in-catalog"></a>6.1.4. How to register your data in the catalog service</h4>
+<h4 id="register-dataset-in-catalog"><a class="anchor" href="#register-dataset-in-catalog"></a>6.2.4. How to register your data in the catalog service</h4>
 <div class="paragraph">
 <p>In order to make a dataset findable, a dataset must be registered in a searchable catalog with appropriate metadata. The (meta)data catalog is indexed and exposed through <a href="https://en.wikipedia.org/wiki/Catalogue_Service_for_the_Web">CSW</a>.</p>
 </div>
@@ -1960,18 +1995,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Generate an MMD xml file from your NetCDF-CF file (see <a href="#local-mmd-xml-generation">Section 6.1.4.1</a>)</p>
+<p>Generate an MMD xml file from your NetCDF-CF file (see <a href="#local-mmd-xml-generation">Section 6.2.4.1</a>)</p>
 </li>
 <li>
-<p>Test your mmd xml metadata file (see <a href="#test-mmd-file">Section 6.1.4.2</a>)</p>
+<p>Test your mmd xml metadata file (see <a href="#test-mmd-file">Section 6.2.4.2</a>)</p>
 </li>
 <li>
-<p>Push the MMD xml file to the discovery metadata catalog (see <a href="#push-mmd-file">Section 6.1.4.3</a>)</p>
+<p>Push the MMD xml file to the discovery metadata catalog (see <a href="#push-mmd-file">Section 6.2.4.3</a>)</p>
 </li>
 </ol>
 </div>
 <div class="sect4">
-<h5 id="local-mmd-xml-generation"><a class="anchor" href="#local-mmd-xml-generation"></a>6.1.4.1. Generation of MMD xml file from NetCDF-CF</h5>
+<h5 id="local-mmd-xml-generation"><a class="anchor" href="#local-mmd-xml-generation"></a>6.2.4.1. Generation of MMD xml file from NetCDF-CF</h5>
 <div class="paragraph">
 <p>Clone the <a href="https://github.com/metno/py-mmd-tools.git">py-mmd-tools</a> repo and make a local installation with eg <code>pip install .</code>. This should bring in all needed dependencies (we recommend to use a virtual environment).</p>
 </div>
@@ -2004,13 +2039,13 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect4">
-<h5 id="test-mmd-file"><a class="anchor" href="#test-mmd-file"></a>6.1.4.2. Test the MMD xml file</h5>
+<h5 id="test-mmd-file"><a class="anchor" href="#test-mmd-file"></a>6.2.4.2. Test the MMD xml file</h5>
 <div class="paragraph">
 <p>Install the <a href="https://github.com/metno/discovery-metadata-catalog-ingestor">dmci app</a>, and run the usage example locally. This will return an error message if anything is wrong with your MMD file.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="push-mmd-file"><a class="anchor" href="#push-mmd-file"></a>6.1.4.3. Push the MMD xml file to the discovery metadata catalog</h5>
+<h5 id="push-mmd-file"><a class="anchor" href="#push-mmd-file"></a>6.2.4.3. Push the MMD xml file to the discovery metadata catalog</h5>
 <div class="paragraph">
 <p>For development and verification purposes:</p>
 </div>
@@ -2034,11 +2069,11 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect2">
-<h3 id="search_context"><a class="anchor" href="#search_context"></a>6.2. Searching data in the Catalog Service for the Web (CSW) interface</h3>
+<h3 id="search_context"><a class="anchor" href="#search_context"></a>6.3. Searching data in the Catalog Service for the Web (CSW) interface</h3>
 <div class="sect3">
-<h4 id="_using_opensearch"><a class="anchor" href="#_using_opensearch"></a>6.2.1. Using OpenSearch</h4>
+<h4 id="_using_opensearch"><a class="anchor" href="#_using_opensearch"></a>6.3.1. Using OpenSearch</h4>
 <div class="sect4">
-<h5 id="_local_test_machines"><a class="anchor" href="#_local_test_machines"></a>6.2.1.1. Local test machines</h5>
+<h5 id="_local_test_machines"><a class="anchor" href="#_local_test_machines"></a>6.3.1.1. Local test machines</h5>
 <div class="paragraph">
 <p>The <a href="https://github.com/metno/vagrant-s-enda"><code>vagrant-s-enda</code></a> environment found at <a href="https://github.com/metno/vagrant-s-enda">vagrant-s-enda</a> provides OpenSearch support through <a href="https://github.com/geopython/pycsw">PyCSW</a>. To test OpenSearch via the browser, start the <code>vagrant-s-enda</code> vm (<code>vagrant up</code>) and go to the following address:</p>
 </div>
@@ -2054,7 +2089,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect4">
-<h5 id="_online_catalog"><a class="anchor" href="#_online_catalog"></a>6.2.1.2. Online catalog</h5>
+<h5 id="_online_catalog"><a class="anchor" href="#_online_catalog"></a>6.3.1.2. Online catalog</h5>
 <div class="paragraph">
 <p>For searching the online metadata catalog, the base url (<code><a href="http://10.10.10.10/" class="bare">http://10.10.10.10/</a></code>) must be replaced by <code><a href="https://csw.s-enda.k8s.met.no/" class="bare">https://csw.s-enda.k8s.met.no/</a></code>:</p>
 </div>
@@ -2067,7 +2102,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect4">
-<h5 id="_opensearch_examples"><a class="anchor" href="#_opensearch_examples"></a>6.2.1.3. OpenSearch examples</h5>
+<h5 id="_opensearch_examples"><a class="anchor" href="#_opensearch_examples"></a>6.3.1.3. OpenSearch examples</h5>
 <div class="paragraph">
 <p>To find all datasets in the catalog:</p>
 </div>
@@ -2111,7 +2146,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect3">
-<h4 id="_advanced_geographical_search"><a class="anchor" href="#_advanced_geographical_search"></a>6.2.2. Advanced geographical search</h4>
+<h4 id="_advanced_geographical_search"><a class="anchor" href="#_advanced_geographical_search"></a>6.3.2. Advanced geographical search</h4>
 <div class="paragraph">
 <p>PyCSW opensearch only supports geographical searches querying for a box. For more advanced geographical searches, one must write specific XML files. For example:</p>
 </div>
@@ -2212,7 +2247,7 @@ requests.post('https://csw.s-enda.k8s.met.no', data=open(my_xml_request).read())
 </div>
 </div>
 <div class="sect3">
-<h4 id="_web_portals"><a class="anchor" href="#_web_portals"></a>6.2.3. Web portals</h4>
+<h4 id="_web_portals"><a class="anchor" href="#_web_portals"></a>6.3.3. Web portals</h4>
 <div class="paragraph">
 <p><strong>GeoNorge.no</strong></p>
 </div>
@@ -2221,7 +2256,7 @@ requests.post('https://csw.s-enda.k8s.met.no', data=open(my_xml_request).read())
 </div>
 </div>
 <div class="sect3">
-<h4 id="_qgis"><a class="anchor" href="#_qgis"></a>6.2.4. QGIS</h4>
+<h4 id="_qgis"><a class="anchor" href="#_qgis"></a>6.3.4. QGIS</h4>
 <div class="paragraph">
 <p>MET Norway&#8217;s S-ENDA CSW catalog service is available at <code><a href="https://csw.s-enda.k8s.met.no" class="bare">https://csw.s-enda.k8s.met.no</a></code>. This can be used from QGIS as follows:</p>
 </div>
@@ -2247,7 +2282,7 @@ requests.post('https://csw.s-enda.k8s.met.no', data=open(my_xml_request).read())
 </div>
 </div>
 <div class="sect2">
-<h3 id="specialized-practical_guidance"><a class="anchor" href="#specialized-practical_guidance"></a>6.3. Practical Guidance to data producers at [INSTITUTION]</h3>
+<h3 id="specialized-practical_guidance"><a class="anchor" href="#specialized-practical_guidance"></a>6.4. Practical Guidance to data producers at [INSTITUTION]</h3>
 <div class="paragraph">
 <p>This chapter includes how-to&#8217;s and other practical guidance for&#8230;&#8203;</p>
 </div>
@@ -3058,7 +3093,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-05-28 04:24:27 UTC
+Last updated 2021-06-10 03:05:47 UTC
 </div>
 </div>
 </body>
