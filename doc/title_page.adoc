@@ -1,5 +1,5 @@
 = Data Management Handbook template for MET and partners in S-ENDA
-Nina E. Larsgård, Bruce Hackett, Audun Christoffersen, Øystein Godøy, Vegar Kristiansen, Martin Grønlien Pejcoch, Eivind Støylen, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano
+Nina E. Larsgård, Bruce Hackett, Audun Christoffersen, Øystein Godøy, Vegar Kristiansen, Martin Grønlien Pejcoch, Eivind Støylen, Elodie Fernandez, Morten W. Hansen, Trygve Aspenes, Arnulf Heimsbakk (MET), and Matteo De Stefano (NINA)
 
 [discrete]
 == Abstract
@@ -16,6 +16,8 @@ toc::[]
 [cols=",,,",]
 |=======================================================================
 |Version |Date |Comment |Responsible
+|2.1.0 beta |2021-06-14 |Clean-up of previous version
+|Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, Trygve Aspenes, Arnulf Heimsbakk, Martin Grønlien Pejcoch
 
 |2.0.0 beta |2021-03-12 |New version based on original MET DMH and developments in S-ENDA
 |Nina E. Larsgård, Elodie Fernandez, Morten W. Hansen, Matteo De Stefano
