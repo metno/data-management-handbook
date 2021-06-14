@@ -31,7 +31,9 @@ jobs:
         git config --local user.name "GitHub Action"
         git add -f doc/acdd-elements.adoc
         cp html/data-management-handbook.html docs/index.html
-        git add docs/index.html
+        cp -r html/images docs/
+        git add -f docs/index.html
+        git add -f docs/images/*
         git commit -m "Automatically updated by GitHub Action"
 
     - name: push code to ${{ github.ref }}
