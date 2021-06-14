@@ -6,7 +6,7 @@ This documents shows the structure of the Data Management Handbook.
 Current status: The headers from V1 of DMH has been added to this document. 
 
 
-Todo:
+Todo: 
 
 * Extract and rewrite the generic parts
 * Create templates for partner specific parts (usually the "implementation" header), suggested sub- sections:

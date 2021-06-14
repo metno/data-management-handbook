@@ -30,7 +30,8 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
         git add -f doc/acdd-elements.adoc
-        git mv html/data-management-handbook.html docs/index.html
+        cp html/data-management-handbook.html docs/index.html
+        git add docs/index.html
         git commit -m "Automatically updated by GitHub Action"
 
     - name: push code to ${{ github.ref }}
