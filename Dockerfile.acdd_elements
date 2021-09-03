@@ -21,7 +21,7 @@ RUN python -c 'import site; print(site.getsitepackages())'
 RUN git clone ${PY_MMD_TOOLS}; \
   cd py-mmd-tools; \
   git checkout ${PY_MMD_TOOLS_VERSION}; \
-  chmod +x script/yaml2adoc; \
+  chmod +x script/yaml2adoc.py; \
   cp requirements.txt /src/requirements.txt; \
   cp -r py_mmd_tools /usr/local/lib/python3.8/site-packages
 
