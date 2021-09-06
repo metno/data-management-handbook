@@ -55,6 +55,7 @@ The following ACDD elements are required:
 |date_metadata_modified | Use date_metadata_modified with comma separation | last_metadata_update>update>datetime
 |title | Use ACDD extension for translations | title>title
 |summary | Use ACDD extension for translations | abstract>abstract
+|time_coverage_start | Comma separated list | temporal_extent>start_date
 |geospatial_lat_max | No repetition allowed | geographic_extent>rectangle>north
 |geospatial_lat_min | No repetition allowed | geographic_extent>rectangle>south
 |geospatial_lon_max | No repetition allowed | geographic_extent>rectangle>east
@@ -67,7 +68,6 @@ The following ACDD elements are recommended:
 [cols=",,,"]
 |=======================================================================
 |*ACDD Attribute* |*Repetition* |*Default* |*MMD equivalent*
-|time_coverage_start | Comma separated list |  | temporal_extent>start_date
 |time_coverage_end | Comma separated list |  | temporal_extent>end_date
 |geospatial_bounds | No repetition allowed |  | geographic_extent>polygon
 |processing_level | No repetition allowed |  | operational_status
