@@ -96,6 +96,7 @@ The following elements are ACDD extensions that are needed to improve (meta)data
 [cols=",,,"]
 |=======================================================================
 |*Extra Attribute* |*Repetition* |*Default* |*MMD equivalent*
+|alternate_identifier |  |  | alternate_identifier
 |date_created_type | Comma separated list | Created | last_metadata_update>update>type
 |collection | Comma separated list |  | collection
 |['title_no'] | Use ACDD extension for translations |  | title>title
