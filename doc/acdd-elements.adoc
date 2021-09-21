@@ -50,7 +50,8 @@ The following ACDD elements are required:
 [cols=",,"]
 |=======================================================================
 |*ACDD Attribute* |*Repetition* |*MMD equivalent*
-|id | No repetition allowed | metadata_identifier
+|id | No repetition allowed. Both id and naming_authority are required. | metadata_identifier
+|naming_authority | No repetition allowed. Both id and naming_authority are required. | metadata_identifier
 |date_created | Use date_metadata_modified with comma separation | last_metadata_update>update>datetime
 |date_metadata_modified | Use date_metadata_modified with comma separation | last_metadata_update>update>datetime
 |title | Use ACDD extension for translations | title>title
@@ -96,8 +97,9 @@ The following elements are ACDD extensions that are needed to improve (meta)data
 [cols=",,,"]
 |=======================================================================
 |*Extra Attribute* |*Repetition* |*Default* |*MMD equivalent*
-|alternate_identifier |  |  | alternate_identifier
-|date_created_type | Comma separated list | Created | last_metadata_update>update>type
+|alternate_identifier | Comma separated list |  | alternate_identifier>alternate_identifier
+|alternate_identifier_type | Comma separated list |  | alternate_identifier>type
+|['date_created_type', 'date_metadata_modified_type'] | Comma separated list | Created | last_metadata_update>update>type
 |collection | Comma separated list |  | collection
 |['title_no'] | Use ACDD extension for translations |  | title>title
 |title_lang | No repetition allowed | en | title>lang
@@ -109,7 +111,7 @@ The following elements are ACDD extensions that are needed to improve (meta)data
 |contributor_email | Comma separated list | Not available | personnel>email
 |['contributor_institution', 'contributor_organisation'] | Comma separated list | Not available | personnel>organisation
 |institution_short_name | Comma separated list |  | data_center>data_center_name>short_name
-|related_dataset_id | Comma separated list |  | related_dataset>id
+|related_dataset_id | Comma separated list |  | related_dataset>related_dataset
 |related_dataset_relation_type | Comma separated list |  | related_dataset>relation_type
 |iso_topic_category | Comma separated list |  | iso_topic_category
 |project_short_name | Semicolon separated list |  | project>short_name

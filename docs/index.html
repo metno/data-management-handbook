@@ -1637,7 +1637,12 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed. Both id and naming_authority are required.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metadata_identifier</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">naming_authority</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed. Both id and naming_authority are required.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">metadata_identifier</p></td>
 </tr>
 <tr>
@@ -1867,12 +1872,18 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier&gt;alternate_identifier</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_created_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
+<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier&gt;type</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">['date_created_type', 'date_metadata_modified_type']</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Created</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;type</p></td>
@@ -1947,7 +1958,7 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list</p></td>
 <td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;related_dataset</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_relation_type</p></td>
@@ -3110,7 +3121,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2021-09-08 02:40:24 UTC
+Last updated 2021-09-21 02:41:33 UTC
 </div>
 </div>
 </body>
