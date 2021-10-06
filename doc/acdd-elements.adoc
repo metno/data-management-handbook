@@ -115,8 +115,6 @@ The following elements are ACDD extensions that are needed to improve (meta)data
 |related_dataset_relation_type | Comma separated list |  | related_dataset>relation_type
 |iso_topic_category | Comma separated list |  | iso_topic_category
 |project_short_name | Semicolon separated list |  | project>short_name
-|platform_short_name | Comma separated list |  | platform>short_name
-|instrument_short_name | Comma separated list |  | platform>instrument>short_name
 |quality_control | No repetition allowed |  | quality_control
 |spatial_representation | No repetition allowed |  | spatial_representation
 |=======================================================================
