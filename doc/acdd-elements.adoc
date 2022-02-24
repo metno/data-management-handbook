@@ -52,8 +52,8 @@ The following ACDD elements are required:
 |*ACDD Attribute* |*Repetition* |*MMD equivalent*
 |id | No repetition allowed. Both id and naming_authority are required. | metadata_identifier
 |naming_authority | No repetition allowed. Both id and naming_authority are required. | metadata_identifier
-|date_created | Use date_metadata_modified with comma separation | last_metadata_update>update>datetime
 |date_metadata_modified | Use date_metadata_modified with comma separation | last_metadata_update>update>datetime
+|date_created | Use date_metadata_modified with comma separation | last_metadata_update>update>datetime
 |title | Use ACDD extension for translations | title>title
 |summary | Use ACDD extension for translations | abstract>abstract
 |time_coverage_start | Comma separated list | temporal_extent>start_date
@@ -99,7 +99,7 @@ The following elements are ACDD extensions that are needed to improve (meta)data
 |*Extra Attribute* |*Repetition* |*Default* |*MMD equivalent*
 |alternate_identifier | Comma separated list |  | alternate_identifier>alternate_identifier
 |alternate_identifier_type | Comma separated list |  | alternate_identifier>type
-|['date_created_type', 'date_metadata_modified_type'] | Comma separated list | Created | last_metadata_update>update>type
+|['date_metadata_modified_type', 'date_created_type'] | Comma separated list | Created | last_metadata_update>update>type
 |collection | Comma separated list |  | collection
 |['title_no'] | Use ACDD extension for translations |  | title>title
 |title_lang | No repetition allowed | en | title>lang
