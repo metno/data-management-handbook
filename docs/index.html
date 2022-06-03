@@ -1580,22 +1580,38 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <div class="sect4">
 <h5 id="_notes"><a class="anchor" href="#_notes"></a>6.2.2.1. Notes</h5>
 <div class="paragraph">
-<p><strong>Keywords</strong> describe the content of your dataset following a given vocabulary. It should be provided as a comma separated list with a short name defining the vocabulary used followed by the actual keyword, i.e., <code>short_name:keyword</code>. Example:</p>
-</div>
-<div class="exampleblock">
-<div class="content">
-<div class="paragraph">
-<p>:keywords = "GCMDSK:Earth Science &gt; Atmosphere &gt; Atmospheric radiation, GEMET:Meteorological geographical features, GEMET:Atmospheric conditions, NORTHEMES:Weather and climate" ;</p>
-</div>
-</div>
-</div>
-<div class="paragraph">
-<p>In addition, <code>keywords_vocabulary</code> provides information about the vocabulary defining the keywords. Example:</p>
+<p><strong>Keywords</strong> describe the content of your dataset following a given vocabulary. You may use any vocabularies to define your keywords, but a link to the keyword definitions should be provided in the <code>keywords_vocabulary</code> attribute. This attribute provides information about the vocabulary defining the keywords used in the <code>keywords</code> attribute. Example:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
 <p>:keywords_vocabulary = "GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords, GEMET:INSPIRE Themes:http://inspire.ec.europa.eu/theme, NORTHEMES:GeoNorge Themes:https://register.geonorge.no/metadata-kodelister/nasjonal-temainndeling" ;</p>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the <strong>GCMDSK</strong>, <strong>GEMET</strong> and <strong>NORTHEMES</strong> vocabularies are required for indexing in <a href="https://adc.met.no/">S-ENDA</a> and <a href="https://www.geonorge.no/en/">Geonorge</a>. You may find appropriate keywords at the following links:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords">GCMDSK</a></p>
+</li>
+<li>
+<p><a href="http://inspire.ec.europa.eu/theme">GEMET</a></p>
+</li>
+<li>
+<p><a href="https://register.geonorge.no/metadata-kodelister/nasjonal-temainndeling">NORTHEMES</a></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The keywords should be provided by the <code>keywords</code> attribute as a comma separated list with a short name defining the vocabulary used, followed by the actual keyword, i.e., <code>short_name:keyword</code>. Example:</p>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>:keywords = "GCMDSK:Earth Science &gt; Atmosphere &gt; Atmospheric radiation, GEMET:Meteorological geographical features, GEMET:Atmospheric conditions, NORTHEMES:Weather and climate" ;</p>
 </div>
 </div>
 </div>
@@ -3111,7 +3127,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-06-02 03:07:49 UTC
+Last updated 2022-06-03 02:57:16 UTC
 </div>
 </div>
 </body>
