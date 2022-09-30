@@ -44,6 +44,9 @@ This might change if "link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP
 include::acdd-elements.adoc[]
 
 :numbered:
+include::spec-default-global-attrs.adoc[]
+
+:numbered:
 include::register_context.adoc[]
 
 :numbered:
