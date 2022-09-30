@@ -28,7 +28,7 @@ RUN git clone ${PY_MMD_TOOLS}; \
 RUN pip3 install --upgrade pip && \
       pip3 install --no-cache -r /src/requirements.txt
 
-RUN mkdir /doc
+RUN mkdir /source
 
-VOLUME /doc
+VOLUME /source
 WORKDIR /py-mmd-tools/script

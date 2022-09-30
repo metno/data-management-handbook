@@ -5,8 +5,8 @@ services:
     build:
       context: .
       args:
-        PY_MMD_TOOLS_VERSION: ${PY_MMD_TOOLS_VERSION:-master}
+        PY_MMD_TOOLS_VERSION: issue158_non_acdd_attrs #${PY_MMD_TOOLS_VERSION:-master}
       dockerfile: Dockerfile.acdd_elements
     volumes:
-      - ./doc:/doc
-    command: ./yaml2adoc.py -o /doc/acdd-elements.adoc
+      - ./source:/source
+    command: ./yaml2adoc.py -o /source/acdd-elements.adoc

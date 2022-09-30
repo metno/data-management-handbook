@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: Dockerfile.asciidoctor
     volumes:
-      - ./doc:/workdir
+      - ./source:/workdir
       - ./html:/html
     command: >
       asciidoctor -r asciidoctor-diagram
@@ -30,7 +30,7 @@ services:
       context: .
       dockerfile: Dockerfile.asciidoctor
     volumes:
-      - ./doc:/workdir
+      - ./source:/workdir
       - ./pdf:/pdf
     command: >
       asciidoctor-pdf -r asciidoctor-diagram
