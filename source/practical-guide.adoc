@@ -40,16 +40,3 @@ This might change if "link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP
   * Test the MMD xml file (see <<test-mmd-file>>)
   * Push the MMD xml file to the discovery metadata catalog (see <<push-mmd-file>>)
 
-:numbered:
-include::acdd-elements.adoc[]
-
-:numbered:
-include::spec-default-global-attrs.adoc[]
-
-:numbered:
-include::register_context.adoc[]
-
-:numbered:
-include::search_context.adoc[]
-
-// optional subchapter that can be used as a checklist for data managers.

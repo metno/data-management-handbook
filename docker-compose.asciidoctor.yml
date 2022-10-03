@@ -18,6 +18,7 @@ services:
       -a special_user_portals=${SPECIAL_USER_PORTALS:-specialized_userportals_template.adoc}
       -a special_data_governance=${SPECIAL_DATA_GOVERNANCE:-specialized_datagov_template.adoc}
       -a special_practical_guidance=${SPECIAL_PRACTICAL_GUIDANCE:-specialized_practical_guidance_template.adoc}
+      -a spec_default_global_attrs=${SPEC_DEFAULT_GLOBAL_ATTRS:-spec_default_global_attrs.adoc}
       -a special_appendix_users=${SPECIAL_APPENDIX_USERS:-specialized_appendix_users.adoc}
       -a toc=left
       -a imagesdir=${IMAGES_DIR:-images}
@@ -41,6 +42,7 @@ services:
       -a special_user_portals=${SPECIAL_USER_PORTALS:-specialized_userportals_template.adoc}
       -a special_data_governance=${SPECIAL_DATA_GOVERNANCE:-specialized_datagov_template.adoc}
       -a special_practical_guidance=${SPECIAL_PRACTICAL_GUIDANCE:-specialized_practical_guidance_template.adoc}
+      -a spec_default_global_attrs=${SPEC_DEFAULT_GLOBAL_ATTRS:-spec_default_global_attrs.adoc}
       -a special_appendix_users=${SPECIAL_APPENDIX_USERS:-specialized_appendix_users.adoc}
       -a pdf-themesdir=/workdir
       -a pdf-theme=dmh
