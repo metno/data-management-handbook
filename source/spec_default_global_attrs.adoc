@@ -8,7 +8,7 @@ The below is an example of selected global attributes, as shown from the output 
     :creator_institution = "<to-be-added>" ;
     :institution = "<to-be-added>" ;
     :institution_short_name = "<to-be-added>" ;
-    :keywords = "GCMDSK:<to-be-added>, GEMET:<to-be-added>, GEMET:<to-be-added>, GEMET:<to-be-added>, NORTHEMES:<to-be-added>" ;
+    :keywords = "GCMDSK:<to-be-added-by-data-creator>, GEMET:<to-be-added-by-data-creator>, GEMET:<to-be-added-by-data-creator>, GEMET:<to-be-added-by-data-creator>, NORTHEMES:<to-be-added-by-data-creator>" ;
     :keywords_vocabulary = "GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords, GEMET:INSPIRE Themes:http://inspire.ec.europa.eu/theme, NORTHEMES:GeoNorge Themes:https://register.geonorge.no/metadata-kodelister/nasjonal-temainndeling" ;
     :license = "CC-BY-4.0" ;
     :license_resource = "http://spdx.org/licenses/CC-BY-4.0" ;
