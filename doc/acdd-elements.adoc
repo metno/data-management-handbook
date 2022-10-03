@@ -122,5 +122,5 @@ The following elements are ACDD extensions that are needed to improve (meta)data
 |iso_topic_category |  | iso_topic_category | Comma separated list.
 |project_short_name |  | project>short_name | Semicolon separated list.
 |quality_control |  | quality_control | No repetition allowed.
-|doi |  | dataset_citation>doi | Can also be the DOI of a parent dataset.
+|doi |  | dataset_citation>doi |
 |=======================================================================
