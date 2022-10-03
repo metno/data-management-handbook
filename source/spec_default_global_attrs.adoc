@@ -5,9 +5,7 @@ The below is an example of selected global attributes, as shown from the output 
 [source, bash]
 ----
 // global attributes:
-    :contributor_institution = "<to-be-added>" ;
     :creator_institution = "<to-be-added>" ;
-    :creator_url = <to-be-added> ;
     :institution = "<to-be-added>" ;
     :institution_short_name = "<to-be-added>" ;
     :keywords = "GCMDSK:<to-be-added>, GEMET:<to-be-added>, GEMET:<to-be-added>, GEMET:<to-be-added>, NORTHEMES:<to-be-added>" ;
@@ -17,6 +15,5 @@ The below is an example of selected global attributes, as shown from the output 
     :naming_authority = "<to-be-added>" ;
     :publisher_country = "Norway" ;
     :publisher_email = "<to-be-added>" ;
-    :publisher_institution = "<to-be-added>" ;
     :publisher_url = "<to-be-added>" ;
 ----
