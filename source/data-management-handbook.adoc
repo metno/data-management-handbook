@@ -51,6 +51,20 @@ include::{special_data_governance}[]
 include::practical-guide.adoc[]
 
 :numbered:
+include::acdd-elements.adoc[]
+
+:numbered:
+include::{spec_default_global_attrs}[]
+
+:numbered:
+include::register_context.adoc[]
+
+:numbered:
+include::search_context.adoc[]
+
+// optional subchapter that can be used as a checklist for data managers.
+
+:numbered:
 include::{special_practical_guidance}[]
 
 :numbered!:

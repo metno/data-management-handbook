@@ -5,7 +5,7 @@ on:
     branches:
       - master
     paths:
-      - 'doc/**'
+      - 'source/**'
   schedule:
     - cron:  '23 2 * * *'
 
@@ -17,11 +17,11 @@ jobs:
     steps:
     - uses: actions/checkout@v1
 
-    - name: update doc/acdd_elements.adoc
+    - name: update source/acdd_elements.adoc
       run: |
         docker-compose -f docker-compose.acdd_elements.yml up
 
-    - name: create html and pdf and update doc/acdd-elements.adoc
+    - name: create html and pdf and update source/acdd-elements.adoc
       run: |
         docker-compose -f docker-compose.asciidoctor.yml up
 
@@ -29,7 +29,7 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git add -f doc/acdd-elements.adoc
+        git add -f source/acdd-elements.adoc
         cp html/data-management-handbook.html docs/index.html
         cp -r html/images docs/
         git add -f docs/index.html

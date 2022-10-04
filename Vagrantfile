@@ -9,7 +9,7 @@
 #   * https://www.vagrantup.com/downloads.html
 #   * https://www.virtualbox.org
 #
-# Build or rebuild doc/mmd-specification.(html|pdf):
+# Build or rebuild html/pdf:
 #
 #   vagrant up
 #
