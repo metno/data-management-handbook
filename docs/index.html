@@ -561,6 +561,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <ul class="sectlevel4">
 <li><a href="#_notes">6.2.2.1. Notes</a></li>
 <li><a href="#acdd-elements">6.2.2.2. List of Attributes</a></li>
+<li><a href="#default-global-attrs">6.2.2.3. Default global attribute values for &lt;organisation-name-here&gt;</a></li>
 </ul>
 </li>
 <li><a href="#add-to-thredds">6.2.3. How to add NetCDF-CF data to thredds</a></li>
@@ -2036,6 +2037,28 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 </tbody>
 </table>
 </div>
+<div class="sect4">
+<h5 id="default-global-attrs"><a class="anchor" href="#default-global-attrs"></a>6.2.2.3. Default global attribute values for &lt;organisation-name-here&gt;</h5>
+<div class="paragraph">
+<p>The below is an example of selected global attributes, as shown from the output of <code>ncdump -h &lt;filename&gt;</code>:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">// global attributes:
+    :creator_institution = "&lt;to-be-added&gt;" ;
+    :institution = "&lt;to-be-added&gt;" ;
+    :institution_short_name = "&lt;to-be-added&gt;" ;
+    :keywords = "GCMDSK:&lt;to-be-added-by-data-creator&gt;, GEMET:&lt;to-be-added-by-data-creator&gt;, GEMET:&lt;to-be-added-by-data-creator&gt;, GEMET:&lt;to-be-added-by-data-creator&gt;, NORTHEMES:&lt;to-be-added-by-data-creator&gt;" ;
+    :keywords_vocabulary = "GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords, GEMET:INSPIRE Themes:http://inspire.ec.europa.eu/theme, NORTHEMES:GeoNorge Themes:https://register.geonorge.no/metadata-kodelister/nasjonal-temainndeling" ;
+    :license = "CC-BY-4.0" ;
+    :license_resource = "http://spdx.org/licenses/CC-BY-4.0" ;
+    :naming_authority = "&lt;to-be-added&gt;" ;
+    :publisher_country = "Norway" ;
+    :publisher_email = "&lt;to-be-added&gt;" ;
+    :publisher_url = "&lt;to-be-added&gt;" ;</code></pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="add-to-thredds"><a class="anchor" href="#add-to-thredds"></a>6.2.3. How to add NetCDF-CF data to thredds</h4>
@@ -3152,7 +3175,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-10-04 03:06:14 UTC
+Last updated 2022-10-04 11:18:04 UTC
 </div>
 </div>
 </body>
