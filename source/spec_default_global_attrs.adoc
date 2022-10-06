@@ -13,7 +13,8 @@ The below is an example of selected global attributes, as shown from the output 
     :license = "CC-BY-4.0" ;
     :license_resource = "http://spdx.org/licenses/CC-BY-4.0" ;
     :naming_authority = "<to-be-added>" ;
-    :publisher_country = "Norway" ;
+    :publisher_name = "<publisher-institution-name>" ;
+    :publisher_type = "institution" ;
     :publisher_email = "<to-be-added>" ;
     :publisher_url = "<to-be-added>" ;
 ----
