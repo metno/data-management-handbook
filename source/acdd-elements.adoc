@@ -82,7 +82,7 @@ The following ACDD elements are (highly) recommended:
 |processing_level |  | operational_status | No repetition allowed. See the MMD docs for valid keywords.
 |license |  | use_constraint>identifier | No repetition allowed.
 |creator_role | Investigator | personnel>role | Comma separated list.
-|contributor_role | Investigator | personnel>role | Comma separated list.
+|contributor_role | Technical contact | personnel>role | Comma separated list.
 |creator_name | Not available | personnel>name | Comma separated list.
 |contributor_name | Not available | personnel>name | Comma separated list.
 |creator_email | Not available | personnel>email | Comma separated list.
