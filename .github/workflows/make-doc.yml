@@ -29,12 +29,12 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
+        git pull
         git add -f source/acdd-elements.adoc
         cp html/data-management-handbook.html docs/index.html
         cp -r html/images docs/
         git add -f docs/index.html
         git add -f docs/images/*
-        git pull
         git commit -m "Automatically updated by GitHub Action"
 
     - name: push code to ${{ github.ref }}
