@@ -34,6 +34,7 @@ jobs:
         cp -r html/images docs/
         git add -f docs/index.html
         git add -f docs/images/*
+        git pull
         git commit -m "Automatically updated by GitHub Action"
 
     - name: push code to ${{ github.ref }}
