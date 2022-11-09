@@ -1644,394 +1644,329 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ACDD Attribute</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MMD equivalent</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Comment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">metadata_identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Required, and should be UUID. No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">An identifier for the dataset, provided by and unique within its naming authority. The combination of the "naming authority" and the "id" should be globally unique, but the id can be globally unique by itself also. A uuid is recommended.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">naming_authority</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">metadata_identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Required. We recommend using reverse-DNS naming. No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The organization that provides the initial id (see above) for the dataset. The naming authority should be uniquely specified by this attribute. We recommend using reverse-DNS naming for the naming authority.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conventions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Conventions</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A comma-separated string of the conventions that are followed by the dataset. For files that follow this version of ACDD, include the string 'ACDD-1.3' (this attribute is described in the NetCDF Users Guide.)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provides an audit trail for modifications to the original data. This attribute is also in the NetCDF Users Guide ('This is a character array with a line for each invocation of a program that has modified the dataset. Well-behaved generic netCDF applications should append a line containing date, time of day, user name, program name and command arguments'). To include a more complete description you can append a reference to an ISO Lineage entity; see NOAA EDM ISO Lineage guidance.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;datetime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Format as ISO8601.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this version of the data was created (modification of variable values implies a new version, hence this would be assigned the date of the most recent modification of variable values). Metadata changes are not considered when assigning the date_created. The ISO 8601:2004 extended date format is recommended, e.g., 2020-10-20T12:35:00Z.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;title</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use ACDD extension "title_no" for Norwegian translation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A short phrase or sentence describing the dataset. In many discovery systems, the title will be displayed in the results list from a search, and therefore should be human readable and reasonable to display in a list of such names. This attribute is also recommended by the NetCDF Users Guide and the CF conventions.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">summary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;abstract</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Use ACDD extension "summary_no" for Norwegian translation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A paragraph describing the dataset, analogous to an abstract for a paper. Use ACDD extension "summary_no" for Norwegian translation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">time_coverage_start</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">temporal_extent&gt;start_date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describes the time of the first data point in the data set. Use the ISO 8601:2004 date format, preferably the extended format as recommended in the Attribute Content Guidance section. I.e. YYYY-MM-DDTHH:MM:SSZ (always use UTC).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lat_max</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;north</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describes a simple upper latitude limit; may be part of a 2- or 3-dimensional bounding region. Geospatial_lat_max specifies the northernmost latitude covered by the dataset. Must be decimal degrees north.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lat_min</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;south</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describes a simple lower latitude limit; may be part of a 2- or 3-dimensional bounding region. Geospatial_lat_min specifies the southernmost latitude covered by the dataset. Must be decimal degrees north.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lon_max</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;east</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describes a simple longitude limit; may be part of a 2- or 3-dimensional bounding region. geospatial_lon_max specifies the easternmost longitude covered by the dataset. Cases where geospatial_lon_min is greater than geospatial_lon_max indicate the bounding box extends from geospatial_lon_max, through the longitude range discontinuity meridian (either the antimeridian for -180:180 values, or Prime Meridian for 0:360 values), to geospatial_lon_min; for example, geospatial_lon_min=170 and geospatial_lon_max=-175 incorporates 15 degrees of longitude (ranges 170 to 180 and -180 to -175). Must be decimal degrees east (negative westwards).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_lon_min</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;rectangle&gt;west</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describes a simple longitude limit; may be part of a 2- or 3-dimensional bounding region. geospatial_lon_min specifies the westernmost longitude covered by the dataset. See also geospatial_lon_max. Must be decimal degrees east (negative westwards).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">use_constraint&gt;resource</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provide the URL to a standard or specific license, enter "Freely Distributed" or "None", or describe any restrictions to data access and distribution in free text. It is strongly recommended to use identifiers and URL&#8217;s from <a href="https://spdx.org/licenses/" class="bare">https://spdx.org/licenses/</a> and to use a form similar to &lt;URL&gt;(&lt;Identifier&gt;) using elements from the SPDX source listed above.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keywords</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keywords&gt;keyword</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A comma-separated list of keywords and/or phrases. Keywords may be common words or phrases, terms from a controlled vocabulary (GCMD is required), or URIs for terms from a controlled vocabulary (see also "keywords_vocabulary" attribute). If keywords are extracted from, e.g., GCMD Science Keywords, add keywords_vocabulary="GCMDSK" and prefix in any case each keyword with the appropriate prefix.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keywords_vocabulary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keywords&gt;vocabulary</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If you are using a controlled vocabulary for the words/phrases in your "keywords" attribute, this is the unique name or identifier of the vocabulary from which keywords are taken. If more than one keyword vocabulary is used, each may be presented with a key, a long name, and a url, followed by a comma, so that keywords may be prefixed with the controlled vocabulary key. Example; 'GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords, GEMET:INSPIRE Themes:http://inspire.ec.europa.eu/theme'.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The following ACDD elements are (highly) recommended:</p>
+<p>The following ACDD elements are recommended (should be used if there is no good reason not to use it):</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
 </colgroup>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>ACDD Attribute</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Default</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MMD equivalent</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Comment</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_metadata_modified</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;datetime</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Format as ISO8601. Comma separated list if more than once.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">time_coverage_end</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">temporal_extent&gt;end_date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describes the time of the last data point in the data set. If the dataset is continuously updated with new measurements (e.g., a timeseries receiving new observations), this attribute can be omitted. Use ISO 8601:2004 date format, preferably the extended format as recommended in the Attribute Content Guidance section. I.e. YYYY-MM-DDTHH:MM:SSZ (always use UTC).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geospatial_bounds</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">geographic_extent&gt;polygon</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Describes the data&#8217;s 2D or 3D geospatial extent in OGC&#8217;s Well-Known Text (WKT) Geometry format (reference the OGC Simple Feature Access (SFA) specification). The meaning and order of values for each point&#8217;s coordinates depends on the coordinate reference system (CRS). The ACDD default is 2D geometry in the EPSG:4326 coordinate reference system. The default may be overridden with geospatial_bounds_crs and geospatial_bounds_vertical_crs (see those attributes). EPSG:4326 coordinate values are latitude (decimal degrees_north) and longitude (decimal degrees_east), in that order. Longitude values in the default case are limited to the [-180, 180) range. Example; 'POLYGON 40.26 -111.29, 41.26 -111.29, 41.26 -110.29, 40.26 -110.29, 40.26 -111.29'. Use this to improve the dataset findability through geospatial search.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">processing_level</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">operational_status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed. See the MMD docs for valid keywords.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">creator_role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Investigator</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A textual description of the processing (or quality control) level of the data. Valid keywords are listed in <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#operational-status">Section 4.5 of the MMD specification</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">contributor_role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Technical contact</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The role of any individuals, projects, or institutions that contributed to the creation of this data. May be presented as free text, or in a structured format compatible with conversion to ncML (e.g., insensitive to changes in whitespace, including end-of-line characters). Multiple roles should be presented in the same order and number as the names in contributor_names.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">creator_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the person (or other creator type specified by the creator_type attribute) principally responsible for creating this data. If multiple persons are involved, please list these as a comma separated list. Anyone that should be listed as dataset creators in DOI landing pages should be added to this item.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">contributor_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of any individuals, projects, or institutions that contributed to the creation of this data. May be presented as free text, or in a structured format compatible with conversion to ncML (e.g., insensitive to changes in whitespace, including end-of-line characters).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creator_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;creator_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies type of creator (one of 'person', 'group', 'institution', or 'position'). If this attribute is not specified, the creator is assumed to be a person. If multiple persons are involved, please list these as a comma separated string. In such situation please remember to add a comma separated string for creator_institution and creator_email as well. Consistency between these fields are done from left to right.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">creator_email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The email address of the person (or other creator type specified by the creator_type attribute) principally responsible for creating this data. See description of creator_type.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">creator_institution</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The institution of the creator; should uniquely identify the creator&#8217;s institution. This attribute&#8217;s value should be specified even if it matches the value of publisher_institution, or if creator_type is institution. See description of creator_type.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">institution</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name&gt;long_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the institution principally responsible for originating this data. This attribute is recommended by the CF convention.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">publisher_url</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;long_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Semicolon separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;long_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform_vocabulary</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;resource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">instrument</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;long_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">instrument_vocabulary</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;resource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">activity_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Semicolon separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">creator_name</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;author</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;publication_date</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">title</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;title</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">publisher_name</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;publisher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">metadata_link</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;url</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The URL of the person (or other entity specified by the publisher_type attribute) responsible for publishing the data file or product to users.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">references</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;other</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">related_information&gt;resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Published or web-based references that describe the data or methods used to produce it. Recommend URIs (such as a URL or DOI) for papers or other references. This attribute is defined in the CF conventions.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;long_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the project(s) principally responsible for originating this data. Multiple projects can be separated by commas, as described under Attribute Content Guidelines. Examples; 'PATMOS-X', 'Extended Continental Shelf Project'.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;long_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the platform(s) that supported the sensor used to create this dataset. Platforms can be of any type, including satellite, ship, station, aircraft or other. Indicate which controlled vocabulary that is used in the platform_vocabulary attribute. Comma separated list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform_vocabulary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controlled vocabulary for the names used in the "platform" attribute. Should be provided as urls in a comma separated list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">instrument</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;long_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the instrument(s) or sensor(s) used to create this dataset. Indicate which controlled vocabulary that is used in the instrument_vocabulary attribute. Comma separated list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">instrument_vocabulary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controlled vocabulary for the names used in the "instrument" attribute. Should be provided as urls in a comma separated list.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">activity_type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The method of production of the original data. This attribute is defined in the <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html#description-of-file-contents">CF Conventions</a>. Valid MMD values are listed in <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#activity-type">section 4.8 of the MMD specification</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creator_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;author</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the person (or other creator type specified by the creator_type attribute) principally responsible for creating this data.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;publication_date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The date on which this version of the data was created (modification of variable values implies a new version, hence this would be assigned the date of the most recent modification of variable values). Metadata changes are not considered when assigning the date_created. The ISO 8601:2004 extended date format is recommended, e.g., 2020-10-20T12:35:00Z.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">publisher_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;publisher</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the person (or entity specified by the publisher_type attribute) responsible for publishing the data file or product to users.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">metadata_link</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;url</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A URL that gives the location of more complete metadata. A persistent URL is recommended for this attribute.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The following elements are ACDD extensions that are needed to improve (meta)data interoperability. Please refer to the documentation of <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for more details:</p>
+<p>The following elements are recommended ACDD extensions that are useful to improve (meta)data interoperability. Please refer to the documentation of <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html">MMD</a> for more details:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
-<col style="width: 25%;">
+<col style="width: 20%;">
+<col style="width: 20%;">
+<col style="width: 60%;">
 </colgroup>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Necessary non-ACDD Attribute</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Default</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Attribute</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>MMD equivalent</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Comment</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Description</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">spatial_representation</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">spatial_representation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The method used to spatially represent geographic information. Valid entries are vector, grid, point and trajectory (see <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#spatial-representation">section 4.16 of the MMD specification</a>).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier&gt;alternate_identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative identifier for the dataset (but not DOI). Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative identifier for the dataset described by the metadata document. This identifier is when datasets may have multiple identifiers, e.g., identifiers depending on the framework data are shared through.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier_type</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier&gt;type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Identification of the type of identifier used. Comma separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_metadata_modified_type</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">E.g., major or minor modification. Comma separated list.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">date_created_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Created</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">last_metadata_update&gt;update&gt;type</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Type of identifier used. Currently no controlled vocabulary is defined, but this should be added once better knowledge of domains are known.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title_no</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;title</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used for Norwegian version of the title.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norwegian version of the title.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title_lang</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title&gt;lang</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISO language code.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO language code for the title. Defaults to "en".</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">summary_no</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;abstract</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Used for Norwegian version of the abstract.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Norwegian version of the abstract.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">summary_lang</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">en</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;lang</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ISO language code.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO language code for the summary. Defaults to "en".</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_production_status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Complete</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_production_status</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Production status for the dataset, using a controlled vocabulary. The valid keywords are listed in <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#dataset-production-status-types">section 4.2 of the MMD specification</a>. If set as "In Work", remember that end_date in <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#temporal_extent">section 2.8 of the MMD specification</a> can (should) be empty.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">access_constraint</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">access_constraint</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Limitations on the access to the dataset. See <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#access-constraints">section 4.6 of the MMD specification</a> for a list of valid values.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">license_identifier</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">use_constraint&gt;identifier</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Referring to the spdx licenseId. If the identifier is specified in the license attribute as &lt;URL&gt;(&lt;Identifier&gt;), license_identifier is not needed.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">contributor_email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Not available</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The email address of the contributor(s). Consistency across comma separated lists for all contributor_* attributes is required.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">contributor_institution</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">contributor_organisation</p></td>
-<td class="tableblock halign-left valign-top"></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The institution of the contributor(s). Consistency across comma separated lists for all contributor_* attributes is required.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">institution_short_name</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name&gt;short_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Short version of the institution name.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_id</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;related_dataset</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the relation between this dataset and another dataset. The type of relationship is determined by the related_dataset_relation_type attribute. The content of the element is a valid identifier.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_relation_type</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;relation_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Valid content is either "parent" (this dataset is a child dataset of the referenced dataset) or "auxiliary" (this dataset is auxiliary data for the referenced dataset).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ISO topic category fetched from a controlled vocabulary. Accepted elements are listed in <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#iso-topic-categories">the MMD specification</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project_short_name</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;short_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Semicolon separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Short version of the project name.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">quality_control</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">quality_control</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">No repetition allowed.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The level of quality control performed on the dataset/product. Valid keywords are listed in <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#quality-control">section 4.22 of the MMD specification</a>. Additional information about data quality control can be provided through the related_information element providing a URL to the quality control documentation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">doi</p></td>
-<td class="tableblock halign-left valign-top"></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">dataset_citation&gt;doi</p></td>
-<td class="tableblock halign-left valign-top"></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Digital Object Identifier (if available).</p></td>
 </tr>
 </tbody>
 </table>
@@ -3174,7 +3109,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-11-08 07:57:27 UTC
+Last updated 2022-11-09 03:05:18 UTC
 </div>
 </div>
 </body>
