@@ -3,17 +3,16 @@
 
 // Data 
 
-==== Background at (insert organsitation name here)
+==== Background 
 
 
 [[specialized-external-requirements]]
-==== External data management requirements and forcing mechanisms specific to (insert organisation name here)
-
+==== External data management requirements 
 
 
 ​
 [[data-management-roles-at]]
-==== Data Management roles at (insert organisation name here)
+==== Data Management roles 
 
 // add institute or organisation specific information below
 
