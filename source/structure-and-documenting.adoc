@@ -1,5 +1,5 @@
 [[structuring-and-documenting]]
-== Structuring and Documenting Data for Efficient Discovery and Use
+== Structuring and Documenting Data
 :xrefstyle: short
 
 === Purpose
