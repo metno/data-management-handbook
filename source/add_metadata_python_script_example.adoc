@@ -31,8 +31,7 @@ with nc.Dataset(sys.argv[1], "a") as f:
 
     f.processing_level = 'Operational'
     # MMD use_constraint_identifier, ACDD license
-    f.license = 'CC-BY-4.0'
-    f.license_resource = 'https://spdx.org/licenses/CC-BY-4.0'
+    f.license = 'https://spdx.org/licenses/CC-BY-4.0(CC-BY-4.0)'
 
     # MMD personnel, ACDD creator
     f.creator_type = 'institution'
