@@ -36,7 +36,7 @@ with nc.Dataset(sys.argv[1], "a") as f:
     # MMD personnel, ACDD creator
     f.creator_type = 'institution'  # typical for a production dataset, such as a weather model result, otherwise use 'person'
     f.creator_role = 'Investigator'
-    f.creator_name = 'Norwegian Meteorological Institute'
+    f.creator_name = 'Norwegian Meteorological Institute'  # typical for a production dataset, such as a weather model result, otherwise use a named person
     f.creator_email = 'post@met.no'
     f.creator_url = 'met.no'
     f.creator_institution = 'Norwegian Meteorological Institute'
