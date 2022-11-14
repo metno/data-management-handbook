@@ -45,7 +45,7 @@ with nc.Dataset(sys.argv[1], "a") as f:
     f.contributor_role = "Metadata author,Technical contact"
     f.contributor_email = "[group 1]@met.no, [group 2]@met.no"
     f.contributor_institution = "Norwegian Meteorological Institute,Norwegian Meteorological Institute"
-    f.contributor_type = "institution,institution"
+    f.contributor_type = "group, group"
     f.contributor_url = "met.no,met.no"
 
     f.publisher_institution = 'MET NORWAY'
