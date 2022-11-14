@@ -95,7 +95,7 @@ with nc.Dataset(sys.argv[1], "a") as f:
     f.date_metadata_modified = '{:%Y-%m-%dT%H:%M:%S}Z'.format(datetime.now(tz=timezone.utc))
     f.date_metadata_modified_type = 'Created'
 
-    f.Conventions = 'CF-1.6 for coordinates,ACDD-1.3'
+    f.Conventions = 'CF-1.6, ACDD-1.3'
 
     f.geospatial_lat_min = 30.05
     f.geospatial_lat_max = 81.95
