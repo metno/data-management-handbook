@@ -49,7 +49,7 @@ with nc.Dataset(sys.argv[1], "a") as f:
     f.contributor_url = "met.no,met.no"
 
     f.publisher_institution = 'MET NORWAY'
-    f.publisher_country = 'NORWAY'
+    f.publisher_country = 'Norway'
     f.publisher_email = 'post@met.no'
     f.publisher_name = 'Meteorological Institute'
     f.publisher_url = 'met.no'
