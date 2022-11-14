@@ -83,7 +83,7 @@ with nc.Dataset(sys.argv[1], "a") as f:
 
     # only 1 timestep (e.g., one measurement) in this example
     coverstart = datetime(1900, 1, 1, 0, 0)  + timedelta(44012)
-    coverend = coverstart
+    coverend = coverstart  # time of last measurement
 
     f.time_coverage_start = '{:%Y-%m-%dT%H:%M:%S.%f}Z'.format(coverstart)
     f.time_coverage_end = '{:%Y-%m-%dT%H:%M:%S.%f}Z'.format(coverend)
