@@ -88,7 +88,6 @@ with nc.Dataset(sys.argv[1], "a") as f:
     f.time_coverage_start = '{:%Y-%m-%dT%H:%M:%S.%f}Z'.format(coverstart)
     f.time_coverage_end = '{:%Y-%m-%dT%H:%M:%S.%f}Z'.format(coverend)
 
-    f.ancillary_timeliness = '[???]'
 
     f.date_created = '{:%Y-%m-%dT%H:%M:%S}Z'.format(createddate)
 
