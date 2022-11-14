@@ -57,6 +57,9 @@ include::acdd-elements.adoc[]
 include::{spec_default_global_attrs}[]
 
 :numbered:
+include::{add_metadata_python_script_example}[]
+
+:numbered:
 include::register_context.adoc[]
 
 :numbered:

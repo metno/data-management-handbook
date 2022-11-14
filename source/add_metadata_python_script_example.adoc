@@ -1,0 +1,105 @@
+[[example-script-add-metadata]]
+===== Example script to add metadata to a netCDF file
+
+The below is an example python script to add to a netCDF the metadata needed for it to be parsed by https://github.com/metno/py-mmd-tools/blob/master/py_mmd_tools/nc_to_mmd.py:
+[source, python]
+----
+#!/usr/bin/env python
+
+from datetime import datetime, timedelta, timezone
+import sys
+import netCDF4 as nc
+from uuid import uuid4
+
+with nc.Dataset(sys.argv[1], "a") as f:
+    f.id = str(uuid4())
+
+    f.collection = '[e.g. METNCS]'
+
+    f.title = 'lorem ipsum'
+    f.title_lang = 'en'
+    f.title_no = 'lorem ipsum'
+
+    # MMD abstract, ACDD summary
+    f.summary = 'lorem ipsum '
+    f.summary += 'lorem ipsum '
+    f.summary += 'lorem ipsum'
+    f.summary_lang = 'en'
+    f.summary_no = 'lorem ipsum '
+    f.summary_no += 'lorem ipsum '
+    f.summary_no += 'lorem ipsum'
+
+    f.processing_level = 'Operational'
+    # MMD use_constraint_identifier, ACDD license
+    f.license = 'CC-BY-4.0'
+    f.license_resource = 'https://spdx.org/licenses/CC-BY-4.0'
+
+    # MMD personnel, ACDD creator
+    f.creator_type = 'institution'
+    f.creator_role = 'Investigator'
+    f.creator_name = 'Norwegian Meteorological Institute'
+    f.creator_email = 'post@met.no'
+    f.creator_url = 'met.no'
+    f.creator_institution = 'Norwegian Meteorological Institute'
+
+    f.contributor_name = "[Group name],Norwegian Meteorological Institute"
+    f.contributor_role = "Metadata author,Technical contact"
+    f.contributor_email = "post@met.no,post@met.no"
+    f.contributor_institution = "Norwegian Meteorological Institute,Norwegian Meteorological Institute"
+    f.contributor_type = "institution,institution"
+    f.contributor_url = "met.no,met.no"
+
+    f.publisher_institution = 'MET NORWAY'
+    f.publisher_country = 'NORWAY'
+    f.publisher_email = 'post@met.no'
+    f.publisher_name = 'Meteorological Institute'
+    f.publisher_url = 'met.no'
+    f.keywords = 'GCMDSK:Earth Science > Atmosphere > Atmospheric radiation, '
+    f.keywords += 'GCMDLOC:Geographic Region > Northern Hemisphere, '
+    f.keywords += 'GCMDPROV: Government Agencies-non-US > Norway > NO/MET > Norwegian Meteorological Institute, '
+    f.keywords += 'GEMET:Meteorological geographical features, GEMET:Atmospheric conditions, '
+    f.keywords += 'GEMET:Oceanographic geographical features, NORTHEMES:Weather and climate'
+    f.keywords_vocabulary = 'GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords, '
+    f.keywords_vocabulary += 'GCMDPROV:GCMD Providers:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/providers, '
+    f.keywords_vocabulary += 'GCMDLOC:GCMD Locations:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/locations, '
+    f.keywords_vocabulary += 'GEMET:INSPIRE themes:http://inspire.ec.europa.eu/theme, '
+    f.keywords_vocabulary += 'NORTHEMES:GeoNorge Themes:https://register.geonorge.no/subregister/metadata-kodelister/kartverket/nasjonal-temainndeling'
+    f.keywords_resource = 'GCMD:https://gcmdservices.gsfc.nasa.gov/static/kms/, GEMET:http://inspire.ec.europa.eu/theme, '
+    f.keywords_resource += 'NORTHEMES:https://register.geonorge.no/subregister/metadata-kodelister/kartverket/nasjonal-temainndeling'
+
+    f.institution = 'Norwegian Meteorological Institute'
+    f.institution_short_name = 'METNO'
+    f.project = 'Govermental core service'
+    f.project_short_name = 'Govermental core service'
+
+    # MMD mandatory not in ACDD
+    f.metadata_status = 'Active'
+    f.dataset_production_status = 'Complete'
+    f.iso_topic_category = 'climatologyMeteorologyAtmosphere,environment'
+
+    f.access_constraint = 'Open'
+    f.spatial_representation = 'grid'
+
+    f.naming_authority = 'no.met'
+
+    # only 1 timestep in this example
+    coverstart = datetime(1900, 1, 1, 0, 0)  + timedelta(44012)
+    coverend = coverstart
+
+    f.time_coverage_start = '{:%Y-%m-%dT%H:%M:%S.%f}Z'.format(coverstart)
+    f.time_coverage_end = '{:%Y-%m-%dT%H:%M:%S.%f}Z'.format(coverend)
+
+    f.ancillary_timeliness = '[???]'
+
+    f.date_created = '{:%Y-%m-%dT%H:%M:%S}Z'.format(createddate)
+
+    f.date_metadata_modified = '{:%Y-%m-%dT%H:%M:%S}Z'.format(datetime.now(tz=timezone.utc))
+    f.date_metadata_modified_type = 'Created'
+
+    f.Conventions = 'CF-1.6 for coordinates,ACDD-1.3'
+
+    f.geospatial_lat_min = 30.05
+    f.geospatial_lat_max = 81.95
+    f.geospatial_lon_min = -29.95
+    f.geospatial_lon_max = 89.95
+----
