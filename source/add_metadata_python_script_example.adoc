@@ -51,7 +51,7 @@ with nc.Dataset(sys.argv[1], "a") as f:
     f.publisher_institution = 'MET NORWAY'
     f.publisher_country = 'Norway'
     f.publisher_email = 'post@met.no'
-    f.publisher_name = 'Meteorological Institute'
+    f.publisher_name = 'Norwegian Meteorological Institute'
     f.publisher_url = 'https://met.no'
     f.keywords = 'GCMDSK:Earth Science > Atmosphere > Atmospheric radiation, '
     f.keywords += 'GCMDLOC:Geographic Region > Northern Hemisphere, '
