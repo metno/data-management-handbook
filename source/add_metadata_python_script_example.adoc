@@ -5,6 +5,7 @@ The below is an example python script to add metadata to a netCDF-CF file. Note 
 [source, python]
 ----
 #!/usr/bin/env python
+# filename.py
 
 from datetime import datetime, timedelta, timezone
 import sys
