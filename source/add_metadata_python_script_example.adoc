@@ -1,7 +1,7 @@
 [[example-script-add-metadata]]
 ===== Example script to add metadata to a netCDF file
 
-The below is an example python script to add to a netCDF the metadata needed for it to be parsed by https://github.com/metno/py-mmd-tools/blob/master/py_mmd_tools/nc_to_mmd.py:
+The below is an example python script to add metadata to a netCDF-CF file. Note that we have only included the required attributes, and that the data producer should add more. This is needed for the netCDF file to be parsed into an MMD xml file by the script `scripts/nc2mmd.py` in https://github.com/metno/py-mmd-tools[py-mmd-tools]:
 [source, python]
 ----
 #!/usr/bin/env python
