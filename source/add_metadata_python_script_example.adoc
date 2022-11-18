@@ -28,7 +28,6 @@ with nc.Dataset(sys.argv[1], "a") as f:
     
     f.history += isotime_now_string + ", Dummy User, " + script_name + "\n" 
 
-    f.collection = '[e.g. METNCS]'
 
     f.title = 'lorem ipsum'
 
