@@ -70,14 +70,6 @@ with nc.Dataset(sys.argv[1], "a") as f:
                     'geonorge.no/subregister/metadata-kodelister/'
                     'kartverket/nasjonal-temainndeling'
                 )
-    f.keywords_resource = (
-                    'GCMD:https://gcmdservices.gsfc.nasa.gov/static/'
-                    'kms/, GEMET:http://inspire.ec.europa.eu/theme, '
-                )
-    f.keywords_resource += (
-                    'NORTHEMES:https://register.geonorge.no/'
-                    'subregister/metadata-kodelister/kartverket/'
-                    'nasjonal-temainndeling'
 
     f.naming_authority = 'no.met'
 
