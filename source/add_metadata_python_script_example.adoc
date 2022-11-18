@@ -54,14 +54,6 @@ with nc.Dataset(sys.argv[1], "a") as f:
                     'sciencekeywords, '
                 )
     f.keywords_vocabulary += (
-                    'GCMDPROV:GCMD Providers:https://gcmd.earthdata.'
-                    'nasa.gov/kms/concepts/concept_scheme/providers, '
-                )
-    f.keywords_vocabulary += (
-                    'GCMDLOC:GCMD Locations:https://gcmd.earthdata.'
-                    'nasa.gov/kms/concepts/concept_scheme/locations, '
-                )
-    f.keywords_vocabulary += (
                     'GEMET:INSPIRE themes:http://inspire.ec.europa.eu'
                     '/theme, '
                 )
