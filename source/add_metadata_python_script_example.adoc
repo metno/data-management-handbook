@@ -41,10 +41,6 @@ with nc.Dataset(sys.argv[1], "a") as f:
     f.keywords = 'GCMDSK:Earth Science > Atmosphere > Atmospheric radiation, '
     f.keywords += 'GCMDLOC:Geographic Region > Northern Hemisphere, '
     f.keywords += (
-                    'GCMDPROV: Government Agencies-non-US > Norway > '
-                    'NO/MET > Norwegian Meteorological Institute, '
-                )
-    f.keywords += (
                     'GEMET:Meteorological geographical features, '
                     'GEMET:Atmospheric conditions, '
                 )
