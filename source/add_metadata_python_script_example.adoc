@@ -1,7 +1,7 @@
 [[example-script-add-metadata]]
 ===== Example script to add metadata to a netCDF file
 
-The below is an example python script to add metadata to a netCDF-CF file. Note that we have only included the required attributes, and that the data producer should add more. This is needed for the netCDF file to be parsed into an MMD xml file by the script `scripts/nc2mmd.py` in https://github.com/metno/py-mmd-tools[py-mmd-tools]:
+The below is an example python script to add metadata to a netCDF-CF file. Note that we have only included the required attributes, and that the data producer should add more. This is needed to support (meta)data interoperability and can be validated by the script `scripts/nc2mmd.py` in https://github.com/metno/py-mmd-tools[py-mmd-tools], which also can parse the netCDF-CF file into an MMD xml file:
 [source, python]
 ----
 #!/usr/bin/env python
@@ -20,7 +20,10 @@ with nc.Dataset(sys.argv[1], "a") as f:
     script_name = os.path.basename(__file__)
     
     if 'history' not in f.ncattrs():
-        f.history = "" # history should already exist in the netcdf file if not we create it here empty 
+        """ History should already exist in the netcdf file but if
+        it does not, we create it here.
+        """
+        f.history = ""
         print("warning: no history field in the netCDF metadata")
     
     f.history += isotime_now_string + ", Dummy User, " + script_name + "\n" 
@@ -38,21 +41,54 @@ with nc.Dataset(sys.argv[1], "a") as f:
     # example keywords given here
     f.keywords = 'GCMDSK:Earth Science > Atmosphere > Atmospheric radiation, '
     f.keywords += 'GCMDLOC:Geographic Region > Northern Hemisphere, '
-    f.keywords += 'GCMDPROV: Government Agencies-non-US > Norway > NO/MET > Norwegian Meteorological Institute, '
-    f.keywords += 'GEMET:Meteorological geographical features, GEMET:Atmospheric conditions, '
-    f.keywords += 'GEMET:Oceanographic geographical features, NORTHEMES:Weather and climate'
-    f.keywords_vocabulary = 'GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords, '
-    f.keywords_vocabulary += 'GCMDPROV:GCMD Providers:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/providers, '
-    f.keywords_vocabulary += 'GCMDLOC:GCMD Locations:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/locations, '
-    f.keywords_vocabulary += 'GEMET:INSPIRE themes:http://inspire.ec.europa.eu/theme, '
-    f.keywords_vocabulary += 'NORTHEMES:GeoNorge Themes:https://register.geonorge.no/subregister/metadata-kodelister/kartverket/nasjonal-temainndeling'
-    f.keywords_resource = 'GCMD:https://gcmdservices.gsfc.nasa.gov/static/kms/, GEMET:http://inspire.ec.europa.eu/theme, '
-    f.keywords_resource += 'NORTHEMES:https://register.geonorge.no/subregister/metadata-kodelister/kartverket/nasjonal-temainndeling'
+    f.keywords += (
+                    'GCMDPROV: Government Agencies-non-US > Norway > '
+                    'NO/MET > Norwegian Meteorological Institute, '
+                )
+    f.keywords += (
+                    'GEMET:Meteorological geographical features, '
+                    'GEMET:Atmospheric conditions, '
+                )
+    f.keywords += (
+                    'GEMET:Oceanographic geographical features, '
+                    'NORTHEMES:Weather and climate'
+                )
+    f.keywords_vocabulary = (
+                    'GCMDSK:GCMD Science Keywords:https://gcmd.'
+                    'earthdata.nasa.gov/kms/concepts/concept_scheme/'
+                    'sciencekeywords, '
+                )
+    f.keywords_vocabulary += (
+                    'GCMDPROV:GCMD Providers:https://gcmd.earthdata.'
+                    'nasa.gov/kms/concepts/concept_scheme/providers, '
+                )
+    f.keywords_vocabulary += (
+                    'GCMDLOC:GCMD Locations:https://gcmd.earthdata.'
+                    'nasa.gov/kms/concepts/concept_scheme/locations, '
+                )
+    f.keywords_vocabulary += (
+                    'GEMET:INSPIRE themes:http://inspire.ec.europa.eu'
+                    '/theme, '
+                )
+    f.keywords_vocabulary += (
+                    'NORTHEMES:GeoNorge Themes:https://register.'
+                    'geonorge.no/subregister/metadata-kodelister/'
+                    'kartverket/nasjonal-temainndeling'
+                )
+    f.keywords_resource = (
+                    'GCMD:https://gcmdservices.gsfc.nasa.gov/static/'
+                    'kms/, GEMET:http://inspire.ec.europa.eu/theme, '
+                )
+    f.keywords_resource += (
+                    'NORTHEMES:https://register.geonorge.no/'
+                    'subregister/metadata-kodelister/kartverket/'
+                    'nasjonal-temainndeling'
 
     f.naming_authority = 'no.met'
 
     # only 1 timestep (e.g., one measurement) in this example
-    coverstart = datetime(1900, 1, 1, 0, 0)  + timedelta(44012)  # time of first measurement
+    # time of first measurement:
+    coverstart = datetime(1900, 1, 1, 0, 0)  + timedelta(44012)
     coverend = coverstart  # time of last measurement
 
     f.time_coverage_start = '{:%Y-%m-%dT%H:%M:%S.%f}Z'.format(coverstart)
@@ -60,9 +96,15 @@ with nc.Dataset(sys.argv[1], "a") as f:
 
 
     if 'created_date' in f.ncattrs() and 'created_hour' in f.ncattrs():
-        f.date_created = createddate = datetime.strptime(f.created_date+'T'+f.created_hour,'%Y%m%dT%H%M%S.%f').replace(tzinfo=timezone.utc)  # it should be possible to get date_created from a pre-existing created_date and created_hour fields
+        """ It should be possible to get date_created from a
+        pre-existing created_date and created_hour fields.
+        """
+        f.date_created = createddate = datetime.strptime(
+            f.created_date + 'T' + f.created_hour, '%Y%m%dT%H%M%S.%f').replace(
+                tzinfo = timezone.utc)
     else:
-        f.date_created = isotime_now # replace with the right value here
+        # replace with the right value here:
+        f.date_created = isotime_now
 
     f.Conventions = 'CF-1.6, ACDD-1.3'
 
