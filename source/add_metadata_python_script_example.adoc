@@ -11,12 +11,15 @@ import sys
 import netCDF4 as nc
 from uuid import uuid4
 import os
+import warnings
 
 with nc.Dataset(sys.argv[1], "a") as f:
     f.id = str(uuid4())
 
-    isotime_now = '{:%Y-%m-%dT%H:%M:%S}Z'.format(datetime.now(tz=timezone.utc))
-    isotime_now_string = str(isotime_now)
+    isotime_now_utc = datetime.utcnow().replace(tzinfo=datetime.timezone.utc).isoformat()
+    isotime_now_local = datetime.now().astimezone().replace(microsecond=0).isoformat()
+    isotime_now_local_string = str(isotime_now_local)
+
     script_name = os.path.basename(__file__)
     
     if 'history' not in f.ncattrs():
@@ -24,7 +27,7 @@ with nc.Dataset(sys.argv[1], "a") as f:
         it does not, we create it here.
         """
         f.history = ""
-        print("warning: no history field in the netCDF metadata")
+        warnings.warn("Warning: no history field in the netCDF metadata")
     
     f.history += isotime_now_string + ", Dummy User, " + script_name + "\n" 
 
@@ -37,7 +40,7 @@ with nc.Dataset(sys.argv[1], "a") as f:
 
     f.license = 'https://spdx.org/licenses/CC-BY-4.0(CC-BY-4.0)'
 
-    # example keywords given here
+    # example keywords are given here, this must be customized depending on the data at hand
     f.keywords = 'GCMDSK:Earth Science > Atmosphere > Atmospheric radiation, '
     f.keywords += 'GCMDLOC:Geographic Region > Northern Hemisphere, '
     f.keywords += (
@@ -67,23 +70,25 @@ with nc.Dataset(sys.argv[1], "a") as f:
 
     # only 1 timestep (e.g., one measurement) in this example
     # time of first measurement:
-    coverstart = datetime(1900, 1, 1, 0, 0)  + timedelta(44012)
+    coverstart = f.time[0]
     coverend = coverstart  # time of last measurement
 
-    f.time_coverage_start = '{:%Y-%m-%dT%H:%M:%S.%f}Z'.format(coverstart)
-    f.time_coverage_end = '{:%Y-%m-%dT%H:%M:%S.%f}Z'.format(coverend)
+    # we assume here that the times are in UTC 
+    f.time_coverage_start = coverstart.replace(tzinfo=datetime.timezone.utc).isoformat()
+    f.time_coverage_end = coverend.replace(tzinfo=datetime.timezone.utc).isoformat()
 
 
-    if 'created_date' in f.ncattrs() and 'created_hour' in f.ncattrs():
-        """ It should be possible to get date_created from a
-        pre-existing created_date and created_hour fields.
+    if 'created_date' in f.ncattrs():
+        """ We assume here that the pre-existing created_date contains the creation date in UTC in the format YYYY-mm-ddT00:00:00
         """
-        f.date_created = createddate = datetime.strptime(
-            f.created_date + 'T' + f.created_hour, '%Y%m%dT%H%M%S.%f').replace(
-                tzinfo = timezone.utc)
+        try :
+           f.date_created = datetime.strptime(f.created_date,'%Y-%m-%dT%H:%M:%S').replace(tzinfo=datetime.timezone.utc).isoformat()
+        except:
+           warnings.warn("Warning: created_date is not in the expected format, date_created will use the current time in UTC")
+           f.date_created = isotime_now_utc
     else:
         # replace with the right value here:
-        f.date_created = isotime_now
+        f.date_created = isotime_now_utc
 
     f.Conventions = 'CF-1.6, ACDD-1.3'
 
