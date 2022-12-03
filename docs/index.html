@@ -1773,32 +1773,32 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">contributor_role</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The role of any individuals, projects, or institutions that contributed to the creation of this data. May be presented as free text, or in a structured format compatible with conversion to ncML (e.g., insensitive to changes in whitespace, including end-of-line characters). Multiple roles should be presented in the same order and number as the names in contributor_names.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The role of any individuals, projects, or institutions that contributed to the creation of this data. May be presented as free text, or in a structured format compatible with conversion to ncML (e.g., insensitive to changes in whitespace, including end-of-line characters). Multiple roles should be presented in the same order and number as the names in contributor_names. Contributor roles should be defined using elements from the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#contact-roles">contact role types in the MMD specification</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">creator_name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the person (or other creator type specified by the creator_type attribute) principally responsible for creating this data. If multiple persons are involved, please list these as a comma separated list. Anyone that should be listed as dataset creators in DOI landing pages should be added to this item.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the person (or other creator type specified by the creator_type attribute) principally responsible for creating this data. If multiple persons are involved, please list these as a comma separated list. In such situation please remember to add a comma separated string for creator_institution, creator_email and creator_role as well. Anyone that should be listed as dataset creators in DOI landing pages should be added to this item.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">contributor_name</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name of any individuals, projects, or institutions that contributed to the creation of this data. May be presented as free text, or in a structured format compatible with conversion to ncML (e.g., insensitive to changes in whitespace, including end-of-line characters).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of any individuals, projects, or institutions that contributed to the creation of this data. May be presented as free text, or in a structured format compatible with conversion to ncML (e.g., insensitive to changes in whitespace, including end-of-line characters). If multiple persons are involved, please list these as a comma separated list.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">creator_type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;creator_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies type of creator (one of 'person', 'group', 'institution', or 'position'). If this attribute is not specified, the creator is assumed to be a person. If multiple persons are involved, please list these as a comma separated string. In such situation please remember to add a comma separated string for creator_institution and creator_email as well. Consistency between these fields are done from left to right.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies type of creator (one of 'person', 'group', 'institution', or 'position'). If this attribute is not specified, the creator is assumed to be a person. If multiple persons are involved, please list these as a comma separated string. In such situation please remember to add a comma separated string for creator_institution, creator_email and creator_role as well. Consistency between these fields are done from left to right.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">creator_email</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The email address of the person (or other creator type specified by the creator_type attribute) principally responsible for creating this data. See description of creator_type.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The email address of the person (or other creator type specified by the creator_type attribute) principally responsible for creating this data. See description of creator_type. Consistency across comma separated lists for all creator_* attributes is required.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">creator_institution</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The institution of the creator; should uniquely identify the creator&#8217;s institution. This attribute&#8217;s value should be specified even if it matches the value of publisher_institution, or if creator_type is institution. See description of creator_type.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The institution of the creator; should uniquely identify the creator&#8217;s institution. This attribute&#8217;s value should be specified even if it matches the value of publisher_institution, or if creator_type is institution. See description of creator_type. Consistency across comma separated lists for all creator_* attributes is required.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">institution</p></td>
@@ -1813,7 +1813,7 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">references</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">related_information&gt;resource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Published or web-based references that describe the data or methods used to produce it. We recommend to use URIs (such as a URL or DOI) for papers or other references, and to use a form similar to &lt;URL&gt;(&lt;Type&gt;) using type elements from the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#related-information-types">related information types in the MMD specification</a>. This attribute is defined in the CF conventions.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A comma separated list of published or web-based references that describe the data or methods used to produce it. We recommend to use URIs (such as a URL or DOI) for papers or other references, and to use a form similar to &lt;URL&gt;(&lt;Type&gt;) using type elements from the <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#related-information-types">related information types in the MMD specification</a>. This attribute is defined in the CF conventions.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
@@ -3118,7 +3118,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-12-02 02:39:44 UTC
+Last updated 2022-12-03 02:34:29 UTC
 </div>
 </div>
 </body>
