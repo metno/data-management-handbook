@@ -29,7 +29,7 @@ Please ask if you need help.
 
  3. To get your organisation's visual profile on the DMH, replace the content of `dmh-theme.yml` to reflect your organisation;
 
- 4. The file `source/data-management-handbook.adoc` includes the custom files via environment variables. These variables must be defined in you CI system (if one of the partner-specific files does not exist in your local repository, the template provided here will be used).
+ 4. Upon compilation, the file `source/data-management-handbook.adoc`, which resides here (i.e., in this general repository), will include the custom files via environment variables. These variables must be defined in you CI system (if one of the partner-specific files does not exist in your local repository, the template provided here will be used).
 
 To simplify the process, the MET gitlab CI files are copied into the folder `custom-setup` of the current repository:
 
