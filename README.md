@@ -20,7 +20,7 @@ Please ask if you need help.
 
 # How to reuse and customize this handbook
 
- 1. Create a separate git repository (a private repository is recommended; it could be both gitlab or github);
+ 1. Create a separate (new) git repository (a private repository is recommended; it could be both gitlab or github);
 
  2. Create a folder named, e.g., "source" in your new repository;
 
