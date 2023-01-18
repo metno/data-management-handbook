@@ -32,27 +32,26 @@ Please ask if you need help.
  4. Copy the content of `custom-setup` into the root folder of your new repository;
 
  5. Set up CI/CD
+     a. Gitlab:
+         * Change the filename `dot.gitlab-ci.yml` to `.gitlab-ci.yml` (linux: `mv dot.gitlab-ci.yml .gitlab-ci.yml`)
+         * Make sure that the following environment variables are defined under the variables entry under build-docs in `.gitlab-ci.yml` (note that `$CI_PROJECT_DIR` should be provided through the gitlab CI system):
+             ```
+             DMH_GENERAL: https://github.com/metno/data-management-handbook
+             DMH_GENERAL_VERSION: master
+             IMAGES_DIR: $CI_PROJECT_DIR/source/images
+             PDF_THEMES_DIR: $CI_PROJECT_DIR/source
+             SPECIAL_APPENDIX_USERS: $CI_PROJECT_DIR/source/specialized_appendix_users.adoc
+             TITLE_PAGE: $CI_PROJECT_DIR/source/title_page.adoc
+             SPECIAL_INTRO: $CI_PROJECT_DIR/source/specialized_intro_MET.adoc
+             SPECIAL_STRUDOC: $CI_PROJECT_DIR/source/specialized_strudoc_MET.adoc
+             SPECIAL_DATA_SERVICES: $CI_PROJECT_DIR/source/specialized_data_services_MET.adoc
+             SPECIAL_USER_PORTALS: $CI_PROJECT_DIR/source/specialized_userportals_MET.adoc
+             SPECIAL_DATA_GOVERNANCE: $CI_PROJECT_DIR/source/specialized_datagov_MET.adoc
+             SPECIAL_PRACTICAL_GUIDANCE: $CI_PROJECT_DIR/source/specialized_practical_guidance_MET.adoc
+             SPEC_DEFAULT_GLOBAL_ATTRS: $CI_PROJECT_DIR/source/spec_default_global_attrs_MET.adoc
+             ```
 
-  a. Gitlab:
-
-    * Change the filename `dot.gitlab-ci.yml` to `.gitlab-ci.yml` (linux: `mv dot.gitlab-ci.yml .gitlab-ci.yml`)
-    * Make sure that the following environment variables are defined under the variables entry under build-docs in `.gitlab-ci.yml` (note that `$CI_PROJECT_DIR` should be provided through the gitlab CI system):
-
-      * DMH_GENERAL: https://github.com/metno/data-management-handbook
-      * DMH_GENERAL_VERSION: master
-      * IMAGES_DIR: $CI_PROJECT_DIR/source/images
-      * PDF_THEMES_DIR: $CI_PROJECT_DIR/source
-      * SPECIAL_APPENDIX_USERS: $CI_PROJECT_DIR/source/specialized_appendix_users.adoc
-      * TITLE_PAGE: $CI_PROJECT_DIR/source/title_page.adoc
-      * SPECIAL_INTRO: $CI_PROJECT_DIR/source/specialized_intro_MET.adoc
-      * SPECIAL_STRUDOC: $CI_PROJECT_DIR/source/specialized_strudoc_MET.adoc
-      * SPECIAL_DATA_SERVICES: $CI_PROJECT_DIR/source/specialized_data_services_MET.adoc
-      * SPECIAL_USER_PORTALS: $CI_PROJECT_DIR/source/specialized_userportals_MET.adoc
-      * SPECIAL_DATA_GOVERNANCE: $CI_PROJECT_DIR/source/specialized_datagov_MET.adoc
-      * SPECIAL_PRACTICAL_GUIDANCE: $CI_PROJECT_DIR/source/specialized_practical_guidance_MET.adoc
-      * SPEC_DEFAULT_GLOBAL_ATTRS: $CI_PROJECT_DIR/source/spec_default_global_attrs_MET.adoc
-
-  b. Github: this is not yet implemented but should be somehow similar..
+     b. Github: this is not yet implemented but should be somehow similar..
 
  6. For compilation on your local computer:
 
