@@ -21,35 +21,30 @@ Please ask if you need help.
 # How to reuse and customize this handbook
 
  1. Create a separate (new) git repository (a private repository is recommended; it could be both gitlab or github);
-
  2. Create a folder named, e.g., "source" in your new repository;
-
     * Copy all the template files containing the string `specialized` or just `spec` from the generic version (this one) to the new folder; and
     * Copy the file `dmh-theme.yml` to the new folder.
-
  3. To get your organisation's visual profile on the DMH, replace the content of `dmh-theme.yml` to reflect your organisation;
-
  4. Copy the content of `custom-setup` into the root folder of your new repository;
-
  5. Set up CI/CD
-     a. Gitlab:
-         * Change the filename `dot.gitlab-ci.yml` to `.gitlab-ci.yml` (linux: `mv dot.gitlab-ci.yml .gitlab-ci.yml`)
-         * Make sure that the following environment variables are defined under the variables entry under build-docs in `.gitlab-ci.yml` (note that `$CI_PROJECT_DIR` should be provided through the gitlab CI system):
-             ```
-             DMH_GENERAL: https://github.com/metno/data-management-handbook
-             DMH_GENERAL_VERSION: master
-             IMAGES_DIR: $CI_PROJECT_DIR/source/images
-             PDF_THEMES_DIR: $CI_PROJECT_DIR/source
-             SPECIAL_APPENDIX_USERS: $CI_PROJECT_DIR/source/specialized_appendix_users.adoc
-             TITLE_PAGE: $CI_PROJECT_DIR/source/title_page.adoc
-             SPECIAL_INTRO: $CI_PROJECT_DIR/source/specialized_intro_MET.adoc
-             SPECIAL_STRUDOC: $CI_PROJECT_DIR/source/specialized_strudoc_MET.adoc
-             SPECIAL_DATA_SERVICES: $CI_PROJECT_DIR/source/specialized_data_services_MET.adoc
-             SPECIAL_USER_PORTALS: $CI_PROJECT_DIR/source/specialized_userportals_MET.adoc
-             SPECIAL_DATA_GOVERNANCE: $CI_PROJECT_DIR/source/specialized_datagov_MET.adoc
-             SPECIAL_PRACTICAL_GUIDANCE: $CI_PROJECT_DIR/source/specialized_practical_guidance_MET.adoc
-             SPEC_DEFAULT_GLOBAL_ATTRS: $CI_PROJECT_DIR/source/spec_default_global_attrs_MET.adoc
-             ```
+    a. Gitlab:
+       * Change the filename `dot.gitlab-ci.yml` to `.gitlab-ci.yml` (linux: `mv dot.gitlab-ci.yml .gitlab-ci.yml`)
+       * Make sure that the following environment variables are defined under the variables entry under build-docs in `.gitlab-ci.yml` (note that `$CI_PROJECT_DIR` should be provided through the gitlab CI system):
+       ```
+       DMH_GENERAL: https://github.com/metno/data-management-handbook
+       DMH_GENERAL_VERSION: master
+       IMAGES_DIR: $CI_PROJECT_DIR/source/images
+       PDF_THEMES_DIR: $CI_PROJECT_DIR/source
+       SPECIAL_APPENDIX_USERS: $CI_PROJECT_DIR/source/specialized_appendix_users.adoc
+       TITLE_PAGE: $CI_PROJECT_DIR/source/title_page.adoc
+       SPECIAL_INTRO: $CI_PROJECT_DIR/source/specialized_intro_MET.adoc
+       SPECIAL_STRUDOC: $CI_PROJECT_DIR/source/specialized_strudoc_MET.adoc
+       SPECIAL_DATA_SERVICES: $CI_PROJECT_DIR/source/specialized_data_services_MET.adoc
+       SPECIAL_USER_PORTALS: $CI_PROJECT_DIR/source/specialized_userportals_MET.adoc
+       SPECIAL_DATA_GOVERNANCE: $CI_PROJECT_DIR/source/specialized_datagov_MET.adoc
+       SPECIAL_PRACTICAL_GUIDANCE: $CI_PROJECT_DIR/source/specialized_practical_guidance_MET.adoc
+       SPEC_DEFAULT_GLOBAL_ATTRS: $CI_PROJECT_DIR/source/spec_default_global_attrs_MET.adoc
+       ```
 
      b. Github: this is not yet implemented but should be somehow similar..
 
