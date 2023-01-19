@@ -1,7 +1,12 @@
 [[example-script-add-metadata]]
-===== Example script to add metadata to a netCDF file
+===== Example script to create a NetCDF-CF file
 
-The below is an example python script to add metadata to a netCDF-CF file. Note that we have only included the required attributes, and that the data producer should add more. This is needed to support (meta)data interoperability and can be validated by the script `scripts/nc2mmd.py` in https://github.com/metno/py-mmd-tools[py-mmd-tools], which also can parse the netCDF-CF file into an MMD xml file:
+Suppose you have a dataset with the following variables in a NetCDF-CF file:
+
+* Wind speed at 10 meter height (CF standard name: wind_speed)
+* Wind direction at 10 meter height (CF standard name: wind_from_direction)
+
+The below is an example python script to add discovery metadata to the netCDF-CF file. Note that we have only included the required attributes, and that the data producer should add the recommended ones as well. This is needed to support (meta)data interoperability. The resulting file can be validated by the script `scripts/nc2mmd.py` in https://github.com/metno/py-mmd-tools[py-mmd-tools], which also can parse the netCDF-CF file into an MMD xml file:
 [source, python]
 ----
 #!/usr/bin/env python
