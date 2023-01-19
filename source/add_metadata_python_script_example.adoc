@@ -47,7 +47,6 @@ with nc.Dataset(sys.argv[1], "a") as f:
 
     # example keywords are given here, this must be customized depending on the data at hand
     f.keywords = 'GCMDSK:Earth Science > Atmosphere > Atmospheric radiation, '
-    f.keywords += 'GCMDLOC:Geographic Region > Northern Hemisphere, '
     f.keywords += (
                     'GEMET:Meteorological geographical features, '
                     'GEMET:Atmospheric conditions, '
