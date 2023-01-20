@@ -1,0 +1,63 @@
+.common:
+  tags:
+    - k8s-unpriv
+  variables:
+    RESULTS_HTML: $CI_PROJECT_DIR
+    RESULTS_PDF: $CI_PROJECT_DIR
+
+build-docs:
+  image: asciidoctor/docker-asciidoctor:latest
+  stage: build
+  variables:
+    BASE: $CI_PROJECT_PATH@$CI_COMMIT_SHORT_SHA
+    BRANCH: $CI_PROJECT_NAME-$CI_COMMIT_SHORT_SHA
+    DMH_GENERAL: https://github.com/metno/data-management-handbook
+    DMH_GENERAL_VERSION: master
+    IMAGES_DIR: $CI_PROJECT_DIR/source/images
+    PDF_THEMES_DIR: $CI_PROJECT_DIR/source
+    SPECIAL_APPENDIX_USERS: $CI_PROJECT_DIR/source/specialized_appendix_users.adoc
+    TITLE_PAGE: $CI_PROJECT_DIR/source/title_page.adoc
+    SPECIAL_INTRO: $CI_PROJECT_DIR/source/specialized_intro_MET.adoc 
+    SPECIAL_STRUDOC: $CI_PROJECT_DIR/source/specialized_strudoc_MET.adoc
+    SPECIAL_DATA_SERVICES: $CI_PROJECT_DIR/source/specialized_data_services_MET.adoc
+    SPECIAL_USER_PORTALS: $CI_PROJECT_DIR/source/specialized_userportals_MET.adoc
+    SPECIAL_DATA_GOVERNANCE: $CI_PROJECT_DIR/source/specialized_datagov_MET.adoc
+    SPECIAL_PRACTICAL_GUIDANCE: $CI_PROJECT_DIR/source/specialized_practical_guidance_MET.adoc
+    SPEC_DEFAULT_GLOBAL_ATTRS: $CI_PROJECT_DIR/source/spec_default_global_attrs_MET.adoc
+  extends:
+    - .common
+  before_script:
+    #- git fetch origin master
+    #- git config --global user.email "$GITLAB_USER_EMAIL"
+    #- git config --global user.name "$GITLAB_USER_NAME"
+  script:
+    - echo $IMAGES_DIR
+    - echo $CI_PROJECT_DIR
+    - pwd
+    - ls -l
+    - ./compile-docs.sh
+  artifacts:
+    expose_as: 'data-management-handbook'
+    paths:
+      - data-management-handbook.pdf
+      - data-management-handbook.html
+    public: true
+    expire_in: never
+  only:
+    - master
+
+pages:
+  stage: deploy
+  extends:
+    - .common
+  script:
+    - mkdir .public
+    - ls -l
+    - cp data-management-handbook.html .public/index.html
+    - mv .public public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+
