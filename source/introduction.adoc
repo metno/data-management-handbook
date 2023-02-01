@@ -40,7 +40,7 @@ By following the <<fair,FAIR>> principles it is easier to obtain a common approa
 * Ease of discovering, viewing and accessing <<glossary-dataset,datasets>>;
 * Standardised ways of accessing data, including downloading or streaming data, with reduced need for special solutions on the user side;
 * Reduced storage needs;
-* Simple and standard access to remote <<glossary-dataset,datasets>> and catalogues, with own data visualisationl and analysis tools;
+* Simple and standard access to remote <<glossary-dataset,datasets>> and catalogues, with own data visualisation and analysis tools;
 * Ability to compare and combine data from internal and external sources;
 * Ability to apply common data transformations, like spatial, temporal and variables subsetting and reprojection, before downloading anything;
 * Possibility to build specialized metadata catalogues and data portals targeting a specific user community.
