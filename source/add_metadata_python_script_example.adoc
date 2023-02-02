@@ -77,39 +77,12 @@ with nc.Dataset(sys.argv[1], "a") as f:
     coverend = f.variables['time'][-1]  # time of last measurement
 
     # we assume here that the time variable contains timesteps in UTC
-    try:
-        f.time_coverage_start = datetime.fromtimestamp(coverstart).replace(tzinfo=timezone.utc).isoformat()
-    except:
-        warnings.warn("Warning: conversion of first timestep to datetime in ISO format failed, setting time_coverage_start as 1900-01-01 00:00:00")
-        f.time_coverage_start = datetime.strptime('1900-01-01', '%Y-%m-%d').replace(tzinfo=timezone.utc).isoformat()
-
-    try:
-       f.time_coverage_end = datetime.fromtimestamp(coverend).replace(tzinfo=timezone.utc).isoformat()
-    except:
-        warnings.warn("Conversion of last timestep to datetime in ISO format failed, time_coverage_end will not be set")
+    f.time_coverage_start = datetime.fromtimestamp(coverstart).replace(tzinfo=timezone.utc).isoformat()
+    f.time_coverage_end = datetime.fromtimestamp(coverend).replace(tzinfo=timezone.utc).isoformat()
 
     if not 'date_created' in f.ncattrs():
-        warnings.warn("Warning: date_created field does not exist")
-        """ We try to extract the creation date from pre-existing fields, this does not
-            cover all possible cases, customize this according to your netcdf file
-        """
-        if 'created_date' in f.ncattrs():
-            if 'created_hour' in f.ncattrs():
-                try :
-                    f.date_created = datetime.strptime(f.created_date+'T'+f.created_hour,'%Y%m%dT%H%M%S.%f').replace(tzinfo=timezone.utc).isoformat()
-                except:
-                    warnings.warn("Warning: created_date or created_hour are not in the expected format, date_created will use the current time in UTC")
-                    f.date_created = isotime_now_utc
-            else:
-                try:
-                    f.date_created = datetime.strptime(f.created_date,'%Y%m%d').replace(tzinfo=datetime.timezone.utc).isoformat()
-                    warnings.warn("Warning: using current created_date and midnight time in UTC to fill the date_created field")
-                except:
-                    warnings.warn("Warning: created_date is not in the expected format, date_created will use the current time in UTC")
-                    f.date_created = isotime_now_utc
-        else:
-            warnings.warn("Warning: filling the date_created field with the current time in UTC")
-            f.date_created = isotime_now_utc
+        warnings.warn("Warning: the 'date_created' field does not exist and it's mandatory, will be set as the current date time in UTC")
+        f.date_created = isotime_now_utc
 
     f.Conventions = 'CF-1.10, ACDD-1.3'
 
