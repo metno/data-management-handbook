@@ -54,7 +54,7 @@ For development and verification purposes:
 
 [source]
 ----
-curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci-*.s-enda.k8s.met.no/v1/insert
+curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-*.k8s.met.no/v1/insert
 ----
 
 where `*` should be either dev or staging.
