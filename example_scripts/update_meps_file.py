@@ -1,12 +1,3 @@
-[[example-script-add-metadata]]
-===== Example script to update a NetCDF-CF file with correct discovery metadata
-
-We use a test dataset containing the U component of wind at 10 m height `x_wind_10m` extracted from a https://thredds.met.no/thredds/catalog/metusers/magnusu/test-2023-02-03/catalog.html?dataset=metusers/magnusu/test-2023-02-03/meps_reduced.nc[MEPS 2.5km file]. The file can be downloaded by clicking on the link at access point 2., HTTPServer.
-
-Below is an example python script to add the required discovery metadata to the netCDF-CF file. The resulting file can be validated by the script `scripts/nc2mmd.py` in https://github.com/metno/py-mmd-tools[py-mmd-tools], which also can parse the netCDF-CF file into an MMD xml file.
-
-[source, python]
-----
 #!/usr/bin/env python
 from datetime import datetime, timezone
 import sys
@@ -87,19 +78,3 @@ with netCDF4.Dataset(sys.argv[1], "a") as f:
 
     # Update the conventions attribute to the correct ones
     f.Conventions = 'CF-1.10, ACDD-1.3'
-----
-
-To test yourself, you can do the following:
-
-[source, bash]
-----
-git clone git@github.com:metno/data-management-handbook.git
-cd data-management-handbook/example_scripts
-wget https://thredds.met.no/thredds/fileServer/metusers/magnusu/test-2023-02-03/meps_reduced.nc
-./update_meps_file.py meps_reduced
-cd <path-to-py-mmd-tools>/script
-./nc2mmd.py -i <path-to-data-management-handbook>/example_scripts/meps_reduced.nc -o .
-less meps_reduced.xml  # to see the MMD xml file
-----
-
-
