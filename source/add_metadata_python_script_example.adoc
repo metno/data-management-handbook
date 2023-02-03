@@ -1,10 +1,7 @@
 [[example-script-add-metadata]]
 ===== Example script to create a NetCDF-CF file
 
-Suppose you have a dataset with the following variables in a NetCDF-CF file:
-
-* Wind speed at 10 meter height (CF standard name: wind_speed)
-* Wind direction at 10 meter height (CF standard name: wind_from_direction)
+We use this test dataset containing the U component of wind `x_wind_10m` extracted from a MEPS 2.5km file: https://thredds.met.no/thredds/catalog/metusers/magnusu/test-2023-02-03/catalog.html?dataset=metusers/magnusu/test-2023-02-03/meps_reduced.nc
 
 The below is an example python script to add discovery metadata to the netCDF-CF file. Note that we have only included the required attributes, and that the data producer should add the recommended ones as well. This is needed to support (meta)data interoperability. The resulting file can be validated by the script `scripts/nc2mmd.py` in https://github.com/metno/py-mmd-tools[py-mmd-tools], which also can parse the netCDF-CF file into an MMD xml file:
 [source, python]
@@ -15,38 +12,20 @@ from datetime import datetime, timedelta, timezone
 import sys
 import netCDF4 as nc
 from uuid import uuid4
-import os
-import warnings
 
 with nc.Dataset(sys.argv[1], "a") as f:
+    
     f.id = str(uuid4())
+    
+    f.title = 'U component of wind example'
 
-    isotime_now_utc = datetime.utcnow().replace(tzinfo=timezone.utc).isoformat()
-    isotime_now_local = datetime.now().astimezone().replace(microsecond=0).isoformat()
-    isotime_now_local_string = str(isotime_now_local)
-
-    script_name = os.path.basename(__file__)
-
-    if 'history' not in f.ncattrs():
-        """ History should already exist in the netcdf file but if
-        it does not, we create it here.
-        """
-        f.history = ""
-        warnings.warn("Warning: no history field in the netCDF metadata")
-
-    f.history += isotime_now_local_string + ", Dummy User, " + script_name + "\n"
+    f.summary = 'test dataset created '
+    f.summary += 'extracting x_wind_10m from '
+    f.summary += 'a MEPS 2.5km dataset'
 
 
-    f.title = 'lorem ipsum'
-
-    f.summary = 'lorem ipsum '
-    f.summary += 'lorem ipsum '
-    f.summary += 'lorem ipsum'
-
-    f.license = 'https://spdx.org/licenses/CC-BY-4.0(CC-BY-4.0)'
-
-    # example keywords are given here, this must be customized depending on the data at hand
     f.keywords = 'GCMDSK:Earth Science > Atmosphere > Atmospheric winds, '
+    f.keywords += 'GCMDLOC:Geographic Region > Northern Hemisphere, '
     f.keywords += (
                     'GEMET:Meteorological geographical features, '
                     'GEMET:Atmospheric conditions, '
@@ -55,41 +34,27 @@ with nc.Dataset(sys.argv[1], "a") as f:
                     'GEMET:Oceanographic geographical features, '
                     'NORTHEMES:Weather and climate'
                 )
-    f.keywords_vocabulary = (
-                    'GCMDSK:GCMD Science Keywords:https://gcmd.'
-                    'earthdata.nasa.gov/kms/concepts/concept_scheme/'
-                    'sciencekeywords, '
-                )
-    f.keywords_vocabulary += (
-                    'GEMET:INSPIRE themes:http://inspire.ec.europa.eu'
-                    '/theme, '
-                )
-    f.keywords_vocabulary += (
-                    'NORTHEMES:GeoNorge Themes:https://register.'
-                    'geonorge.no/subregister/metadata-kodelister/'
-                    'kartverket/nasjonal-temainndeling'
-                )
+    
+    f.keywords_vocabulary = 'GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/sciencekeywords, '
+    f.keywords_vocabulary += 'GEMET:INSPIRE themes:https://inspire.ec.europa.eu/theme, '
+    f.keywords_vocabulary += 'NORTHEMES:GeoNorge Themes:https://register.geonorge.no/subregister/metadata-kodelister/kartverket/nasjonal-temainndeling, '
+    f.keywords_vocabulary += 'GCMDLOC:GCMD Locations:https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/locations'
 
     f.naming_authority = 'no.met'
+    f.institution_short_name = 'MET Norway'
 
     # extracting f.time_coverage_start and f.time_coverage_end from the time variable
-    coverstart = f.variables['time'][0] # time of first measurement
-    coverend = f.variables['time'][-1]  # time of last measurement
+    first_time_step = f.variables['time'][0] # 1675242000 in this example
+    last_time_step = f.variables['time'][-1] # 1675461600 in this example
 
-    # we assume here that the time variable contains timesteps in UTC
-    f.time_coverage_start = datetime.fromtimestamp(coverstart).replace(tzinfo=timezone.utc).isoformat()
-    f.time_coverage_end = datetime.fromtimestamp(coverend).replace(tzinfo=timezone.utc).isoformat()
+    f.time_coverage_start = datetime.fromtimestamp(first_time_step).replace(tzinfo=timezone.utc).isoformat()
+    f.time_coverage_end = datetime.fromtimestamp(last_time_step).replace(tzinfo=timezone.utc).isoformat()
 
-    if not 'date_created' in f.ncattrs():
-        warnings.warn("Warning: the 'date_created' field does not exist and it's mandatory, will be set as the current date time in UTC")
-        f.date_created = isotime_now_utc
-
+    # the date_created is recorded in the 'history' field in this case 
+    f.date_created = datetime.strptime("2023-02-01T11:30:05","%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc).isoformat()
+       
+    # we update the conventions we are using   
     f.Conventions = 'CF-1.10, ACDD-1.3'
-
-    f.geospatial_lat_min = 30.05
-    f.geospatial_lat_max = 81.95
-    f.geospatial_lon_min = -29.95
-    f.geospatial_lon_max = 89.95
 
     f.iso_topic_category = 'climatologyMeteorologyAtmosphere'
 
