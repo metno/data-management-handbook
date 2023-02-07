@@ -562,6 +562,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_notes">6.2.2.1. Notes</a></li>
 <li><a href="#acdd-elements">6.2.2.2. List of Attributes</a></li>
 <li><a href="#default-global-attrs">6.2.2.3. Default global attribute values for &lt;organisation-name-here&gt;</a></li>
+<li><a href="#example-script-add-metadata">6.2.2.4. Example script to update a NetCDF-CF file with correct discovery metadata</a></li>
 </ul>
 </li>
 <li><a href="#add-to-thredds">6.2.3. How to add NetCDF-CF data to thredds</a></li>
@@ -2002,6 +2003,113 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 </div>
 </div>
 </div>
+<div class="sect4">
+<h5 id="example-script-add-metadata"><a class="anchor" href="#example-script-add-metadata"></a>6.2.2.4. Example script to update a NetCDF-CF file with correct discovery metadata</h5>
+<div class="paragraph">
+<p>We use a test dataset containing the U component of wind at 10 m height, <code>x_wind_10m</code>, extracted from a <a href="https://thredds.met.no/thredds/catalog/metusers/magnusu/test-2023-02-03/catalog.html?dataset=metusers/magnusu/test-2023-02-03/meps_reduced.nc">MEPS 2.5km file</a>. The file can be downloaded by clicking on the link at access point 2., HTTPServer.</p>
+</div>
+<div class="paragraph">
+<p>Below is an example python script to add the required discovery metadata to the netCDF-CF file. The resulting file can be validated by the script <code>scripts/nc2mmd.py</code> in <a href="https://github.com/metno/py-mmd-tools">py-mmd-tools</a>, which also can parse the netCDF-CF file into an MMD xml file.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">#!/usr/bin/env python
+from datetime import datetime, timezone
+import sys
+import netCDF4
+from uuid import uuid4
+
+
+with netCDF4.Dataset(sys.argv[1], "a") as f:
+    f.id = str(uuid4())
+    f.naming_authority = "no.met"
+
+    f.creator_institution = "Norwegian Meteorological Institute"
+    f.delncattr("creator_url")  # not needed, replaced by publisher_url
+
+    f.institution = "Norwegian Meteorological Institute"
+    f.institution_short_name = 'MET Norway'
+
+    f.title = "U component of wind speed at ten meter height (example)"
+    f.title_no = "U-komponent av vindhastighet i ti meters høyde (eksempel)"
+    f.summary = (
+        "Test dataset to demonstrate how to document a netcdf-cf file"
+        " containing wind speed at 10 meter height from a MEPS 2.5km "
+        "dataset with ACDD attributes.")
+    f.summary_no = (
+        "Test datasett for å demonstrere hvordan du dokumenterer en "
+        "netcdf-cf-fil som inneholder vindhastighet i 10 meters "
+        "høyde fra et MEPS 2,5 km datasett med ACDD-attributter.")
+    f.references = "https://github.com/metno/NWPdocs/wiki (Users guide)"
+
+    f.keywords = (
+        "GCMDSK:Earth Science &gt; Atmosphere &gt; Atmospheric winds, "
+        "GEMET:Meteorological geographical features, "
+        "GEMET:Atmospheric conditions, "
+        "GEMET:Oceanographic geographical features, "
+        "NORTHEMES:Weather and climate")
+    f.keywords_vocabulary = (
+        "GCMDSK:GCMD Science Keywords:https://gcmd.earthdata.nasa.gov"
+        "/kms/concepts/concept_scheme/sciencekeywords, "
+        "GEMET:INSPIRE themes:https://inspire.ec.europa.eu/theme, "
+        "NORTHEMES:GeoNorge Themes:https://register.geonorge.no/"
+        "subregister/metadata-kodelister/kartverket/nasjonal-"
+        "temainndeling")
+
+    # Set ISO topic category
+    f.iso_topic_category = "climatologyMeteorologyAtmosphere"
+
+    # Set the correct license
+    f.license = "http://spdx.org/licenses/CC-BY-4.0(CC-BY-4.0)"
+
+    f.publisher_name = "Norwegian Meteorological Institute"
+    f.publisher_type = "institution"
+    f.publisher_email = "csw-services@met.no"
+    f.publisher_url = "https://www.met.no/"
+
+    # Extract time_coverage_start from the time variable
+    tstart = f.variables['time'][0]  # masked array
+    tstart = int(tstart[~tstart.mask].data[0])
+    tstart = datetime.fromtimestamp(tstart)
+    # The time zone is utc (this can be seen from the metadata of the
+    # time variable) and the time in isoformat is
+    # 2023-02-01T10:00:00+00:00
+    f.time_coverage_start = tstart.replace(tzinfo=timezone.utc).isoformat()
+
+    # Extract time_coverage_end from the time variable
+    tend = f.variables['time'][-1]  # masked array
+    tend = int(tend[~tend.mask].data[0])
+    tend = datetime.fromtimestamp(tend)
+    # The time in isoformat is 2023-02-03T23:00:00+00:00
+    f.time_coverage_end = tend.replace(tzinfo=timezone.utc).isoformat()
+
+    # The date_created is in this case recorded in the history attribute
+    # We have hardcoded it here for simplicity
+    f.date_created = datetime.strptime("2023-02-01T11:30:05", "%Y-%m-%dT%H:%M:%S").replace(
+        tzinfo=timezone.utc).isoformat()
+
+    # Set the spatial representation (a MET ACDD extension)
+    f.spatial_representation = 'grid'
+
+    # Update the conventions attribute to the correct ones
+    f.Conventions = 'CF-1.10, ACDD-1.3'</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>To test it yourself, you can do the following:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-bash" data-lang="bash">$ git clone git@github.com:metno/data-management-handbook.git
+$ cd data-management-handbook/example_scripts
+$ wget https://thredds.met.no/thredds/fileServer/metusers/magnusu/test-2023-02-03/meps_reduced.nc
+$ ./update_meps_file.py meps_reduced
+$ cd &lt;path-to-py-mmd-tools&gt;/script
+$ ./nc2mmd.py -i &lt;path-to-data-management-handbook&gt;/example_scripts/meps_reduced.nc -o .
+$ less meps_reduced.xml  # to see the MMD xml file</code></pre>
+</div>
+</div>
+</div>
 </div>
 <div class="sect3">
 <h4 id="add-to-thredds"><a class="anchor" href="#add-to-thredds"></a>6.2.3. How to add NetCDF-CF data to thredds</h4>
@@ -3118,7 +3226,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-02-07 12:33:50 UTC
+Last updated 2023-02-07 13:15:56 UTC
 </div>
 </div>
 </body>
