@@ -2,7 +2,7 @@
 ==== How to add NetCDF-CF data to thredds
 
 :numbered:
-include::specialized_nc2thredds.adoc[]
+include::{special_nc2thredds}[]
 
 [[register-dataset-in-catalog]]
 ==== How to register your data in the catalog service
