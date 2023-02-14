@@ -23,6 +23,7 @@ build-docs:
     SPECIAL_USER_PORTALS: $CI_PROJECT_DIR/source/specialized_userportals_MET.adoc
     SPECIAL_DATA_GOVERNANCE: $CI_PROJECT_DIR/source/specialized_datagov_MET.adoc
     SPECIAL_PRACTICAL_GUIDANCE: $CI_PROJECT_DIR/source/specialized_practical_guidance_MET.adoc
+    SPECIAL_NC2THREDDS: $CI_PROJECT_DIR/source/specialized_nc2thredds_MET.adoc
     SPEC_DEFAULT_GLOBAL_ATTRS: $CI_PROJECT_DIR/source/spec_default_global_attrs_MET.adoc
   extends:
     - .common
