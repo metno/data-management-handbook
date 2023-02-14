@@ -22,7 +22,7 @@ RUN git clone ${PY_MMD_TOOLS}; \
   cd py-mmd-tools; \
   git checkout ${PY_MMD_TOOLS_VERSION}; \
   pip3 install --upgrade pip && \
-      pip3 install py_mmd_tools
+      pip3 install .
 
 RUN mkdir /source
 

@@ -1,4 +1,4 @@
-name: 'html/pdf'
+name: 'html/pdf-no-push'
 
 on:
   pull_request: 
