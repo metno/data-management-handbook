@@ -9,4 +9,4 @@ services:
       dockerfile: Dockerfile.acdd_elements
     volumes:
       - ./source:/source
-    command: ./yaml2adoc.py -o /source/acdd-elements.adoc
+    command: yaml2adoc.py -o /source/acdd-elements.adoc
