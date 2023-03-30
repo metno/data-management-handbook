@@ -76,6 +76,13 @@ https://csw.s-enda-*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&reque
 
 where `*` should be either dev or staging and can specify the title of the dataset in a date or within a given time span.
 
+[source]
+----
+https://csw.s-enda-*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006
+----
+
+where `id` is the `metadata_identifier`
+
 For production :
 
 [source]
