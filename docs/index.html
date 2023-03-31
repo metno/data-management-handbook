@@ -2241,6 +2241,37 @@ $ less meps_reduced.xml  # to see the MMD xml file</code></pre>
 <pre class="highlight"><code>curl --data-binary "@&lt;PATH_TO_MMD_FILE&gt;" https://dmci.s-enda.k8s.met.no/v1/insert</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>[[ test-MMD-ingested ]]
+===== Check that the MMD file has been added to csw</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>https://csw.s-enda-*.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=arctic&amp;time=2023-03-25</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>*</code> should be either dev or staging and can specify the title of the dataset in a date or within a given time span.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>https://csw.s-enda-*.k8s.met.no/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;oxml&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=no.met:4a34334b-b384-48b3-b846-76807bc006</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>where <code>id</code> is the <code>metadata_identifier</code></p>
+</div>
+<div class="paragraph">
+<p>For production :</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>https://csw.s-enda.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=direct&amp;time=2022-03-01/2022-09-25</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>shows the datasets containing <code>direct</code> in title and in the time span <code>2022-03-01/2022-09-25</code></p>
+</div>
 </div>
 </div>
 </div>
@@ -3269,7 +3300,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-03-31 02:34:22 UTC
+Last updated 2023-03-31 11:06:56 UTC
 </div>
 </div>
 </body>
