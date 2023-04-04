@@ -576,6 +576,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#local-mmd-xml-generation">6.2.4.1. Generation of MMD xml file from NetCDF-CF</a></li>
 <li><a href="#test-mmd-file">6.2.4.2. Test the MMD xml file</a></li>
 <li><a href="#push-mmd-file">6.2.4.3. Push the MMD xml file to the discovery metadata catalog</a></li>
+<li><a href="#test-mmd-ingested">6.2.4.4. Check that the MMD file has been added to csw</a></li>
 </ul>
 </li>
 </ul>
@@ -2241,36 +2242,49 @@ $ less meps_reduced.xml  # to see the MMD xml file</code></pre>
 <pre class="highlight"><code>curl --data-binary "@&lt;PATH_TO_MMD_FILE&gt;" https://dmci.s-enda.k8s.met.no/v1/insert</code></pre>
 </div>
 </div>
+</div>
+<div class="sect4">
+<h5 id="test-mmd-ingested"><a class="anchor" href="#test-mmd-ingested"></a>6.2.4.4. Check that the MMD file has been added to csw</h5>
 <div class="paragraph">
-<p>[[ test-MMD-ingested ]]
-===== Check that the MMD file has been added to csw</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>https://csw.s-enda-*.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=arctic&amp;time=2023-03-25</code></pre>
-</div>
+<p>There are several ways to check if your MMD file has been added to the metadata catalog(s). One way is via regular csw/opensearch requests as described in <a href="#search_context">Section 6.3</a>, and the examples below.</p>
 </div>
 <div class="paragraph">
-<p>where <code>*</code> should be either dev or staging and can specify the title of the dataset in a date or within a given time span.</p>
+<p>In addition, a new dataset should get a landing page when it is added. At MET Norway, you can access that as follows:</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>https://csw.s-enda-*.k8s.met.no/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;oxml&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=no.met:4a34334b-b384-48b3-b846-76807bc006</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>where <code>id</code> is the <code>metadata_identifier</code></p>
-</div>
-<div class="paragraph">
-<p>For production :</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code>https://csw.s-enda.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=direct&amp;time=2022-03-01/2022-09-25</code></pre>
-</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code><a href="https://data.met.no/dataset/UUID" class="bare">https://data.met.no/dataset/UUID</a></code></p>
+</li>
+<li>
+<p><code><a href="https://data-staging.met.no/dataset/UUID" class="bare">https://data-staging.met.no/dataset/UUID</a></code> (for the staging environment)</p>
+</li>
+<li>
+<p><code><a href="https://data-test.met.no/dataset/UUID" class="bare">https://data-test.met.no/dataset/UUID</a></code> (for the development environment)</p>
+</li>
+</ul>
 </div>
 <div class="paragraph">
-<p>shows the datasets containing <code>direct</code> in title and in the time span <code>2022-03-01/2022-09-25</code></p>
+<p>where UUID should be replaced by your dataset uuid (not <code>no.met:UUID</code>). Others ways to check are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Find the datasets containing <code>arctic</code> keyword in the title and on a given date: <code><a href="https://csw.s-enda*.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=arctic&amp;time=2023-03-25" class="bare">https://csw.s-enda*.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=arctic&amp;time=2023-03-25</a></code></p>
+</li>
+<li>
+<p>Find the datasets having a given <code>metadata_identifier</code>: <code><a href="https://csw.s-enda*.k8s.met.no/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;oxml&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=no.met:4a34334b-b384-48b3-b846-76807bc006" class="bare">https://csw.s-enda*.k8s.met.no/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;oxml&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=no.met:4a34334b-b384-48b3-b846-76807bc006</a></code></p>
+</li>
+<li>
+<p>Find the datasets containing <code>direct</code> keyword in the title and within a given time span: <code><a href="https://csw.s-enda*.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=direct&amp;time=2022-03-01/2022-09-25" class="bare">https://csw.s-enda*.k8s.met.no/?mode=opensearch&amp;service=CSW&amp;version=2.0.2&amp;request=GetRecords&amp;elementsetname=full&amp;typenames=csw:Record&amp;resulttype=results&amp;q=direct&amp;time=2022-03-01/2022-09-25</a></code></p>
+</li>
+<li>
+<p>Or from the command line: <code>curl "https://csw.s-enda-dev.k8s.met.no/csw?service=CSW&amp;version=2.0.2&amp;request=GetRecordById&amp;oxml&amp;outputSchema=http://www.isotc211.org/2005/gmd&amp;elementsetname=full&amp;id=no.met:4a34334b-b384-48b3-b846-76807bc006ca"</code>. This means that the dataset ID must be known. Given wrong "id=" in the url, will still give you "200 OK", but the returned xml will only be one line and not a full metadata document.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>In all examples, <code>*</code> should be omitted to find data in the production environment, or be either "-dev" or "-staging" for the development or staging environments, respectively.</p>
 </div>
 </div>
 </div>
@@ -3300,7 +3314,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-04-04 02:33:17 UTC
+Last updated 2023-04-04 12:02:34 UTC
 </div>
 </div>
 </body>
