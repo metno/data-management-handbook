@@ -69,27 +69,20 @@ curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/inser
 [[test-mmd-ingested]]
 ===== Check that the MMD file has been added to csw
 
-Shows the datasets containing `arctic` keyword in the title and in a given date:
+There are several ways to check if your MMD file has been added to the metadata catalog(s). One way is via regular csw/opensearch requests as described in <<search_context>>, and the examples below.
 
-[source]
-----
-https://csw.s-enda-*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=arctic&time=2023-03-25
-----
+In addition, a new dataset should get a landing page when it is added. At MET Norway, you can access that as follows:
 
-where `*` should be either dev or staging.
+* `https://data.met.no/dataset/UUID`
+* `https://data-staging.met.no/dataset/UUID` (for the staging environment)
+* `https://data-test.met.no/dataset/UUID` (for the development environment)
 
-Shows the datasets having a given `metadata_identifier`:
+where UUID should be replaced by your dataset uuid (not `no.met:UUID`). Others ways to check are:
 
-[source]
-----
-https://csw.s-enda-*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006
-----
+* Find the datasets containing `arctic` keyword in the title and on a given date: `https://csw.s-enda*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=arctic&time=2023-03-25`
+* Find the datasets having a given `metadata_identifier`: `https://csw.s-enda*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006`
+* Find the datasets containing `direct` keyword in the title and within a given time span: `https://csw.s-enda*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=direct&time=2022-03-01/2022-09-25`
+* Or from the command line: `curl "https://csw.s-enda-dev.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006ca"`. This means that the dataset ID must be known. Given wrong "id=" in the url, will still give you "200 OK", but the returned xml will only be one line and not a full metadata document.
 
-For production :
+In all examples, `*` should be omitted to find data in the production environment, or be either "-dev" or "-staging" for the development or staging environments, respectively.
 
-Shows the datasets containing `direct` keyword in the title and within a given time span:
-
-[source]
-----
-https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=direct&time=2022-03-01/2022-09-25
-----
