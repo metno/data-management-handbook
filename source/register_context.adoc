@@ -66,28 +66,30 @@ For production (the official catalog):
 curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert
 ----
 
-[[ test-MMD-ingested ]]
+[[test-mmd-ingested]]
 ===== Check that the MMD file has been added to csw
+
+Shows the datasets containing `arctic` keyword in the title and in a given date:
 
 [source]
 ----
 https://csw.s-enda-*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=arctic&time=2023-03-25
 ----
 
-where `*` should be either dev or staging and can specify the title of the dataset in a date or within a given time span.
+where `*` should be either dev or staging.
+
+Shows the datasets having a given `metadata_identifier`:
 
 [source]
 ----
 https://csw.s-enda-*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006
 ----
 
-where `id` is the `metadata_identifier`
-
 For production :
+
+Shows the datasets containing `direct` keyword in the title and within a given time span:
 
 [source]
 ----
 https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=direct&time=2022-03-01/2022-09-25
 ----
-
-shows the datasets containing `direct` in title and in the time span `2022-03-01/2022-09-25`
