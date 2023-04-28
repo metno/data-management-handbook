@@ -53,6 +53,11 @@ with netCDF4.Dataset(sys.argv[1], "a") as f:
     # Set ISO topic category
     f.iso_topic_category = "climatologyMeteorologyAtmosphere"
 
+    # Specify the type of discrete sampling geometry 
+    # https://metno.github.io/data-management-handbook/#_climate_and_forecast_conventions_cf
+    # https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html#_features_and_feature_types
+    f.featureType = 'timeSeries'
+
     # Set the correct license
     f.license = "http://spdx.org/licenses/CC-BY-4.0(CC-BY-4.0)"
 
@@ -96,9 +101,9 @@ To test it yourself, you can do the following:
 $ git clone git@github.com:metno/data-management-handbook.git
 $ cd data-management-handbook/example_scripts
 $ wget https://thredds.met.no/thredds/fileServer/metusers/magnusu/test-2023-02-03/meps_reduced.nc
-$ ./update_meps_file.py meps_reduced
+$ ./update_meps_file.py meps_reduced.nc
 $ cd <path-to-py-mmd-tools>/script
-$ ./nc2mmd.py -i <path-to-data-management-handbook>/example_scripts/meps_reduced.nc -o .
+$ ./nc2mmd.py -u https://thredds.met.no/thredds/dodsC/metusers/magnusu/test-2023-02-03/meps_reduced.nc -i <path-to-data-management-handbook>/example_scripts/meps_reduced.nc -o .
 $ less meps_reduced.xml  # to see the MMD xml file
 ----
 
