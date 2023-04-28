@@ -25,7 +25,7 @@ Then, generate your mmd xml file as follows:
 [source]
 ----
 cd script
-./nc2mmd.py -i <your netcdf file> -o <your xml output directory>
+./nc2mmd.py -u <OPeNDAP url of your netcdf file> -i <path to your netcdf file> -o <your xml output directory>
 ----
 
 See `./nc2mmd.py --help` for documentation and extra options.
