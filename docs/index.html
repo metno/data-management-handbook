@@ -2220,6 +2220,14 @@ $ less meps_reduced.xml  # to see the MMD xml file</code></pre>
 <div class="paragraph">
 <p>Install the <a href="https://github.com/metno/discovery-metadata-catalog-ingestor">dmci app</a>, and run the usage example locally. This will return an error message if anything is wrong with your MMD file.</p>
 </div>
+<div class="paragraph">
+<p>You can also test your MMD file via the DMCI API:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>curl --data-binary "@&lt;PATH_TO_MMD_FILE&gt;" https://dmci.s-enda-*.k8s.met.no/v1/validate</code></pre>
+</div>
+</div>
 </div>
 <div class="sect4">
 <h5 id="push-mmd-file"><a class="anchor" href="#push-mmd-file"></a>6.2.4.3. Push the MMD xml file to the discovery metadata catalog</h5>
@@ -3314,7 +3322,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-08 02:33:40 UTC
+Last updated 2023-05-08 17:03:12 UTC
 </div>
 </div>
 </body>
