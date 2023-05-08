@@ -47,6 +47,13 @@ Note that the discovery metadata catalog ingestion tool will take care of transl
 
 Install the link:https://github.com/metno/discovery-metadata-catalog-ingestor[dmci app], and run the usage example locally. This will return an error message if anything is wrong with your MMD file.
 
+You can also test your MMD file via the DMCI API:
+
+[source]
+----
+curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-*.k8s.met.no/v1/validate
+----
+
 [[push-mmd-file]]
 ===== Push the MMD xml file to the discovery metadata catalog
 
