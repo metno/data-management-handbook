@@ -1861,8 +1861,8 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;long_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the project(s) principally responsible for originating this data. Multiple projects can be separated by commas, as described under Attribute Content Guidelines. Examples; 'PATMOS-X', 'Extended Continental Shelf Project'.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the project(s) principally responsible for originating this data in the format &lt;long projectname&gt; (&lt;short project name&gt;). Multiple projects can be separated by commas, as described under Attribute Content Guidelines. Examples; 'PATMOS-X', 'Extended Continental Shelf Project' becomes 'Extended Continental Shelf Project (PATMOS-X)'. I.e., if each substring includes a keyword in parantheses, the content within the paranthesis is interpreted as the short name for the project while the rest is the long name, e.g., 'Nansen Legacy (NLEG)'.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
@@ -2005,11 +2005,6 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">ISO topic category fetched from a controlled vocabulary. Accepted elements are listed in <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#iso-topic-categories">the MMD specification</a>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project_short_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project&gt;short_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Short version of the project name.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">quality_control</p></td>
@@ -3322,7 +3317,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-09 02:33:39 UTC
+Last updated 2023-05-10 02:33:12 UTC
 </div>
 </div>
 </body>
