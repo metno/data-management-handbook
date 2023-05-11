@@ -4,6 +4,7 @@
 We use a test dataset containing the U component of wind at 10 m height, `x_wind_10m`, extracted from a https://thredds.met.no/thredds/catalog/metusers/magnusu/test-2023-02-03/catalog.html?dataset=metusers/magnusu/test-2023-02-03/meps_reduced.nc[MEPS 2.5km file]. The file can be downloaded by clicking on the link at access point 2., HTTPServer.
 
 Below is an example python script to add the required discovery metadata to the netCDF-CF file. The resulting file can be validated by the script `scripts/nc2mmd.py` in https://github.com/metno/py-mmd-tools[py-mmd-tools], which also can parse the netCDF-CF file into an MMD xml file.
+A warning that the CF attribute featureType is missing will be printed, but this is not a concern for this dataset, since it's gridded data and featureType only applies to discrete sampling geometries (see https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html#_features_and_feature_types).
 
 [source, python]
 ----
@@ -52,11 +53,6 @@ with netCDF4.Dataset(sys.argv[1], "a") as f:
 
     # Set ISO topic category
     f.iso_topic_category = "climatologyMeteorologyAtmosphere"
-
-    # Specify the type of discrete sampling geometry 
-    # https://metno.github.io/data-management-handbook/#_climate_and_forecast_conventions_cf
-    # https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html#_features_and_feature_types
-    f.featureType = 'timeSeries'
 
     # Set the correct license
     f.license = "http://spdx.org/licenses/CC-BY-4.0(CC-BY-4.0)"

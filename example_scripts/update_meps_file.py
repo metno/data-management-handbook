@@ -44,11 +44,6 @@ with netCDF4.Dataset(sys.argv[1], "a") as f:
     # Set ISO topic category
     f.iso_topic_category = "climatologyMeteorologyAtmosphere"
 
-    # Specify the type of discrete sampling geometry 
-    # https://metno.github.io/data-management-handbook/#_climate_and_forecast_conventions_cf
-    # https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html#_features_and_feature_types
-    f.featureType = 'timeSeries'
-
     # Set the correct license
     f.license = "http://spdx.org/licenses/CC-BY-4.0(CC-BY-4.0)"
 
