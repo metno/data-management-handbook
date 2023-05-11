@@ -1992,14 +1992,9 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <td class="tableblock halign-left valign-top"><p class="tableblock">Short version of the institution name.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;related_dataset</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the relation between this dataset and another dataset. The type of relationship is determined by the related_dataset_relation_type attribute. The content of the element is a valid identifier.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset_relation_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset&gt;relation_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Valid content is either "parent" (this dataset is a child dataset of the referenced dataset) or "auxiliary" (this dataset is auxiliary data for the referenced dataset).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specifies the relation between this dataset and another dataset in the form "&lt;naming_authority:id&gt; (relation type)". The type of relationship must be either "parent" (this dataset is a child dataset of the referenced dataset) or "auxiliary" (this dataset is auxiliary data for the referenced dataset).</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">iso_topic_category</p></td>
@@ -3317,7 +3312,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-10 02:33:12 UTC
+Last updated 2023-05-11 02:33:14 UTC
 </div>
 </div>
 </body>
