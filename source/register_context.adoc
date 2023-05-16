@@ -24,11 +24,10 @@ Then, generate your mmd xml file as follows:
 
 [source]
 ----
-cd script
 nc2mmd -u <OPeNDAP url of your netcdf file> -i <path to your netcdf file> -o <your xml output directory>
 ----
 
-See `./nc2mmd.py --help` for documentation and extra options.
+See `nc2mmd --help` for documentation and extra options.
 
 You will find Extensible Stylesheet Language Transformations (XSLT) documents in the link:https://github.com/metno/mmd.git[MMD] repository. These can be used to translate the metadata documents from MMD to other vocabularies, such as ISO19115:
 
