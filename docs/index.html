@@ -2040,10 +2040,11 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <div class="sect4">
 <h5 id="example-script-add-metadata"><a class="anchor" href="#example-script-add-metadata"></a>6.2.2.4. Example script to update a NetCDF-CF file with correct discovery metadata</h5>
 <div class="paragraph">
-<p>We use a test dataset containing the U component of wind at 10 m height, <code>x_wind_10m</code>, extracted from a <a href="https://thredds.met.no/thredds/catalog/metusers/magnusu/test-2023-02-03/catalog.html?dataset=metusers/magnusu/test-2023-02-03/meps_reduced.nc">MEPS 2.5km file</a>. The file can be downloaded by clicking on the link at access point 2., HTTPServer.</p>
+<p>We use a test dataset containing the U component of wind at 10 m height, <code>x_wind_10m</code>, extracted from a <a href="https://thredds.met.no/thredds/catalog/metusers/magnusu/test-2023-02-03/catalog.html?dataset=metusers/magnusu/test-2023-02-03/meps_reduced.nc">MEPS 2.5km file</a> (~3.5G). The file can be downloaded by clicking on the link in the HTTPServer access point.</p>
 </div>
 <div class="paragraph">
-<p>Below is an example python script to add the required discovery metadata to the netCDF-CF file. The resulting file can be validated by the script <code>scripts/nc2mmd.py</code> in <a href="https://github.com/metno/py-mmd-tools">py-mmd-tools</a>, which also can parse the netCDF-CF file into an MMD xml file.</p>
+<p>Below is an example python script to add the required discovery metadata to the netCDF-CF file. The resulting file can be validated by the script <code>py_mmd_tools/script/nc2mmd.py</code> in <a href="https://github.com/metno/py-mmd-tools">py-mmd-tools</a>, which also can parse the netCDF-CF file into an MMD xml file. The script becomes available as the endpoint <code>nc2mmd</code> in the environment where the py-mmd-tools repo is installed.
+A warning that the CF attribute featureType is missing will be printed, but this is not a concern for this dataset, since it is gridded data, and <code>featureType</code> only applies to discrete sampling geometries (see <a href="https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html#_features_and_feature_types" class="bare">https://cfconventions.org/Data/cf-conventions/cf-conventions-1.10/cf-conventions.html#_features_and_feature_types</a>).</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -2136,10 +2137,9 @@ with netCDF4.Dataset(sys.argv[1], "a") as f:
 <div class="content">
 <pre class="highlight"><code class="language-bash" data-lang="bash">$ git clone git@github.com:metno/data-management-handbook.git
 $ cd data-management-handbook/example_scripts
-$ wget https://thredds.met.no/thredds/fileServer/metusers/magnusu/test-2023-02-03/meps_reduced.nc
-$ ./update_meps_file.py meps_reduced
-$ cd &lt;path-to-py-mmd-tools&gt;/script
-$ ./nc2mmd.py -i &lt;path-to-data-management-handbook&gt;/example_scripts/meps_reduced.nc -o .
+$ wget https://thredds.met.no/thredds/fileServer/metusers/magnusu/test-2023-02-03/meps_reduced.nc # warning: the file size is 3.5G
+$ ./update_meps_file.py meps_reduced.nc
+$ nc2mmd -u https://thredds.met.no/thredds/dodsC/metusers/magnusu/test-2023-02-03/meps_reduced.nc -i meps_reduced.nc -o .
 $ less meps_reduced.xml  # to see the MMD xml file</code></pre>
 </div>
 </div>
@@ -2182,12 +2182,11 @@ $ less meps_reduced.xml  # to see the MMD xml file</code></pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code>cd script
-./nc2mmd.py -i &lt;your netcdf file&gt; -o &lt;your xml output directory&gt;</code></pre>
+<pre class="highlight"><code>nc2mmd -u &lt;OPeNDAP url of your netcdf file&gt; -i &lt;path to your netcdf file&gt; -o &lt;your xml output directory&gt;</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>See <code>./nc2mmd.py --help</code> for documentation and extra options.</p>
+<p>See <code>nc2mmd --help</code> for documentation and extra options.</p>
 </div>
 <div class="paragraph">
 <p>You will find Extensible Stylesheet Language Transformations (XSLT) documents in the <a href="https://github.com/metno/mmd.git">MMD</a> repository. These can be used to translate the metadata documents from MMD to other vocabularies, such as ISO19115:</p>
@@ -3312,7 +3311,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-05-16 02:33:40 UTC
+Last updated 2023-05-16 20:03:19 UTC
 </div>
 </div>
 </body>
