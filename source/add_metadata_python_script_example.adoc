@@ -98,7 +98,7 @@ $ git clone git@github.com:metno/data-management-handbook.git
 $ cd data-management-handbook/example_scripts
 $ wget https://thredds.met.no/thredds/fileServer/metusers/magnusu/test-2023-02-03/meps_reduced.nc
 $ ./update_meps_file.py meps_reduced.nc
-$ nc2mmd -u https://thredds.met.no/thredds/dodsC/metusers/magnusu/test-2023-02-03/meps_reduced.nc -i <path-to-data-management-handbook>/example_scripts/meps_reduced.nc -o .
+$ nc2mmd -u https://thredds.met.no/thredds/dodsC/metusers/magnusu/test-2023-02-03/meps_reduced.nc -i meps_reduced.nc -o .
 $ less meps_reduced.xml  # to see the MMD xml file
 ----
 
