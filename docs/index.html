@@ -2450,6 +2450,60 @@ $ less meps_reduced.xml  # to see the MMD xml file</code></pre>
 <div class="ulist">
 <ul>
 <li>
+<p>To find all datasets intersecting a polygon within a given time span:</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-xml" data-lang="xml">&lt;?xml version="1.0" encoding="ISO-8859-1" standalone="no"?&gt;
+&lt;csw:GetRecords
+    xmlns:csw="http://www.opengis.net/cat/csw/2.0.2"
+    xmlns:gml="http://www.opengis.net/gml"
+    xmlns:ogc="http://www.opengis.net/ogc"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    service="CSW"
+    version="2.0.2"
+    resultType="results"
+    maxRecords="100"
+    outputFormat="application/xml"
+    outputSchema="http://www.opengis.net/cat/csw/2.0.2"
+    xsi:schemaLocation="http://www.opengis.net/cat/csw/2.0.2 http://schemas.opengis.net/csw/2.0.2/CSW-discovery.xsd" &gt;
+  &lt;csw:Query typeNames="csw:Record"&gt;
+    &lt;csw:ElementSetName&gt;summary&lt;/csw:ElementSetName&gt;
+    &lt;csw:Constraint version="1.1.0"&gt;
+      &lt;ogc:Filter&gt;
+        &lt;ogc:And&gt;
+          &lt;ogc:Intersects&gt;
+            &lt;ogc:PropertyName&gt;ows:BoundingBox&lt;/ogc:PropertyName&gt;
+            &lt;gml:Polygon&gt;
+              &lt;gml:exterior&gt;
+                &lt;gml:LinearRing&gt;
+                  &lt;gml:posList&gt;
+                    63.3984 7.65173 60.7546 5.0449 59.0639 10.187 62.9065 12.4944 63.3984 7.65173
+                  &lt;/gml:posList&gt;
+                &lt;/gml:LinearRing&gt;
+              &lt;/gml:exterior&gt;
+            &lt;/gml:Polygon&gt;
+          &lt;/ogc:Intersects&gt;
+          &lt;ogc:PropertyIsGreaterThanOrEqualTo&gt;
+            &lt;ogc:PropertyName&gt;apiso:TempExtent_begin&lt;/ogc:PropertyName&gt;
+            &lt;ogc:Literal&gt;2022-03-01 00:00&lt;/ogc:Literal&gt;
+          &lt;/ogc:PropertyIsGreaterThanOrEqualTo&gt;
+          &lt;ogc:PropertyIsLessThanOrEqualTo&gt;
+            &lt;ogc:PropertyName&gt;apiso:TempExtent_end&lt;/ogc:PropertyName&gt;
+            &lt;ogc:Literal&gt;2023-03-08 00:00&lt;/ogc:Literal&gt;
+          &lt;/ogc:PropertyIsLessThanOrEqualTo&gt;
+        &lt;/ogc:And&gt;
+      &lt;/ogc:Filter&gt;
+    &lt;/csw:Constraint&gt;
+  &lt;/csw:Query&gt;
+&lt;/csw:GetRecords&gt;</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
 <p>Then, you can query the CSW endpoint with, e.g., python:</p>
 </li>
 </ul>
@@ -3308,7 +3362,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-06-21 02:34:40 UTC
+Last updated 2023-06-21 12:11:01 UTC
 </div>
 </div>
 </body>
