@@ -1843,8 +1843,8 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">institution</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name&gt;long_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the institution principally responsible for originating this data. This attribute is recommended by the CF convention.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the institution principally responsible for originating this data in the format &lt;long institution name&gt; (&lt;short institution name&gt;). This attribute is recommended by the CF convention.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">publisher_url</p></td>
@@ -1863,8 +1863,8 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;long_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the platform(s) that supported the sensor used to create this dataset. Platforms can be of any type, including satellite, ship, station, aircraft or other. Both <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#platform-1">MMD</a> and <a href="https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms">GCMD</a> has controlled vocabularies for platform names (the GCMD one is a large xml file in which the data producer must search for the correct platform name [use prefLabel], e.g. like &lt;ctrl&gt;-f "models&lt;/skos:prefLabel"). Indicate which controlled vocabulary that is used in the platform_vocabulary attribute. Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the platform(s) that supported the sensor used to create this dataset in the format &lt;long platform name&gt; (&lt;short platform name&gt;). Platforms can be of any type, including satellite, ship, station, aircraft or other. Both <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#platform-1">MMD</a> and <a href="https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/platforms">GCMD</a> has controlled vocabularies for platform names (the GCMD one is a large xml file in which the data producer must search for the correct platform name [use prefLabel], e.g. like &lt;ctrl&gt;-f "models&lt;/skos:prefLabel"). Indicate which controlled vocabulary that is used in the platform_vocabulary attribute.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform_vocabulary</p></td>
@@ -1873,8 +1873,8 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">instrument</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument&gt;long_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the instrument(s) or sensor(s) used to create this dataset. Both <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#instruments">MMD</a> and <a href="https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments">GCMD</a> has controlled vocabularies for instrument names (the GCMD one is a large xml file in which the data producer must search for the correct instrument name [use prefLabel], e.g. like &lt;ctrl&gt;-f "thermometers&lt;/skos:prefLabel"). Indicate which controlled vocabulary that is used in the instrument_vocabulary attribute. Comma separated list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">platform&gt;instrument</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the instrument(s) or sensor(s) used to create this dataset in the format &lt;long name&gt; (&lt;short name&gt;). Both <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#instruments">MMD</a> and <a href="https://gcmd.earthdata.nasa.gov/kms/concepts/concept_scheme/instruments">GCMD</a> has controlled vocabularies for instrument names (the GCMD one is a large xml file in which the data producer must search for the correct instrument name [use prefLabel], e.g. like &lt;ctrl&gt;-f "thermometers&lt;/skos:prefLabel"). Indicate which controlled vocabulary that is used in the instrument_vocabulary attribute.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">instrument_vocabulary</p></td>
@@ -1931,12 +1931,7 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier&gt;alternate_identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative identifier for the dataset described by the metadata document. This identifier is when datasets may have multiple identifiers, e.g., identifiers depending on the framework data are shared through.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier_type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">alternate_identifier&gt;type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Type of identifier used. Currently no controlled vocabulary is defined, but this should be added once better knowledge of domains are known.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Alternative identifier for the dataset described by the metadata document in the form &lt;url&gt; (&lt;type&gt;). This identifier is when datasets may have multiple identifiers, e.g., identifiers depending on the framework data are shared through.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">title_no</p></td>
@@ -1969,11 +1964,6 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <td class="tableblock halign-left valign-top"><p class="tableblock">Limitations on the access to the dataset. See <a href="https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html#access-constraints">section 4.6 of the MMD specification</a> for a list of valid values.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">license_identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">use_constraint&gt;identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Referring to the spdx licenseId. If the identifier is specified in the license attribute as &lt;URL&gt;(&lt;Identifier&gt;), license_identifier is not needed.</p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">contributor_email</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;email</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The email address of the contributor(s). Consistency across comma separated lists for all contributor_* attributes is required.</p></td>
@@ -1982,11 +1972,6 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <td class="tableblock halign-left valign-top"><p class="tableblock">contributor_institution</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">personnel&gt;organisation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The institution of the contributor(s). Consistency across comma separated lists for all contributor_* attributes is required.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">institution_short_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">data_center&gt;data_center_name&gt;short_name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Short version of the institution name.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">related_dataset</p></td>
@@ -3362,7 +3347,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2023-10-05 02:28:58 UTC
+Last updated 2023-10-06 02:28:03 UTC
 </div>
 </div>
 </body>
