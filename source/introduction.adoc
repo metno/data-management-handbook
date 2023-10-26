@@ -198,34 +198,32 @@ Metadata is a broad concept. In our <<glossary-data-management,data management>>
 
 The tools and facilities used to manage the information for efficient discovery and use are further described in <<structuring-and-documenting>>.
 
+[[controlled-vocabularies]]
+==== Controlled vocabularies and ontologies
 
+Controlled vocabularies and taxonomies are used somewhat interchangeably and
+are controlled lists of terms used to organize information. As such, a
+controlled vocabulary is "an organized arrangement of words and phrases used to
+index content and/or to retrieve content through exploration and search."
+Controlled vocabularies can be used in any industry that collects and uses
+information, such as academic research, libraries, corporations, government
+organizations, etc. Common types of controlled vocabularies include term lists,
+authority files, and thesauruses. Controlled vocabularies require the use of
+predefined terms and ensure consistency and accuracy in documenting data. There
+are well-established vocabularies for personal and company names, geographical
+names, topics, concepts, resource types and languages. MET Norway has
+controlled vocabularies in, e.g., the MMD standard.
 
+An ontology is a way of describing the characteristics of a subject area and
+how they are connected. For example, translation of text within a subject area
+can be simplified by creating controlled vocabularies of jargon and
+associations (for example triple-store) between jargon in different languages.
+MET Norway has implemented an ontology available at https://vocab.met.no, to
+provide the MMD, CF and GCMD controlled vocabularies and the connections
+between them, where it is relevant.
 
-
-
-
-Taxonomies, controlled vocabularies and ontologies
-
- 
-
-Taxonomies and controlled vocabularies are partly used interchangeably and are controlled lists of terms used to organize information. A controlled vocabulary is "an organized arrangement of words and phrases used to index content and/or to retrieve content through exploration and search."4 Controlled vocabularies can be used in any industry that collects and uses information, such as academic research , libraries, corporations, government organizations, etc. Common types of controlled vocabularies include term lists, authority files, and thesauruses.5 Controlled vocabularies require the use of predefined terms and ensure consistency and accuracy in documenting data. There are well-established vocabularies for personal and company names, geographical names, topics, concepts, resource types and languages.
-
- 
-
-An ontology is a way of describing the characteristics of a subject area and how they are connected. For example, translation of text within a subject area can be simplified by creating controlled vocabularies of jargon and associations (for example triple-store) between jargon in different languages. An example of an ontology used in the EU project Aerosol, Clouds and Trace Gases Research Infrastructure (ACTRIS) is https://vocabulary.actris.nilu.no/skosmos/actris_vocab/en/. Vocabulary and controlled lists with definitions and connections between terms used in the project are offered here.
-
- 
-
-Taxonomies, controlled vocabularies and ontologies are particularly useful for supporting machine interoperability (see FAIR principles under Chapters 4 and 5).
-
-
-
-
-
-
-
-
-
+Taxonomies, controlled vocabularies and ontologies are particularly useful for
+supporting machine interoperability.
 
 [[fair-data-management-model]]
 ==== A data management model based on the FAIR principles
