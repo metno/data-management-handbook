@@ -4,9 +4,24 @@ Nina E. Larsgård, Bruce Hackett, Audun Christoffersen, Øystein Godøy, Vegar K
 [discrete]
 == Abstract
 
-This document describes general data management practices in line with the FAIR principles, and focuses on the management and sharing of dynamical geodata (i.e., geolocated data about processes in nature). The practices aim at a metadata-driven data management regime. Data management principles are described and summarised. Details of the practical implementation of the principles are described along 4 pillars: structuring and documenting data; data services; user portals and documentation; and data governance. Practical guidance for data producers is also provided.
+This document describes general data management practices in line with the FAIR
+principles, and focuses on the management and sharing of dynamic geodata.
+Dynamic geodata is weather, environment and climate related data that changes
+in space and time and is thus descriptive of processes in nature. Examples are
+weather observations, weather warnings, pollution (environmental toxins) in
+water, air and sea, information on the operation of cod eggs and salmon lice,
+water flow in rivers, driving conditions on the roads and the spread of sea
+ice. Dynamic geodata provide important constraints for many decision-making
+processes and activities in society. The data management practices aim at a
+metadata-driven data management regime. Data management principles are
+described and summarised. Details of the practical implementation of the
+principles are described along 4 pillars: structuring and documenting data;
+data services; user portals and documentation; and data governance. Practical
+guidance for data producers is also provided.
 
-The present handbook is a general text that can be applied by anyone. We have prepared templates for organisation specific information that can be updated and merged into the general handbook by the user organisations.
+The present handbook is a general text that can be applied by anyone. We have
+prepared templates for organisation specific information that can be updated
+and merged into the general handbook by the user organisations.
 
 toc::[]
 

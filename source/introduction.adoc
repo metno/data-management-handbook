@@ -10,32 +10,71 @@ The purpose of the Data Management Handbook (<<dmh,DMH>>) is threefold:
 2. to help personnel identify their roles and responsibilities for good data management; and
 3. to provide personnel with practical guidelines for carrying out good data management.
 
-<<glossary-data-management,_Data management_>> is the term used to describe the handling of data in a systematic and cost-effective manner. The data management regime should be continuously evolving, to reflect the evolving nature of data collection. Therefore this <<dmh,DMH>> is a living document that will be revised and updated from time to time in order to maintain its relevance.
+<<glossary-data-management,_Data management_>> is the term used to describe the
+handling of data in a systematic and cost-effective manner. The data management
+regime should be continuously evolving, to reflect the evolving nature of data
+collection. Therefore, this <<dmh,DMH>> is a living document that will be
+revised and updated from time to time in order to maintain its relevance.
 
-The <<dmh,DMH>> is a strategic governing document and should be used as part of the quality framework the organisation is using. 
+The <<dmh,DMH>> is a strategic governing document and should be used as part of
+the quality framework the organisation is using. 
 
 // Remember to add links/references to the chapters below
 
-The primary focus of this <<dmh,DMH>> is on the management of <<glossary-dynamic-geodata, dynamic geodata>>. <<glossary-dynamic-geodata, Dynamic geodata>> is weather, environment and climate-related data that changes in space and time and is thus descriptive of processes in nature. Examples are weather observations, weather forecasts, pollution (environmental toxins) in water, air and sea, information on the drift of cod eggs and salmon lice, water flow in rivers, driving conditions on the roads and the distribution of sea ice. <<glossary-dynamic-geodata, Dynamic geodata>> provides important constraints for many decision-making processes and activities in society.
+The primary focus of this <<dmh,DMH>> is on the management of
+<<glossary-dynamic-geodata, dynamic geodata>>. <<glossary-dynamic-geodata,
+Dynamic geodata>> is weather, environment and climate-related data that changes
+in space and time and is thus descriptive of processes in nature. Examples are
+weather observations, weather forecasts, pollution (environmental toxins) in
+water, air and sea, information on the drift of cod eggs and salmon lice, water
+flow in rivers, driving conditions on the roads and the distribution of sea
+ice. <<glossary-dynamic-geodata, Dynamic geodata>> provides important
+constraints for many decision-making processes and activities in society.
 
-This introduction (<<introduction>>) lays forth the background and principles for the data management regime. Chapters 2-5 describe the implementation of the main building blocks: structuring and documenting data (<<structuring-and-documenting>>), data services (<<data-services>>), portals and documentation aimed at users (<<user-portals>>), and governance issues (<<data-governance>>). Each chapter starts with a brief statement of its purpose, followed by a description of what is implemented at present, as well as the planned developments for the short-term (<2 years) and expected developments for the longer term (2-5 years).
+This introduction (<<introduction>>) lays forth the background and principles
+for the data management regime. Chapters 2-5 describe the implementation of the
+main building blocks: structuring and documenting data
+(<<structuring-and-documenting>>), data services (<<data-services>>), portals
+and documentation aimed at users (<<user-portals>>), and governance issues
+(<<data-governance>>). Practical guidelines for carrying out good
+<<glossary-data-management,data management>> are addressed in
+<<practical-guides>>. Each chapter starts with a brief statement of its
+purpose, followed by a description of what is implemented at present, as well
+as the planned developments for the short-term (<2 years) and expected
+developments for the longer term (2-5 years).
  
-Practical guidelines for carrying out good <<glossary-data-management,data management>> are addressed in Chapter 6.
-
-The intended audience for this DMH is any personell involved in the process of making data available for the end user. This process can be viewed as a value chain that moves from the producer of the data to the data consumer (i.e., the end user). The process is further described in <<value-chain>> (<<img-value-chain>>).  
+The intended audience for this DMH is any personell involved in the process of
+making data available to the end user. This process can be viewed as a value
+chain that moves from the producer of the data to the data consumer (i.e., the
+end user). The process is further described in <<value-chain>>
+(<<img-value-chain>>).  
 
 The handbook can be used in three ways: 
 
 . Read <<introduction>> to learn about the background and principles of <<glossary-data-management,data management>>;
-. Read Chapters 2-5 to learn about how <<glossary-data-management,data management>> is currently implemented and how it is expected to evolve in the next few years; and
+. Read Chapters 2-5 to learn about how <<glossary-data-management,data management>> is currently implemented, and how it is expected to evolve in the next few years; and
 . Read <<practical-guides>> to find how-to's and practical guidelines.
 
 [[PrinciplesDataManagement]]
 === The principles of data management for dynamic geodata
 
-Principles of standardised data documentation, publication, sharing and preservation have been formalised in the <<glossary-fair-principles,FAIR>> Guiding Principles for scientific data management and stewardship [https://www.nature.com/articles/sdata201618[RD3]] through a process facilitated by <<force11,FORCE11>>. FAIR stands for findability, accessibility, <<glossary-interoperability,interoperability>> and reusability.
+Principles of standardised data documentation, publication, sharing and
+preservation have been formalised in the <<glossary-fair-principles,FAIR>>
+Guiding Principles for scientific data management and stewardship
+[https://www.nature.com/articles/sdata201618[RD3]] through a process
+facilitated by <<force11,FORCE11>>. FAIR stands for Findable, Accessible,
+<<glossary-interoperability,Interoperable>> and Reusable.
 
-By following the <<fair,FAIR>> principles it is easier to obtain a common approach to <<glossary-data-management,data management>>, or a <<glossary-unified-data-management, unified data management>> model. One of the main motivations for implementing a <<glossary-unified-data-management, unified data management>> is to better serve the users of the data. Primarily, this can be approached by making user needs and requirements the guide for determining what data we provide and how. For example, it will be described below how the specification of <<glossary-dataset,datasets>> should be determined. By implementing the data management practices described here, it is expected that users will experience:
+By following the <<fair,FAIR>> principles it is easier to obtain a common
+approach to <<glossary-data-management,data management>>, or a
+<<glossary-unified-data-management, unified data management>> model. One of the
+main motivations for implementing a <<glossary-unified-data-management, unified
+data management>> is to better serve the users of the data. Primarily, this can
+be approached by making user needs and requirements the guide for determining
+what data we provide and how. For example, it will be described how the
+specification of <<glossary-dataset,datasets>> should be determined. By
+implementing the data management practices described here, it is expected that
+users will experience:
 
 * Ease of discovering, viewing and accessing <<glossary-dataset,datasets>>;
 * Standardised ways of accessing data, including downloading or streaming data, with reduced need for special solutions on the user side;
@@ -48,25 +87,57 @@ By following the <<fair,FAIR>> principles it is easier to obtain a common approa
 [[external-requirements]]
 ==== External data management requirements and forcing mechanisms
 
-Any organisation that strives to implement <<glossary-fair-principles,FAIR>> data management model has to relate to external forcing mechanisms concerning <<glossary-data-management,data management>> at several levels. At the national level, the organisation must comply with national regulations as decided by the government. Some of these are indications of expected behaviour (e.g., <<oecd,OECD>> regulations) and some are implemented through a legal framework. The Norwegian government has over time promoted free and open sharing of public data. Mechanisms for how to do this are governed by the <<glossary-geodataloven,Geodataloven>> (implemented as <<glossary-geonorge,Geonorge>>), which is a national implementation of the European <<inspire,INSPIRE directive>> (to be amended in 2019). <<inspire,INSPIRE>> defines a federated multinational <<glossary-spatial-data-infrastructure,Spatial Data Infrastructure>> (<<sdi,SDI>>) for the European Union, similar to <<nsdi,NSDI>> in the USA or <<unsdi,UNSDI>> under the United Nations. The goal is to provide a standardised access to data and provide the necessary tools to be able to work with the data in a unified manner. In short, these legal frameworks require standardised documentation (at discovery and use level; these concepts are described later) and access (through specified protocols) to the data identified.
+Any organisation that strives to implement <<glossary-fair-principles,FAIR>>
+data management model has to relate to external forcing mechanisms concerning
+<<glossary-data-management,data management>> at several levels. At the national
+level, the organisation must comply with national regulations as decided by the
+government. Some of these are indications of expected behaviour (e.g.,
+<<oecd,OECD>> regulations) and some are implemented through a legal framework.
+The Norwegian government has over time promoted free and open sharing of public
+data. Mechanisms for how to do this are governed by the
+<<glossary-geodataloven,Geodataloven>> (implemented as
+<<glossary-geonorge,Geonorge>>), which is a national implementation of the
+European <<inspire,INSPIRE directive>> (to be amended in 2019).
+<<inspire,INSPIRE>> defines a federated multinational
+<<glossary-spatial-data-infrastructure,Spatial Data Infrastructure>>
+(<<sdi,SDI>>) for the European Union, similar to <<nsdi,NSDI>> in the USA or
+<<unsdi,UNSDI>> under the United Nations. The goal is to provide a standardised
+access to data and provide the necessary tools to be able to work with the data
+in a unified manner. In short, these legal frameworks require standardised
+documentation (at discovery and use level; these concepts are described later)
+and access (through specified protocols) to the data identified.
 
-Other external requirements and forcing mechanisms that are organisation-specific are provided in <<specialized-external-requirements>>.
+Other external requirements and forcing mechanisms that are
+organisation-specific are provided in <<specialized-external-requirements>>.
 
 [[value-chain]]
 ==== The data value chain
 
-The process of getting the data from the data producer to the consumer can be viewed as a value chain. An example of a data value chain is presented in <<img-value-chain>>. Typically, data from a wide variety of providers are used in the value chain. Traditionally, the data used have been transmitted on request from one <<glossary-data-centre,data centre>> to another, and used in the specific processing chains that requested the data. The focus on reuse of data in various contexts has been missing.
+The process of getting the data from the data producer to the consumer can be
+viewed as a value chain. An example of a data value chain is presented in
+<<img-value-chain>>. Typically, data from a wide variety of providers are used
+in the value chain. Traditionally, the data used have been transmitted on
+request from one <<glossary-data-centre,data centre>> to another, and used in
+the specific processing chains that requested the data. The focus on reuse of
+data in various contexts has been missing.
 
 [#img-value-chain]
 .Value chain for data.
 image::value_chain.png[Value chain,800]
 
-Datasets and metadata are what travels through the value chain. At the end of the <<glossary-data-management,data management>> value chain are the data consumers.
-
 [[dataset]]
 ==== Dataset
 
-A <<glossary-dataset,dataset>> is a collection of data. In the context of the <<glossary-data-management,data management>> model, the storage mode of the <<glossary-dataset,dataset>> is irrelevant, since access mechanisms can be decoupled from the storage layer as experienced by a data consumer. Typically, a <<glossary-dataset,dataset>> represents a number of variables in time and space. A more detailed definition is provided in the <<glossary-glossary,Glossary of Terms>>. In order to best serve the data through <<web-service,web services>>, the following principles are useful for guiding the <<glossary-dataset,dataset>> definition:
+A <<glossary-dataset,dataset>> is the combination of data records and the
+associated information content. In the context of the
+<<glossary-data-management,data management>> model, the storage mode of the
+<<glossary-dataset,dataset>> is irrelevant, since access mechanisms can be
+decoupled from the storage layer as experienced by a data consumer. Typically,
+a <<glossary-dataset,dataset>> represents a number of variables in time and
+space. A more detailed definition is provided in the
+<<glossary-glossary,Glossary of Terms>>. In order to best serve the data
+through <<web-service,web services>>, the following principles are useful for
+guiding the <<glossary-dataset,dataset>> definition:
 
 1. A <<glossary-dataset,dataset>> can be a collection of variables stored in, for example, a relational database or as flat files;
 2. A <<glossary-dataset,dataset>> is defined as a number of spatial and/or temporal variables;
@@ -104,6 +175,10 @@ Metadata is a broad concept. In our <<glossary-data-management,data management>>
 <<bufr,BUFR>> +
 <<grib,GRIB>>
 
+|[[provenance-metadata]]Provenance metadata
+|Information concerning the creation, attribution, or version history of managed data.
+|
+
 |[[site-metadata]]Site metadata
 |Used to understand data found
 |Site metadata are used to describe the context of observational data. They describe the location of an observation, the instrumentation, procedures, etc. To a certain extent they overlap with <<discovery-metadata,discovery metadata>>, but also extend discovery metadata. Site metadata can be used for observation network design. Site metadata can be considered a type of <<use-metadata,use metadata>>.
@@ -122,6 +197,35 @@ Metadata is a broad concept. In our <<glossary-data-management,data management>>
 |===
 
 The tools and facilities used to manage the information for efficient discovery and use are further described in <<structuring-and-documenting>>.
+
+
+
+
+
+
+
+Taxonomies, controlled vocabularies and ontologies
+
+ 
+
+Taxonomies and controlled vocabularies are partly used interchangeably and are controlled lists of terms used to organize information. A controlled vocabulary is "an organized arrangement of words and phrases used to index content and/or to retrieve content through exploration and search."4 Controlled vocabularies can be used in any industry that collects and uses information, such as academic research , libraries, corporations, government organizations, etc. Common types of controlled vocabularies include term lists, authority files, and thesauruses.5 Controlled vocabularies require the use of predefined terms and ensure consistency and accuracy in documenting data. There are well-established vocabularies for personal and company names, geographical names, topics, concepts, resource types and languages.
+
+ 
+
+An ontology is a way of describing the characteristics of a subject area and how they are connected. For example, translation of text within a subject area can be simplified by creating controlled vocabularies of jargon and associations (for example triple-store) between jargon in different languages. An example of an ontology used in the EU project Aerosol, Clouds and Trace Gases Research Infrastructure (ACTRIS) is https://vocabulary.actris.nilu.no/skosmos/actris_vocab/en/. Vocabulary and controlled lists with definitions and connections between terms used in the project are offered here.
+
+ 
+
+Taxonomies, controlled vocabularies and ontologies are particularly useful for supporting machine interoperability (see FAIR principles under Chapters 4 and 5).
+
+
+
+
+
+
+
+
+
 
 [[fair-data-management-model]]
 ==== A data management model based on the FAIR principles
