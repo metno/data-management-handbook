@@ -4,7 +4,15 @@
 [[human-roles-context]]
 ==== Context
 
-Data is processed and interpreted to generate knowledge (e.g., about the weather) for end users. The knowledge can be presented as information in the form of actual data, illustrations, text or other forms of communication. In this context, an illustration is a representation of data, whereas data means the numerical values needed to analyse and interpret a natural process (i.e., calibrated or with calibration information; it must be possible to understand the meaning of the numerical value from the available and machine-readable information).
+Data is processed and interpreted to generate knowledge (e.g., about the
+weather) for end users. The knowledge can be presented as information in the
+form of actual data, illustrations, text or other forms of communication. In
+this context, an illustration is a representation of data, whereas a data
+record is the numerical value needed to analyse and interpret a natural process
+(i.e., calibrated or with calibration information; it must be possible to
+understand the meaning of the numerical value from the available and
+machine-readable information). The combination of data records and information
+content is a dataset.
 
 [plantuml, information-to-knowledge, png]
 ....
@@ -33,20 +41,28 @@ Knowledge --> Data : Trace and verify
 *Definition:*
 [DEFINITION]
 ====
-Data here means the numerical values needed to analyse and interpret a natural process (i.e., calibrated or with calibration information, provenance, etc.; it must be possible to understand the meaning of the numerical value from the available and machine-readable information).
+A dataset is a combination of data records, such as the numerical values needed to analyse and interpret a natural process, and the related information content (i.e., calibrated data or data with calibration information, discovery, use and provenance metadata; it must be possible to understand the meaning of the numerical value from the available and machine-readable information).
 ====
 
-Advanced users typically consume some type of data in order to process and interpret it, and produce new knowledge, e.g., in the form of a new dataset or other information. The datasets can be organised in different levels, such as the link:http://codes.wmo.int/wmdr/_SourceOfObservation[WMO WIGOS definition for levels of data]. Less advanced users apply information based on data (e.g., an illustration) to make decisions (e.g., clothing adapted to the forecast weather).
+Advanced users typically consume some type of data in order to process and
+interpret it, and produce new knowledge, e.g., in the form of a new dataset or
+other information. The datasets can be organised in different levels, such as
+the link:http://codes.wmo.int/wmdr/_SourceOfObservation[WMO WIGOS definition
+for levels of data]. Less advanced users apply information based on data (e.g.,
+an illustration) to make decisions (e.g., clothing adapted to the forecast
+weather).
 
 [[user-definitions]]
 ==== User definitions
 
 We define two types of users:
 
-1. *Producers*: Those that create / produce data
-2. *Consumers*: Those that consume data
+1. *Producers*: Those that create / produce datasets
+2. *Consumers*: Those that consume datasets
 
-A consumer of one level of data is typically a producer of data at the next level. A user can both consume data and produce data, or just have one of these roles (e.g., at the start/end of the production chain).
+A consumer of one level of data is typically a producer of data at the next
+level. A user can both consume data and produce data, or just have one of these
+roles (e.g., at the start/end of the production chain).
 
 [plantuml, user-definitions, png]
 ....
@@ -79,11 +95,11 @@ Advanced consumers require information in the form of data and metadata (includi
 
 Example questions:
 
-* Need all historical weather data, that can be used to model / predict the weather in the future
+* Need all historical weather data for validation of model simulations, data assimilation, etc.
 
 Specific consumers:
 
-* Researcher (e.g., for climate projections within the "Klima i Norge 2100" research project)
+* Researchers
 
 [[intermediate-consumers]]
 ====== Intermediate consumers
@@ -106,7 +122,10 @@ Specific consumers:
 [[simple-consumers]]
 ====== Simple consumers
 
-Simple consumers do not have any prior knowledge about the data. Information in the form of text or illustrations is sufficient for their decision making. They do not need to understand either data or metadata, and they are most likely looking for answers to simple questions.
+Simple consumers do not have any prior knowledge about the data. Information in
+the form of text or illustrations is sufficient for their decision making. They
+do not need to understand either data or metadata, and they are most likely
+looking for answers to simple questions.
 
 Example questions:
 
@@ -122,15 +141,28 @@ Specific consumers:
 
 [NOTE]
 ====
-An advanced consumer may discover information pertaining a role as a simple consumer. Such a user may, for some reason, be interested in tracking the data in order to use it together with other data (interoperability) or to verify the information. Therefore, it is important to have provenance metadata pointing to the basic data source(s) also at the simplest information level.
+An advanced consumer may discover information pertaining a role as a simple
+consumer. Such a user may, for some reason, be interested in tracking the data
+in order to use it together with other data (interoperability) or to verify the
+information. Therefore, it is important to have provenance metadata pointing to
+the basic data source(s) also at the simplest information level.
 ====
 
 [[data-producers]]
 ===== Data producers
 
-A producer is an advanced consumer at one level of data that generate new information at a higher level. This new information could be in the form of actual data or simple information, such as an illustration or a text summary. It is essential that any information can be traced back to the source(s).
+A producer is an advanced consumer at one level of data that generate new
+information at a higher level. This new information could be in the form of
+actual data or simple information, such as an illustration or a text summary.
+It is essential that any information can be traced back to the source(s).
 
 [[data-management-roles]]
 ===== Data Management Roles
 
-Between the data providers and data consumers are the processes that manage and deliver the datasets (cf. <<img-value-chain>>). A number of human roles may be defined with responsibilities that, together, ensure that these processes are carried out in accordance with the data management requirements of the organisation. The definition and filling of these roles depend heavily on the particular organisation, and each organisation must devise its own best solution. 
+Between the data providers and data consumers are the processes that manage and
+deliver the datasets (cf. <<img-value-chain>>). A number of human roles may be
+defined with responsibilities that, together, ensure that these processes are
+carried out in accordance with the data management requirements of the
+organisation. The definition and filling of these roles depend heavily on the
+particular organisation, and each organisation must devise its own best
+solution. 

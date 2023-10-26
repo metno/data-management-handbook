@@ -31,19 +31,7 @@ flow in rivers, driving conditions on the roads and the distribution of sea
 ice. <<glossary-dynamic-geodata, Dynamic geodata>> provides important
 constraints for many decision-making processes and activities in society.
 
-This introduction (<<introduction>>) lays forth the background and principles
-for the data management regime. Chapters 2-5 describe the implementation of the
-main building blocks: structuring and documenting data
-(<<structuring-and-documenting>>), data services (<<data-services>>), portals
-and documentation aimed at users (<<user-portals>>), and governance issues
-(<<data-governance>>). Practical guidelines for carrying out good
-<<glossary-data-management,data management>> are addressed in
-<<practical-guides>>. Each chapter starts with a brief statement of its
-purpose, followed by a description of what is implemented at present, as well
-as the planned developments for the short-term (<2 years) and expected
-developments for the longer term (2-5 years).
- 
-The intended audience for this DMH is any personell involved in the process of
+The intended audience for this DMH is any personnel involved in the process of
 making data available to the end user. This process can be viewed as a value
 chain that moves from the producer of the data to the data consumer (i.e., the
 end user). The process is further described in <<value-chain>>
@@ -51,12 +39,12 @@ end user). The process is further described in <<value-chain>>
 
 The handbook can be used in three ways: 
 
-. Read <<introduction>> to learn about the background and principles of <<glossary-data-management,data management>>;
-. Read Chapters 2-5 to learn about how <<glossary-data-management,data management>> is currently implemented, and how it is expected to evolve in the next few years; and
-. Read <<practical-guides>> to find how-to's and practical guidelines.
+. Read <<PrinciplesDataManagement>> to get an overview of the main principles and structural organisation of the <<glossary-data-management,data management>>;
+. Read Chapters <<structuring-and-documenting>>-<<data-governance>> to learn about how <<glossary-data-management,data management>> is currently implemented, and how it is expected to evolve in the next few years; and
+. Read <<practical-guides>> to find how-to's and practical guidelines for defining, documenting and making your datasets available, as well as how to search and access data through APIs.
 
 [[PrinciplesDataManagement]]
-=== The principles of data management for dynamic geodata
+== The principles and structural organisation of data management
 
 Principles of standardised data documentation, publication, sharing and
 preservation have been formalised in the <<glossary-fair-principles,FAIR>>
@@ -85,7 +73,7 @@ users will experience:
 * Possibility to build specialized metadata catalogues and data portals targeting a specific user community.
 
 [[external-requirements]]
-==== External data management requirements and forcing mechanisms
+=== External data management requirements and forcing mechanisms
 
 Any organisation that strives to implement <<glossary-fair-principles,FAIR>>
 data management model has to relate to external forcing mechanisms concerning
@@ -111,7 +99,7 @@ Other external requirements and forcing mechanisms that are
 organisation-specific are provided in <<specialized-external-requirements>>.
 
 [[value-chain]]
-==== The data value chain
+=== The data value chain
 
 The process of getting the data from the data producer to the consumer can be
 viewed as a value chain. An example of a data value chain is presented in
@@ -126,7 +114,7 @@ data in various contexts has been missing.
 image::value_chain.png[Value chain,800]
 
 [[dataset]]
-==== Dataset
+=== Dataset
 
 A <<glossary-dataset,dataset>> is the combination of data records and the
 associated information content. In the context of the
@@ -149,7 +137,7 @@ Point 3 implies that the output of, e.g., a numerical model may be divided into 
 Most importantly, a <<glossary-dataset,dataset>> should be defined to meet the consumer needs. This means that the specification of a <<glossary-dataset,dataset>> should follow not only the content guidelines just listed, but also address the consumer needs for data delivery, security and preservation.
 
 [[metadata]]
-==== Metadata
+=== Metadata
 
 Metadata is a broad concept. In our <<glossary-data-management,data management>> model the term "metadata" is used in several contexts, specifically the five categories that are briefly described in <<table-metadata>>. 
 
@@ -176,7 +164,8 @@ Metadata is a broad concept. In our <<glossary-data-management,data management>>
 <<grib,GRIB>>
 
 |[[provenance-metadata]]Provenance metadata
-|Information concerning the creation, attribution, or version history of managed data.
+|Information concerning the creation, attribution, or version history of managed data
+|
 |
 
 |[[site-metadata]]Site metadata
@@ -226,7 +215,7 @@ Taxonomies, controlled vocabularies and ontologies are particularly useful for
 supporting machine interoperability.
 
 [[fair-data-management-model]]
-==== A data management model based on the FAIR principles
+=== A data management model based on the FAIR principles
 
 The <<glossary-data-management,data management>> model is built upon the following principles:
 
