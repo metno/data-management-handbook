@@ -9,9 +9,6 @@
 |Term
 |Description
 
-|[[glossary-application-service]]Application service
-|TBC
-
 |[[glossary-CMD-dataset]]CDM dataset
 |A dataset that “may be a NetCDF, HDF5, GRIB, etc. file, an OPeNDAP dataset, a collection of files, or anything else which can be accessed through the NetCDF API.” https://www.unidata.ucar.edu/software/netcdf-java/v4.6/CDM/index.html[Unidata Common Data Model] 
 // need link to acronyms
@@ -36,7 +33,7 @@ Alias: life cycle management
 |A combination of a (distributed) data repository and the data availability services and information about them (e.g., a metadata catalog). A data centre may include contributions from several other data centres.  
 
 |[[glossary-data-management]]Data management
-|How data sets are handled by the organisation through the entire value chain - include receiving, storing, metadata management and data retrieval.
+|How datasets are handled by the organisation through the entire value chain - include receiving, storing, metadata management and data retrieval.
 
 |[[glossary-data-provenance]]Data provenance
 |“The term ‘data provenance’ refers to a record trail that accounts for the origin of a piece of data (in a database, document or repository) together with an explanation of how and why it got to the present place.” (Gupta, 2009). See also https://www.theboohers.org/2015/03/03/provenance/[Boohers (2015)]
@@ -60,7 +57,7 @@ In the context of data preservation a dataset consists of the data records and t
 |See Discovery metadata definition in Table 2
 
 |[[glossary-dynamic-geodata]]Dynamic geodata
-|Data describing geophysical processes which are continuously evolving over time. Typically these data are used for monitoring and prediction of the weather, sea, climate and environment. Dynamic geodata is weather, environment and climate-related data that changes in space and time and is thus descriptive of processes in nature. Examples are weather observations, weather forecasts, pollution (environmental toxins) in water, air and sea, information on the drift of cod eggs and salmon lice, water flow in rivers, driving conditions on the roads and the distribution of sea ice. Dynamic geodata provides important constraints for many decision-making processes and activities in society. 
+|Data describing geophysical processes which are continuously evolving in time and space. Typically these data are used for monitoring and prediction of the weather, sea, climate and environment. Dynamic geodata provides important constraints for many decision-making processes and activities in society. 
 
 |[[glossary-fair-principles]]FAIR principles
 |The four foundational principles of good data management and stewardship: *F*indability, *A*ccessibility, *I*nteroperability and *R*eusability. Nature article [https://www.nature.com/articles/sdata201618[RD3]], https://www.go-fair.org/fair-principles/[FAIR Data Principles], https://github.com/FAIRMetrics/Metrics[FAIR metrics proposal], https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf[EU H2020 Guidelines]

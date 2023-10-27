@@ -18,10 +18,6 @@ including fimex
 
 https://github.com/metno/fimex[github repository]
 
-|frost2nc
-|Dump observational time series from KDVH to NetCDF files
-|https://github.com/metno/frost2nc[github repository]
-
 |met_moai
 |OAI-PMH implementation based on MOAI
 |https://github.com/metno/met_moai[github repository]
