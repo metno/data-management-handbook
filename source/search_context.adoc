@@ -1,24 +1,7 @@
 [[search_context]]
-=== Searching data in the Catalog Service for the Web (CSW) interface
+=== Searching data in the OGC CSW API
 
 ==== Using OpenSearch
-
-===== Local test machines
-
-The link:https://github.com/metno/vagrant-s-enda[`vagrant-s-enda`] environment found at link:https://github.com/metno/vagrant-s-enda[vagrant-s-enda] provides OpenSearch support through link:https://github.com/geopython/pycsw[PyCSW]. To test OpenSearch via the browser, start the `vagrant-s-enda` vm (`vagrant up`) and go to the following address:
-
-* `http://10.10.10.10/pycsw/csw.py?mode=opensearch&service=CSW&version=2.0.2&request=GetCapabilities`
-
-This will return a description document of the catalog service. The `URL` field in the description document is a template format that can be used to represent a parameterized form of the search. The search client will process the URL template and attempt to replace each instance of a template parameter, generally represented in the form {name}, with a value determined at query time (link:https://github.com/dewitt/opensearch/blob/master/opensearch-1-1-draft-6.md#opensearch-url-template-syntax[OpenSearch URL template syntax]). The question mark following any search parameter means that the parameter is optional.
-
-===== Online catalog
-
-For searching the online metadata catalog, the base url (`http://10.10.10.10/`) must be replaced by `https://csw.s-enda.k8s.met.no/`:
-
-* `http://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results`
-
-
-===== OpenSearch examples
 
 To find all datasets in the catalog:
 
@@ -169,11 +152,12 @@ import requests
 requests.post('https://csw.s-enda.k8s.met.no', data=open(my_xml_request).read()).text
 ----
 
-==== Web portals
+==== data.met.no
 
-*GeoNorge.no*
-
-*TODO:* describe how to search in geonorge, possibly with screenshots
+Access the link:https://data-test.met.no/metsis/search[human search interface]
+at link:https://data.met.no[data.met.no] to find you data via the web browser.
+The link:https://data.met.no/documentation[documentation page] provides more
+information about how to use the service.
 
 ==== QGIS
 
