@@ -47,7 +47,7 @@ A dataset is a combination of data records, such as the numerical values needed 
 Advanced users typically consume some type of data in order to process and
 interpret it, and produce new knowledge, e.g., in the form of a new dataset or
 other information. The datasets can be organised in different levels, such as
-the link:http://codes.wmo.int/wmdr/_SourceOfObservation[WMO WIGOS definition
+the link:https://codes.wmo.int/wmdr/_LevelOfData[WMO WIGOS definition
 for levels of data]. Less advanced users apply information based on data (e.g.,
 an illustration) to make decisions (e.g., clothing adapted to the forecast
 weather).
