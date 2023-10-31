@@ -15,15 +15,15 @@ link:https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&re
 deterministic], where the link provides the OGC CSW result of a search for
 "deterministic".
 
-The same search but with results provided in ISO format: link:https://csw.s-enda.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&q=deterministic&outputschema=http://www.isotc211.org/2005/gmd
+The same search but with results provided in ISO format: `https://csw.s-enda.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&q=deterministic&outputschema=http://www.isotc211.org/2005/gmd`
 
 Here, a field `gmd:parentIdentifier` provides the metadata identification of the parent dataset, i.e., `no.met:806070da-e9f3-4d03-ba1d-26b843961634`.
 
 Get the parent dataset by link:https://csw.s-enda.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRepositoryItem&id=no.met:806070da-e9f3-4d03-ba1d-26b843961634
 
-Get all its children by link:https://csw.s-enda.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&outputFormat=application%2Fxml&outputschema=http://www.isotc211.org/2005/gmd&CONSTRAINTLANGUAGE=CQL_TEXT&CONSTRAINT=apiso:ParentIdentifier%20like%20%27no.met:806070da-e9f3-4d03-ba1d-26b843961634%27
+Get all its children by `https://csw.s-enda.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&outputFormat=application%2Fxml&outputschema=http://www.isotc211.org/2005/gmd&CONSTRAINTLANGUAGE=CQL_TEXT&CONSTRAINT=apiso:ParentIdentifier%20like%20%27no.met:806070da-e9f3-4d03-ba1d-26b843961634%27`
 
-To find all parent datasets, use link:https://csw.s-enda-staging.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&outputschema=http://www.isotc211.org/2005/gmd&CONSTRAINTLANGUAGE=CQL_TEXT&CONSTRAINT=dc:type%20like%20%27series%27
+To find all parent datasets, use `https://csw.s-enda-staging.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&outputschema=http://www.isotc211.org/2005/gmd&CONSTRAINTLANGUAGE=CQL_TEXT&CONSTRAINT=dc:type%20like%20%27series%27`
 
 [[opensearch]]
 ==== Using OpenSearch
