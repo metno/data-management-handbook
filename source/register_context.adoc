@@ -1,5 +1,5 @@
 [[add-to-thredds]]
-==== How to add NetCDF-CF data to thredds
+==== Add NetCDF-CF data to thredds
 
 :numbered:
 include::{special_nc2thredds}[]

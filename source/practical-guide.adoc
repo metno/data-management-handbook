@@ -23,7 +23,7 @@ Currently you can use the _export_ function in easyDMP to download an HTML or PD
 This might change if "link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP]" gets implemented.
 
 [[netcdf-cf-guide]]
-=== Defining and creating NetCDF-CF datasets
+=== Define and create NetCDF-CF datasets
 
 ==== Workflow
 

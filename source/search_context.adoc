@@ -1,5 +1,5 @@
 [[search_context]]
-=== Searching data in the OGC CSW API
+=== Search data in the OGC CSW API
 
 The OGC standard for the catalog server, OGC 12-168r6, OGC Catalogue Services
 3.0 - General Model can be found 
@@ -26,7 +26,7 @@ Get all its children by `https://csw.s-enda.k8s.met.no/csw?SERVICE=CSW&VERSION=2
 To find all parent datasets, use `https://csw.s-enda-staging.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&outputschema=http://www.isotc211.org/2005/gmd&CONSTRAINTLANGUAGE=CQL_TEXT&CONSTRAINT=dc:type%20like%20%27series%27`.
 
 [[opensearch]]
-==== Using OpenSearch
+==== OpenSearch
 
 To find all datasets in the catalog:
 
