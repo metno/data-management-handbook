@@ -23,7 +23,7 @@ Currently you can use the _export_ function in easyDMP to download an HTML or PD
 This might change if "link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP]" gets implemented.
 
 [[netcdf-cf-guide]]
-=== Submitting data as NetCDF-CF
+=== Defining and creating NetCDF-CF datasets
 
 ==== Workflow
 
@@ -38,5 +38,5 @@ This might change if "link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP
 
   * Test that your dataset contains the necessary discovery metadata and create an MMD xml file (see <<local-mmd-xml-generation>>)
   * Test the MMD xml file (see <<test-mmd-file>>)
-  * Push the MMD xml file to the discovery metadata catalog (see <<push-mmd-file>>)
-
+  * Optionally create, test and add parent dataset MMD file to the discovery metadata catalog (in this case, also remember to add the parent `metadata_id` to the `related_dataset` global NetCDF attribute: `related_dataset = <naming_authority:id> (parent)`; see <<create-parent-mmd>>)
+  * Add the (child) MMD xml file to the discovery metadata catalog (see <<push-mmd-file>>)

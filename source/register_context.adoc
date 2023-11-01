@@ -5,7 +5,7 @@
 include::{special_nc2thredds}[]
 
 [[register-dataset-in-catalog]]
-==== How to register your data in the catalog service
+=== How to register your data in the catalog service
 
 In order to make a dataset findable, a dataset must be registered in a searchable catalog with appropriate metadata. The (meta)data catalog is indexed and exposed through link:https://en.wikipedia.org/wiki/Catalogue_Service_for_the_Web[CSW].
 
@@ -16,7 +16,7 @@ The following needs to be done:
 . Push the MMD xml file to the discovery metadata catalog (see <<push-mmd-file>>)
 
 [[local-mmd-xml-generation]]
-===== Generation of MMD xml file from NetCDF-CF
+==== Create MMD xml file from NetCDF-CF
 
 Clone the link:https://github.com/metno/py-mmd-tools.git[py-mmd-tools] repo and make a local installation with eg `pip install .`. This should bring in all needed dependencies (we recommend to use a virtual environment).
 
@@ -41,8 +41,42 @@ You will find Extensible Stylesheet Language Transformations (XSLT) documents in
 Note that the discovery metadata catalog ingestion tool will take care of translations from MMD, so you don't need to worry about that unless you have special interest in it.
 ====
 
+[[create-parent-mmd]]
+==== Create parent MMD xml file
+
+When cataloging a lot of datasets of the same type, it is very useful to
+create parent-child relationships. This is used, e.g., by Geonorge to harvest
+and make the parents findable as dataset series (an INSPIRE term), and then
+link to link:https://data.met.no[data.met.no] instead of listing all the child
+datasets on their side. The parent dataset landing pages at
+link:https://data.met.no[data.met.no] then provide access to the child datasets.
+
+When creating parent-child related datasets, it is best to ask for help from
+the mailto:data-management-group@met.no[Data Management Group (DMG)]. The DMG
+will help to review the datasets and prepare a "production line" for the given
+type of data.
+
+The following workflow should be followed:
+
+. Create an MMD file based on one of the child datasets (a netCDF file), e.g., `cp arome_arctic_det_2_5km_20220510T06Z.xml arome_arctic_det_2_5km_parent.xml`
+. Edit the new MMD file:
+   * Replace the UUID part of the `metadata_id` by a new one
+   * Update the `title` field
+   * `dataset_production_status` may be changed to "In Work", if this is a dataset in production
+   * `data_access` most likely needs to be changed
+. Push the parent MMD file to the DMCI API: `curl --data-binary "@parent.xml" https://dmci.s-enda.k8s.met.no/v1/insert`
+. Add the `metadata_id` to the file `parent-uuid-list.xml` in the correct environment folder of the S-ENDA tjenesterepo. For the development environment that would, e.g., be [environment/dev/config-dmci](https://gitlab.met.no/tjenester/s-enda/-/tree/dev/environment/dev/config-dmci).
+. Merge S-ENDA tjenesterepo all the way from dev to staging to prod
+. Create MMD files for the child datasets
+  .. For new datasets:
+     * Either use the "parent" argument to the `nc2mmd` script:`nc2mmd -i <netcdf-filename> -u <opendap-url> -o <output-folder> --log-ids --parent <metadata_id>` (the log-ids argument will log all the dataset IDs to a file for later reference - this can be useful for debugging)
+     * Or add the global attribute `related_dataset = <naming_authority:id> (parent)` to the NetCDF files
+     * Push the child dataset MMD files to the DMCI API (if this is a once or once-in-a-while event) or to the event queue, in case the data production is operational over time.
+  .. For existing datasets:
+     * Update the MMD files in the gitlab MMD/MMD-xml-* repository with the parent `metadata_id` - sample script are available in the gitlab "tjenesterepo"
+
 [[test-mmd-file]]
-===== Test the MMD xml file
+==== Test the MMD xml file
 
 Install the link:https://github.com/metno/discovery-metadata-catalog-ingestor[dmci app], and run the usage example locally. This will return an error message if anything is wrong with your MMD file.
 
@@ -54,7 +88,7 @@ curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-*.k8s.met.no/v1/val
 ----
 
 [[push-mmd-file]]
-===== Push the MMD xml file to the discovery metadata catalog
+==== Push the MMD xml file to the discovery metadata catalog
 
 For development and verification purposes:
 
@@ -73,7 +107,7 @@ curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/inser
 ----
 
 [[test-mmd-ingested]]
-===== Check that the MMD file has been added
+==== Check that the MMD file has been added
 
 There are several ways to check if your MMD file has been added to the metadata catalog(s). One way is via regular csw/opensearch requests as described in <<search_context>>, and the examples below.
 

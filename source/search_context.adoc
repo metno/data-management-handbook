@@ -2,8 +2,8 @@
 === Searching data in the OGC CSW API
 
 The OGC standard for the catalog server, OGC 12-168r6, OGC Catalogue Services
-3.0 - General Model can be found here:
-link:http://docs.opengeospatial.org/is/12-168r6/12-168r6.html. Here, we provide
+3.0 - General Model can be found 
+link:http://docs.opengeospatial.org/is/12-168r6/12-168r6.html[here]. Here, we provide
 some examples of how to use the service.
 
 [[search-parents]]
