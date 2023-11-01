@@ -5,16 +5,32 @@
 include::{special_nc2thredds}[]
 
 [[register-dataset-in-catalog]]
-=== Metadata Controlled Production
+=== Register and make your data available
 
-In order to make a dataset findable, a dataset must be registered in a
-searchable catalog with appropriate metadata.
+Metadata Controlled Production is the process of using metadata and
+notification services to control downstream production. The MET Messaging
+System (MMS) is a message broker that notifies users about the availability of
+new data. MMS uses link:https://cloudevents.io/[CloudEvents] to describe
+link:https://github.com/metno/MMS/blob/main/messages.md[Product Events], which
+are notification messages about new datasets (or products).
+
+MMS can be used both to notifying downstream production systems, and to make
+datasets findable, accessible and reusable for the general public. The former
+can be achieved by supplying the minimum required metadata in a Product Event,
+whereas the latter requires provisioning of an MMD metadata string to the
+Product Event. See section <<push-to-event-queue>> to learn how to create and
+submit an MMS event.
+
+In order to make a dataset available to the public, a dataset must be
+registered in a searchable catalog with appropriate metadata.
 
 The following needs to be done:
 
 . Generate an MMD xml file from your NetCDF-CF file (see <<local-mmd-xml-generation>>)
 . Test your mmd xml metadata file (see <<test-mmd-file>>)
-. Push the MMD xml file to the discovery metadata catalog (see <<push-mmd-file>>)
+. Push the MMD xml file to MMS (see <<push-to-event-queue>>) or to the discovery metadata catalog service (see <<push-mmd-file>>)
+
+These steps are described in the following.
 
 [[local-mmd-xml-generation]]
 ==== Create MMD xml file from NetCDF-CF
@@ -80,8 +96,11 @@ The following workflow should be followed:
 ==== Test and ingest the MMD file to the discovery metadata catalog
 
 In order to publish your data to consumer systems, metadata should be pushed to
-(1) the event queue or (2) the Discovery Metadata Catalog Ingestor (DMCI)
-service. Typically, metadata about operational data (i.e., data that are
+
+. The event queue; or
+. The Discovery Metadata Catalog Ingestor (DMCI) service.
+
+Typically, metadata about operational data (i.e., data that are
 generated regularly and used operationally downstream) should go through the
 event queue, whereas metadata of data that is not used in a downstream
 operational system could be pushed directly to DMCI. In both cases it is
@@ -102,14 +121,25 @@ You can also test your MMD file via the DMCI API:
 curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-*.k8s.met.no/v1/validate
 ----
 
-[[push-mmd-file]]
-===== Push the MMD xml file to the discovery metadata catalog
+[[push-to-event-queue]]
+===== Data notification with the MET Messaging Service (MMS)
 
 As a producer of operational data, you should do the following:
 
-. Push some test metadata to the event queue in dev (TODO: add section about how to publish to the event queue, and link it from here)
-. Check that messages are coming through the event queue (TODO: add section about how to use the event queue, and link it from here)
-. Check that the MMD file has been added to csw (see <<test-mmd-ingested>>)
+. Create a link:https://github.com/metno/MMS/blob/main/messages.md[Product Event]: SHAMLY
+. Push the Product Event to MMS in staging: SHAMLY 
+. Check that messages are coming through the event queue: SHAMLY
+. Optionally, check that the MMD file has been added to the metadata catalog (see <<test-mmd-ingested>>)
+
+As noted, the MMD payload is optional. This is because some data is not always
+suited for addition in the official metadata catalog, e.g., since it is
+short-living, not "owned" by MET Norway, or there has not been time to define
+and create NetCDF-CF and MMD files.
+
+SHAMLY: write what happens when events contain MMD strings
+
+[[push-mmd-file]]
+===== Push the MMD xml file to the discovery metadata catalog
 
 As a producer of data that does not need to go through the event queue, you should do the following:
 
@@ -119,7 +149,7 @@ As a producer of data that does not need to go through the event queue, you shou
 . Check that the MMD file has been added to the catalog services in production (see <<test-mmd-ingestion>>).
 
 [[test-mmd-ingested]]
-==== Check that the MMD file has been added
+===== Check that the MMD file has been added
 
 There are several ways to check if your MMD file has been added to the metadata catalog(s). One way is via regular csw/opensearch requests as described in <<search_context>>, and the examples below.
 
