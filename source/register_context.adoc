@@ -5,9 +5,10 @@
 include::{special_nc2thredds}[]
 
 [[register-dataset-in-catalog]]
-=== How to register your data in the catalog service
+=== Metadata Controlled Production
 
-In order to make a dataset findable, a dataset must be registered in a searchable catalog with appropriate metadata. The (meta)data catalog is indexed and exposed through link:https://en.wikipedia.org/wiki/Catalogue_Service_for_the_Web[CSW].
+In order to make a dataset findable, a dataset must be registered in a
+searchable catalog with appropriate metadata.
 
 The following needs to be done:
 
@@ -75,10 +76,24 @@ The following workflow should be followed:
   .. For existing datasets:
      * Update the MMD files in the gitlab MMD/MMD-xml-* repository with the parent `metadata_id` - sample script are available in the gitlab "tjenesterepo"
 
-[[test-mmd-file]]
-==== Test the MMD xml file
+[[test-and-ingest-mmd]]
+==== Test and ingest the MMD file to the discovery metadata catalog
 
-Install the link:https://github.com/metno/discovery-metadata-catalog-ingestor[dmci app], and run the usage example locally. This will return an error message if anything is wrong with your MMD file.
+In order to publish your data to consumer systems, metadata should be pushed to
+(1) the event queue or (2) the Discovery Metadata Catalog Ingestor (DMCI)
+service. Typically, metadata about operational data (i.e., data that are
+generated regularly and used operationally downstream) should go through the
+event queue, whereas metadata of data that is not used in a downstream
+operational system could be pushed directly to DMCI. In both cases it is
+important to test your MMD file.
+
+[[test-mmd-file]]
+===== Test the MMD xml file
+
+Install the
+link:https://github.com/metno/discovery-metadata-catalog-ingestor[dmci app],
+and run the usage example locally. This will return an error message if
+anything is wrong with your MMD file.
 
 You can also test your MMD file via the DMCI API:
 
@@ -88,23 +103,20 @@ curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-*.k8s.met.no/v1/val
 ----
 
 [[push-mmd-file]]
-==== Push the MMD xml file to the discovery metadata catalog
+===== Push the MMD xml file to the discovery metadata catalog
 
-For development and verification purposes:
+As a producer of operational data, you should do the following:
 
-[source]
-----
-curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-*.k8s.met.no/v1/insert
-----
+. Push some test metadata to the event queue in dev (TODO: add section about how to publish to the event queue, and link it from here)
+. Check that messages are coming through the event queue (TODO: add section about how to use the event queue, and link it from here)
+. Check that the MMD file has been added to csw (see <<test-mmd-ingested>>)
 
-where `*` should be either dev or staging.
+As a producer of data that does not need to go through the event queue, you should do the following:
 
-For production (the official catalog):
-
-[source]
-----
-curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert
-----
+. Push to the staging environment for tesing and verification: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-staging.k8s.met.no/v1/insert`
+. Check that the MMD file has been added to the catalog services in staging (see <<test-mmd-ingestion>>).
+. Push to production (the official catalog) for final publication: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert`
+. Check that the MMD file has been added to the catalog services in production (see <<test-mmd-ingestion>>).
 
 [[test-mmd-ingested]]
 ==== Check that the MMD file has been added
