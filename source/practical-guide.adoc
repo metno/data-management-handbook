@@ -10,6 +10,7 @@ This chapter includes how-to's and other practical guidance for data producers.
 
 The funding agency of your project will usually provide requirements, guidelines or a template for the DMP. If this is not the case or for datasets that are not part of a project use the template provided by your institution or the template based on the link:https://www.forskningsradet.no/contentassets/e4cd6d2c23cf49d4989bb10c5eea087a/se_rdm_practical_guide_final.pdf[recommendations by Science Europe].
 
+[[easy-dmp]]
 ==== Using easyDMP
 
 . Log in to link:https://easydmp.sigma2.no/login/[easyDMP], use *Dataporten* if your institution supports that, otherwise pick one of the other login methods.

@@ -95,8 +95,23 @@ in a unified manner. In short, these legal frameworks require standardised
 documentation (at discovery and use level; these concepts are described later)
 and access (through specified protocols) to the data identified.
 
-Other external requirements and forcing mechanisms that are
-organisation-specific are provided in <<specialized-external-requirements>>.
+At MET Norway, data have always been managed, albeit in a rather narrow
+technical sense. The main focus has been on storage, primarily for operational
+data. More recently, the issues of delivering, sharing and reusing data have
+steadily gained prominence. Still, the legacy of data storage systems built up
+over many years is an important factor in any uniform data management program.
+
+During the International Polar Year (<<ipy,IPY>>), MET Norway was the
+international coordinator for operational data. IPY data management was based
+on the principle of distributed data management through exchange of
+standardised descriptions of datasets between contributing data centres.
+
+MET Norway is the primary representative for Norway in
+the <<wmo,WMO>>. <<wmo,WMO>> has in recent years reorganised its approach to
+documenting and sharing data through two major activities: <<wis,WIS>> and
+<<wigos,WIGOS>>. Both are metadata-driven activities that follow the same
+principles as <<geonorge,Geonorge>> and <<inspire,INSPIRE>>, although there are
+differences concerning standards required.
 
 [[value-chain]]
 === The data value chain
