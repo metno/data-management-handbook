@@ -171,7 +171,7 @@ specifically the six categories that are briefly described in
 |[[discovery-metadata]]Discovery metadata
 |Used to find relevant data
 |Discovery metadata are also called index metadata and are a digital version of the library index card. They describe who did what, where and when, how to access data and potential constraints on the data. They shall also link to further information on the data, such as <<site-metadata,site metadata>>.
-|<<ISO-19115,ISO 19115>> +
+|<<iso-19115,ISO 19115>> +
 <<gcmd,GCMD>>/<<dif,DIF>>
 
 |[[use-metadata]]Use metadata
