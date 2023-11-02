@@ -23,7 +23,7 @@ In this chapter we address many aspects of this definition, but a full descripti
 
 <<glossary-data-life-cycle-management,Data life cycle management>> is steered by documentation describing how data generated or used in an activity will be handled throughout the lifetime of the activity and after the activity has been completed. This is living documentation that follows the activity and specifies what kind of data will be generated or acquired, how the data will be described, where the data will be stored, whether and how the data can be shared, and how the data will be retired (archived or deleted). The purpose of life cycle management is to safeguard the data, not just during their “active” period but also for future reuse of the data, and to facilitate cost-effective data handling.
  
-This DMH recommends the following concepts of <<glossary-data-life-cycle-managment,life cycle management>> to be implemented for the institution:
+This DMH recommends the following concepts of <<glossary-data-life-cycle-management,life cycle management>> to be implemented for the institution:
  
 * An institution specific Data Management Handbook (DMH) based on a common general template;
 * Extended <<glossary-discovery-metadata,discovery metadata>> for data in internal production chains (these are metadata elements that provide the necessary information for life cycle management just described); and
