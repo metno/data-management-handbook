@@ -21,7 +21,7 @@ The funding agency of your project will usually provide requirements, guidelines
 ==== Publishing the plan
 
 Currently you can use the _export_ function in easyDMP to download an HTML or PDF version of the DMP and use it further.
-This might change if "link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP]" gets implemented.
+This might change if link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP] gets implemented.
 
 [[netcdf-cf-guide]]
 === Define and create NetCDF-CF datasets
