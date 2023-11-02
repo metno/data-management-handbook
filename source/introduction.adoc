@@ -139,7 +139,7 @@ decoupled from the storage layer as experienced by a data consumer. Typically,
 a <<glossary-dataset,dataset>> represents a number of variables in time and
 space. A more detailed definition is provided in the
 <<glossary-glossary,Glossary of Terms>>. In order to best serve the data
-through <<web-service,web services>>, the following principles are useful for
+through web services, the following principles are useful for
 guiding the <<glossary-dataset,dataset>> definition:
 
 1. A <<glossary-dataset,dataset>> can be a collection of variables stored in, for example, a relational database or as flat files;
@@ -196,7 +196,7 @@ Metadata is a broad concept. In our <<glossary-data-management,data management>>
 
 |[[system-metadata]]System metadata
 |Used to understand the technical structure of the <<glossary-data-management,data management>> system and track changes in it 
-|System metadata covers, e.g., technical details of the storage system, <<glossary-web-service,web services>>, their purpose and how they interact with other components of the <<glossary-data-management,data management>> system, available and consumed storage, number of users and other KPI elements etc.
+|System metadata covers, e.g., technical details of the storage system, web services, their purpose and how they interact with other components of the <<glossary-data-management,data management>> system, available and consumed storage, number of users and other KPI elements etc.
 |
 |===
 
