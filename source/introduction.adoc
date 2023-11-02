@@ -154,7 +154,10 @@ Most importantly, a <<glossary-dataset,dataset>> should be defined to meet the c
 [[metadata]]
 === Metadata
 
-Metadata is a broad concept. In our <<glossary-data-management,data management>> model the term "metadata" is used in several contexts, specifically the five categories that are briefly described in <<table-metadata>>. 
+Metadata is a broad concept. In our <<glossary-data-management,data
+management>> model the term "metadata" is used in several contexts,
+specifically the six categories that are briefly described in
+<<table-metadata>>. 
 
 .Brief introduction to different types of metadata.
 [[table-metadata]]
