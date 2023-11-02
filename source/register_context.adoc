@@ -146,9 +146,9 @@ SHAMLY: write what happens when events contain MMD strings
 As a producer of data that does not need to go through the event queue, you should do the following:
 
 . Push to the staging environment for tesing and verification: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-staging.k8s.met.no/v1/insert`
-. Check that the MMD file has been added to the catalog services in staging (see <<test-mmd-ingestion>>).
+. Check that the MMD file has been added to the catalog services in staging (see <<test-mmd-ingested>>).
 . Push to production (the official catalog) for final publication: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert`
-. Check that the MMD file has been added to the catalog services in production (see <<test-mmd-ingestion>>).
+. Check that the MMD file has been added to the catalog services in production (see <<test-mmd-ingested>>).
 
 [[test-mmd-ingested]]
 ===== Check that the MMD file has been added
