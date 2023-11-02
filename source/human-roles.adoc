@@ -157,7 +157,7 @@ actual data or simple information, such as an illustration or a text summary.
 It is essential that any information can be traced back to the source(s).
 
 [[data-management-roles]]
-==== Data Management Roles
+==== Organisational Roles
 
 Between the data producers and data consumers are the processes that manage and
 deliver the datasets (cf. <<img-value-chain>>). A number of human roles may be

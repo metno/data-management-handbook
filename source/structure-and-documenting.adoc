@@ -13,7 +13,7 @@ metadata>> can be embedded in the files produced for a
 formats. If properly done by the <<data-producers,data producer>>, publication
 and preservation of data through services is simplified and can be automated.
 
-=== Implementation
+=== Current Implementation
 
 An essential prerequisite for structuring and documenting data is the
 specification of the <<glossary-dataset,dataset(s)>>, cf. <<dataset>>. The
