@@ -110,7 +110,7 @@ MET Norway is the primary representative for Norway in
 the <<wmo,WMO>>. <<wmo,WMO>> has in recent years reorganised its approach to
 documenting and sharing data through two major activities: <<wis,WIS>> and
 <<wigos,WIGOS>>. Both are metadata-driven activities that follow the same
-principles as <<geonorge,Geonorge>> and <<inspire,INSPIRE>>, although there are
+principles as <<glossary-geonorge,Geonorge>> and <<inspire,INSPIRE>>, although there are
 differences concerning standards required.
 
 [[value-chain]]
