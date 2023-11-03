@@ -142,7 +142,7 @@ Push the Product Event to MMS:
 
 Alternatively, use the staging environment for testing; `https://mms-api.s-enda-staging.k8s.met.no`.
 Note that `ntotal` is the `TotalCount`, and that `event-interval` is used to make 
-`NextEventAt` in link:https://github.com/metno/MMS/blob/main/messages.md[Product Event].
+`NextEventAt` (see link:https://github.com/metno/MMS/blob/main/messages.md[Product Event]).
   
 The actual command for posting an event including the `Product Event` is
   
