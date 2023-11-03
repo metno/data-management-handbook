@@ -146,8 +146,7 @@ Note that `ntotal` is the `TotalCount`, and that `event-interval` is used to mak
   
 The actual command for posting an event including the `Product Event` is
   
-
-Make sure you have a valid cred file to subscribe to a queue .
+Make sure you also have a valid credential file to **subscribe** to the queue.
 
 Check that messages are coming through the event queue: 
 
