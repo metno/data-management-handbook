@@ -102,9 +102,9 @@ In order to publish your data to consumer systems, metadata should be pushed to
 
 Typically, metadata about operational data (i.e., data that are
 generated regularly and used operationally downstream) should go through the
-event queue, whereas metadata of data that is not used in a downstream
+event queue, whereas metadata about data that is not used in a downstream
 operational system could be pushed directly to DMCI. In both cases it is
-important to test your MMD file.
+important to first test your MMD file.
 
 [[test-mmd-file]]
 ===== Test the MMD xml file
@@ -124,12 +124,15 @@ curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-*.k8s.met.no/v1/val
 [[push-to-event-queue]]
 ===== Data notification with the MET Messaging Service (MMS)
 
-As a producer of operational data, you should do the following:
+As a producer of operational data, you should use the MET Messaging Service
+(MMS) to notify downstream users about new available datasets.
 
 Install the link:https://github.com/metno/go-mms[go-mms app],
 and run the usage example for mms NATS Jetstream locally.
 
-Make sure you have a valid API-key to publish an event to MMS. You can get the key by contacting the mailto:dm-service-organisation@met.no[Service Organisation] for data management.
+Make sure you have a valid API-key to publish an event to MMS. You can get the
+key by contacting the mailto:dm-service-organisation@met.no[Service
+Organisation] for data management.
 
 Push the Product Event to MMS:
 
@@ -138,31 +141,34 @@ Push the Product Event to MMS:
   ./mms post --api-key=validKey --production-hub=https://mms-api.s-enda.k8s.met.no --queue-name=queueName --jobname=test --product=test --product-location=test-location --production-hub=https://mms-api.s-enda-*.k8s.met.no --MMD="$(cat /path/to/MMdfile.xml)" --counter=1 --ntotal=1 --reftime=2023-11-02T12:02:46Z --event-interval=3
 ----
 
- The arguments required  for the Product Event are explained link:https://github.com/metno/MMS/blob/main/messages.md[here].
+The arguments required  for the Product Event are explained
+link:https://github.com/metno/MMS/blob/main/messages.md[here]. Note that
+`ntotal` is the `TotalCount`, and that `event-interval` is used to make
+`NextEventAt`.
 
-Alternatively, use the staging environment for testing; `https://mms-api.s-enda-staging.k8s.met.no`.
-Note that `ntotal` is the `TotalCount`, and that `event-interval` is used to make 
-`NextEventAt` (see link:https://github.com/metno/MMS/blob/main/messages.md[Product Event]).
+Alternatively, use the staging environment for testing;
+`https://mms-api.s-enda-staging.k8s.met.no`.    
   
-The actual command for posting an event including the `Product Event` is
-  
-Make sure you also have a valid credential file to **subscribe** to the queue.
-
-Check that messages are coming through the event queue: 
+To be able to get MMS notifications, make sure you have a valid credential file
+to **subscribe** to the queue. With this in place, you can check that messages
+are coming through the event queue: 
 
 [source]
 ----
  ./mms subscribe --production-hub=nats://nats.s-enda.k8s.met.no:32001 --queue-name=queueName --cred-file=path/to/credFile.creds --queue-name=queueName --nats-local=false
 ----
 
-Optionally, check that the MMD file has been added to the metadata catalog (see <<test-mmd-ingested>>)
-
 As noted, the MMD payload is optional. This is because some data is not always
 suited for addition in the official metadata catalog, e.g., since it is
 short-living, not "owned" by MET Norway, or there has not been time to define
 and create NetCDF-CF and MMD files.
 
-The `MMD-Agent` subscribes to all the messages coming through the event queue. If the message contains an MMD payload, it will post the MMD file to the DMCI API, which stores the metadata in the catalog.
+The `MMD-Agent` subscribes to all the messages coming through the event queue.
+If the message contains an MMD payload, it will post the MMD file to the DMCI
+API, which stores the metadata in the catalog.
+
+If you also posted an MMD file, check that this has been added to the metadata
+catalog (see <<test-mmd-ingested>>).
 
 [[push-mmd-file]]
 ===== Push the MMD xml file to the discovery metadata catalog
