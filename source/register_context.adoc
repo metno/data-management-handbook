@@ -132,6 +132,12 @@ and run the usage example for mms NATS Jetstream locally.
 Make sure you have a valid API-key to publish an event to MMS. You can get the key by contacting the mailto:dm-service-organisation@met.no[Service Organisation] for data management.
 
 Push the Product Event to MMS:
+
+[source]
+----
+  ./mms post --api-key=validKey --production-hub=https://mms-api.s-enda.k8s.met.no --queue-name=queueName --jobname=test --product=test --product-location=test-location --production-hub=https://mms-api.s-enda-*.k8s.met.no --MMD="$(cat /path/to/MMdfile.xml)" --counter=1 --ntotal=1 --reftime=2023-11-02T12:02:46Z --event-interval=3
+----
+
   Include the arguments required to make the link:https://github.com/metno/MMS/blob/main/messages.md[Product Event]
   in the post command.
 
