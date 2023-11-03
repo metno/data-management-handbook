@@ -137,7 +137,7 @@ Push the Product Event to MMS:
 
 [source]
 ----
-  --jobname=test --product=test --product-location=test-location --production-hub=https://mms-api.s-enda-*.k8s.met.no --MMD="$(cat /path/to/MMdfile.xml)" --counter=1 --ntotal=1 --reftime=2023-11-02T12:02:46Z --event-interval=3
+  --jobname=test --product=test --product-location=test-location --production-hub=https://mms-api.s-enda.k8s.met.no --MMD="$(cat /path/to/MMdfile.xml)" --counter=1 --ntotal=1 --reftime=2023-11-02T12:02:46Z --event-interval=3
 ----   
 
 `ntotal` is the `TotalCount` and `event-interval` is used to make 
