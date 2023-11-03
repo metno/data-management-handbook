@@ -190,7 +190,7 @@ In addition, a new dataset should get a landing page when it is added. At MET No
 * `https://data-staging.met.no/dataset/UUID` (for the staging environment)
 * `https://data-test.met.no/dataset/UUID` (for the development environment)
 
-where UUID should be replaced by your dataset uuid (not `no.met:UUID`). Others ways to check are:
+where UUID should be replaced by your dataset uuid (not `no.met:UUID` but only the `UUID`). Others ways to check are:
 
 * Find the datasets containing `arctic` keyword in the title and on a given date: `https://csw.s-enda*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=arctic&time=2023-03-25`
 * Find the datasets having a given `metadata_identifier = no.met:4a34334b-b384-48b3-b846-76807bc006`: `https://csw.s-enda*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006`
