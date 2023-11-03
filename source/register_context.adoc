@@ -170,9 +170,9 @@ The `MMD-Agent` subscribes to all the messages coming through the event queue. I
 As a producer of data that does not need to go through the event queue, you should do the following:
 
 . Push to the staging environment for tesing and verification: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-staging.k8s.met.no/v1/insert`
-. Check that the MMD file has been added to the catalog services in staging (see <<test-mmd-ingestion>>).
+. Check that the MMD file has been added to the catalog services in staging (see <<test-mmd-ingested>>).
 . Push to production (the official catalog) for final publication: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert`
-. Check that the MMD file has been added to the catalog services in production (see <<test-mmd-ingestion>>).
+. Check that the MMD file has been added to the catalog services in production (see <<test-mmd-ingested>>).
 
 [[test-mmd-ingested]]
 ===== Check that the MMD file has been added
@@ -188,7 +188,7 @@ In addition, a new dataset should get a landing page when it is added. At MET No
 where UUID should be replaced by your dataset uuid (not `no.met:UUID` but only the `UUID`). Others ways to check are:
 
 * Find the datasets containing `arctic` keyword in the title and on a given date: `https://csw.s-enda*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=arctic&time=2023-03-25`
-* Find the dataset having a given `metadata_identifier = no.met:4a34334b-b384-48b3-b846-76807bc006`: `https://csw.s-enda*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006`
+* Find the dataset with a given `metadata_identifier = no.met:4a34334b-b384-48b3-b846-76807bc006`: `https://csw.s-enda*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006`
 * Find the datasets containing `direct` keyword in the title and within a given time span: `https://csw.s-enda*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=direct&time=2022-03-01/2022-09-25`
 * Or from the command line: `curl "https://csw.s-enda-dev.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006ca"`. This means that the dataset ID must be known. Given wrong "id=" in the url, will still give you "200 OK", but the returned xml will only be one line and not a full metadata document.
 
