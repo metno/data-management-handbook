@@ -140,6 +140,7 @@ Push the Product Event to MMS:
   --jobname=test --product=test --product-location=test-location --production-hub=https://mms-api.s-enda.k8s.met.no --MMD="$(cat /path/to/MMdfile.xml)" --counter=1 --ntotal=1 --reftime=2023-11-02T12:02:46Z --event-interval=3
 ----   
 
+Alternatively, use the staging environment for testing; https://mms-api.s-enda-staging.k8s.met.no
 `ntotal` is the `TotalCount` and `event-interval` is used to make 
 `NextEventAt` in Product Event. 
   
