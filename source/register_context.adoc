@@ -166,7 +166,7 @@ suited for addition in the official metadata catalog, e.g., since it is
 short-living, not "owned" by MET Norway, or there has not been time to define
 and create NetCDF-CF and MMD files.
 
-`MMD-Agent` is subscribing to all these messages coming through the event queue. If the messsage contains a MMD payload, it will post the MMD file to `DMCI`.
+The `MMD-Agent` is subscribed to all the messages coming through the event queue. If the messsage contains a MMD payload, it will post the MMD file to the DMCI API, which stores the metadata in the catalog.
 
 [[push-mmd-file]]
 ===== Push the MMD xml file to the discovery metadata catalog
