@@ -126,19 +126,43 @@ curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-*.k8s.met.no/v1/val
 
 As a producer of operational data, you should do the following:
 
-. Create NATS JetStream NSE user for publishing events: SHAMLY
-. Create NATS JetStream NSE user for subscribing to events: SHAMLY
-. Create a link:https://github.com/metno/MMS/blob/main/messages.md[Product Event]: SHAMLY
-. Push the Product Event to MMS in staging: SHAMLY 
-. Check that messages are coming through the event queue: SHAMLY
-. Optionally, check that the MMD file has been added to the metadata catalog (see <<test-mmd-ingested>>)
+Install the link:https://github.com/metno/go-mms[go-mms app],
+and run the usage example for mms NATS Jetstream locally.
+
+Make sure you have a valid API-key to publish an event to MMS. You can get the key by contacting the mailto:dm-service-organisation@met.no[Service Organisation] for data management.
+
+Push the Product Event to MMS:
+
+[source]
+----
+  ./mms post --api-key=validKey --production-hub=https://mms-api.s-enda.k8s.met.no --queue-name=queueName --jobname=test --product=test --product-location=test-location --production-hub=https://mms-api.s-enda-*.k8s.met.no --MMD="$(cat /path/to/MMdfile.xml)" --counter=1 --ntotal=1 --reftime=2023-11-02T12:02:46Z --event-interval=3
+----
+
+ The arguments required  for the Product Event are explained link:https://github.com/metno/MMS/blob/main/messages.md[here].
+
+Alternatively, use the staging environment for testing; `https://mms-api.s-enda-staging.k8s.met.no`.
+Note that `ntotal` is the `TotalCount`, and that `event-interval` is used to make 
+`NextEventAt` (see link:https://github.com/metno/MMS/blob/main/messages.md[Product Event]).
+  
+The actual command for posting an event including the `Product Event` is
+  
+Make sure you also have a valid credential file to **subscribe** to the queue.
+
+Check that messages are coming through the event queue: 
+
+[source]
+----
+ ./mms subscribe --production-hub=nats://nats.s-enda.k8s.met.no:32001 --queue-name=queueName --cred-file=path/to/credFile.creds --queue-name=queueName --nats-local=false
+----
+
+Optionally, check that the MMD file has been added to the metadata catalog (see <<test-mmd-ingested>>)
 
 As noted, the MMD payload is optional. This is because some data is not always
 suited for addition in the official metadata catalog, e.g., since it is
 short-living, not "owned" by MET Norway, or there has not been time to define
 and create NetCDF-CF and MMD files.
 
-SHAMLY: write what happens when events contain MMD strings
+The `MMD-Agent` subscribes to all the messages coming through the event queue. If the message contains an MMD payload, it will post the MMD file to the DMCI API, which stores the metadata in the catalog.
 
 [[push-mmd-file]]
 ===== Push the MMD xml file to the discovery metadata catalog
@@ -146,9 +170,9 @@ SHAMLY: write what happens when events contain MMD strings
 As a producer of data that does not need to go through the event queue, you should do the following:
 
 . Push to the staging environment for tesing and verification: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-staging.k8s.met.no/v1/insert`
-. Check that the MMD file has been added to the catalog services in staging (see <<test-mmd-ingested>>).
+. Check that the MMD file has been added to the catalog services in staging (see <<test-mmd-ingestion>>).
 . Push to production (the official catalog) for final publication: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert`
-. Check that the MMD file has been added to the catalog services in production (see <<test-mmd-ingested>>).
+. Check that the MMD file has been added to the catalog services in production (see <<test-mmd-ingestion>>).
 
 [[test-mmd-ingested]]
 ===== Check that the MMD file has been added
@@ -164,7 +188,7 @@ In addition, a new dataset should get a landing page when it is added. At MET No
 where UUID should be replaced by your dataset uuid (not `no.met:UUID` but only the `UUID`). Others ways to check are:
 
 * Find the datasets containing `arctic` keyword in the title and on a given date: `https://csw.s-enda*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=arctic&time=2023-03-25`
-* Find the dataset with a given `metadata_identifier = no.met:4a34334b-b384-48b3-b846-76807bc006`: `https://csw.s-enda*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006`
+* Find the dataset having a given `metadata_identifier = no.met:4a34334b-b384-48b3-b846-76807bc006`: `https://csw.s-enda*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006`
 * Find the datasets containing `direct` keyword in the title and within a given time span: `https://csw.s-enda*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=direct&time=2022-03-01/2022-09-25`
 * Or from the command line: `curl "https://csw.s-enda-dev.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006ca"`. This means that the dataset ID must be known. Given wrong "id=" in the url, will still give you "200 OK", but the returned xml will only be one line and not a full metadata document.
 
