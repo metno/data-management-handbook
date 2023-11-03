@@ -141,10 +141,6 @@ Note that `ntotal` is the `TotalCount` and `event-interval` is used to make
   
 The actual command for posting an event including the `Product Event` is
   
-[source]
-----
-  ./mms post --api-key=validKey --production-hub=https://mms-api.s-enda.k8s.met.no --queue-name=queueName --jobname=test --product=test --product-location=test-location --production-hub=https://mms-api.s-enda-*.k8s.met.no --MMD="$(cat /path/to/MMdfile.xml)" --counter=1 --ntotal=1 --reftime=2023-11-02T12:02:46Z --event-interval=3
-----
 
 Make sure you have a valid cred file to subscribe to a queue .
 
