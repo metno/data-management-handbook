@@ -129,7 +129,7 @@ As a producer of operational data, you should do the following:
 Install the link:https://github.com/metno/go-mms[go-mms app],
 and run the usage example for mms NATS Jetstream locally.
 
-Make sure you have one valid api-key to publish an event to MMS. 
+Make sure you have a valid API-key to publish an event to MMS. You can get the key by contacting the mailto:dm-service-organisation@met.no[Service Organisation] for data management.
 
 Push the Product Event to MMS:
   Include the arguments required to make the link:https://github.com/metno/MMS/blob/main/messages.md[Product Event]
