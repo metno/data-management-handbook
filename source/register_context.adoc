@@ -53,7 +53,7 @@ You will find Extensible Stylesheet Language Transformations (XSLT) documents in
 ./bin/convert_from_mmd -i <your mmd xml file> -f iso -o <your iso output file name>
 ----
 
-[[NOTE]]
+[NOTE]
 ====
 Note that the discovery metadata catalog ingestion tool will take care of translations from MMD, so you don't need to worry about that unless you have special interest in it.
 ====

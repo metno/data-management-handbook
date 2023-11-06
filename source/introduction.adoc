@@ -43,6 +43,11 @@ The handbook can be used in three ways:
 . Read Chapters <<structuring-and-documenting>>-<<data-governance>> to learn about how <<glossary-data-management,data management>> is currently implemented, and how it is expected to evolve in the next few years; and
 . Read <<practical-guides>> to find how-to's and practical guidelines for defining, documenting and making your datasets available, as well as how to search and access data through APIs.
 
+[NOTE]
+====
+If you do not think that your data fits into the Data Management Model described here, please contact the <<met-org-roles,Data Management Group>>. We have several examples of data that is not available in, e.g., NetCDF-CF that have been added to the catalog, and it is usually possible to find pragmatic solutions to FAIRifying data.
+====
+
 [[PrinciplesDataManagement]]
 == Principles and structural organisation
 
