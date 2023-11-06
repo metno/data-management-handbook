@@ -44,7 +44,7 @@ The handbook can be used in three ways:
 . Read <<practical-guides>> to find how-to's and practical guidelines for defining, documenting and making your datasets available, as well as how to search and access data through APIs.
 
 [[PrinciplesDataManagement]]
-== The principles and structural organisation of data management
+== Principles and structural organisation
 
 Principles of standardised data documentation, publication, sharing and
 preservation have been formalised in the <<glossary-fair-principles,FAIR>>
@@ -72,8 +72,10 @@ users will experience:
 * Ability to apply common data transformations, like spatial, temporal and variables subsetting and reprojection, before downloading anything;
 * Possibility to build specialized metadata catalogues and data portals targeting a specific user community.
 
+include::human-roles.adoc[]
+
 [[external-requirements]]
-=== External data management requirements and forcing mechanisms
+=== External requirements and forcing mechanisms
 
 Any organisation that strives to implement <<glossary-fair-principles,FAIR>>
 data management model has to relate to external forcing mechanisms concerning

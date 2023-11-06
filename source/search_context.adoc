@@ -1,13 +1,18 @@
 [[search_context]]
-=== Search data in the OGC CSW API
+=== How to Find Data
 
-The OGC standard for the catalog server, OGC 12-168r6, OGC Catalogue Services
-3.0 - General Model can be found 
-link:http://docs.opengeospatial.org/is/12-168r6/12-168r6.html[here]. Here, we provide
-some examples of how to use the service.
+Historically, the main way to find data on the web was via human search
+interfaces on custom web portals. METs data management supports this through
+dedicated user portals. In addition, machine-to-machine interfaces are
+supported through search and access services such as OGC CSW and OPeNDAP. The
+OGC standard for the catalog server, OGC 12-168r6, OGC Catalogue Services 3.0 -
+General Model can be found
+link:http://docs.opengeospatial.org/is/12-168r6/12-168r6.html[here]. In this
+section, we provide some examples of how to use this, and available human
+search and access tools.
 
 [[search-parents]]
-==== Get parent datasets and their children (or dataset series in ISO19115)
+==== Get parent datasets and their children (or dataset series in ISO19115) with OGC CSW
 
 MET Norway organises datasets in parent-child relationships. As mentioned in
 section <<dataset>>, a parent can be a given model simulation like
@@ -26,7 +31,7 @@ Get all its children by `https://csw.s-enda.k8s.met.no/csw?SERVICE=CSW&VERSION=2
 To find all parent datasets, use `https://csw.s-enda-staging.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&outputschema=http://www.isotc211.org/2005/gmd&CONSTRAINTLANGUAGE=CQL_TEXT&CONSTRAINT=dc:type%20like%20%27series%27`.
 
 [[opensearch]]
-==== OpenSearch
+==== Find Data with OpenSearch
 
 To find all datasets in the catalog:
 
@@ -44,7 +49,7 @@ Or, datasets with "arome-arctic 2.5Km deterministic" in the title:
 
 * `https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=arome-arctic\\%202.5Km\\%20deterministic`
 
-==== More advanced geographical search
+==== More advanced geographical search with OGC CSW
 
 PyCSW opensearch only supports geographical searches querying for a box. For more advanced geographical searches, one must write specific XML files. For example:
 
@@ -177,14 +182,14 @@ import requests
 requests.post('https://csw.s-enda.k8s.met.no', data=open(my_xml_request).read()).text
 ----
 
-==== data.met.no
+==== Human Search Interface at data.met.no
 
 Access the link:https://data-test.met.no/metsis/search[human search interface]
 at link:https://data.met.no[data.met.no] to find you data via the web browser.
 The link:https://data.met.no/documentation[documentation page] provides more
 information about how to use the service.
 
-==== QGIS
+==== Human Search Interface with QGIS
 
 MET Norway's S-ENDA CSW catalog service is available at `https://csw.s-enda.k8s.met.no`. This can be used from QGIS as follows:
 

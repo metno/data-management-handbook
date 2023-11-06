@@ -15,9 +15,6 @@ include::{title_page}[]
 include::introduction.adoc[]
 
 :numbered:
-include::human-roles.adoc[]
-
-:numbered:
 include::{special_intro}[]
 
 :numbered:
