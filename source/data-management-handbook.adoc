@@ -18,6 +18,9 @@ include::introduction.adoc[]
 include::{special_intro}[]
 
 :numbered:
+include::principles-and-structure.adoc[]
+
+:numbered:
 include::summary-requirements.adoc[]
 
 :numbered:
