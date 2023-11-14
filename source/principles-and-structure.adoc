@@ -90,8 +90,32 @@ data in various contexts has been missing.
 .Value chain for data.
 image::value_chain.png[Value chain,800]
 
+[[fair-data-management-model]]
+=== A data management model based on the FAIR principles
+
+The data management regime at MET Norway follows the model of the Arctic Data
+Centre, introduced in <<background>>, which adheres to the FAIR principles.
+The model's basic functions fall into three main categories:
+
+1. *Documentation of data* using <<glossary-discovery-metadata,discovery>> and <<glossary-use-metadata,use metadata>>. The documentation identifies who, what, when, where, and how, and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of <<glossary-controlled-vocabulary,controlled vocabularies>> and <<glossary-ontology,ontologies>> where textual representation is required. It also covers the topic of <<glossary-data-provenance,data provenance>> which is used to describe the origin and all actions done on a <<glossary-dataset,dataset>>. <<glossary-data-provenance,Data provenance>> is closely linked with <<glossary-workflow-management,workflow management>>. Furthermore, it covers the relationship between <<glossary-dataset,datasets>>. Application of <<glossary-ontology,ontologies>> in data documentation is closely linked to the concept of <<glossary-linked-data,linked data>>. 
+2. *Publication and sharing of data* focuses on making data accessible to consumers internally and externally. Application of standardised approaches is vital, along with cost effective solutions that are sustainable. Direct integration of data in applications for analysis through data streaming minimises the complexity and overhead in dissemination solutions. This category also covers persistent identifiers for data.
+3. *Preservation of data* includes short and long term management of data, which secures access and availability throughout the lifespan of the data. Good solutions in this area depend on expected and actual usage of the data. Preservation of data includes the concept of data life cycle, i.e., the documented flow of data from initial storage through to obsolescence and permanent archiving (or deletion).
+
+For its implementation, the
+<<glossary-data-management,data management>> model is built upon the following
+principles:
+
+* *Standardisation* – compliance with established international standards;
+* *<<glossary-interoperability,Interoperability>>* – enabling machine-to-machine interfaces including standardised documentation and encoding of data;
+* *Integrity* – ensuring that data and data access can be maintained over time, and ensuring that the consumer receives the same data at any time of request;
+* *Traceability* – documentation of the <<glossary-data-provenance,provenance>> of a <<glossary-dataset,dataset>>, i.e., all actions taken to produce and maintain the <<glossary-dataset,dataset>> and the usage of the data in downstream systems;
+* *Modularisation* – enabling replacement of one component of the system without necessitating other changes.
+
+In this data management model there are two terms that are fundamental and may
+be addressed immediately: **dataset** and **metadata**.
+
 [[dataset]]
-=== Dataset
+==== Dataset
 
 A <<glossary-dataset,dataset>> is the combination of data records and the
 associated information content. In the context of the
@@ -109,12 +133,26 @@ guiding the <<glossary-dataset,dataset>> definition:
 3. A <<glossary-dataset,dataset>> should be defined by the information content and not the production method;
 4. A good <<glossary-dataset,dataset>> does not mix <<glossary-feature-type,feature types>>, i.e., trajectories and gridded data should not be present in the same <<glossary-dataset,dataset>>.
 
-Point 3 implies that the output of, e.g., a numerical model may be divided into several <<glossary-dataset,datasets>> that are related. This is also important in order to efficiently serve the data through <<glossary-webservice,web services>>. For instance, model variables defined on different vertical coordinates should be separated as <<glossary-linked-data,linked datasets>>, since some <<ogc,OGC>> services (e.g., <<wms,WMS>>) are unable to handle mixed coordinates in the same <<glossary-dataset,dataset>>. One important linked dataset relation is the parent-child relationship. In the numerical model example, the parent dataset would be the model simulation. This (parent) dataset encompasses all datasets created by the model simulation such as, e.g., two NetCDF-CF files (child datasets) with different information content.
+Point 3 implies that the output of, e.g., a numerical model may be divided into
+several <<glossary-dataset,datasets>> that are related. This is also important
+in order to efficiently serve the data through <<glossary-webservice,web
+services>>. For instance, model variables defined on different vertical
+coordinates should be separated as <<glossary-linked-data,linked datasets>>,
+since some <<ogc,OGC>> services (e.g., <<wms,WMS>>) are unable to handle mixed
+coordinates in the same <<glossary-dataset,dataset>>. One important linked
+dataset relation is the parent-child relationship. In the numerical model
+example, the parent dataset would be the model simulation. This (parent)
+dataset encompasses all datasets created by the model simulation such as, e.g.,
+two NetCDF-CF files (child datasets) with different information content.
 
-Most importantly, a <<glossary-dataset,dataset>> should be defined to meet the consumer needs. This means that the specification of a <<glossary-dataset,dataset>> should follow not only the content guidelines just listed, but also address the consumer needs for data delivery, security and preservation.
+Most importantly, a <<glossary-dataset,dataset>> should be defined to meet the
+consumer needs. This means that the specification of a
+<<glossary-dataset,dataset>> should follow not only the content guidelines just
+listed, but also address the consumer needs for data delivery, security and
+preservation.
 
 [[metadata]]
-=== Metadata
+==== Metadata
 
 Metadata is a broad concept. In our <<glossary-data-management,data
 management>> model the term "metadata" is used in several contexts,
@@ -168,7 +206,7 @@ specifically the six categories that are briefly described in
 The tools and facilities used to manage the information for efficient discovery and use are further described in <<structuring-and-documenting>>.
 
 [[controlled-vocabularies]]
-==== Controlled vocabularies and ontologies
+===== Controlled vocabularies and ontologies
 
 Controlled vocabularies and taxonomies are used somewhat interchangeably and
 are controlled lists of terms used to organize information. As such, a
@@ -193,20 +231,3 @@ between them, where it is relevant.
 
 Taxonomies, controlled vocabularies and ontologies are particularly useful for
 supporting machine interoperability.
-
-[[fair-data-management-model]]
-=== A data management model based on the FAIR principles
-
-The <<glossary-data-management,data management>> model is built upon the following principles:
-
-* *Standardisation* – compliance with established international standards;
-* *<<glossary-interoperability,Interoperability>>* – enabling machine-to-machine interfaces including standardised documentation and encoding of data;
-* *Integrity* – ensuring that data and data access can be maintained over time, and ensuring that the consumer receives the same data at any time of request;
-* *Traceability* – documentation of the <<glossary-data-provenance,provenance>> of a <<glossary-dataset,dataset>>, i.e., all actions taken to produce and maintain the <<glossary-dataset,dataset>> and the usage of the data in downstream systems;
-* *Modularisation* – enabling replacement of one component of the system without necessitating other changes.
-
-The model’s basic functions fall into three main categories:
-
-1. *Documentation of data* using <<glossary-discovery-metadata,discovery>> and <<glossary-use-metadata,use metadata>>. The documentation identifies who, what, when, where, and how, and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of <<glossary-controlled-vocabulary,controlled vocabularies>> and <<glossary-ontology,ontologies>> where textual representation is required. It also covers the topic of <<glossary-data-provenance,data provenance>> which is used to describe the origin and all actions done on a <<glossary-dataset,dataset>>. <<glossary-data-provenance,Data provenance>> is closely linked with <<glossary-workflow-management,workflow management>>. Furthermore, it covers the relationship between <<glossary-dataset,datasets>>. Application of <<glossary-ontology,ontologies>> in data documentation is closely linked to the concept of <<glossary-linked-data,linked data>>. 
-2. *Publication and sharing of data* focuses on making data accessible to consumers internally and externally. Application of standardised approaches is vital, along with cost effective solutions that are sustainable. Direct integration of data in applications for analysis through data streaming minimises the complexity and overhead in dissemination solutions. This category also covers persistent identifiers for data.
-3. *Preservation of data* includes short and long term management of data, which secures access and availability throughout the lifespan of the data. Good solutions in this area depend on expected and actual usage of the data. Preservation of data includes the concept of data life cycle, i.e., the documented flow of data from initial storage through to obsolescence and permanent archiving (or deletion) and preserving the metadata for the same data (even after deleting).
