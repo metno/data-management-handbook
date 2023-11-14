@@ -1,4 +1,4 @@
 [bibliography]
 == Bibliography
 
-* [[[clarke_KC86, Clarke (1986)]]] Clarke, K. C., 1986: Advances in geographic information systems, computers, environment and urban systems, Vol. 10, pp. 175–184.
+* [[[clarke_KC86, 1]]] Clarke, K. C., 1986: Advances in geographic information systems, computers, environment and urban systems, Vol. 10, pp. 175–184.
