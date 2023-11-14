@@ -59,13 +59,17 @@ over many years is an important factor in any uniform data management program.
 During the International Polar Year (<<ipy,IPY>>), MET Norway was the
 international coordinator for operational data. IPY data management was based
 on the principle of distributed data management through exchange of
-standardised descriptions of datasets between contributing data centres.
+standardised descriptions of datasets between contributing data centres. The
+principles of standardised data documentation, publication, sharing and
+preservation have since been formalised in the The FAIR Guiding Principles for
+scientific data management and stewardship [RD3] through a process facilitated
+by FORCE11.
 
-MET Norway is the primary representative for Norway in
-the <<wmo,WMO>>. <<wmo,WMO>> has in recent years reorganised its approach to
-documenting and sharing data through two major activities: <<wis,WIS>> and
-<<wigos,WIGOS>>. Both are metadata-driven activities that follow the same
-principles as <<glossary-geonorge,Geonorge>> and <<inspire,INSPIRE>>, although there are
+MET Norway is the primary representative for Norway in the <<wmo,WMO>>.
+<<wmo,WMO>> has in recent years reorganised its approach to documenting and
+sharing data through two major activities: <<wis,WIS>> and <<wigos,WIGOS>>.
+Both are metadata-driven activities that follow the same principles as
+<<glossary-geonorge,Geonorge>> and <<inspire,INSPIRE>>, although there are
 differences concerning standards required.
 
 include::human-roles.adoc[]
@@ -80,6 +84,7 @@ in the value chain. Traditionally, the data used have been transmitted on
 request from one <<glossary-data-centre,data centre>> to another, and used in
 the specific processing chains that requested the data. The focus on reuse of
 data in various contexts has been missing.
+
 
 [#img-value-chain]
 .Value chain for data.

@@ -151,7 +151,7 @@ the basic data source(s) also at the simplest information level.
 [[data-producers]]
 ===== Data producers
 
-A producer is an advanced consumer at one level of data that generate new
+A data producer is an advanced consumer at one level of data that generate new
 information at a higher level. This new information could be in the form of
 actual data or simple information, such as an illustration or a text summary.
 It is essential that any information can be traced back to the source(s).
