@@ -74,13 +74,13 @@ include::{special_practical_guidance}[]
 include::acknowledgements.adoc[]
 
 :numbered!:
-include::bibliography.adoc[]
-
-:numbered!:
 include::glossary.adoc[]
 
 :numbered!:
 include::acronyms.adoc[]
+
+:numbered!:
+include::bibliography.adoc[]
 
 :numbered!:
 include::appendixA.adoc[]
