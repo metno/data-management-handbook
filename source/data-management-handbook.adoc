@@ -83,6 +83,9 @@ include::acronyms.adoc[]
 include::bibliography.adoc[]
 
 :numbered!:
+include::refdocs.adoc[]
+
+:numbered!:
 include::appendixA.adoc[]
 
 :numbered!:
