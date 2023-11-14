@@ -7,7 +7,7 @@
 :toc: macro
 :chapter-label:
 :xrefstyle: short
-:toclevels: 6
+:toclevels: 2
 
 include::{title_page}[]
 
