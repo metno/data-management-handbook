@@ -72,8 +72,6 @@ Both are metadata-driven activities that follow the same principles as
 <<glossary-geonorge,Geonorge>> and <<inspire,INSPIRE>>, although there are
 differences concerning standards required.
 
-include::human-roles.adoc[]
-
 [[value-chain]]
 === The data value chain
 
@@ -85,10 +83,11 @@ request from one <<glossary-data-centre,data centre>> to another, and used in
 the specific processing chains that requested the data. The focus on reuse of
 data in various contexts has been missing.
 
-
 [#img-value-chain]
 .Value chain for data.
 image::value_chain.png[Value chain,800]
+
+include::human-roles.adoc[]
 
 [[fair-data-management-model]]
 === A data management model based on the FAIR principles
