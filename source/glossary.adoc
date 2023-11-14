@@ -73,7 +73,7 @@ In the context of data preservation a dataset consists of the data records and t
 |"Geonorge is the national website for map data and other location information in Norway. Users of map data can search for any such information available and access it here." See https://www.geonorge.no/en/[Geonorge]. 
 
 |[[glossary-geographic-information-system]]Geographic Information System
-|A geographic information system (GIS) is a system designed to capture, store, manipulate, analyze, manage and present spatial or geographic data. (Clarke, K. C., 1986)
+|A geographic information system (GIS) is a system designed to capture, store, manipulate, analyze, manage and present spatial or geographic data (<<clarke_KC86>>).
 GIS systems have lately evolved in distributed <<glossary-spatial-data-infrastructure,Spatial Data Infrastructures (SDI)>>
 
 |[[glossary-glossary]]Glossary

@@ -74,6 +74,9 @@ include::{special_practical_guidance}[]
 include::acknowledgements.adoc[]
 
 :numbered!:
+include::bibliography.adoc[]
+
+:numbered!:
 include::glossary.adoc[]
 
 :numbered!:
