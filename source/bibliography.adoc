@@ -9,7 +9,7 @@
 * [[[tonchovska2012, 6]]] Tonchovska, Rumyana; Stanley, Victoria; De Martino, Samantha. 2012. Spatial Data Infrastructure and INSPIRE. Europe and Central Asia knowledge brief;issue no. 55. World Bank, Washington, DC (https://openknowledge.worldbank.org/handle/10986/17082).
 * [[[wilkinson2016, 7]]] Wilkinson, M., Dumontier, M., Aalbersberg, I. et al., 2016: The FAIR Guiding Principles for scientific data management and stewardship. Sci Data 3, 160018 (2016). DOI: https://doi.org/10.1038/sdata.2016.18
 
-=== Applicable and Reference Documents
+Applicable and Reference Documents:
 
 * [[[AD1,AD1]]] link:https://drive.google.com/open?id=1DxeKLz5PzQNDEvEZ1fZj5G_EYyac5Za_SlhZyXA6ObE[Mandat - arbeidsgruppe for enhetlig dataforvaltning]
 * [[[AD2,AD2]]] link:https://drive.google.com/open?id=1hapAdo2FLmLt-hioan21MtfjkXknMNYmu9gT1kjPHDI[Enhetlig dataforvaltning til økt nytte for brukerne. (Kap. 4.3 av Meteorologisk institutts forslag til KLD)]
