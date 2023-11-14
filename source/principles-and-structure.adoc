@@ -4,9 +4,9 @@
 Principles of standardised data documentation, publication, sharing and
 preservation have been formalised in the <<glossary-fair-principles,FAIR>>
 Guiding Principles for scientific data management and stewardship
-[https://www.nature.com/articles/sdata201618[RD3]] through a process
-facilitated by <<force11,FORCE11>>. FAIR stands for Findable, Accessible,
-<<glossary-interoperability,Interoperable>> and Reusable.
+<<wilkinson2016>> through a process facilitated by <<force11,FORCE11>>. FAIR
+stands for Findable, Accessible, <<glossary-interoperability,Interoperable>>
+and Reusable.
 
 By following the <<fair,FAIR>> principles it is easier to obtain a common
 approach to <<glossary-data-management,data management>>, or a

@@ -36,7 +36,7 @@ Alias: life cycle management
 |How datasets are handled by the organisation through the entire value chain - include receiving, storing, metadata management and data retrieval.
 
 |[[glossary-data-provenance]]Data provenance
-|“The term ‘data provenance’ refers to a record trail that accounts for the origin of a piece of data (in a database, document or repository) together with an explanation of how and why it got to the present place.” (Gupta, 2009). See also https://www.theboohers.org/2015/03/03/provenance/[Boohers (2015)]
+|“The term ‘data provenance’ refers to a record trail that accounts for the origin of a piece of data (in a database, document or repository) together with an explanation of how and why it got to the present place.” <<gupta2009>>. See also https://www.theboohers.org/2015/03/03/provenance/[Boohers (2015)]
 
 |[[glossary-data-repository]]Data repository
 |A set of distributed components that will hold the data and ensure they can be queried and accessed according to agreed protocols. This component is also known as a Data Node.
@@ -102,7 +102,7 @@ GIS systems have lately evolved in distributed <<glossary-spatial-data-infrastru
 //needs internal link
 
 |[[glossary-spatial-data-infrastructure]]Spatial Data Infrastructure
-|"Spatial Data Infrastructure (SDI) is defined as a framework of policies, institutional arrangements. technologies, data, and people that enables the sharing and effective usage of geographic information by standardising formats and protocols for access and interoperability." (Tonchovska et al, 2012). SDI has evolved from <<glossary-geographic-information-system,GIS>>. Among the largest implementations are: NSDI in the USA, INSPIRE in Europe and UNSDI as an effort by the United Nations. For areas in the Arctic, there is https://arctic-sdi.org/[arctic-sdi.org].
+|"Spatial Data Infrastructure (SDI) is defined as a framework of policies, institutional arrangements. technologies, data, and people that enables the sharing and effective usage of geographic information by standardising formats and protocols for access and interoperability." <<tonchovska2012>>. SDI has evolved from <<glossary-geographic-information-system,GIS>>. Among the largest implementations are: NSDI in the USA, INSPIRE in Europe and UNSDI as an effort by the United Nations. For areas in the Arctic, there is https://arctic-sdi.org/[arctic-sdi.org].
 
 |[[glossary-unified-data-management]]Unified data management
 |A common approach to data management in a grouping of separate data management enterprises.
