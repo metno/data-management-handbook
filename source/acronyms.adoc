@@ -13,7 +13,7 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 |Meaning
 
 |[[acdd]]ACDD
-|Attribute Convention for Dataset Discovery https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3[RD5]
+|Attribute Convention for Dataset Discovery https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3[RD4]
 
 |[[adc]]ADC
 |Arctic Data Centre (https://pm.met.no/home[ADC])
@@ -97,7 +97,7 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 |European Weather Cloud ()
 
 |[[fair]]FAIR
-|Findability, Accessibility, Interoperability and Reusability https://www.nature.com/articles/sdata201618[RD3]
+|Findability, Accessibility, Interoperability and Reusability <<wilkinson2016>>
 
 |[[feide]]FEIDE
 |Identity Federation of the Norwegian National Research and Education Network (UNINETT) (https://www.feide.no/[FEIDE])

@@ -60,7 +60,7 @@ In the context of data preservation a dataset consists of the data records and t
 |Data describing geophysical processes which are continuously evolving in time and space. Typically these data are used for monitoring and prediction of the weather, sea, climate and environment. Dynamic geodata provides important constraints for many decision-making processes and activities in society. 
 
 |[[glossary-fair-principles]]FAIR principles
-|The four foundational principles of good data management and stewardship: *F*indability, *A*ccessibility, *I*nteroperability and *R*eusability. Nature article [https://www.nature.com/articles/sdata201618[RD3]], https://www.go-fair.org/fair-principles/[FAIR Data Principles], https://github.com/FAIRMetrics/Metrics[FAIR metrics proposal], https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf[EU H2020 Guidelines]
+|The four foundational principles of good data management and stewardship: *F*indability, *A*ccessibility, *I*nteroperability and *R*eusability. Nature article <<wilkinson2016>>, https://www.go-fair.org/fair-principles/[FAIR Data Principles], https://github.com/FAIRMetrics/Metrics[FAIR metrics proposal], https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf[EU H2020 Guidelines]
 
 |[[glossary-feature-type]]Feature type
 |A categorisation of data according to how they are stored, for example, grid, time series, profile, etc. It has been formalised in the NetCDF/CF https://www.nodc.noaa.gov/data/formats/netcdf/v2.0/#templatesexamples[feature type table], which currently defines eight feature types. 

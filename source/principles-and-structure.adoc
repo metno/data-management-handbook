@@ -62,8 +62,8 @@ on the principle of distributed data management through exchange of
 standardised descriptions of datasets between contributing data centres. The
 principles of standardised data documentation, publication, sharing and
 preservation have since been formalised in the The FAIR Guiding Principles for
-scientific data management and stewardship [RD3] through a process facilitated
-by FORCE11.
+scientific data management and stewardship <<wilkinson2016>> through a process
+facilitated by FORCE11.
 
 MET Norway is the primary representative for Norway in the <<wmo,WMO>>.
 <<wmo,WMO>> has in recent years reorganised its approach to documenting and
