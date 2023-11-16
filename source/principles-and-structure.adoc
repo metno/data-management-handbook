@@ -209,7 +209,7 @@ be published as separate datasets.
 The purpose of restricting how data is published is to simplify the work to
 automatically pull different datasets into aggregated datasets in space and
 time. This also helps to simplify the process of establishing automated
-workflows, e.g., in support of the emerging European data spaces.
+workflows, e.g., in support of the emerging European Data Spaces.
 ====
 
 Recommendations:
