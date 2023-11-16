@@ -17,7 +17,7 @@ Applicable Documents:
 * [[[AD2,AD2]]] link:https://drive.google.com/open?id=1hapAdo2FLmLt-hioan21MtfjkXknMNYmu9gT1kjPHDI[Enhetlig dataforvaltning til økt nytte for brukerne. (Kap. 4.3 av Meteorologisk institutts forslag til KLD)]
 * [[[AD3,AD3]]] link:https://drive.google.com/open?id=1QSlernwkXenWcrhMaZh-IzeUOKHPeqc5cCm8pyWObFY[Prosjektplan forslag Enhetlig Dataforvaltning av Dynamiske Geodata, Fase 1]
 * [[[RD1,RD1]]] Forprosjektet "Kartlegging og behov ObsklimDL og Anbefalte løsningsprosjekter" (pass:macros[https://docs.google.com/document/d/1jD9ehDXxCoJ3O--0DQj2v3fkwt8bF3IKdflPNgouNzg])
-* [[[RD2,RD2]]] link:http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition%3A&blobheadervalue1=+attachment%3B+filename%3D170110-Forskningsr%C3%A5det-OAD-kunnskapsgrunnlagKD-Rapport.pdf&blobkey=id&blobtable=MungoBlobs&blobwhere=1274509373366&ssbinary=true[Tilgjengeliggjøring av forskningsdata og data for forskning]
+* [[[RD2,RD2]]] link:https://www.forskningsradet.no/siteassets/publikasjoner/1254023795613.pdf[Tilgjengeliggjøring av forskningsdata og data for forskning]
 * [[[RD3,RD3]]] <<wilkinson2016>>
 * [[[RD4,RD4]]] link:https://drive.google.com/open?id=0B5XQ-N9snzDDUjNmZkZsR0FQM0E[Functional Requirements for the Copernicus Distribution Services and the Data and Information Access Services (DIAS)]
 * [[[RD5,RD5]]] link:http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery[Attribute Convention for Data Discovery 1-3]
