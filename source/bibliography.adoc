@@ -9,14 +9,14 @@
 * [[[tonchovska2012, 6]]] Tonchovska, Rumyana; Stanley, Victoria; De Martino, Samantha. 2012. Spatial Data Infrastructure and INSPIRE. Europe and Central Asia knowledge brief;issue no. 55. World Bank, Washington, DC (https://openknowledge.worldbank.org/handle/10986/17082).
 * [[[wilkinson2016, 7]]] Wilkinson, M., Dumontier, M., Aalbersberg, I. et al., 2016: The FAIR Guiding Principles for scientific data management and stewardship. Sci Data 3, 160018 (2016). DOI: https://doi.org/10.1038/sdata.2016.18
 
-:link-with-dashes: https://docs.google.com/document/d/1jD9ehDXxCoJ3O--0DQj2v3fkwt8bF3IKdflPNgouNzg
+
 
 Applicable Documents:
 
 * [[[AD1,AD1]]] link:https://drive.google.com/open?id=1DxeKLz5PzQNDEvEZ1fZj5G_EYyac5Za_SlhZyXA6ObE[Mandat - arbeidsgruppe for enhetlig dataforvaltning]
 * [[[AD2,AD2]]] link:https://drive.google.com/open?id=1hapAdo2FLmLt-hioan21MtfjkXknMNYmu9gT1kjPHDI[Enhetlig dataforvaltning til økt nytte for brukerne. (Kap. 4.3 av Meteorologisk institutts forslag til KLD)]
 * [[[AD3,AD3]]] link:https://drive.google.com/open?id=1QSlernwkXenWcrhMaZh-IzeUOKHPeqc5cCm8pyWObFY[Prosjektplan forslag Enhetlig Dataforvaltning av Dynamiske Geodata, Fase 1]
-* [[[RD1,RD1]]] {link-with-dashes} Forprosjektet "Kartlegging og behov ObsklimDL og Anbefalte løsningsprosjekter"
+* [[[RD1,RD1]]] pass:macros[https://docs.google.com/document/d/1jD9ehDXxCoJ3O--0DQj2v3fkwt8bF3IKdflPNgouNzg] Forprosjektet "Kartlegging og behov ObsklimDL og Anbefalte løsningsprosjekter"
 * [[[RD2,RD2]]] link:http://www.forskningsradet.no/servlet/Satellite?blobcol=urldata&blobheader=application%2Fpdf&blobheadername1=Content-Disposition%3A&blobheadervalue1=+attachment%3B+filename%3D170110-Forskningsr%C3%A5det-OAD-kunnskapsgrunnlagKD-Rapport.pdf&blobkey=id&blobtable=MungoBlobs&blobwhere=1274509373366&ssbinary=true[Tilgjengeliggjøring av forskningsdata og data for forskning]
 * [[[RD3,RD3]]] <<wilkinson2016>>
 * [[[RD4,RD4]]] link:https://drive.google.com/open?id=0B5XQ-N9snzDDUjNmZkZsR0FQM0E[Functional Requirements for the Copernicus Distribution Services and the Data and Information Access Services (DIAS)]
