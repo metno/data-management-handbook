@@ -26,11 +26,9 @@ https://github.com/metno/fimex[github repository]
 |Perl and Python code to harvest discovery metadata using OAI-PMH, OpenSearch and OGC CSW
 |https://github.com/steingod/mdharvest[github repository]
 
-|METSIS-data
-
--ingestion
-|A generic utility to index <<mmd,MMD>> dataset, thumbnails to <<solr,SolR>>.
-|https://github.com/metno/metsis-metadata[github repository: metsis-metadata]
+|Discovery Metadata Catalog Ingestor (DMCI)
+|A generic utility to index <<mmd,MMD>> in the metadata stores (file, <<solr,SolR>>, postgis)
+|https://github.com/metno/discovery-metadata-catalog-ingestor[github repository: dmci]
 
 |METSIS-data
 
