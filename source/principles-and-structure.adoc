@@ -218,7 +218,7 @@ authority files, and thesauruses. Controlled vocabularies require the use of
 predefined terms and ensure consistency and accuracy in documenting data. There
 are well-established vocabularies for personal and company names, geographical
 names, topics, concepts, resource types and languages. MET Norway has
-controlled vocabularies in, e.g., the MMD standard.
+controlled vocabularies in, e.g., the MMD standard <<RD7>>.
 
 An ontology is a way of describing the characteristics of a subject area and
 how they are connected. For example, translation of text within a subject area
