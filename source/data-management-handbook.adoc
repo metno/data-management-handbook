@@ -8,7 +8,6 @@
 :chapter-label:
 :xrefstyle: short
 :toclevels: 2
-:link-with-dashes: https://docs.google.com/document/d/1jD9ehDXxCoJ3O--0DQj2v3fkwt8bF3IKdflPNgouNzg
 
 include::{title_page}[]
 
