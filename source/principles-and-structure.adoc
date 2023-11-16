@@ -153,8 +153,8 @@ preservation.
 [[granularity]]
 ===== Aspects on dataset granularity
 
-Granularity is a constant challenge in distributed data management. Quite often
-the discovery level information provided is only useful for human
+Granularity is a constant challenge in distributed data management. Quite
+often, the discovery level information provided is only useful for human
 interpretation and not for machine action, which is necessary to establish
 aggregated datasets and to let computers do the data preparation while humans
 can focus on interpretation and analysis.
@@ -168,7 +168,7 @@ e.g., a numerical model is not necessarily interested in the cruise itself, but
 a combination of profiles of a given variable from a large number of cruises in
 a specific region and time period. By publishing data based on research
 cruises, the work load on the data consumer is increased, without any benefit.
-The visibility of the cruise could be established using parent/child relations
+The visibility of the cruise could be established using parent-child relations
 between datasets or even by just tagging datasets with a cruise reference. This
 is just an example from ocean data publishing, but similar examples could be
 identified from other domains.
@@ -182,11 +182,12 @@ our own purpose only.
 
 On a general basis, the highest possible granularity (i.e., the most detailed
 separation of data into datasets) is beneficial for machine action and reuse
-in, e.g., numerical models, satellite calibration, and validation activities.
-This means that data from different stations and instruments are kept in
-separate datasets/files, and not in the same. These datasets can then be
-combined into networks, field activities, research cruises, etc., using
-parent/child relations or just by tagging them with specific keywords.
+in, e.g., numerical models, satellite data calibration, and validation
+activities thereof. This means that data from different stations and
+instruments are kept in separate datasets/files, and not in the same. These
+datasets can then be combined into networks, field activities, research
+cruises, etc., using parent-child relations or just by tagging them with
+specific keywords.
 
 Another aspect that should be avoided, is combining data at different time
 scales in the same dataset. For example, if a station has some sensors
@@ -195,9 +196,9 @@ in two datasets. Combining these in the same dataset is of course possible, but
 complicates downstream machine handling due to increased complexity and too
 many degrees of freedom.
 
-The same is also valid for feature types (e.g., time series of point
-observations or profiles), which should not be mixed. For example, weather
-stations often have a mix of instruments with different characteristics where
+The same is also valid for different feature types (e.g., time series of point
+observations and profiles), which should not be mixed. For example, weather
+stations often have a mix of instruments with different characteristics, where
 some instruments observe scalar values at a specific height (e.g., air
 temperature) and others can observe profiles (e.g., permafrost). To avoid too
 many degrees of freedom for the downstream aggregation software, these should
@@ -207,16 +208,16 @@ be published as separate datasets.
 ====
 The purpose of restricting how data is published is to simplify the work to
 automatically pull different datasets into aggregated datasets in space and
-time. This also helps to simplify the process of establishing automated work
-flows, e.g., in support of the emerging European data spaces.
+time. This also helps to simplify the process of establishing automated
+workflows, e.g., in support of the emerging European data spaces.
 ====
 
 Recommendations:
 
 * Always publish data at the highest possible functional granularity (i.e., not individual
-measurements, but neither several stations combined in one dataset)
-* Never combine data with different temporal dimensions (e.g., variables with minute and variables with hourly resolutions) in the same dataset
-* Never combine data with different vertical dimensions (e.g., surface observations and vertical profiles) in the same dataset
+measurements, but neither several stations combined in one dataset);
+* Never combine data with different temporal dimensions (e.g., variables with minute and variables with hourly resolutions) in the same dataset;
+* Never combine data with different vertical dimensions (e.g., surface observations and vertical profiles) in the same dataset; and
 * If there is a need to reference datasets to collection work (e.g., research cruises or field work), establish this reference through metadata keywords or trough parent-child relations, allowing data consumers to collect data based on content and spatio-temporal traits.
 
 [[metadata]]
