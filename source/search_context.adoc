@@ -16,38 +16,42 @@ search and access tools.
 
 MET Norway organises datasets in parent-child relationships. As mentioned in
 section <<dataset>>, a parent can be a given model simulation like
-link:https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=deterministic[Arome-Arctic
+link:https://data.csw.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=deterministic[Arome-Arctic
 deterministic], where the link provides the OGC CSW result of a search for
 "deterministic".
 
-The same search but with results provided in ISO format: `https://csw.s-enda.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&q=deterministic&outputschema=http://www.isotc211.org/2005/gmd`.
+The same search but with results provided in ISO format: `https://data.csw.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&q=deterministic&outputschema=http://www.isotc211.org/2005/gmd`.
 
 Here, a field `gmd:parentIdentifier` provides the metadata identification of the parent dataset, i.e., `no.met:806070da-e9f3-4d03-ba1d-26b843961634`.
 
-Get the parent dataset by `https://csw.s-enda.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRepositoryItem&id=no.met:806070da-e9f3-4d03-ba1d-26b843961634`.
+Get the parent dataset by `https://data.csw.met.no/csw?service=CSW&version=2.0.2&request=GetRepositoryItem&id=no.met:806070da-e9f3-4d03-ba1d-26b843961634`.
 
-Get all its children by `https://csw.s-enda.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&outputFormat=application%2Fxml&outputschema=http://www.isotc211.org/2005/gmd&CONSTRAINTLANGUAGE=CQL_TEXT&CONSTRAINT=apiso:ParentIdentifier%20like%20%27no.met:806070da-e9f3-4d03-ba1d-26b843961634%27`.
+Get all its children by `https://data.csw.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&outputFormat=application%2Fxml&outputschema=http://www.isotc211.org/2005/gmd&CONSTRAINTLANGUAGE=CQL_TEXT&CONSTRAINT=apiso:ParentIdentifier%20like%20%27no.met:806070da-e9f3-4d03-ba1d-26b843961634%27`.
 
 To find all parent datasets, use `https://csw.s-enda-staging.k8s.met.no/csw?SERVICE=CSW&VERSION=2.0.2&REQUEST=GetRecords&RESULTTYPE=results&TYPENAMES=csw:Record&ElementSetName=full&outputschema=http://www.isotc211.org/2005/gmd&CONSTRAINTLANGUAGE=CQL_TEXT&CONSTRAINT=dc:type%20like%20%27series%27`.
 
 [[opensearch]]
 ==== Find Data with OpenSearch
 
+link:https://en.wikipedia.org/wiki/OpenSearch[OpenSearch] was introduced in
+2005, and is a way for websites and search engines to publish search results in
+a standard and accessible format.
+
 To find all datasets in the catalog:
 
-* `https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results`
+* `https://data.csw.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results`
 
 Or datasets within a given time span:
 
-* `http://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&time=2000-01-01/2020-09-01`
+* `http://data.csw.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&time=2000-01-01/2020-09-01`
 
 Or datasets within a geographical domain (defined as a box with parameters min_longitude, min_latitude, max_longitude, max_latitude):
 
-* `https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&bbox=0,40,10,60`
+* `https://data.csw.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&bbox=0,40,10,60`
 
 Or, datasets with "arome-arctic 2.5Km deterministic" in the title:
 
-* `https://csw.s-enda.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=arome-arctic\\%202.5Km\\%20deterministic`
+* `https://data.csw.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=arome-arctic\\%202.5Km\\%20deterministic`
 
 ==== More advanced geographical search with OGC CSW
 
@@ -179,7 +183,7 @@ PyCSW opensearch only supports geographical searches querying for a box. For mor
 [source, python]
 ----
 import requests
-requests.post('https://csw.s-enda.k8s.met.no', data=open(my_xml_request).read()).text
+requests.post('https://data.csw.met.no', data=open(my_xml_request).read()).text
 ----
 
 ==== Human Search Interface at data.met.no
@@ -191,11 +195,11 @@ information about how to use the service.
 
 ==== Human Search Interface with QGIS
 
-MET Norway's S-ENDA CSW catalog service is available at `https://csw.s-enda.k8s.met.no`. This can be used from QGIS as follows:
+MET Norway's S-ENDA CSW catalog service is available at `https://data.csw.met.no`. This can be used from QGIS as follows:
 
 . Select `Web > MetaSearch > MetaSearch` menu item
 . Select `Services > New`
-. Type, e.g., `csw.s-enda.k8s.met.no` for the name
-. Type `https://csw.s-enda.k8s.met.no` for the URL
+. Type, e.g., `data.csw.met.no` for the name
+. Type `https://data.csw.met.no` for the URL
 
 Under the `Search` tab, you can then add search parameters, click `Search`, and get a list of available datasets.
