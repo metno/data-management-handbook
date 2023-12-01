@@ -113,7 +113,7 @@ The following ACDD elements are recommended (should be used if there is no good 
 |metadata_link | dataset_citation>url | A URL that gives the location of more complete metadata, such as a dataset landing page. A persistent URL is recommended for this attribute. At MET Norway, landing page urls are https://data.met.no/dataset/, plus the dataset UUID.
 |=======================================================================
 
-The following elements are recommended ACDD extensions that are useful to improve (meta)data interoperability. Please refer to the documentation of https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] for more details:
+The following elements are recommended ACDD extensions that are useful to **improve (meta)data interoperability**. Please refer to the documentation of https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[MMD] for more details:
 [cols="1,1,3"]
 |=======================================================================
 |*Attribute* |*MMD equivalent* |*Description*
