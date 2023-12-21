@@ -37,4 +37,13 @@ The goal is that life cycle management information shall be readily available fo
 
 A Data Management Plan (<<dmp,DMP>>) is a document that describes textually how the <<glossary-data-life-cycle-management,data life cycle management>> will be carried out for <<glossary-dataset,datasets>> used and produced in specific projects. Generally, these are externally financed projects for which such documentation is required by funding agencies. However, larger internal projects covering many datasets may also find it beneficial to create a specific document of this type.
  
-Currently, agencies funding R&D (such as <<nfr,NFR>> and the EU) do not strictly require a DMP from the start of any project. However, for projects in the geosciences, data management is an issue that must be addressed, and the agencies strongly recommend a DMP solution. For example, NFR publishes https://www.forskningsradet.no/en/Adviser-research-policy/open-science/open-access-to-research-data/[guidelines] for the contents of a DMP, including links to tools (templates and online services); these guidelines are recommended for any data management project or activity and will in time become a requirement according to <<nfr,NFR>>.
+For projects in the geosciences, data management is an issue that must be
+addressed, and the agencies strongly recommend a DMP solution. For example, NFR
+publishes
+https://www.forskningsradet.no/en/Adviser-research-policy/open-science/open-access-to-research-data/[guidelines]
+for for sharing research data, including recommendations for the contents of a
+DMP and links to tools (templates and online services). As noticed, all
+projects that have received funding from NFR after 2018-01-01 and that manage
+data in their project must submit a data management plan at the start of the
+project, and provide an updated version together with the project's final
+report.
