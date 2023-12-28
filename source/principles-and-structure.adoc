@@ -56,7 +56,7 @@ preservation have since been formalised in the The FAIR Guiding Principles for
 scientific data management and stewardship <<wilkinson2016>> through a process
 facilitated by FORCE11.
 
-MET Norway is the primary representative for Norway in the <<wmo,WMO>>.
+MET Norway is the primary representative for Norway in <<wmo,WMO>>.
 <<wmo,WMO>> has in recent years reorganised its approach to documenting and
 sharing data through two major activities: <<wis,WIS>> and <<wigos,WIGOS>>.
 Both are metadata-driven activities that follow the same principles as
