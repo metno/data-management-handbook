@@ -47,4 +47,3 @@ The handbook can be used in three ways:
 ====
 If you do not think that your data fits into the Data Management Model described here, please contact the <<met-org-roles,Data Management Group>>. We have several examples of data that is not available in, e.g., NetCDF-CF that have been added to the catalog, and it is usually possible to find pragmatic solutions to FAIRifying data.
 ====
-

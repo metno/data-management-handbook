@@ -15,9 +15,9 @@ main motivations for implementing a <<glossary-unified-data-management, unified
 data management>> is to better serve the users of the data. Primarily, this can
 be approached by making user needs and requirements the guide for determining
 what data we provide and how. For example, it will be described how the
-specification of <<glossary-dataset,datasets>> should be determined. By
-implementing the data management practices described here, it is expected that
-users will experience:
+specification of <<glossary-dataset,datasets>> should be determined
+(<<dataset>>). By implementing the data management practices described here, it
+is expected that users will experience:
 
 * Ease of discovering, viewing and accessing <<glossary-dataset,datasets>>;
 * Standardised ways of accessing data, including downloading or streaming data, with reduced need for special solutions on the user side;
