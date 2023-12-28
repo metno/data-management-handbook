@@ -38,7 +38,6 @@ PI --> Knowledge
 Knowledge --> Data : Trace and verify
 ....
 
-*Definition:*
 [DEFINITION]
 ====
 A dataset is a combination of data records, such as the numerical values needed to analyse and interpret a natural process, and the related information content (i.e., calibrated data or data with calibration information, discovery, use and provenance metadata; it must be possible to understand the meaning of the numerical value from the available and machine-readable information).

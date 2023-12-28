@@ -41,7 +41,7 @@ The handbook can be used in three ways:
 
 . Read <<PrinciplesDataManagement>> to get an overview of the main principles and structural organisation of the <<glossary-data-management,data management>>;
 . Read Chapters <<structuring-and-documenting>>-<<data-governance>> to learn about how <<glossary-data-management,data management>> is currently implemented, and how it is expected to evolve in the next few years; and
-. Read <<practical-guides>> to find how-to's and practical guidelines for defining, documenting and making your datasets available, as well as how to search and access data through APIs.
+. Read <<practical-guides>> to find how-to's and practical guidelines for defining, documenting and making your data available, as well as how to search and access data through APIs.
 
 [NOTE]
 ====
