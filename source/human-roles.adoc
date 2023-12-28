@@ -51,8 +51,8 @@ weather).
 
 We define two types of users:
 
-1. *Producers*: Those that create / produce datasets
-2. *Consumers*: Those that consume datasets
+1. *Producers*: Those that create / produce data
+2. *Consumers*: Those that consume data
 
 A consumer of one level of data is typically a producer of data at the next
 level. A user can both consume data and produce data, or just have one of these
