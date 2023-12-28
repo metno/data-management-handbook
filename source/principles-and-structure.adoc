@@ -31,7 +31,7 @@ The Norwegian government has over time promoted free and open sharing of public
 data. Mechanisms for how to do this are governed by the
 <<glossary-geodataloven,Geodataloven>> (implemented as
 <<glossary-geonorge,Geonorge>>), which is a national implementation of the
-European <<inspire,INSPIRE directive>> (to be amended in 2019).
+European <<inspire,INSPIRE directive>>.
 <<inspire,INSPIRE>> defines a federated multinational
 <<glossary-spatial-data-infrastructure,Spatial Data Infrastructure>>
 (<<sdi,SDI>>) for the European Union, similar to <<nsdi,NSDI>> in the USA or
