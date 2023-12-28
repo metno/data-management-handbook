@@ -75,7 +75,8 @@ are used at different levels in such a value chain. Also, at least some of this
 data has traditionally been transmitted on request from one
 <<glossary-data-centre,data centre>> to another, and used in the specific value
 chain. However, the focus on allowing general and open reuse of data to anyone
-and in various contexts has been missing.
+and in various contexts has been missing - this is core to the I and the R of
+the FAIR principles.
 
 [#img-value-chain]
 .Value chain for data.
