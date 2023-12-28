@@ -10,7 +10,7 @@ form of actual data, illustrations, text or other forms of communication. In
 this context, an illustration is a representation of data, whereas a data
 record is the numerical value needed to analyse and interpret a natural process
 (i.e., calibrated or with calibration information; it must be possible to
-understand the meaning of the numerical value from the available and
+understand the meaning of the numerical value from the available 
 machine-readable information). The combination of data records and information
 content is a dataset.
 
