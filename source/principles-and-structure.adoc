@@ -66,13 +66,16 @@ differences concerning standards required.
 [[value-chain]]
 === The data value chain
 
-The process of getting the data from the data producer to the consumer can be
+The process of getting data from the data producer to the consumer can be
 viewed as a value chain. An example of a data value chain is presented in
-<<img-value-chain>>. Typically, data from a wide variety of providers are used
-in the value chain. Traditionally, the data used have been transmitted on
-request from one <<glossary-data-centre,data centre>> to another, and used in
-the specific processing chains that requested the data. The focus on reuse of
-data in various contexts has been missing.
+<<img-value-chain>>, where data is acquired, processed and analysed before
+results are published as scientific publications and/or data products that are
+made available to the public.  Typically, data from a wide variety of providers
+are used at different levels in such a value chain. Also, at least some of this
+data has traditionally been transmitted on request from one
+<<glossary-data-centre,data centre>> to another, and used in the specific value
+chain. However, the focus on allowing general and open reuse of data to anyone
+and in various contexts has been missing.
 
 [#img-value-chain]
 .Value chain for data.
