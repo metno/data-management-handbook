@@ -80,7 +80,7 @@ L1C --> (CD1)
 [[data-consumer]]
 ===== Data consumers
 
-We split between three types of data consumers: (1) advanced, (2) intermediate, and (3) simple. These are defined below.
+We split between three types of data consumers: (1) advanced, (2) intermediate, and (3) basic. These are defined below.
 
 [[advanced-consumers]]
 ====== Advanced consumers
@@ -113,13 +113,13 @@ Specific consumers:
 * External partners
 
 
-[[simple-consumers]]
-====== Simple consumers
+[[basic-consumers]]
+====== Basic consumers
 
-Simple consumers do not have any prior knowledge about the data. Information in
+Basic consumers do not have any prior knowledge about the data. Information in
 the form of text or illustrations is sufficient for their decision making. They
 do not need to understand either data or metadata, and they are most likely
-looking for answers to simple questions.
+looking for answers to basic questions.
 
 Example questions:
 
@@ -135,11 +135,11 @@ Specific consumers:
 
 [NOTE]
 ====
-An advanced consumer may discover information pertaining a role as a simple
+An advanced consumer may discover information pertaining a role as a basic
 consumer. Such a user may, for some reason, be interested in tracking the data
 in order to use it together with other data (interoperability) or to verify the
 information. Therefore, it is important to have provenance metadata pointing to
-the basic data source(s) also at the simplest information level.
+the basic data source(s) also at the most basic information level.
 ====
 
 [[data-producers]]
@@ -147,7 +147,7 @@ the basic data source(s) also at the simplest information level.
 
 A data producer is an advanced consumer at one level of data that generate new
 information at a higher level. This new information could be in the form of
-actual data or simple information, such as an illustration or a text summary.
+actual data or basic information, such as an illustration or a text summary.
 It is essential that any information can be traced back to the source(s).
 
 [[data-management-roles]]
