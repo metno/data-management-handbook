@@ -11,7 +11,7 @@
 
 
 
-Applicable Documents:
+Applicable and Reference Documents:
 
 * [[[AD1,AD1]]] link:https://drive.google.com/open?id=1DxeKLz5PzQNDEvEZ1fZj5G_EYyac5Za_SlhZyXA6ObE[Mandat - arbeidsgruppe for enhetlig dataforvaltning]
 * [[[AD2,AD2]]] link:https://drive.google.com/open?id=1hapAdo2FLmLt-hioan21MtfjkXknMNYmu9gT1kjPHDI[Enhetlig dataforvaltning til økt nytte for brukerne. (Kap. 4.3 av Meteorologisk institutts forslag til KLD)]
