@@ -118,7 +118,7 @@ associated information content. In the context of the
 decoupled from the storage layer as experienced by a data consumer. Typically,
 a <<glossary-dataset,dataset>> represents a number of variables in time and
 space. A more detailed definition is provided in the
-<<glossary-glossary,Glossary of Terms>>. In order to best serve the data
+<<glossary-dataset,Glossary of Terms>>. In order to best serve the data
 through <<glossary-webservice,web services>>, the following principles are useful for
 guiding the <<glossary-dataset,dataset>> definition:
 
