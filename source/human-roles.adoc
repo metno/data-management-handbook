@@ -124,7 +124,7 @@ looking for answers to basic questions.
 Example questions:
 
 * Will it be raining today?
-* Can the event take place, or will the weather impeed it?
+* Can the event take place, or will the weather impede it?
 * When should I harvest my crops?
 
 Specific consumers:
@@ -135,11 +135,11 @@ Specific consumers:
 
 [NOTE]
 ====
-An advanced consumer may discover information pertaining a role as a basic
-consumer. Such a user may, for some reason, be interested in tracking the data
-in order to use it together with other data (interoperability) or to verify the
-information. Therefore, it is important to have provenance metadata pointing to
-the basic data source(s) also at the most basic information level.
+An advanced consumer may discover information like a basic consumer, and be
+interested in tracing the information back to the original data in order to use
+it with or compare it to other data. As such, it is important to have
+provenance metadata pointing to the original data source(s) also at the most
+basic information level.
 ====
 
 [[data-producers]]
