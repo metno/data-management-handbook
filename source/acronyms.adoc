@@ -22,7 +22,7 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 |Arven etter Nansen (English: Nansen Legacy)
 
 |[[bufr]]BUFR
-|Binary Universal Form for the Representation of meteorological data. WMO standard format for binary data, particularly for non-gridded data (https://www.wmo.int/pages/prog/www/WDM/Guides/Guide-binary-1A.html[BUFR])
+|Binary Universal Form for the Representation of meteorological data. WMO standard format for binary data, particularly for non-gridded data (link:https://library.wmo.int/idurl/4/35625[BUFR])
 
 |[[cdm]]CDM
 |Unidata Common Data Model (https://docs.unidata.ucar.edu/netcdf-java/current/userguide/common_data_model_overview.html[CDM])
