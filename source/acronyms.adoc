@@ -115,7 +115,7 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 |Global Cryosphere Watch (https://globalcryospherewatch.org/[GCW])
 
 |[[geoaccessno]]GeoAccessNO
-|An NFR-funded infrastructure project, 2015- (https://www.geoaccessno.no/[GeoAccessNO])
+|An RCN-funded infrastructure project, 2015- (https://www.geoaccessno.no/[GeoAccessNO])
 
 |[[gis]]GIS
 |<<glossary-geographic-information-system,Geographic Information System>>
@@ -174,8 +174,8 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 |[[netcdf-cf]]NetCDF/CF
 |A common combination of <<netcdf,NetCDF>> file format with <<cf,CF>>-compliant attributes.
 
-|[[nfr]]NFR
-|The Research Council of Norway (https://www.forskningsradet.no/en/[NFR])
+|[[nfr]]RCN
+|The Research Council of Norway (https://www.forskningsradet.no/en/[RCN])
 
 |[[nilu]]NILU
 |Norwegian Institute for Air Research (https://www.nilu.no/Forsiden/tabid/41/language/en-GB/Default.aspx[NILU])
@@ -184,16 +184,16 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 |Norwegian Institute for Water Research (https://www.niva.no/en[NIVA])
 
 |[[nmdc]]NMDC
-|Norwegian Marine Data Centre, NFR-supported infrastructure project 2013-2017 (https://nmdc.no/[NMDC])
+|Norwegian Marine Data Centre, RCN-supported infrastructure project 2013-2017 (https://nmdc.no/[NMDC])
 
 |[[nordatanet]]NorDataNet
-|Norwegian Scientific Data Network, an NFR-funded project 2015-2020 (https://www.nordatanet.no/[NorDataNet])
+|Norwegian Scientific Data Network, an RCN-funded project 2015-2020 (https://www.nordatanet.no/[NorDataNet])
 
 |[[norway-digital]]Norway Digital
 |Norwegian national spatial data infrastructure organisation (https://www.geonorge.no/en/infrastructure/norway-digital/[Norway Digital]). Norwegian: https://www.geonorge.no/Geodataarbeid/Norge-digitalt/[Norge digitalt]
 
 |[[normap]]NORMAP
-|Norwegian Satellite Earth Observation Database for Marine and Polar Research, an NFR-funded project 2010-2016  (https://normap.nersc.no/[NORMAP])
+|Norwegian Satellite Earth Observation Database for Marine and Polar Research, an RCN-funded project 2010-2016  (https://normap.nersc.no/[NORMAP])
 
 |[[nrpa]]NRPA
 |Norwegian Radiation Protection Authority (https://dsa.no/en/[NRPA])
@@ -253,7 +253,7 @@ This list contains acronyms used throughout the DMH. The column "General/Specifi
 |Svalbard Integrated Arctic Earth Observing System
 
 |[[sios-kc]]SIOS-KC
-|<<sios,SIOS>> Knowledge Centre, an NFR-supported project 2015-2018  (https://www.sios-svalbard.org/KnowledgeCentre[SIOS-KC])
+|<<sios,SIOS>> Knowledge Centre, an RCN-supported project 2015-2018  (https://www.sios-svalbard.org/KnowledgeCentre[SIOS-KC])
 
 |[[skos]]SKOS
 |Simple Knowledge Organization System (https://www.w3.org/2004/02/skos/[SKOS])
