@@ -54,7 +54,7 @@ with netCDF4.Dataset(sys.argv[1], "a") as f:
     # Set ISO topic category
     f.iso_topic_category = "climatologyMeteorologyAtmosphere"
 
-    # Set the correct license
+    # Set the correct licence
     f.license = "http://spdx.org/licenses/CC-BY-4.0(CC-BY-4.0)"
 
     f.publisher_name = "Norwegian Meteorological Institute"

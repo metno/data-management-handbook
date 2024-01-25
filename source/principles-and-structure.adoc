@@ -8,12 +8,12 @@ Guiding Principles for scientific data management and stewardship
 stands for Findable, Accessible, <<glossary-interoperability,Interoperable>>
 and Reusable.
 
-By following the <<fair,FAIR>> principles it is easier to obtain a common
+Following the <<fair,FAIR>> principles makes it easier to obtain a common
 approach to <<glossary-data-management,data management>>, or a
 <<glossary-unified-data-management, unified data management>> model. One of the
 main motivations for implementing a <<glossary-unified-data-management, unified
 data management>> is to better serve the users of the data. Primarily, this can
-be approached by making user needs and requirements the guide for determining
+be addressed by making user needs and requirements the guide for determining
 what data we provide and how. For example, it will be described how the
 specification of <<glossary-dataset,datasets>> should be determined
 (<<dataset>>).
@@ -21,11 +21,11 @@ specification of <<glossary-dataset,datasets>> should be determined
 [[external-requirements]]
 === External requirements and forcing mechanisms
 
-Any organisation that strives to implement <<glossary-fair-principles,FAIR>>
+Any organisation that strives to implement a <<glossary-fair-principles,FAIR>>
 data management model has to relate to external forcing mechanisms concerning
 <<glossary-data-management,data management>> at several levels. At the national
 level, the organisation must comply with national regulations as decided by the
-government. Some of these are indications of expected behaviour (e.g.,
+government. Some of these forcing mechanisms are indications of expected behaviour (e.g.,
 <<oecd,OECD>> regulations) and some are implemented through a legal framework.
 The Norwegian government has over time promoted free and open sharing of public
 data. Mechanisms for how to do this are governed by the
@@ -41,7 +41,7 @@ in a unified manner. In short, these legal frameworks require standardised
 documentation (at discovery and use level; these concepts are described later)
 and access (through specified protocols) to the data identified.
 
-At MET Norway, data have always been managed, albeit in a rather narrow
+At MET Norway, data has always been managed, albeit in a rather narrow
 technical sense. The main focus has been on storage, primarily for operational
 data. More recently, the issues of delivering, sharing and reusing data have
 steadily gained prominence. Still, the legacy of data storage systems built up
@@ -52,11 +52,11 @@ international coordinator for operational data. IPY data management was based
 on the principle of distributed data management through exchange of
 standardised descriptions of datasets between contributing data centres. The
 principles of standardised data documentation, publication, sharing and
-preservation have since been formalised in the The FAIR Guiding Principles for
-scientific data management and stewardship <<wilkinson2016>> through a process
+preservation have since been formalised in the FAIR Guiding Principles for
+Scientific Data Management and Stewardship <<wilkinson2016>> through a process
 facilitated by FORCE11.
 
-MET Norway is the primary representative for Norway in <<wmo,WMO>>.
+MET Norway is the primary representative for Norway in the <<wmo,WMO>>.
 <<wmo,WMO>> has in recent years reorganised its approach to documenting and
 sharing data through two major activities: <<wis,WIS>> and <<wigos,WIGOS>>.
 Both are metadata-driven activities that follow the same principles as
@@ -91,7 +91,7 @@ The data management regime at MET Norway follows the model of the Arctic Data
 Centre, introduced in <<background>>, which adheres to the FAIR principles.
 The model's basic functions fall into three main categories:
 
-1. *Documentation of data* using <<glossary-discovery-metadata,discovery>> and <<glossary-use-metadata,use metadata>>. The documentation identifies who, what, when, where, and how, and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of <<glossary-controlled-vocabulary,controlled vocabularies>> and <<glossary-ontology,ontologies>> where textual representation is required. It also covers the topic of <<glossary-data-provenance,data provenance>> which is used to describe the origin and all actions done on a <<glossary-dataset,dataset>>. <<glossary-data-provenance,Data provenance>> is closely linked with <<glossary-workflow-management,workflow management>>. Furthermore, it covers the relationship between <<glossary-dataset,datasets>>. Application of <<glossary-ontology,ontologies>> in data documentation is closely linked to the concept of <<glossary-linked-data,linked data>>. 
+1. *Documentation of data* using <<glossary-discovery-metadata,discovery>> and <<glossary-use-metadata,use metadata>>. The documentation identifies who, what, when, where, and how, and shall make it easy for consumers to find and understand data. This requires application of information containers and utilisation of <<glossary-controlled-vocabulary,controlled vocabularies>> and <<glossary-ontology,ontologies>> where textual representation is required. It also covers <<glossary-data-provenance,data provenance>> which is used to describe the origin and all actions done on a <<glossary-dataset,dataset>>. <<glossary-data-provenance,Data provenance>> is closely linked with <<glossary-workflow-management,workflow management>>. Furthermore, it covers the relationship between <<glossary-dataset,datasets>>. Application of <<glossary-ontology,ontologies>> in data documentation is closely linked to the concept of <<glossary-linked-data,linked data>>. 
 2. *Publication and sharing of data* focuses on making data accessible to consumers internally and externally. Application of standardised approaches is vital, along with cost effective solutions that are sustainable. Direct integration of data in applications for analysis through data streaming minimises the complexity and overhead in dissemination solutions. This category also covers persistent identifiers for data.
 3. *Preservation of data* includes short and long term management of data, which secures access and availability throughout the lifespan of the data. Good solutions in this area depend on expected and actual usage of the data. Preservation of data includes the concept of data life cycle, i.e., the documented flow of data from initial storage through to obsolescence and permanent archiving (or deletion).
 
@@ -132,12 +132,13 @@ several <<glossary-dataset,datasets>> that are related. This is also important
 in order to efficiently serve the data through <<glossary-webservice,web
 services>>. For instance, model variables defined on different vertical
 coordinates should be separated as <<glossary-linked-data,linked datasets>>,
-since some <<ogc,OGC>> services (e.g., <<wms,WMS>>) are unable to handle mixed
-coordinates in the same <<glossary-dataset,dataset>>. One important linked
-dataset relation is the parent-child relationship. In the numerical model
-example, the parent dataset would be the model simulation. This (parent)
-dataset encompasses all datasets created by the model simulation such as, e.g.,
-two NetCDF-CF files (child datasets) with different information content.
+since some Open Geospatial Consortium (<<ogc,OGC>>) services (e.g., Web Map
+Service; <<wms,WMS>>) are unable to handle mixed coordinates in the same
+<<glossary-dataset,dataset>>. One important linked dataset relation is the
+parent-child relationship. In the numerical model example, the parent dataset
+would be the model simulation. This (parent) dataset encompasses all datasets
+created by the model simulation such as, e.g., two NetCDF-CF files (child
+datasets) with different information content.
 
 Most importantly, a <<glossary-dataset,dataset>> should be defined to meet the
 consumer needs. This means that the specification of a
@@ -156,13 +157,13 @@ can focus on interpretation and analysis.
 
 Furthermore, dataset granularity is often defined by the data producer (i.e.,
 the data collector/generator), who often has a different perspective on data
-than a potential data consumer. An example on this is, e.g., profiles of
-temperature and salinity data from research cruises. These data are often
+than a potential data consumer. An example of this includes
+temperature and salinity profiles from research cruises. These data are often
 published together as one cruise dataset, while a data consumer working with,
 e.g., a numerical model is not necessarily interested in the cruise itself, but
 a combination of profiles of a given variable from a large number of cruises in
 a specific region and time period. By publishing data based on research
-cruises, the work load on the data consumer is increased, without any benefit.
+cruises, the workload on the data consumer is increased, without any benefit.
 The visibility of the cruise could be established using parent-child relations
 between datasets or even by just tagging datasets with a cruise reference. This
 is just an example from ocean data publishing, but similar examples could be
@@ -210,10 +211,10 @@ workflows, e.g., in support of the emerging European Data Spaces.
 Recommendations:
 
 * Always publish data at the highest possible functional granularity (i.e., not individual
-measurements, but neither several stations combined in one dataset);
+measurements, or several stations combined in a single dataset);
 * Never combine data with different temporal dimensions (e.g., variables with minute and variables with hourly resolutions) in the same dataset;
 * Never combine data with different vertical dimensions (e.g., surface observations and vertical profiles) in the same dataset; and
-* If there is a need to reference datasets to collection work (e.g., research cruises or field work), establish this reference through metadata keywords or trough parent-child relations, allowing data consumers to collect data based on content and spatio-temporal traits.
+* If there is a need to reference datasets to collection work (e.g., research cruises or field work), establish this reference through metadata keywords or through parent-child relations, allowing data consumers to collect data based on content and spatio-temporal traits.
 
 [[metadata]]
 ==== Metadata
@@ -252,7 +253,7 @@ specifically the six categories that are briefly described in
 
 |[[site-metadata]]Site metadata
 |Used to understand data found
-|Site metadata are used to describe the context of observational data. They describe the location of an observation, the instrumentation, procedures, etc. To a certain extent they overlap with <<discovery-metadata,discovery metadata>>, but also extend discovery metadata. Site metadata can be used for observation network design. Site metadata can be considered a type of <<use-metadata,use metadata>>.
+|Site metadata is used to describe the context of observational data. They describe the location of an observation, the instrumentation, procedures, etc. To some extent they overlap with <<discovery-metadata,discovery metadata>>, but they also augment it. Site metadata can be used for observation network design. Site metadata can be considered a type of <<use-metadata,use metadata>>.
 |<<wigos,WIGOS>> +
 <<ogc-om,OGC O&M>>
 
@@ -263,7 +264,7 @@ specifically the six categories that are briefly described in
 
 |[[system-metadata]]System metadata
 |Used to understand the technical structure of the <<glossary-data-management,data management>> system and track changes in it 
-|System metadata covers, e.g., technical details of the storage system, <<glossary-webservice,web services>>, their purpose and how they interact with other components of the <<glossary-data-management,data management>> system, available and consumed storage, number of users and other KPI elements etc.
+|System metadata includes technical details about the storage system, <<glossary-webservice,web services>>, their purpose and interactions with other components of the <<glossary-data-management,data management>> system, available and consumed storage, number of users and other KPI elements.
 |
 |===
 
@@ -273,25 +274,26 @@ The tools and facilities used to manage the information for efficient discovery 
 ===== Controlled vocabularies and ontologies
 
 Controlled vocabularies and taxonomies are used somewhat interchangeably and
-are controlled lists of terms used to organize information. As such, a
-controlled vocabulary is "an organized arrangement of words and phrases used to
-index content and/or to retrieve content through exploration and search."
-Controlled vocabularies can be used in any industry that collects and uses
-information, such as academic research, libraries, corporations, government
-organizations, etc. Common types of controlled vocabularies include term lists,
-authority files, and thesauruses. Controlled vocabularies require the use of
-predefined terms and ensure consistency and accuracy in documenting data. There
-are well-established vocabularies for personal and company names, geographical
+are controlled lists of terms used to organise information. A controlled
+vocabulary is defined as "an organised arrangement of words and phrases used to
+index and/or to retrieve content through exploration and search." Controlled
+vocabularies can be used in any industry that collects and uses information,
+such as academic research, libraries, corporations, government entities, etc.
+Common types of controlled vocabularies include term lists, authority files,
+and thesauruses. Controlled vocabularies require the use of predefined terms
+and ensure consistency and accuracy in documenting data. There are
+well-established vocabularies for personal and company names, geographical
 names, topics, concepts, resource types and languages. MET Norway has
-controlled vocabularies in, e.g., the MMD standard <<RD7>>.
+controlled vocabularies as part of the MET Norway Metadata Format (MMD)
+<<RD7>>.
 
 An ontology is a way of describing the characteristics of a subject area and
-how they are connected. For example, translation of text within a subject area
+how they are related. For example, translation of text within a subject area
 can be simplified by creating controlled vocabularies of jargon and
 associations (for example triple-store) between jargon in different languages.
 MET Norway has implemented an ontology available at https://vocab.met.no, to
-provide the MMD, CF and GCMD controlled vocabularies and the connections
-between them, where it is relevant.
+provide the MMD, CF and GCMD controlled vocabularies and the connections, where
+it is relevant.
 
 Taxonomies, controlled vocabularies and ontologies are particularly useful for
 supporting machine interoperability.

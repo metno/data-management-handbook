@@ -8,7 +8,7 @@ This chapter includes how-to's and other practical guidance for data producers.
 [[dmp-guide]]
 === Create a Data Management Plan (DMP)
 
-The funding agency of your project will usually provide requirements, guidelines or a template for the DMP. If this is not the case or for datasets that are not part of a project use the template provided by your institution or the template based on the link:https://www.forskningsradet.no/contentassets/e4cd6d2c23cf49d4989bb10c5eea087a/se_rdm_practical_guide_final.pdf[recommendations by Science Europe].
+The funding agency of your project will usually provide requirements, guidelines or a template for the DMP. If this is not the case, or for datasets that are not part of a project, use the template provided by your institution or the template based on the link:https://www.forskningsradet.no/contentassets/e4cd6d2c23cf49d4989bb10c5eea087a/se_rdm_practical_guide_final.pdf[recommendations by Science Europe].
 
 [[easy-dmp]]
 ==== Using easyDMP
@@ -20,8 +20,8 @@ The funding agency of your project will usually provide requirements, guidelines
 
 ==== Publishing the plan
 
-Currently you can use the _export_ function in easyDMP to download an HTML or PDF version of the DMP and use it further.
-This might change if link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP] gets implemented.
+Currently you can use the _export_ function in easyDMP to download an HTML or
+PDF version of the DMP and use it further.
 
 [[netcdf-cf-guide]]
 === Define and create NetCDF-CF datasets
@@ -31,7 +31,7 @@ This might change if link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP]
 . Define your dataset (see <<glossary-dataset,dataset>> and <<dataset>>)
 . Create a NetCDF-CF file (see <<data-as-netcdf-cf>>)
 
-  * Add discovery metadata as global attributes (see <<acdd-elements,global attibutes section>>)
+  * Add discovery metadata as global attributes (see <<acdd-elements,global attributes section>>)
   * Add variables and <<glossary-use-metadata,use metadata>> following the link:https://cfconventions.org/[CF conventions]
 
 . Store the NetCDF-CF file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <<add-to-thredds>>)

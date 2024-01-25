@@ -12,10 +12,10 @@ section, we provide some examples of how to use this, and available human
 search and access tools.
 
 [[search-parents]]
-==== Get parent datasets and their children (or dataset series in ISO19115) with OGC CSW
+==== Get parent datasets and their children (or dataset series in ISO 19115) with OGC CSW
 
 MET Norway organises datasets in parent-child relationships. As mentioned in
-section <<dataset>>, a parent can be a given model simulation like
+<<dataset>>, a parent can be a given model simulation like
 link:https://data.csw.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=deterministic[Arome-Arctic
 deterministic], where the link provides the OGC CSW result of a search for
 "deterministic".
@@ -189,7 +189,7 @@ requests.post('https://data.csw.met.no', data=open(my_xml_request).read()).text
 ==== Human Search Interface at data.met.no
 
 Access the link:https://data-test.met.no/metsis/search[human search interface]
-at link:https://data.met.no[data.met.no] to find you data via the web browser.
+at link:https://data.met.no[data.met.no] to find your data via the web browser.
 The link:https://data.met.no/documentation[documentation page] provides more
 information about how to use the service.
 

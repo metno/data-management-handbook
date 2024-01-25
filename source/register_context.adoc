@@ -35,7 +35,9 @@ These steps are described in the following.
 [[local-mmd-xml-generation]]
 ==== Create MMD xml file from NetCDF-CF
 
-Clone the link:https://github.com/metno/py-mmd-tools.git[py-mmd-tools] repo and make a local installation with eg `pip install .`. This should bring in all needed dependencies (we recommend to use a virtual environment).
+Clone the link:https://github.com/metno/py-mmd-tools.git[py-mmd-tools] repo and
+make a local installation with, e.g., `pip install .`. This should bring in all
+needed dependencies (we recommend using a virtual environment).
 
 Then, generate your mmd xml file as follows:
 
@@ -175,7 +177,7 @@ catalogue (see <<test-mmd-ingested>>).
 
 As a producer of data that does not need to go through the event queue, you should do the following:
 
-. Push to the staging environment for tesing and verification: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-staging.k8s.met.no/v1/insert`
+. Push to the staging environment for testing and verification: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-staging.k8s.met.no/v1/insert`
 . Check that the MMD file has been added to the catalogue services in staging (see <<test-mmd-ingested>>).
 . Push to production (the official catalogue) for final publication: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert`
 . Check that the MMD file has been added to the catalogue services in production (see <<test-mmd-ingested>>).

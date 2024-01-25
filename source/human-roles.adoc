@@ -4,8 +4,8 @@
 [[human-roles-context]]
 ==== Context
 
-Data is processed and interpreted to generate knowledge (e.g., about the
-weather) for end users. The knowledge can be presented as information in the
+Data is processed and analysed to provide end-users with knowledge (such as
+weather information). The knowledge can be presented as information in the
 form of actual data, illustrations, text or other forms of communication. In
 this context, an illustration is a representation of data, whereas a data
 record is the numerical value needed to analyse and interpret a natural process
@@ -39,10 +39,10 @@ Knowledge --> Data : Trace and verify
 ....
 
 Advanced users typically consume some type of data in order to process and
-interpret it, and produce new knowledge, e.g., in the form of a new dataset or
+interpret it, and produce new knowledge, such as a new dataset or
 other information. The datasets can be organised in different levels, such as
 the link:https://codes.wmo.int/wmdr/_LevelOfData[WMO WIGOS definition
-for levels of data]. Less advanced users apply information based on data (e.g.,
+for levels of data]. Less advanced users apply data-driven information (e.g.,
 an illustration) to make decisions (e.g., clothing adapted to the forecasted
 weather).
 
@@ -85,11 +85,15 @@ We split between three types of data consumers: (1) advanced, (2) intermediate, 
 [[advanced-consumers]]
 ====== Advanced consumers
 
-Advanced consumers require information in the form of data and metadata (including provenance) to gain a full understanding of what data exists and how to use it (discovery and use metadata), and to automatize the generation of derived data (new knowledge generation), verification (of information), and validation of data products.
+Advanced consumers require information in the form of data and metadata
+(including provenance) to gain a complete understanding of what data exists and how
+to use it (discovery and use metadata), as well as to automate the generation of
+derived data (new knowledge generation), information verification, and
+validation of data products.
 
-Example questions:
+Example problem:
 
-* Need all historical weather data for validation of model simulations, data assimilation, etc.
+* All historical weather data is required to validate model simulations, as well as for data assimilation
 
 Specific consumers:
 
@@ -98,11 +102,14 @@ Specific consumers:
 [[intermediate-consumers]]
 ====== Intermediate consumers
 
-Intermediate consumers need enough information to find data and understand if it can answer their question(s) (discovery and use metadata). Also, they often want to cross reference a dataset with another dataset or metadata for inter-comparative verification of information.
+Intermediate consumers need sufficient information to find data and determine
+whether it can answer their question(s) (discovery and use metadata). They also
+often seek to cross reference a dataset with another dataset or metadata for
+inter-comparative verification of information.
 
-Example questions:
+Example problems:
 
-* Is this observation a record / weather extreme (coldest, warmest, wettest)?
+* Is this observation a record / weather extreme (coldest, hottest, wettest)?
 * What was the amount of rain in last month in a certain watershed?
 
 Specific consumers:
@@ -121,7 +128,7 @@ the form of text or illustrations is sufficient for their decision making. They
 do not need to understand either data or metadata, and they are most likely
 looking for answers to basic questions.
 
-Example questions:
+Example problems:
 
 * Will it be raining today?
 * Can the event take place, or will the weather impede it?
@@ -148,7 +155,7 @@ basic information level.
 A data producer is an advanced consumer at one level of data that generate new
 information at a higher level. This new information could be in the form of
 actual data or basic information, such as an illustration or a text summary.
-It is essential that any information can be traced back to the source(s).
+It is essential that any information can be traced back to its source(s).
 
 [[data-management-roles]]
 ==== Organisational Roles
