@@ -30,7 +30,7 @@ Alias: life cycle management
 |“A data management plan (DMP) is a written document that describes the data you expect to acquire or generate during the course of a research project, how you will manage, describe, analyse, and store those data, and what mechanisms you will use at the end of your project to share and preserve your data.” https://library.stanford.edu/research/data-management-services/data-management-plans[Stanford Libraries]
 
 |[[glossary-data-centre]]Data centre
-|A combination of a (distributed) data repository and the data availability services and information about them (e.g., a metadata catalog). A data centre may include contributions from several other data centres.  
+|A combination of a (distributed) data repository and the data availability services and information about them (e.g., a metadata catalogue). A data centre may include contributions from several other data centres.  
 
 |[[glossary-data-management]]Data management
 |How datasets are handled by the organisation through the entire value chain - include receiving, storing, metadata management and data retrieval.

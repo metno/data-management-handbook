@@ -5,7 +5,7 @@ Historically, the main way to find data on the web was via human search
 interfaces on custom web portals. METs data management supports this through
 dedicated user portals. In addition, machine-to-machine interfaces are
 supported through search and access services such as OGC CSW and OPeNDAP. The
-OGC standard for the catalog server, OGC 12-168r6, OGC Catalogue Services 3.0 -
+OGC standard for the catalogue server, OGC 12-168r6, OGC Catalogue Services 3.0 -
 General Model can be found
 link:http://docs.opengeospatial.org/is/12-168r6/12-168r6.html[here]. In this
 section, we provide some examples of how to use this, and available human
@@ -37,7 +37,7 @@ link:https://en.wikipedia.org/wiki/OpenSearch[OpenSearch] was introduced in
 2005, and is a way for websites and search engines to publish search results in
 a standard and accessible format.
 
-To find all datasets in the catalog:
+To find all datasets in the catalogue:
 
 * `https://data.csw.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results`
 
@@ -195,7 +195,7 @@ information about how to use the service.
 
 ==== Human Search Interface with QGIS
 
-MET Norway's S-ENDA CSW catalog service is available at `https://data.csw.met.no`. This can be used from QGIS as follows:
+MET Norway's S-ENDA CSW catalogue service is available at `https://data.csw.met.no`. This can be used from QGIS as follows:
 
 . Select `Web > MetaSearch > MetaSearch` menu item
 . Select `Services > New`
