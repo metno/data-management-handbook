@@ -1577,10 +1577,10 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <div class="sect3">
 <h4 id="data-as-netcdf-cf"><a class="anchor" href="#data-as-netcdf-cf"></a>6.2.2. Create NetCDF-CF files</h4>
 <div class="paragraph">
-<p>By documenting and formatting your data using <a href="#netcdf">NetCDF</a> following the <a href="https://cfconventions.org/">CF conventions</a> and the <a href="https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3">Attribute Convention for Data Discovery (ACDD)</a>, <a href="#mmd">MMD</a> files can be automatically generated from the <a href="#netcdf">NetCDF</a> files. The <a href="#cf">CF conventions</a> is a controlled vocabulary providing a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. The <a href="#acdd">ACDD</a> vocabulary describes attributes recommended for describing a <a href="#netcdf">NetCDF</a> dataset to data discovery systems. See, e.g., <a href="https://unidata.github.io/netcdf4-python/">netCDF4-python docs</a>, or <a href="http://xarray.pydata.org/en/stable/user-guide/io.html">xarray docs</a> for documentation about how to create netCDF files.</p>
+<p>By documenting and formatting your data using <a href="#netcdf">NetCDF</a> following the <a href="https://cfconventions.org/">CF conventions</a> and the <a href="https://wiki.esipfed.org/Attribute_Convention_for_Data_Discovery_1-3">Attribute Convention for Data Discovery (ACDD)</a>, <a href="#mmd">MMD</a> files can be automatically generated from the <a href="#netcdf">NetCDF</a> files. The <a href="#cf">CF convention</a> is a controlled vocabulary providing a definitive description of what the data in each variable represents, and the spatial and temporal properties of the data. The <a href="#acdd">ACDD</a> vocabulary describes attributes recommended for describing a <a href="#netcdf">NetCDF</a> dataset to data discovery systems. See, e.g., <a href="https://unidata.github.io/netcdf4-python/">netCDF4-python docs</a>, or <a href="http://xarray.pydata.org/en/stable/user-guide/io.html">xarray docs</a> for documentation about how to create netCDF files.</p>
 </div>
 <div class="paragraph">
-<p>The ACDD recommendations should be followed in order to properly document your netCDF-CF files. The below tables summarize required and recommended ACDD and some additional attributes that are needed to support interoperability between different information systems (e.g., GCMD/DIF, the INSPIRE and WMO profiles of ISO19115, etc.).</p>
+<p>The ACDD recommendations should be followed in order to properly document your netCDF-CF files. The below tables summarise required and recommended ACDD and some additional attributes that are needed to support interoperability between different information systems (e.g., GCMD/DIF, the INSPIRE and WMO profiles of ISO19115, etc.).</p>
 </div>
 <div class="sect4">
 <h5 id="_notes"><a class="anchor" href="#_notes"></a>6.2.2.1. Notes</h5>
@@ -1624,7 +1624,7 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <p>See <a href="https://adc.met.no/node/96" class="bare">https://adc.met.no/node/96</a> for more information about how to define the ACDD keywords.</p>
 </div>
 <div class="paragraph">
-<p>A data <strong>license</strong> provides information about any restrictions on the use of the dataset. To support a linked data approach, it is strongly recommended to use identifiers and URL&#8217;s from <a href="https://spdx.org/licenses/" class="bare">https://spdx.org/licenses/</a> and to use a form similar to &lt;URL&gt;(&lt;Identifier&gt;) using elements from the SPDX license list. Example:</p>
+<p>A data <strong>licence</strong> provides information about any restrictions on the use of the dataset. To support a linked data approach, it is strongly recommended to use identifiers and URL&#8217;s from <a href="https://spdx.org/licenses/" class="bare">https://spdx.org/licenses/</a> and to use a form similar to &lt;URL&gt;(&lt;Identifier&gt;) using elements from the SPDX licence list. Example:</p>
 </div>
 <div class="exampleblock">
 <div class="content">
@@ -1709,7 +1709,7 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">naming_authority</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">metadata_identifier</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The organization that provides the initial id (see above) for the dataset. The naming authority should be uniquely specified by this attribute. We recommend using reverse-DNS naming for the naming authority.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The organisation that provides the initial id (see above) for the dataset. The naming authority should be uniquely specified by this attribute. We recommend using reverse-DNS naming for the naming authority.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date_created</p></td>
@@ -1724,7 +1724,7 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">summary</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">abstract&gt;abstract</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">A paragraph describing the dataset, analogous to an abstract for a paper. Use ACDD extension "summary_no" for Norwegian translation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A paragraph describing the dataset, analogous to an abstract for a paper. Use the ACDD extension "summary_no" for Norwegian translation.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">time_coverage_start</p></td>
@@ -1754,7 +1754,7 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">use_constraint&gt;resource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Provide the URL to a standard or specific license, enter "Freely Distributed" or "None", or describe any restrictions to data access and distribution in free text. It is strongly recommended to use identifiers and URL&#8217;s from <a href="https://spdx.org/licenses/" class="bare">https://spdx.org/licenses/</a> and to use a form similar to &lt;URL&gt;(&lt;Identifier&gt;) using elements from the SPDX license list.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Provide the URL to a standard or specific licence, enter "Freely Distributed" or "None", or describe any restrictions to data access and distribution in free text. It is strongly recommended to use identifiers and URL&#8217;s from <a href="https://spdx.org/licenses/" class="bare">https://spdx.org/licenses/</a> and to use a form similar to &lt;URL&gt;(&lt;Identifier&gt;) using elements from the SPDX licence list.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">keywords</p></td>
@@ -1856,7 +1856,7 @@ This might change if "<a href="https://github.com/hmpf/easydmp/issues/226">Hoste
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the project(s) principally responsible for originating this data in the format &lt;long-name&gt; (&lt;short-name&gt;). Multiple projects can be separated by commas, as described under Attribute Content Guidelines. Examples; 'PATMOS-X', 'Extended Continental Shelf Project' becomes 'Extended Continental Shelf Project (PATMOS-X)'. I.e., if each substring includes a keyword in parantheses, the content within the paranthesis is interpreted as the short name for the project while the rest is the long name, e.g., 'Nansen Legacy (NLEG)'.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The name of the project(s) principally responsible for originating this data in the format &lt;long-name&gt; (&lt;short-name&gt;). Multiple projects can be separated by commas, as described under Attribute Content Guidelines. Examples; 'PATMOS-X', 'Extended Continental Shelf Project' becomes 'Extended Continental Shelf Project (PATMOS-X)'. I.e., if each substring includes a keyword in parentheses, the content within the parenthesis is interpreted as the short name for the project while the rest is the long name, e.g., 'Nansen Legacy (NLEG)'.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">platform</p></td>
@@ -3349,7 +3349,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-01-25 02:33:11 UTC
+Last updated 2024-01-26 02:28:43 UTC
 </div>
 </div>
 </body>
