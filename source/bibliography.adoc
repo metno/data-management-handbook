@@ -1,0 +1,27 @@
+[bibliography]
+== References
+
+* [[[clarke_KC86, 1]]] Clarke, K. C., 1986: Advances in geographic information systems, computers, environment and urban systems, Vol. 10, pp. 175–184.
+* [[[collins_2018, 2]]] Collins, S., F. Genova, N. Harrower, S. Hodson, S. Jones, L. Laaksonen, D. Mietchen, R. Petrauskaité and P. Wittenburg, 2018: Turning FAIR into reality. European Commission, Directorate General for Research and Innovation. Luxembourg: Office for Official Publications of the European Communities. ISBN 978-92-79-96546-3, DOI: https://doi.org/10.2777/1524.
+* [[[gupta2009, 3]]] Gupta A., 2009: Data Provenance. In: Liu L., Özsu, M.T. (eds) Encyclopedia of Database Systems. Springer, Boston, MA. ISBN 978-0-387-39940-9. DOI: https://doi.org/10.1007/978-0-387-39940-9.
+* [[[iona2015, 4]]] Iona, S., 2015: Implementation of the JCOMM Data Management Plan. World Meteorological Organization, Geneva.
+* [[[ozolina2009, 5]]] Ozoliņa, Ž., C. Mitcham, J. Stilgoe, P. Andanda, M. Kaiser, L. Nielsen, N. Stehr and R.-Z. Qiu, 2009: EUR 23616 EN – Global Governance of Science – Report of the Expert Group on Global Governance of Science to the Science, Economy and Society Directorate, Directorate-General for Research, European Commission. Luxembourg: Office for Official Publications of the European Communities. ISBN 978-92-79-07972-6. DOI: https://doi.org/10.2777/31776.
+* [[[tonchovska2012, 6]]] Tonchovska, Rumyana; Stanley, Victoria; De Martino, Samantha. 2012. Spatial Data Infrastructure and INSPIRE. Europe and Central Asia knowledge brief;issue no. 55. World Bank, Washington, DC (https://openknowledge.worldbank.org/handle/10986/17082).
+* [[[wilkinson2016, 7]]] Wilkinson, M., Dumontier, M., Aalbersberg, I. et al., 2016: The FAIR Guiding Principles for scientific data management and stewardship. Sci Data 3, 160018 (2016). DOI: https://doi.org/10.1038/sdata.2016.18
+
+
+
+Applicable and Reference Documents:
+
+* [[[AD1,AD1]]] link:https://drive.google.com/open?id=1DxeKLz5PzQNDEvEZ1fZj5G_EYyac5Za_SlhZyXA6ObE[Mandat - arbeidsgruppe for enhetlig dataforvaltning]
+* [[[AD2,AD2]]] link:https://drive.google.com/open?id=1hapAdo2FLmLt-hioan21MtfjkXknMNYmu9gT1kjPHDI[Enhetlig dataforvaltning til økt nytte for brukerne. (Kap. 4.3 av Meteorologisk institutts forslag til KLD)]
+* [[[AD3,AD3]]] link:https://drive.google.com/open?id=1QSlernwkXenWcrhMaZh-IzeUOKHPeqc5cCm8pyWObFY[Prosjektplan forslag Enhetlig Dataforvaltning av Dynamiske Geodata, Fase 1]
+* [[[RD1,RD1]]] Forprosjektet "Kartlegging og behov ObsklimDL og Anbefalte løsningsprosjekter" (pass:macros[https://docs.google.com/document/d/1jD9ehDXxCoJ3O--0DQj2v3fkwt8bF3IKdflPNgouNzg])
+* [[[RD2,RD2]]] link:https://www.forskningsradet.no/siteassets/publikasjoner/1254023795613.pdf[Tilgjengeliggjøring av forskningsdata og data for forskning]
+* [[[RD3,RD3]]] link:https://drive.google.com/open?id=0B5XQ-N9snzDDUjNmZkZsR0FQM0E[Functional Requirements for the Copernicus Distribution Services and the Data and Information Access Services (DIAS)]
+* [[[RD4,RD4]]] link:http://wiki.esipfed.org/index.php/Attribute_Convention_for_Data_Discovery[Attribute Convention for Data Discovery 1-3]
+* [[[RD5,RD5]]] link:https://drive.google.com/open?id=0B5XQ-N9snzDDTWFRZkduSUkxbVU[NorDataNet D1.4 System design and interfaces]
+* [[[RD6,RD6]]] link:https://drive.google.com/open?id=0B5XQ-N9snzDDWU5NRHZXWlpMeWxISWlnZFVYTFU2eUtkM0Mw[Year of Polar Prediction Technical Documentation: Guidance for data centres contributing to YOPP]
+* [[[RD7,RD7]]] link:https://htmlpreview.github.io/?https://github.com/metno/mmd/blob/master/doc/mmd-specification.html[METNO Metadata Format Specification]
+* [[[RD8,RD8]]] link:https://docs.google.com/document/d/1hjgDzfo8_4EZ3sH-5xHUHWxXHGgPeutxlAVUGDAMt4M/edit#heading=h.ce1d7t8irylp[Best practices for configuring datasets in NetCDF/CF]
+* [[[RD9,RD9]]] link:https://docs.google.com/document/d/1K_7qC7oOci4nJzJiUUctpfKavqYbUmtAF9puUQpGlg4[Utkast til frontendplan 2019]

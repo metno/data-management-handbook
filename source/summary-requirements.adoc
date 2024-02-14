@@ -3,22 +3,23 @@
 
 The data management regime described in this DMH follows the Arctic Data centre model and shall ensure that:
 
-. There are relevant metadata for all datasets, and both data and metadata are available in a form and in such a way that they can be utilised by both humans and machines
+. There is relevant metadata for all datasets, and that both data and metadata are available in a form and manner that can be utilised by both humans and machines, i.e.:
 
-  * There are sufficient metadata for each dataset for both discovery and use purposes
-  * Discovery metadata are indexed and can be retrieved from available services in a standard way and with standard protocols
+  * There is sufficient metadata for each dataset for both discovery and use purposes
+  * Discovery metadata is indexed and can be retrieved from available services in a standard way and with standard protocols
   * There are interfaces for discovery, visualisation and download, as well as portals for human access, that operate seamlessly across institutions
-  * The data are described in a relevant, standardised and managed vocabulary that supports machine-machine interfaces
-  * Datasets have attached a unique and permanent identifier that enables traceability
+  * The data is described in a relevant, standard and managed vocabulary that supports machine-machine interfaces
+  * Datasets have a unique and permanent identifier that enables traceability
   * Datasets have licensing that ensures free use and reuse wherever possible
   * Datasets are available for download in a standard form according to the FAIR guiding principles and through standard protocols that are accepted and utilised in the user environment
   * There are authentication and authorisation mechanisms that ensure access control to data with restrictions, and that are compatible with and coupled to relevant public authentication solutions (FEIDE, eduGAIN, Google, etc.)
 
 . There is an organisation that provides for the management of each dataset throughout its lifetime (life cycle management)
 
-  * There is documentation that describes physical storage, lifetime of each dataset, degree of storage redundancy, metadata consistency methods, how dataset versioning is implemented and unique IDs to ensure traceability
+  * There is documentation that describes physical storage, dataset lifetime, degree of storage redundancy, metadata consistency methods, and how dataset versioning is implemented
+  * Unique IDs are used to ensure traceability
   * The organisation provides seamless access to data from distributed data centres through various portals
-  * The above and a business model at dataset level are described in a Data Management Plan (DMP)
+  * A Data Management Plan (DMP) outlines the aforementioned and a business model for each dataset
 
 . There are services or tools that provide the following functionalities on the datasets:
 

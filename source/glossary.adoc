@@ -9,9 +9,6 @@
 |Term
 |Description
 
-|[[glossary-application-service]]Application service
-|TBC
-
 |[[glossary-CMD-dataset]]CDM dataset
 |A dataset that “may be a NetCDF, HDF5, GRIB, etc. file, an OPeNDAP dataset, a collection of files, or anything else which can be accessed through the NetCDF API.” https://www.unidata.ucar.edu/software/netcdf-java/v4.6/CDM/index.html[Unidata Common Data Model] 
 // need link to acronyms
@@ -33,13 +30,13 @@ Alias: life cycle management
 |“A data management plan (DMP) is a written document that describes the data you expect to acquire or generate during the course of a research project, how you will manage, describe, analyse, and store those data, and what mechanisms you will use at the end of your project to share and preserve your data.” https://library.stanford.edu/research/data-management-services/data-management-plans[Stanford Libraries]
 
 |[[glossary-data-centre]]Data centre
-|A combination of a (distributed) data repository and the data availability services and information about them (e.g., a metadata catalog). A data centre may include contributions from several other data centres.  
+|A combination of a (distributed) data repository and the data availability services and information about them (e.g., a metadata catalogue). A data centre may include contributions from several other data centres.  
 
 |[[glossary-data-management]]Data management
-|How data sets are handled by the organisation through the entire value chain - include receiving, storing, metadata management and data retrieval.
+|How datasets are handled by the organisation through the entire value chain - include receiving, storing, metadata management and data retrieval.
 
 |[[glossary-data-provenance]]Data provenance
-|“The term ‘data provenance’ refers to a record trail that accounts for the origin of a piece of data (in a database, document or repository) together with an explanation of how and why it got to the present place.” (Gupta, 2009). See also https://www.theboohers.org/2015/03/03/provenance/[Boohers (2015)]
+|“The term ‘data provenance’ refers to a record trail that accounts for the origin of a piece of data (in a database, document or repository) together with an explanation of how and why it got to the present place.” <<gupta2009>>. See also https://www.theboohers.org/2015/03/03/provenance/[Boohers (2015)]
 
 |[[glossary-data-repository]]Data repository
 |A set of distributed components that will hold the data and ensure they can be queried and accessed according to agreed protocols. This component is also known as a Data Node.
@@ -60,10 +57,10 @@ In the context of data preservation a dataset consists of the data records and t
 |See Discovery metadata definition in Table 2
 
 |[[glossary-dynamic-geodata]]Dynamic geodata
-|Data describing geophysical processes which are continuously evolving over time. Typically these data are used for monitoring and prediction of the weather, sea, climate and environment. Dynamic geodata is weather, environment and climate-related data that changes in space and time and is thus descriptive of processes in nature. Examples are weather observations, weather forecasts, pollution (environmental toxins) in water, air and sea, information on the drift of cod eggs and salmon lice, water flow in rivers, driving conditions on the roads and the distribution of sea ice. Dynamic geodata provides important constraints for many decision-making processes and activities in society. 
+|Data describing geophysical processes which are continuously evolving in time and space. Typically these data are used for monitoring and prediction of the weather, sea, climate and environment. Dynamic geodata provides important constraints for many decision-making processes and activities in society. 
 
 |[[glossary-fair-principles]]FAIR principles
-|The four foundational principles of good data management and stewardship: *F*indability, *A*ccessibility, *I*nteroperability and *R*eusability. Nature article [https://www.nature.com/articles/sdata201618[RD3]], https://www.go-fair.org/fair-principles/[FAIR Data Principles], https://github.com/FAIRMetrics/Metrics[FAIR metrics proposal], https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf[EU H2020 Guidelines]
+|The four foundational principles of good data management and stewardship: *F*indability, *A*ccessibility, *I*nteroperability and *R*eusability. Nature article <<wilkinson2016>>, https://www.go-fair.org/fair-principles/[FAIR Data Principles], https://github.com/FAIRMetrics/Metrics[FAIR metrics proposal], https://ec.europa.eu/research/participants/data/ref/h2020/grants_manual/hi/oa_pilot/h2020-hi-oa-data-mgt_en.pdf[EU H2020 Guidelines]
 
 |[[glossary-feature-type]]Feature type
 |A categorisation of data according to how they are stored, for example, grid, time series, profile, etc. It has been formalised in the NetCDF/CF https://www.nodc.noaa.gov/data/formats/netcdf/v2.0/#templatesexamples[feature type table], which currently defines eight feature types. 
@@ -76,7 +73,7 @@ In the context of data preservation a dataset consists of the data records and t
 |"Geonorge is the national website for map data and other location information in Norway. Users of map data can search for any such information available and access it here." See https://www.geonorge.no/en/[Geonorge]. 
 
 |[[glossary-geographic-information-system]]Geographic Information System
-|A geographic information system (GIS) is a system designed to capture, store, manipulate, analyze, manage and present spatial or geographic data. (Clarke, K. C., 1986)
+|A geographic information system (GIS) is a system designed to capture, store, manipulate, analyze, manage and present spatial or geographic data <<clarke_KC86>>.
 GIS systems have lately evolved in distributed <<glossary-spatial-data-infrastructure,Spatial Data Infrastructures (SDI)>>
 
 |[[glossary-glossary]]Glossary
@@ -105,7 +102,7 @@ GIS systems have lately evolved in distributed <<glossary-spatial-data-infrastru
 //needs internal link
 
 |[[glossary-spatial-data-infrastructure]]Spatial Data Infrastructure
-|"Spatial Data Infrastructure (SDI) is defined as a framework of policies, institutional arrangements. technologies, data, and people that enables the sharing and effective usage of geographic information by standardising formats and protocols for access and interoperability." (Tonchovska et al, 2012). SDI has evolved from <<glossary-geographic-information-system,GIS>>. Among the largest implementations are: NSDI in the USA, INSPIRE in Europe and UNSDI as an effort by the United Nations. For areas in the Arctic, there is https://arctic-sdi.org/[arctic-sdi.org].
+|"Spatial Data Infrastructure (SDI) is defined as a framework of policies, institutional arrangements. technologies, data, and people that enables the sharing and effective usage of geographic information by standardising formats and protocols for access and interoperability." <<tonchovska2012>>. SDI has evolved from <<glossary-geographic-information-system,GIS>>. Among the largest implementations are: NSDI in the USA, INSPIRE in Europe and UNSDI as an effort by the United Nations. For areas in the Arctic, there is https://arctic-sdi.org/[arctic-sdi.org].
 
 |[[glossary-unified-data-management]]Unified data management
 |A common approach to data management in a grouping of separate data management enterprises.

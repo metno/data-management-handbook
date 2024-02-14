@@ -8,8 +8,9 @@ This chapter includes how-to's and other practical guidance for data producers.
 [[dmp-guide]]
 === Create a Data Management Plan (DMP)
 
-The funding agency of your project will usually provide requirements, guidelines or a template for the DMP. If this is not the case or for datasets that are not part of a project use the template provided by your institution or the template based on the link:https://www.forskningsradet.no/contentassets/e4cd6d2c23cf49d4989bb10c5eea087a/se_rdm_practical_guide_final.pdf[recommendations by Science Europe].
+The funding agency of your project will usually provide requirements, guidelines or a template for the DMP. If this is not the case, or for datasets that are not part of a project, use the template provided by your institution or the template based on the link:https://www.forskningsradet.no/contentassets/e4cd6d2c23cf49d4989bb10c5eea087a/se_rdm_practical_guide_final.pdf[recommendations by Science Europe].
 
+[[easy-dmp]]
 ==== Using easyDMP
 
 . Log in to link:https://easydmp.sigma2.no/login/[easyDMP], use *Dataporten* if your institution supports that, otherwise pick one of the other login methods.
@@ -19,24 +20,24 @@ The funding agency of your project will usually provide requirements, guidelines
 
 ==== Publishing the plan
 
-Currently you can use the _export_ function in easyDMP to download an HTML or PDF version of the DMP and use it further.
-This might change if "link:https://github.com/hmpf/easydmp/issues/226[Hosted DMP]" gets implemented.
+Currently you can use the _export_ function in easyDMP to download an HTML or
+PDF version of the DMP and use it further.
 
 [[netcdf-cf-guide]]
-=== Submitting data as NetCDF-CF
+=== Define and create NetCDF-CF datasets
 
 ==== Workflow
 
 . Define your dataset (see <<glossary-dataset,dataset>> and <<dataset>>)
 . Create a NetCDF-CF file (see <<data-as-netcdf-cf>>)
 
-  * Add discovery metadata as global attributes (see <<acdd-elements,global attibutes section>>)
+  * Add discovery metadata as global attributes (see <<acdd-elements,global attributes section>>)
   * Add variables and <<glossary-use-metadata,use metadata>> following the link:https://cfconventions.org/[CF conventions]
 
 . Store the NetCDF-CF file in a suitable location, and distribute it via thredds or another dap server (see, e.g., <<add-to-thredds>>)
-. Register your dataset in a searchable catalog (see <<register-dataset-in-catalog>>)
+. Register your dataset in a searchable catalogue (see <<register-dataset-in-catalog>>)
 
   * Test that your dataset contains the necessary discovery metadata and create an MMD xml file (see <<local-mmd-xml-generation>>)
   * Test the MMD xml file (see <<test-mmd-file>>)
-  * Push the MMD xml file to the discovery metadata catalog (see <<push-mmd-file>>)
-
+  * Optionally create, test and add parent dataset MMD file to the discovery metadata catalogue (in this case, also remember to add the parent `metadata_id` to the `related_dataset` global NetCDF attribute: `related_dataset = <naming_authority:id> (parent)`; see <<create-parent-mmd>>)
+  * Add the (child) MMD xml file to the discovery metadata catalogue (see <<push-mmd-file>>)

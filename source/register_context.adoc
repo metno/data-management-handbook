@@ -1,24 +1,43 @@
 [[add-to-thredds]]
-==== How to add NetCDF-CF data to thredds
+==== Add NetCDF-CF data to thredds
 
 :numbered:
 include::{special_nc2thredds}[]
 
 [[register-dataset-in-catalog]]
-==== How to register your data in the catalog service
+=== Register and make your data available
 
-In order to make a dataset findable, a dataset must be registered in a searchable catalog with appropriate metadata. The (meta)data catalog is indexed and exposed through link:https://en.wikipedia.org/wiki/Catalogue_Service_for_the_Web[CSW].
+Metadata Controlled Production is the process of using metadata and
+notification services to control downstream production. The MET Messaging
+System (MMS) is a message broker that notifies users about the availability of
+new data. MMS uses link:https://cloudevents.io/[CloudEvents] to describe
+link:https://github.com/metno/MMS/blob/main/messages.md[Product Events], which
+are notification messages about new datasets (or products).
+
+MMS can be used both to notifying downstream production systems, and to make
+datasets findable, accessible and reusable for the general public. The former
+can be achieved by supplying the minimum required metadata in a Product Event,
+whereas the latter requires provisioning of an MMD metadata string to the
+Product Event. See section <<push-to-event-queue>> to learn how to create and
+submit an MMS event.
+
+In order to make a dataset available to the public, a dataset must be
+registered in a searchable catalogue with appropriate metadata.
 
 The following needs to be done:
 
 . Generate an MMD xml file from your NetCDF-CF file (see <<local-mmd-xml-generation>>)
 . Test your mmd xml metadata file (see <<test-mmd-file>>)
-. Push the MMD xml file to the discovery metadata catalog (see <<push-mmd-file>>)
+. Push the MMD xml file to MMS (see <<push-to-event-queue>>) or to the discovery metadata catalogue service (see <<push-mmd-file>>)
+
+These steps are described in the following.
 
 [[local-mmd-xml-generation]]
-===== Generation of MMD xml file from NetCDF-CF
+==== Create MMD xml file from NetCDF-CF
 
-Clone the link:https://github.com/metno/py-mmd-tools.git[py-mmd-tools] repo and make a local installation with eg `pip install .`. This should bring in all needed dependencies (we recommend to use a virtual environment).
+Clone the link:https://github.com/metno/py-mmd-tools.git[py-mmd-tools] repo and
+make a local installation with, e.g., `pip install .`. This should bring in all
+needed dependencies (we recommend using a virtual environment).
 
 Then, generate your mmd xml file as follows:
 
@@ -36,15 +55,69 @@ You will find Extensible Stylesheet Language Transformations (XSLT) documents in
 ./bin/convert_from_mmd -i <your mmd xml file> -f iso -o <your iso output file name>
 ----
 
-[[NOTE]]
+[NOTE]
 ====
-Note that the discovery metadata catalog ingestion tool will take care of translations from MMD, so you don't need to worry about that unless you have special interest in it.
+Note that the discovery metadata catalogue ingestion tool will take care of translations from MMD, so you don't need to worry about that unless you have special interest in it.
 ====
+
+[[create-parent-mmd]]
+==== Create parent MMD xml file
+
+When cataloguing a lot of datasets of the same type, it is very useful to
+create parent-child relationships. This is used, e.g., by Geonorge to harvest
+and make the parents findable as dataset series (an INSPIRE term), and then
+link to link:https://data.met.no[data.met.no] instead of listing all the child
+datasets on their side. The parent dataset landing pages at
+link:https://data.met.no[data.met.no] then provide access to the child datasets.
+
+When creating parent-child related datasets, it is best to ask for help from
+the mailto:data-management-group@met.no[Data Management Group (DMG)]. The DMG
+will help to review the datasets and prepare a "production line" for the given
+type of data.
+
+The following workflow should be followed:
+
+. Create an MMD file based on one of the child datasets (a netCDF file), e.g., `cp arome_arctic_det_2_5km_20220510T06Z.xml arome_arctic_det_2_5km_parent.xml`
+. Edit the new MMD file:
+   * Replace the UUID part of the `metadata_id` by a new one
+   * Update the `title` field
+   * `dataset_production_status` may be changed to "In Work", if this is a dataset in production
+   * `data_access` most likely needs to be changed
+. Push the parent MMD file to the DMCI API: `curl --data-binary "@parent.xml" https://dmci.s-enda.k8s.met.no/v1/insert`
+. Add the `metadata_id` to the file `parent-uuid-list.xml` in the correct environment folder of the S-ENDA tjenesterepo. For the development environment that would, e.g., be [environment/dev/config-dmci](https://gitlab.met.no/tjenester/s-enda/-/tree/dev/environment/dev/config-dmci).
+. Merge S-ENDA tjenesterepo all the way from dev to staging to prod
+. Create MMD files for the child datasets
+  .. For new datasets:
+     * Either use the "parent" argument to the `nc2mmd` script:`nc2mmd -i <netcdf-filename> -u <opendap-url> -o <output-folder> --log-ids --parent <metadata_id>` (the log-ids argument will log all the dataset IDs to a file for later reference - this can be useful for debugging)
+     * Or add the global attribute `related_dataset = <naming_authority:id> (parent)` to the NetCDF files
+     * Push the child dataset MMD files to the DMCI API (if this is a once or once-in-a-while event) or to the event queue, in case the data production is operational over time.
+  .. For existing datasets:
+     * Update the MMD files in the gitlab MMD/MMD-xml-* repository with the parent `metadata_id` - sample script are available in the gitlab "tjenesterepo"
+
+[[test-and-ingest-mmd]]
+==== Test and ingest the MMD file to the discovery metadata catalogue
+
+In order to publish your data to consumer systems, metadata should be pushed to
+
+. The event queue; or
+. The Discovery Metadata Catalog Ingestor (DMCI) service.
+
+Typically, metadata about operational data (i.e., data that are
+generated regularly and used operationally downstream) should go through the
+event queue, whereas metadata about data that is not used in a downstream
+operational system could be pushed directly to DMCI. In both cases it is
+important to first test your MMD file.
+
+METs Data Manager or a member of the DMG (see <<specialized-datagov>>) can help
+to verify the MMD files and push them to the catalogue.
 
 [[test-mmd-file]]
 ===== Test the MMD xml file
 
-Install the link:https://github.com/metno/discovery-metadata-catalog-ingestor[dmci app], and run the usage example locally. This will return an error message if anything is wrong with your MMD file.
+Install the
+link:https://github.com/metno/discovery-metadata-catalog-ingestor[dmci app],
+and run the usage example locally. This will return an error message if
+anything is wrong with your MMD file.
 
 You can also test your MMD file via the DMCI API:
 
@@ -53,29 +126,74 @@ You can also test your MMD file via the DMCI API:
 curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-*.k8s.met.no/v1/validate
 ----
 
+[[push-to-event-queue]]
+===== Data notification with the MET Messaging Service (MMS)
+
+As a producer of operational data, you should use the MET Messaging Service
+(MMS) to notify downstream users about new available datasets.
+
+Install the link:https://github.com/metno/go-mms[go-mms app],
+and run the usage example for mms NATS Jetstream locally.
+
+Make sure you have a valid API-key to publish an event to MMS. You can get the
+key by contacting the mailto:dm-service-organisation@met.no[Service
+Organisation] for data management.
+
+Push the Product Event to MMS:
+
+[source]
+----
+  ./mms post --api-key=validKey --production-hub=https://mms-api.s-enda.k8s.met.no --queue-name=queueName --jobname=test --product=test --product-location=test-location --production-hub=https://mms-api.s-enda-*.k8s.met.no --MMD="$(cat /path/to/MMdfile.xml)" --counter=1 --ntotal=1 --reftime=2023-11-02T12:02:46Z --event-interval=3
+----
+
+The arguments required  for the Product Event are explained
+link:https://github.com/metno/MMS/blob/main/messages.md[here]. Note that
+`ntotal` is the `TotalCount`, and that `event-interval` is used to make
+`NextEventAt`.
+
+Alternatively, use the staging environment for testing;
+`https://mms-api.s-enda-staging.k8s.met.no`.    
+  
+To be able to get MMS notifications, make sure you have a valid credential file
+to **subscribe** to the queue. With this in place, you can check that messages
+are coming through the event queue: 
+
+[source]
+----
+ ./mms subscribe --production-hub=nats://nats.s-enda.k8s.met.no:32001 --queue-name=queueName --cred-file=path/to/credFile.creds --queue-name=queueName --nats-local=false
+----
+
+As noted, the MMD payload is optional. This is because some data is not always
+suited for addition in the official metadata catalogue, e.g., since it is
+short-living, not "owned" by MET Norway, or there has not been time to define
+and create NetCDF-CF and MMD files.
+
+The `MMD-Agent` subscribes to all the messages coming through the event queue.
+If the message contains an MMD payload, it will post the MMD file to the DMCI
+API, which stores the metadata in the catalogue.
+
+Please coordinate with the Data Manager or the DMG (see
+<<specialized-datagov>>) if you intend to push MMD files through the queue. If
+you post an MMD file, make sure to check that it has been added to the metadata
+catalogue (see <<test-mmd-ingested>>).
+
 [[push-mmd-file]]
-===== Push the MMD xml file to the discovery metadata catalog
+===== Push the MMD xml file to the discovery metadata catalogue
 
-For development and verification purposes:
+If you produce data that does not need to go through the event queue, the Data
+Manager or someone in the DMG (see <<specialized-datagov>>) can help you with
+the following:
 
-[source]
-----
-curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-*.k8s.met.no/v1/insert
-----
-
-where `*` should be either dev or staging.
-
-For production (the official catalog):
-
-[source]
-----
-curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert
-----
+. Verify and validate the MMD file(s)
+. Push to the staging environment for testing and verification: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-staging.k8s.met.no/v1/insert`
+. Check that the MMD file has been added to the catalogue services in staging (see <<test-mmd-ingested>>).
+. Push to the production environment (the official catalogue) for final publication: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert`
+. Check that the MMD file has been added to the catalogue services in production (see <<test-mmd-ingested>>).
 
 [[test-mmd-ingested]]
-===== Check that the MMD file has been added to csw
+===== Check that the MMD file has been added
 
-There are several ways to check if your MMD file has been added to the metadata catalog(s). One way is via regular csw/opensearch requests as described in <<search_context>>, and the examples below.
+There are several ways to check if your MMD file has been added to the metadata catalogue(s). One way is via regular csw/opensearch requests as described in <<search_context>>, and the examples below.
 
 In addition, a new dataset should get a landing page when it is added. At MET Norway, you can access that as follows:
 
@@ -83,10 +201,10 @@ In addition, a new dataset should get a landing page when it is added. At MET No
 * `https://data-staging.met.no/dataset/UUID` (for the staging environment)
 * `https://data-test.met.no/dataset/UUID` (for the development environment)
 
-where UUID should be replaced by your dataset uuid (not `no.met:UUID`). Others ways to check are:
+where UUID should be replaced by your dataset uuid (not `no.met:UUID` but only the `UUID`). Others ways to check are:
 
 * Find the datasets containing `arctic` keyword in the title and on a given date: `https://csw.s-enda*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=arctic&time=2023-03-25`
-* Find the datasets having a given `metadata_identifier`: `https://csw.s-enda*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006`
+* Find the dataset with a given `metadata_identifier = no.met:4a34334b-b384-48b3-b846-76807bc006`: `https://csw.s-enda*.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006`
 * Find the datasets containing `direct` keyword in the title and within a given time span: `https://csw.s-enda*.k8s.met.no/?mode=opensearch&service=CSW&version=2.0.2&request=GetRecords&elementsetname=full&typenames=csw:Record&resulttype=results&q=direct&time=2022-03-01/2022-09-25`
 * Or from the command line: `curl "https://csw.s-enda-dev.k8s.met.no/csw?service=CSW&version=2.0.2&request=GetRecordById&oxml&outputSchema=http://www.isotc211.org/2005/gmd&elementsetname=full&id=no.met:4a34334b-b384-48b3-b846-76807bc006ca"`. This means that the dataset ID must be known. Given wrong "id=" in the url, will still give you "200 OK", but the returned xml will only be one line and not a full metadata document.
 

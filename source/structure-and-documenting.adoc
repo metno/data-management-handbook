@@ -4,10 +4,21 @@
 
 === Purpose
 
-In order to properly find, understand and use geophysical data, standardised encoding and documentation are required, i.e., <<metadata,metadata>>.
+In order to properly find, understand and use geophysical data, standardised
+encoding and documentation are required, i.e., <<metadata,metadata>>.
 
-Both <<discovery-metadata,discovery metadata>> and <<use-metadata,use metadata>> can be embedded in the files produced for a <<glossary-dataset,dataset>> through utilisation of self-explaining file formats. If properly done by the <<data-producers,data producer>>, publication and preservation of data through services is simplified and can be automated.
+Both <<discovery-metadata,discovery metadata>> and <<use-metadata,use
+metadata>> can be embedded in the files produced for a
+<<glossary-dataset,dataset>> through utilisation of self-explaining file
+formats. If properly done by the <<data-producers,data producer>>, publication
+and preservation of data through services is simplified and can be automated.
 
-=== Implementation
+=== Current Implementation
 
-An essential prerequisite for structuring and documenting data is the specification of the <<glossary-dataset,dataset(s)>>, cf. <<dataset>>. The <<glossary-dataset,dataset>> is the basic building block of our <<fair-data-management-model,data management model>>; all the documentation and services described in this <<dmh,DMH>> are built on <<glossary-dataset,datasets>>. The dataset specification is the first step in structuring one's data for efficient management, and it is mandatory.
+An essential prerequisite for structuring and documenting data is the
+specification of the <<glossary-dataset,dataset(s)>>, cf. <<dataset>>. The
+<<glossary-dataset,dataset>> is the basic building block of our
+<<fair-data-management-model,data management model>>; all the documentation and
+services described in this <<dmh,DMH>> are built on
+<<glossary-dataset,datasets>>. The dataset specification is the first step in
+structuring one's data for efficient management, and it is mandatory.

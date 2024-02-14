@@ -153,7 +153,7 @@ General, Use cases are MET specific. Need to figure out what to do with the work
 
 * UC2: A new operational in situ observation source is introduced and its data shall be made freely available to public consumers after QC.
 
-* UC3: A researcher has funding from NFR to produce a dedicated set of model experiments
+* UC3: A researcher has funding from RCN to produce a dedicated set of model experiments
 
 * UC4: A user shall extract observed and forecasted temperature time series data values over Longyearbyen.
 
