@@ -172,14 +172,17 @@ The `MMD-Agent` subscribes to all the messages coming through the event queue.
 If the message contains an MMD payload, it will post the MMD file to the DMCI
 API, which stores the metadata in the catalogue.
 
-Please coordinate with the Data Manager or the DMG if you intend to push MMD
-files thorugh the queue. If you post an MMD file, make sure to check that it
-has been added to the metadata catalogue (see <<test-mmd-ingested>>).
+Please coordinate with the Data Manager or the DMG (see
+<<specialized-datagov>>) if you intend to push MMD files through the queue. If
+you post an MMD file, make sure to check that it has been added to the metadata
+catalogue (see <<test-mmd-ingested>>).
 
 [[push-mmd-file]]
 ===== Push the MMD xml file to the discovery metadata catalogue
 
-If you produce data that does not need to go through the event queue, the Data Manager or someone in the DMG can help you with the following:
+If you produce data that does not need to go through the event queue, the Data
+Manager or someone in the DMG (see <<specialized-datagov>>) can help you with
+the following:
 
 . Verify and validate the MMD file(s)
 . Push to the staging environment for testing and verification: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-staging.k8s.met.no/v1/insert`
