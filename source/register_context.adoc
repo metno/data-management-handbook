@@ -108,6 +108,9 @@ event queue, whereas metadata about data that is not used in a downstream
 operational system could be pushed directly to DMCI. In both cases it is
 important to first test your MMD file.
 
+METs Data Manager or a member of the DMG (see <<specialized-datagov>>) can help
+to verify the MMD files and push them to the catalogue.
+
 [[test-mmd-file]]
 ===== Test the MMD xml file
 
@@ -169,17 +172,19 @@ The `MMD-Agent` subscribes to all the messages coming through the event queue.
 If the message contains an MMD payload, it will post the MMD file to the DMCI
 API, which stores the metadata in the catalogue.
 
-If you also posted an MMD file, check that this has been added to the metadata
-catalogue (see <<test-mmd-ingested>>).
+Please coordinate with the Data Manager or the DMG if you intend to push MMD
+files thorugh the queue. If you post an MMD file, make sure to check that it
+has been added to the metadata catalogue (see <<test-mmd-ingested>>).
 
 [[push-mmd-file]]
 ===== Push the MMD xml file to the discovery metadata catalogue
 
-As a producer of data that does not need to go through the event queue, you should do the following:
+If you produce data that does not need to go through the event queue, the Data Manager or someone in the DMG can help you with the following:
 
+. Verify and validate the MMD file(s)
 . Push to the staging environment for testing and verification: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda-staging.k8s.met.no/v1/insert`
 . Check that the MMD file has been added to the catalogue services in staging (see <<test-mmd-ingested>>).
-. Push to production (the official catalogue) for final publication: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert`
+. Push to the production environment (the official catalogue) for final publication: `curl --data-binary "@<PATH_TO_MMD_FILE>" https://dmci.s-enda.k8s.met.no/v1/insert`
 . Check that the MMD file has been added to the catalogue services in production (see <<test-mmd-ingested>>).
 
 [[test-mmd-ingested]]
