@@ -59,7 +59,9 @@ wget https://thredds.met.no/thredds/fileServer/met.no/observations/surface/96220
 ncheader2json -i ./lebesby_karlmyhr_max_air_temperature.nc | curl -X POST -H 'Content-Type: application/json' -d @- "https://py-mmd-tools.s-enda.k8s.met.no/nc2mmd?return_xml=1&url=https://thredds.met.no/thredds/dodsC/met.no/observations/surface/96220/216/lebesby_karlmyhr_max_air_temperature.nc&parent=no.met:9fbe6a04-279c-46b8-a582-bb08f4b11794" > my_mmd.xml
 ----
 
-OBS: explain error output...
+The API is currently an early version. If it fails, and the error is unclear,
+please try to install py-mmd-tools locally in order to understand what is
+wrong.
 
 [NOTE]
 ====
