@@ -72,9 +72,9 @@ https://py-mmd-tools.s-enda-dev.k8s.met.no/docs#/default/nc2mmd_nc2mmd_post.
 
 Alternatively, you can use the `nc2mmd.py` script to create your MMD files.
 However, if you choose this approach, make sure to keep your local version
-up-to-date.
+of link:https://github.com/metno/py-mmd-tools.git[py-mmd-tools] up-to-date.
 
-Then, generate your mmd xml file as follows:
+In this case, generate your mmd xml file as follows:
 
 [source]
 ----
