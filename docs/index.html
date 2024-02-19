@@ -2416,12 +2416,79 @@ registered in a searchable catalogue with appropriate metadata.</p>
 <div class="sect3">
 <h4 id="local-mmd-xml-generation"><a class="anchor" href="#local-mmd-xml-generation"></a>7.3.1. Create MMD xml file from NetCDF-CF</h4>
 <div class="paragraph">
-<p>Clone the <a href="https://github.com/metno/py-mmd-tools.git">py-mmd-tools</a> repo and
-make a local installation with, e.g., <code>pip install .</code>. This should bring in all
-needed dependencies (we recommend using a virtual environment).</p>
+<p>The <a href="https://github.com/metno/py-mmd-tools.git">py-mmd-tools</a> based nc2mmd
+API function can be used to create MMD files from NetCDF-CF files that follow the
+recommendations in <a href="#data-as-netcdf-cf">Section 7.2.2</a>.</p>
 </div>
 <div class="paragraph">
-<p>Then, generate your mmd xml file as follows:</p>
+<p>You will need to clone the
+<a href="https://github.com/metno/py-mmd-tools.git">py-mmd-tools</a> repository and
+make a local installation with, e.g., <code>pip install .</code>. This should bring in all
+needed dependencies (we recommend to use a virtual environment).</p>
+</div>
+<div class="paragraph">
+<p>Example usage:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Download an example NetCDF-CF file:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>wget https://thredds.met.no/thredds/fileServer/met.no/observations/surface/96220/216/lebesby_karlmyhr_max_air_temperature.nc</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a json copy of the metadata with the <code>ncheader2json</code> script, and push this to the nc2mmd API function:</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code>ncheader2json -i ./lebesby_karlmyhr_max_air_temperature.nc | curl -X POST -H 'Content-Type: application/json' -d @- "https://py-mmd-tools.s-enda.k8s.met.no/nc2mmd?return_xml=1&amp;url=https://thredds.met.no/thredds/dodsC/met.no/observations/surface/96220/216/lebesby_karlmyhr_max_air_temperature.nc&amp;parent=no.met:9fbe6a04-279c-46b8-a582-bb08f4b11794" &gt; my_mmd.xml</code></pre>
+</div>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The API is currently an early version. If it fails, and the error is unclear,
+please try to use the nc2mmd script locally or contact the Data Manager.</p>
+</div>
+<div class="paragraph">
+<p>The OpenAPI documentation for the API can be found at <a href="https://py-mmd-tools.s-enda.k8s.met.no/docs" class="bare">https://py-mmd-tools.s-enda.k8s.met.no/docs</a>.</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The OPeNDAP url is not checked, except for syntax. Make sure that it is correct!</p>
+</li>
+<li>
+<p>NetCDF-CF datasets should be connected to a parent dataset (see <a href="#create-parent-mmd">Section 7.3.2</a>).</p>
+</li>
+<li>
+<p>If you produce raster datasets providing OGC WMS
+visualizations, you can add WMS information according to the documentation at
+<a href="https://py-mmd-tools.s-enda-dev.k8s.met.no/docs#/default/nc2mmd_nc2mmd_post" class="bare">https://py-mmd-tools.s-enda-dev.k8s.met.no/docs#/default/nc2mmd_nc2mmd_post</a>.</p>
+</li>
+</ol>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Alternatively, you can use the <code>nc2mmd.py</code> script to create your MMD files.
+However, if you choose this approach, make sure to keep your local version
+of <a href="https://github.com/metno/py-mmd-tools.git">py-mmd-tools</a> up-to-date.</p>
+</div>
+<div class="paragraph">
+<p>In this case, generate your mmd xml file as follows:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3749,7 +3816,7 @@ GIS systems have lately evolved in distributed <a href="#glossary-spatial-data-i
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2024-02-19 02:28:13 UTC
+Last updated 2024-02-19 13:46:14 UTC
 </div>
 </div>
 </body>
