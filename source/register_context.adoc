@@ -60,7 +60,7 @@ ncheader2json -i ./lebesby_karlmyhr_max_air_temperature.nc | curl -X POST -H 'Co
 ----
 
 The API is currently an early version. If it fails, and the error is unclear,
-please contact the Data Manager or try to use the nc2mmd script locally.
+please try to use the nc2mmd script locally or contact the Data Manager.
 
 The OpenAPI documentation for the API can be found at https://py-mmd-tools.s-enda.k8s.met.no/docs.
 
