@@ -63,7 +63,7 @@ The API is currently an early version. If it fails, and the error is unclear,
 please try to use the nc2mmd script locally in order to understand what is
 wrong.
 
-The OpenAPI documentation for the API can be found at py-mmd-tools.s-enda.k8s.met.no/docs
+The OpenAPI documentation for the API can be found at https://py-mmd-tools.s-enda.k8s.met.no/docs.
 
 [NOTE]
 ====
