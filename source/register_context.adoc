@@ -4,6 +4,9 @@
 :numbered:
 include::{special_nc2thredds}[]
 
+[[visualize]]
+==== Add visualization to you netcdf data
+
 :numbered:
 include::{special_visualization}[]
 
