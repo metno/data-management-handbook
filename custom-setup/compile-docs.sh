@@ -56,6 +56,7 @@ asciidoctor -r asciidoctor-diagram \
       -a special_data_governance=$SPECIAL_DATA_GOVERNANCE \
       -a special_practical_guidance=$SPECIAL_PRACTICAL_GUIDANCE \
       -a special_nc2thredds=$SPECIAL_NC2THREDDS \
+      -a special_visualization=$SPECIAL_VISUALIZATION \
       -a spec_default_global_attrs=$SPEC_DEFAULT_GLOBAL_ATTRS \
       -a special_appendix_users=$SPECIAL_APPENDIX_USERS \
       -a toc=left \
@@ -75,6 +76,7 @@ asciidoctor-pdf -r asciidoctor-diagram \
       -a special_data_governance=$SPECIAL_DATA_GOVERNANCE \
       -a special_practical_guidance=$SPECIAL_PRACTICAL_GUIDANCE \
       -a special_nc2thredds=$SPECIAL_NC2THREDDS \
+      -a special_visualization=$SPECIAL_VISUALIZATION \
       -a spec_default_global_attrs=$SPEC_DEFAULT_GLOBAL_ATTRS \
       -a special_appendix_users=$SPECIAL_APPENDIX_USERS \
       -a imagesdir=$IMAGES_DIR \

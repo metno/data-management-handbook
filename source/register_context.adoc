@@ -4,6 +4,9 @@
 :numbered:
 include::{special_nc2thredds}[]
 
+:numbered:
+include::{special_visualization}[]
+
 [[register-dataset-in-catalog]]
 === Register and make your data available
 
