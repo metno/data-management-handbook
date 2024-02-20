@@ -24,6 +24,7 @@ SPECIAL_USER_PORTALS=${SPECIAL_USER_PORTALS:-/workdir/source/specialized_userpor
 SPECIAL_DATA_GOVERNANCE=${SPECIAL_DATA_GOVERNANCE:-/workdir/source/specialized_datagov_MET.adoc}
 SPECIAL_PRACTICAL_GUIDANCE=${SPECIAL_PRACTICAL_GUIDANCE:-/workdir/source/specialized_practical_guidance_MET.adoc}
 SPECIAL_NC2THREDDS=${SPECIAL_NC2THREDDS:-/workdir/source/specialized_nc2thredds_MET.adoc}
+SPECIAL_VISUALIZATION=${SPECIAL_VISUALIZATION:-/workdir/source/specialized_visualization_MET.adoc}
 SPEC_DEFAULT_GLOBAL_ATTRS=${SPEC_DEFAULT_GLOBAL_ATTRS:-/workdir/source/spec_default_global_attrs_MET.adoc}
 
 CWD=$(pwd)

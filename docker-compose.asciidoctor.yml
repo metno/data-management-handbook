@@ -19,6 +19,7 @@ services:
       -a special_data_governance=${SPECIAL_DATA_GOVERNANCE:-specialized_datagov_template.adoc}
       -a special_practical_guidance=${SPECIAL_PRACTICAL_GUIDANCE:-specialized_practical_guidance_template.adoc}
       -a special_nc2thredds=${SPECIAL_NC2THREDDS:-specialized_nc2thredds.adoc}
+      -a special_visualization=${SPECIAL_VISUALIZATION:-specialized_visualization.adoc}
       -a spec_default_global_attrs=${SPEC_DEFAULT_GLOBAL_ATTRS:-spec_default_global_attrs.adoc}
       -a special_appendix_users=${SPECIAL_APPENDIX_USERS:-specialized_appendix_users.adoc}
       -a toc=left
@@ -44,6 +45,7 @@ services:
       -a special_data_governance=${SPECIAL_DATA_GOVERNANCE:-specialized_datagov_template.adoc}
       -a special_practical_guidance=${SPECIAL_PRACTICAL_GUIDANCE:-specialized_practical_guidance_template.adoc}
       -a special_nc2thredds=${SPECIAL_NC2THREDDS:-specialized_nc2thredds.adoc}
+      -a special_visualization=${SPECIAL_VISUALIZATION:-specialized_visualization.adoc}
       -a spec_default_global_attrs=${SPEC_DEFAULT_GLOBAL_ATTRS:-spec_default_global_attrs.adoc}
       -a special_appendix_users=${SPECIAL_APPENDIX_USERS:-specialized_appendix_users.adoc}
       -a pdf-themesdir=/workdir
