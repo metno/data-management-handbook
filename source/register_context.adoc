@@ -4,6 +4,12 @@
 :numbered:
 include::{special_nc2thredds}[]
 
+[[visualize]]
+==== Create OGC WMS visualization of NetCDF-CF raster data
+
+:numbered:
+include::{special_visualization}[]
+
 [[register-dataset-in-catalog]]
 === Register and make your data available
 
