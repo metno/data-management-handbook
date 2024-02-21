@@ -5,7 +5,7 @@
 include::{special_nc2thredds}[]
 
 [[visualize]]
-==== Add visualization to you netcdf data
+==== Create OGC WMS visualization of NetCDF-CF raster data
 
 :numbered:
 include::{special_visualization}[]
