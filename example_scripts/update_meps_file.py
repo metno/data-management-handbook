@@ -12,8 +12,7 @@ with netCDF4.Dataset(sys.argv[1], "a") as f:
     f.creator_institution = "Norwegian Meteorological Institute"
     f.delncattr("creator_url")  # not needed, replaced by publisher_url
 
-    f.institution = "Norwegian Meteorological Institute"
-    f.institution_short_name = 'MET Norway'
+    f.institution = "Norwegian Meteorological Institute (MET Norway)"
 
     f.title = "U component of wind speed at ten meter height (example)"
     f.title_no = "U-komponent av vindhastighet i ti meters høyde (eksempel)"
@@ -49,7 +48,7 @@ with netCDF4.Dataset(sys.argv[1], "a") as f:
 
     f.publisher_name = "Norwegian Meteorological Institute"
     f.publisher_type = "institution"
-    f.publisher_email = "csw-services@met.no"
+    f.publisher_email = "data-management-group@met.no"
     f.publisher_url = "https://www.met.no/"
 
     # Extract time_coverage_start from the time variable

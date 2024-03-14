@@ -58,7 +58,7 @@ with netCDF4.Dataset(sys.argv[1], "a") as f:
 
     f.publisher_name = "Norwegian Meteorological Institute"
     f.publisher_type = "institution"
-    f.publisher_email = "csw-services@met.no"
+    f.publisher_email = "data-management-group@met.no"
     f.publisher_url = "https://www.met.no/"
 
     # Extract time_coverage_start from the time variable
